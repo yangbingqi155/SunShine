@@ -38,6 +38,7 @@ function enableModel(url,manageLoginUrl) {
             alert(returndata.Message);
             window.Location.href = manageLoginUrl;
         } else if (returndata.Code == "1") {
+            alert(returndata.Message);
             window.location.href = window.location.href;
         } else {
             alert("系统出错，请稍后再试。");

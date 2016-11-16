@@ -44,7 +44,7 @@
                             <td>@item.sortno</td>
                             <td>
                                 <div class="switch">
-                                    <input type="checkbox" onchange="enableProductCategory('@Url.Action("MercTypeEnable", "Manage", new { idcategory = item.idcategory, enable = !item.inuse, isAjax = true })','@Url.Action("Login", "Manage")')" name="enableProductCategory" @(item.inuse ? "checked" : "") />
+                                    <input type="checkbox" onchange="enableModel('@Url.Action("ProductCategoryEnable", "Manage", new { idcategory = item.idcategory, enable = !item.inuse, isAjax = true })','@Url.Action("Login", "Manage")')" name="enableProductCategory" @(item.inuse ? "checked" : "") />
                                 </div>
                             </td>
                             <td>@item.cretime</td>
