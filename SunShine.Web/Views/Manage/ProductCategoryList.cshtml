@@ -1,0 +1,72 @@
+﻿@using SunShine.Utils;
+@using SunShine.Web.Utils;
+@using SunShine.Model;
+@model List<ProductCategoryViewModel>
+
+@{
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+    var pageCount = Convert.ToInt32(ViewData["pageCount"]);
+    var pageIndex = Convert.ToInt32(ViewData["pageIndex"]);
+}
+<div class="ManageRightTitle">
+    <ol class="breadcrumb">
+        <li><a href="#">产品管理</a></li>
+        <li><a href="#" class="active">类别管理</a></li>
+    </ol>
+</div>
+<div class="ManageRightContent">
+    <div>
+        <a class="btn btn-primary" href="@Url.Action("ProductCategoryEdit","Manage")">新增</a>
+    </div>
+    <div>
+        @Html.Raw(Url.BootstrapPagerHTML(pageCount, pageIndex, "ProductCategoryList", "Manage", ViewContext.RouteData.Values))
+    </div>
+    <div class="list-box">
+        @if (Model.Count > 0) {
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, string>(en => en.idcategory))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, String>(en => en.categoryname))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, string>(en => en.groupmethodname))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, int?>(en => en.sortno))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, bool>(en => en.inuse))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, DateTime?>(en => en.cretime))</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model) {
+                        <tr>
+                            <td>@item.idcategory</td>
+                            <td>@item.categoryname</td>
+                            <td>@item.groupmethodname</td>
+                            <td>@item.sortno</td>
+                            <td>
+                                <div class="switch">
+                                    <input type="checkbox" onchange="enableProductCategory('@Url.Action("MercTypeEnable", "Manage", new { idcategory = item.idcategory, enable = !item.inuse, isAjax = true })','@Url.Action("Login", "Manage")')" name="enableProductCategory" @(item.inuse ? "checked" : "") />
+                                </div>
+                            </td>
+                            <td>@item.cretime</td>
+                            <td>
+                                <a href="@Url.Action("ProductCategoryEdit","Manage",new {idcategory=item.idcategory })" class="btn btn-primary">编辑</a>
+                               
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else {
+            <h2>还没有任何产品类别.</h2>
+        }
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $.fn.bootstrapSwitch.defaults.onText = '启用';
+        $.fn.bootstrapSwitch.defaults.offText = '禁用';
+        $("[name='enableProductCategory']").bootstrapSwitch();
+    });
+</script>

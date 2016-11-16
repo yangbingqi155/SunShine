@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticleViewModel.cs" />
+    <Compile Include="GroupMethodType.cs" />
     <Compile Include="ManageUserViewModel.cs" />
+    <Compile Include="ModuleType.cs" />
     <Compile Include="NULLViewModel.cs" />
     <Compile Include="PictureViewModel.cs" />
     <Compile Include="ProductCategoryViewModel.cs" />
@@ -58,6 +60,10 @@
     <ProjectReference Include="..\SunShine.EF\SunShine.EF.csproj">
       <Project>{ea8368cf-d921-49ee-909b-088a7a26d987}</Project>
       <Name>SunShine.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunShine.Utils\SunShine.Utils.csproj">
+      <Project>{96cea3d5-fb0a-481a-9ab4-6ae7c9e057e0}</Project>
+      <Name>SunShine.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

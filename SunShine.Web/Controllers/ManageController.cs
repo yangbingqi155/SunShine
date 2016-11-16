@@ -57,6 +57,105 @@ namespace TNet.Controllers
             return View();
         }
 
-        
+
+        /// <summary>
+        /// 产品类别列表
+        /// </summary>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        public ActionResult ProductCategoryList(int pageIndex = 0) {
+            int pageCount = 0;
+            int pageSize = 10;
+            List<ProductCategory> entities = ProductCategoryService.GetALL();
+            List<ProductCategory> pageList = entities.Pager<ProductCategory>(pageIndex, pageSize, out pageCount);
+
+
+            List<ProductCategoryViewModel> viewModels = pageList.Select(model => {
+                ProductCategoryViewModel viewModel = new ProductCategoryViewModel();
+                viewModel.CopyFromBase(model);
+                return viewModel;
+            }).ToList();
+
+            ViewData["pageCount"] = pageCount;
+            ViewData["pageIndex"] = pageIndex;
+
+            return View(viewModels);
+        }
+
+
+        /// <summary>
+        /// 启用或者禁用产品类别
+        /// </summary>
+        /// <param name="idcategory"></param>
+        /// <param name="enable"></param>
+        /// <param name="isAjax"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ManageLoginValidation]
+        public ActionResult ProductCategoryEnable(string idcategory, bool enable, bool isAjax) {
+            ResultModel<ProductCategoryViewModel> resultEntity = new ResultModel<ProductCategoryViewModel>();
+            resultEntity.Code = ResponseCodeType.Success;
+            resultEntity.Message = "成功";
+            try {
+                ProductCategory category = ProductCategoryService.Get(idcategory);
+                category.inuse = enable;
+                ProductCategoryService.Edit(category);
+            }
+            catch (Exception ex) {
+                resultEntity.Code = ResponseCodeType.Fail;
+                resultEntity.Message = ex.ToString();
+            }
+
+            return Content(resultEntity.SerializeToJson());
+        }
+
+        /// <summary>
+        /// 新增\编辑产品类别
+        /// </summary>
+        /// <param name="idcategory"></param>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpGet]
+        public ActionResult ProductCategoryEdit(string idcategory = "") {
+            ProductCategoryViewModel model = new ProductCategoryViewModel();
+            if (!string.IsNullOrEmpty(idcategory)) {
+                ProductCategory category = ProductCategoryService.Get(idcategory);
+                if (category != null) { model.CopyFromBase(category); }
+            }
+            else {
+                model.inuse = true;
+            }
+
+            return View(model);
+        }
+
+        /// <summary>
+        /// 新增\编辑产品类别
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpPost]
+        public ActionResult ProductCategoryEdit(ProductCategoryViewModel model) {
+            ProductCategory category = new ProductCategory();
+            model.CopyToBase(category);
+            if (string.IsNullOrEmpty(category.idcategory)) {
+                category.idcategory = Pub.ID();
+                category.cretime = DateTime.Now;
+                //新增
+                category = ProductCategoryService.Add(category);
+            }
+            else {
+                //编辑
+                category = ProductCategoryService.Edit(category);
+            }
+
+            //修改后重新加载
+            model.CopyFromBase(category);
+
+            ModelState.AddModelError("", "保存成功.");
+
+            return View(model);
+        }
     }
 }

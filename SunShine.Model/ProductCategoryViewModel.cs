@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SunShine.EF;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using SunShine.Utils;
 
 namespace SunShine.Model {
     [NotMapped]
@@ -32,6 +33,31 @@ namespace SunShine.Model {
         [Display(Name = "创建时间")]
         public new DateTime? cretime { get; set; }
 
+
+        public static List<SelectItemViewModel<int>> GroupMethodTypeSelectItems {
+            get { 
+            List<SelectItemViewModel<int>> list = new List<SelectItemViewModel<int>>();
+            list.Add(new SelectItemViewModel<int>() {
+                DisplayText = AttributeHelper.GetDisplayName<GroupMethodType>(GroupMethodType.Industry),
+                DisplayValue = (int)GroupMethodType.Industry
+            });
+            list.Add(new SelectItemViewModel<int>() {
+                DisplayText = AttributeHelper.GetDisplayName<GroupMethodType>(GroupMethodType.Usage),
+                DisplayValue = (int)GroupMethodType.Usage
+            });
+            list.Add(new SelectItemViewModel<int>() {
+                DisplayText = AttributeHelper.GetDisplayName<GroupMethodType>(GroupMethodType.Product),
+                DisplayValue = (int)GroupMethodType.Product
+            });
+            return list;
+            }
+        }
+
+        [Display(Name = "分组方式")]
+        public  string groupmethodname { get {
+               var methodTypes= GroupMethodTypeSelectItems.Where(en => en.DisplayValue == groupmethod).ToList();
+                return (methodTypes != null && methodTypes.Count > 0) ? methodTypes.First().DisplayText : "";
+            }  }
 
         public void CopyFromBase(ProductCategory category) {
             this.idcategory = category.idcategory;

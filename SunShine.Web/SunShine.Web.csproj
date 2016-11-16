@@ -778,6 +778,8 @@
     <Content Include="Views\Manage\Login.cshtml" />
     <Content Include="Views\Shared\_ManageLayout.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ProductCategoryList.cshtml" />
+    <Content Include="Views\Manage\ProductCategoryEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

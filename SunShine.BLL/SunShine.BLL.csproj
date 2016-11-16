@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ManageUserService.cs" />
+    <Compile Include="ProductCategoryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +54,10 @@
     <ProjectReference Include="..\SunShine.Model\SunShine.Model.csproj">
       <Project>{ce18912c-7a50-4325-9ae0-3943f87b3c7c}</Project>
       <Name>SunShine.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunShine.Utils\SunShine.Utils.csproj">
+      <Project>{96cea3d5-fb0a-481a-9ab4-6ae7c9e057e0}</Project>
+      <Name>SunShine.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

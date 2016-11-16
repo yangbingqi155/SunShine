@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SunShine.EF;
+using SunShine.Model;
+using SunShine.Utils;
+
+namespace SunShine.BLL {
+    public class ProductCategoryService {
+
+        public static List<ProductCategory> GetALL() {
+            TN db = new TN();
+            return db.ProductCategories.OrderBy(en => en.sortno).ToList();
+        }
+
+        public static List<SelectItemViewModel<string>> SelectItems() {
+            List<SelectItemViewModel<string>> mercTypeOptions = new List<SelectItemViewModel<string>>();
+            List<ProductCategory> categories = GetALL();
+            if (categories != null && categories.Count > 0) {
+                for (int i = 0; i < categories.Count; i++) {
+                    mercTypeOptions.Add(new SelectItemViewModel<string>() {
+                        DisplayValue = categories[i].idcategory.ToString(),
+                        DisplayText = categories[i].categoryname
+                    });
+                }
+            }
+
+            return mercTypeOptions;
+        }
+
+        public static ProductCategory Get(string idcategory) {
+            TN db = new TN();
+            return db.ProductCategories.Where(en => en.idcategory == idcategory).FirstOrDefault();
+        }
+
+        public static ProductCategory Edit(ProductCategory category) {
+            TN db = new TN();
+            ProductCategory oldCategory = db.ProductCategories.Where(en => en.idcategory == category.idcategory).FirstOrDefault();
+
+            oldCategory.idcategory = category.idcategory;
+            oldCategory.categoryname = category.categoryname;
+            oldCategory.groupmethod = category.groupmethod;
+            oldCategory.sortno = category.sortno;
+            oldCategory.inuse = category.inuse;
+
+            db.SaveChanges();
+            return oldCategory;
+        }
+
+
+
+        public static ProductCategory Add(ProductCategory category) {
+            TN db = new TN();
+            db.ProductCategories.Add(category);
+            db.SaveChanges();
+            return category;
+        }
+    }
+}
