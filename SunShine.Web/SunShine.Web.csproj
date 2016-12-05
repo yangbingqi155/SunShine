@@ -232,6 +232,8 @@
     <Content Include="Css\Bootstrap\bootstrap-theme.min.css" />
     <Content Include="Css\Bootstrap\bootstrap.css" />
     <Content Include="Css\Bootstrap\bootstrap.min.css" />
+    <Content Include="Css\Fonts\font_1469444055_0424716_iconfont.svg" />
+    <Content Include="Css\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Css\iCheck\skins\all.css" />
     <Content Include="Css\iCheck\skins\flat\aero%402x.png" />
     <Content Include="Css\iCheck\skins\flat\aero.css" />
@@ -453,6 +455,16 @@
     </Content>
     <Content Include="Css\Bootstrap\bootstrap-theme.css.map" />
     <Content Include="Css\Bootstrap\bootstrap.css.map" />
+    <Content Include="Css\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Css\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Css\Fonts\font_1469444055_0424716.eot" />
+    <Content Include="Css\Fonts\font_1469444055_0424716.ttf" />
+    <Content Include="Css\Fonts\font_1469444055_0424716.woff" />
+    <Content Include="Css\Fonts\font_1469444055_0424716_iefix.eot" />
+    <Content Include="Css\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Css\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Css\Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Css\Fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jQuery\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
