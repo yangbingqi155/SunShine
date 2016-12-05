@@ -42,11 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArticleService.cs" />
     <Compile Include="ManageUserService.cs" />
     <Compile Include="PictureService.cs" />
     <Compile Include="ProductCategoryService.cs" />
     <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SiteCategoryService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SunShine.EF\SunShine.EF.csproj">

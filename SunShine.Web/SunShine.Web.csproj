@@ -794,6 +794,10 @@
     <Content Include="Views\Manage\ProductCategoryEdit.cshtml" />
     <Content Include="Views\Manage\ProductList.cshtml" />
     <Content Include="Views\Manage\ProductEdit.cshtml" />
+    <Content Include="Views\Manage\SiteCategoryList.cshtml" />
+    <Content Include="Views\Manage\SiteCategoryEdit.cshtml" />
+    <Content Include="Views\Manage\ArticleList.cshtml" />
+    <Content Include="Views\Manage\ArticleEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

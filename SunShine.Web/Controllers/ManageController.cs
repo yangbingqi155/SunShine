@@ -302,6 +302,117 @@ namespace TNet.Controllers
         }
 
 
+        /// <summary>
+        /// 网站类别列表
+        /// </summary>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        public ActionResult SiteCategoryList(int pageIndex = 0)
+        {
+            int pageCount = 0;
+            int pageSize = 10;
+            List<SiteCategory> entities = SiteCategoryService.GetALL();
+            List<SiteCategory> pageList = entities.Pager<SiteCategory>(pageIndex, pageSize, out pageCount);
+
+
+            List<SiteCategoryViewModel> viewModels = pageList.Select(model => {
+                SiteCategoryViewModel viewModel = new SiteCategoryViewModel();
+                viewModel.CopyFromBase(model);
+                return viewModel;
+            }).ToList();
+
+            ViewData["pageCount"] = pageCount;
+            ViewData["pageIndex"] = pageIndex;
+
+            return View(viewModels);
+        }
+
+
+        /// <summary>
+        /// 启用或者禁用网站类别
+        /// </summary>
+        /// <param name="idcategory"></param>
+        /// <param name="enable"></param>
+        /// <param name="isAjax"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ManageLoginValidation]
+        public ActionResult SiteCategoryEnable(string idcategory, bool enable, bool isAjax)
+        {
+            ResultModel<SiteCategoryViewModel> resultEntity = new ResultModel<SiteCategoryViewModel>();
+            resultEntity.Code = ResponseCodeType.Success;
+            resultEntity.Message = "成功";
+            try
+            {
+                SiteCategory category = SiteCategoryService.Get(idcategory);
+                category.inuse = enable;
+                SiteCategoryService.Edit(category);
+            }
+            catch (Exception ex)
+            {
+                resultEntity.Code = ResponseCodeType.Fail;
+                resultEntity.Message = ex.ToString();
+            }
+
+            return Content(resultEntity.SerializeToJson());
+        }
+
+        /// <summary>
+        /// 新增\编辑产品类别
+        /// </summary>
+        /// <param name="idcategory"></param>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpGet]
+        public ActionResult SiteCategoryEdit(string idcategory = "")
+        {
+            SiteCategoryViewModel model = new SiteCategoryViewModel();
+            if (!string.IsNullOrEmpty(idcategory))
+            {
+                SiteCategory category = SiteCategoryService.Get(idcategory);
+                if (category != null) { model.CopyFromBase(category); }
+            }
+            else
+            {
+                model.inuse = true;
+            }
+
+            return View(model);
+        }
+
+        /// <summary>
+        /// 新增\编辑产品类别
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpPost]
+        public ActionResult SiteCategoryEdit(SiteCategoryViewModel model)
+        {
+            SiteCategory category = new SiteCategory();
+            model.CopyToBase(category);
+            if (string.IsNullOrEmpty(category.idcategory))
+            {
+                category.idcategory = Pub.ID();
+                category.cretime = DateTime.Now;
+                //新增
+                category = SiteCategoryService.Add(category);
+            }
+            else
+            {
+                //编辑
+                category = SiteCategoryService.Edit(category);
+            }
+
+            //修改后重新加载
+            model.CopyFromBase(category);
+
+            ModelState.AddModelError("", "保存成功.");
+
+            return RedirectToAction("SiteCategoryList", "Manage");
+        }
+
+
         [ManageLoginValidation]
         public ActionResult UploadImage(ModuleType moduleType,string idmodule="")
         {
