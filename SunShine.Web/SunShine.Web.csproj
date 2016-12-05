@@ -780,6 +780,8 @@
     <Content Include="Views\Manage\Index.cshtml" />
     <Content Include="Views\Manage\ProductCategoryList.cshtml" />
     <Content Include="Views\Manage\ProductCategoryEdit.cshtml" />
+    <Content Include="Views\Manage\ProductList.cshtml" />
+    <Content Include="Views\Manage\ProductEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

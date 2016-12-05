@@ -5,7 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TNet.Models
+namespace SunShine.Model
 {
     /// <summary>
     /// 模块类型

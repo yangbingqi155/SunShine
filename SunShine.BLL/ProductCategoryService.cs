@@ -15,9 +15,9 @@ namespace SunShine.BLL {
             return db.ProductCategories.OrderBy(en => en.sortno).ToList();
         }
 
-        public static List<SelectItemViewModel<string>> SelectItems() {
+        public static List<SelectItemViewModel<string>> SelectItems(GroupMethodType methodType) {
             List<SelectItemViewModel<string>> mercTypeOptions = new List<SelectItemViewModel<string>>();
-            List<ProductCategory> categories = GetALL();
+            List<ProductCategory> categories = GetALL().Where(en=>en.groupmethod==(int)methodType).ToList();
             if (categories != null && categories.Count > 0) {
                 for (int i = 0; i < categories.Count; i++) {
                     mercTypeOptions.Add(new SelectItemViewModel<string>() {
@@ -26,7 +26,10 @@ namespace SunShine.BLL {
                     });
                 }
             }
-
+            mercTypeOptions.Insert(0,new SelectItemViewModel<string>() {
+                 DisplayText="请选择",
+                  DisplayValue=""
+            });
             return mercTypeOptions;
         }
 

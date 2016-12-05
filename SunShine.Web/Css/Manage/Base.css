@@ -482,9 +482,17 @@ span.input-group-addon span.glyphicon-remove {
 }
 
 nav .pagination {
-    margin:10px 0 0 0;
+    margin: 10px 0 0 0;
 }
 
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
     padding: 10px 10px 10px 10px;
+}
+
+.searchbox .filter_label {
+    float: left;
+    vertical-align:middle;
+    height:34px;
+    line-height:34px;
+    font-size:14px;
 }
