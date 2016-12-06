@@ -31,13 +31,22 @@ namespace SunShine.Model {
         [StringLength(50)]
         public new string idusagecategory { get; set; }
 
+        [Display(Name = "用途类别")]
+        public string usageCategoryName { get; set; }
+
         [Display(Name = "行业类别")]
         [StringLength(50)]
         public new string idindustrycategory { get; set; }
 
+        [Display(Name = "行业类别")]
+        public string industryCategoryName { get; set; }
+
         [Display(Name = "产品类别")]
         [StringLength(50)]
         public new string idproductcategory { get; set; }
+
+        [Display(Name = "产品类别")]
+        public  string productCategoryName { get; set; }
 
         [Display(Name = "详细描述")]
         public new string description { get; set; }

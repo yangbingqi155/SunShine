@@ -9,25 +9,30 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SunShine.Model {
     [NotMapped]
-    public class SiteCategoryViewModel {
+    public class SiteCategoryViewModel:SiteCategory {
         [Display(Name ="类别编号")]
         [StringLength(50)]
-        public string idcategory { get; set; }
+        public new string idcategory { get; set; }
 
         [Display(Name = "名称")]
         [Required]
         [StringLength(100)]
-        public string categoryname { get; set; }
+        public new string categoryname { get; set; }
 
         [Display(Name = "父级编号")]
         [StringLength(50)]
-        public string parentid { get; set; }
+        public new string parentid { get; set; }
 
         [Display(Name = "创建时间")]
-        public DateTime? cretime { get; set; }
+        public new DateTime? cretime { get; set; }
 
         [Display(Name = "启用")]
-        public bool inuse { get; set; }
+        public new bool inuse { get; set; }
+
+        public new int level { get; set; }
+
+        [Display(Name = "父级类别")]
+        public SiteCategory ParentCategory { get; set; }
 
 
         public void CopyFromBase(SiteCategory category) {

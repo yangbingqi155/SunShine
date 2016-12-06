@@ -32,8 +32,7 @@ namespace SunShine.Model {
 
         [Display(Name = "创建时间")]
         public new DateTime? cretime { get; set; }
-
-
+        
         public static List<SelectItemViewModel<int>> GroupMethodTypeSelectItems {
             get { 
             List<SelectItemViewModel<int>> list = new List<SelectItemViewModel<int>>();

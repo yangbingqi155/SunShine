@@ -23,5 +23,7 @@ namespace SunShine.EF
         public DateTime? cretime { get; set; }
 
         public bool inuse { get; set; }
+
+        public int level { get; set; }
     }
 }

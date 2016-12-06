@@ -2,6 +2,7 @@
 .user
 .suo
 
+/.vs/
 /.vs/TNet/v14/*.suo
 
 /SunShine.BLL/obj/
