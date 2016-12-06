@@ -211,8 +211,8 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 
 .news {width:100%; max-width:1440px; height:424px; margin:30px auto; overflow:hidden;}
 .news_center { width:1000px; margin:0 auto; overflow:hidden;} 
-.xw { width:526px; float:left; overflow:hidden;}
-.news_t {width:508px; height:35px; line-height:35px; color:#333; font-size:25px; font-weight:700; overflow:hidden;}
+.xw { width:500px; float:left; overflow:hidden;}
+.news_t {width:480px; height:35px; line-height:35px; color:#333; font-size:25px; font-weight:700; overflow:hidden;}
 .news_t ul{overflow:hidden; width:200px; float:left}
 .news_t ul li { float:left;  text-align:left;  }
 
@@ -223,28 +223,31 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 .news_t ul li.xuanz a { color:#ff7c02; }
 .news_t ul li.no1 a { border-left:none; background:none; }
 .news_t ul li:hover { color:#ff7c02; background:url(../images/fgz_53.png) no-repeat bottom center;}
-.news_t .more { float:right; margin-top:8px;}
+.news_t .more { float:right; margin-top:0px;}
 
-.content4 { width:509px; overflow:hidden; margin-top:15px;}
-.shang { width:509px; height:141px; overflow:hidden;}
+.content4 { width:480px; overflow:hidden; margin-top:15px;}
+
+.shang { width:480px; height:141px; overflow:hidden;}
+.youshang { width:509px; height:141px; overflow:hidden;margin-top:15px}
 .tutu { width:230px; height:141px; overflow:hidden;  float:left;}
-.right_news{ float:left; width:369px; margin:0px 0 0 20px; overflow:hidden;}
-.right_news p{ font-size:14px;  color:#333; width:360px;text-overflow:ellipsis; overflow:hidden; white-space:nowrap; display:block; font-weight:bold;}
-.right_news p a{ color:#333;}
+.right_news{ float:left; width:230px; margin:0px 0 0 15px; overflow:hidden;}
+.right_news p{ font-size:13px;  color:#333; width:360px;text-overflow:ellipsis; overflow:hidden; white-space:nowrap; display:block; font-weight:bold;}
+.right_news p a{ color:#333;font-size:14px}
 .right_news p a:hover{ color:#ff7c02;}
-.right_news span{ display:block; height:70px; overflow:hidden; line-height:24px; font-size:13px; color:#666;  margin-top:10px;}
+.right_news span{ display:block; height:120px; overflow:hidden; line-height:22px; font-size:12px; color:#666;  margin-top:10px;}
 .xia { overflow:hidden; margin-top:20px;}
-.xia ul {width:509px; height:274px; overflow:hidden;}
-.xia ul li {width:509px; height:35px; overflow:hidden; border-bottom:1px #e4e4e4 dashed; background:url(../images/fgz_56.png) no-repeat left center; float:left;}
-.xia ul li a { font-size:14px; font-weight:500; height:35px; line-height:35px; text-indent:10px; display:block; }
+.xia ul {width:480px; height:274px; overflow:hidden;}
+.xia ul li {width:480px; height:35px; overflow:hidden;  background:url(../images/fgz_56.png) no-repeat left center; float:left;}
+.xia ul li a { font-size:12px; font-weight:500; height:35px; line-height:35px; text-indent:10px; display:block; }
 .xia ul li a span{float:right;}
+.xia ul li img{float:left}
 
 
 .yiny {float:left;}
 
 .wt{ float:right; width:450px;overflow:hidden}
-.news_t2 {width:320px; height:35px; line-height:35px; color:#333; font-size:20px; font-weight:700; overflow:hidden; float:left;}
-.news_t2 a { padding-left:15px; border-left:4px #ff7c02 solid;}
+.news_t2 {width:320px; height:35px; line-height:35px; color:#333; font-size:25px; font-weight:700; overflow:hidden; float:left;}
+.news_t2 a { }
 .news_tt .more { width:59px; float:right; margin-top:8px;}
 .wenti_box{ width:450px; overflow:hidden;}
 .wenti_box ul li{ overflow:hidden; border-bottom:1px dashed #CCC; height:81px; margin: 15px 0 0; }
