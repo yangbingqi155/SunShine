@@ -232,6 +232,8 @@
     <Content Include="Css\Bootstrap\bootstrap-theme.min.css" />
     <Content Include="Css\Bootstrap\bootstrap.css" />
     <Content Include="Css\Bootstrap\bootstrap.min.css" />
+    <Content Include="Css\Bootstrap\home.css" />
+    <Content Include="Css\Bootstrap\style.css" />
     <Content Include="Css\iCheck\skins\all.css" />
     <Content Include="Css\iCheck\skins\flat\aero%402x.png" />
     <Content Include="Css\iCheck\skins\flat\aero.css" />
@@ -354,6 +356,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\home\banner-1.jpg" />
+    <Content Include="Images\home\fgz_04.jpg" />
+    <Content Include="Images\home\home_1.jpg" />
+    <Content Include="Images\home\home_banner-1.jpg" />
+    <Content Include="Images\home\sinaLogo.jpg" />
+    <Content Include="Images\home\sinaLogo_1.jpg" />
+    <Content Include="Images\home\weixinLogo.jpg" />
+    <Content Include="Images\home\weixinLogo_1.jpg" />
     <Content Include="Images\Manage\headerbg4.png" />
     <Content Include="Images\Manage\login_bg.jpg" />
     <Content Include="lib\log4net\log4net.dll" />
@@ -456,6 +466,7 @@
     <None Include="Scripts\jQuery\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\Bootstrap\home.js" />
     <Content Include="Scripts\Bootstrap\npm.js" />
     <Content Include="Scripts\CustomerModelValidation\CheckoutRequiredClientValidation.js" />
     <Content Include="Scripts\iCheck\icheck.js" />

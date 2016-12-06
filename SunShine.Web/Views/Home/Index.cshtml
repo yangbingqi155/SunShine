@@ -1,31 +1,610 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    Layout = null;
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Css/Bootstrap/style.css" rel="stylesheet" />
+    <link href="~/Css/Bootstrap/home.css" rel="stylesheet" />
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/DrawImage.js" type="text/javascript"></script>
+    <script src="~/Scripts/Bootstrap/home.js"></script>
+    <script type="text/javascript">
+        var flag = false;
+        function SuchImage(ImgD, iwidth, iheight) {
+            var image = new Image();
+            image.src = ImgD.src;
+            if (image.width > 0 && image.height > 0) {
+                flag = true;
+                if (image.width / image.height >= iwidth / iheight) {
+                    if (image.width > iwidth) {
+                        ImgD.width = iwidth;
+                        ImgD.style.paddingTop = (iheight - (image.height * iwidth) / image.width) / 2 + "px";
+                        ImgD.style.paddingBottom = (iheight - (image.height * iwidth) / image.width) / 2 + "px";
+                        ImgD.height = (image.height * iwidth) / image.width;
+                    } else {
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+                        if (iheight > image.height) {
+                            ImgD.style.paddingTop = (iheight - image.height) / 2 + "px";
+                            ImgD.style.paddingBottom = (iheight - image.height) / 2 + "px";
+                            ImgD.height = image.height;
+                            ImgD.width = image.height * iwidth / iheight;
+                        }
+                    }
+
+                }
+                else {
+                    if (image.height > iheight) {
+                        ImgD.height = iheight;
+                        ImgD.width = (image.width * iheight) / image.height;
+                    }
+                    else {
+                        ImgD.style.paddingTop = (iheight - image.height) / 2 + "px";
+                        ImgD.style.paddingBottom = (iheight - image.height) / 2 + "px";
+                        ImgD.height = image.height;
+                        ImgD.width = image.height * iwidth / iheight;
+                    }
+                }
+            }
+        }
+        </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <div class="top">
+                <div class="welcome">您好，欢迎来到创意阳光广告有限公司官方网站</div>
+                <span>&nbsp;&nbsp;<a href="commong.html"><img src=" ~/Images/home/sinaLogo_1.jpg" width="23px" /> &nbsp;官方微博</a>&nbsp; &nbsp;|&nbsp;&nbsp;<a href="map.html"><image src="~/Images/home/weixinLogo_1.jpg" width="23px" /> &nbsp;微信</a>&nbsp; &nbsp;|&nbsp;&nbsp; <a href="contact.html">收藏本站</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="map.html">常见问题</a>&nbsp; &nbsp;|&nbsp;&nbsp;<a href="@Url.Action("About","Home")">联系我们</a>&nbsp; &nbsp;</span>
+            </div>
+            <div class="center"><div class="logo"><img src="~/Images/home/fgz_04.jpg" width="1000" height="116" /></div></div>
+        </div>
+        <div class="tablist1" id="pro_list1">
+            <div class="tablist">
+                <ul>
+                    <li class='hovers'><a href="index.html">创意阳光首页</a></li>
+                    <li><a href="product-1.html">楼顶发光字</a></li>
+                    <li><a href="product-3.html">门头发光字</a></li>
+                    <li><a href="product-8.html">背景墙发光字</a></li>
+                    <li><a href="product.html">产品中心</a></li>
+                    <li><a href="cases.html">成功案例</a></li>
+                    <li><a href="customer.html">品牌创意阳光</a></li>
+                    <li><a href="brands.html">联系阳光</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="fullSlide">
+                <div class="md">
+                    <ul style="position: relative; width: 1903px; height: 446px;">
+
+                        <li style="background-position: center center; background-repeat: no-repeat; position: absolute; width: 1903px; left: 0px; top: 0px; background-image: url(~/Images/home/home_banner-1.jpg.jpg&quot;)"><a href="http://www.ydqfgz.com/product.html" target="_blank" title="创意阳光"></a></li>
+                    </ul>
+                </div>
+                <div class="hd">
+                    <ul></ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="search">
+
+            <div class="keyword"><b>其他人同时也在搜索：</b><a href="/">迷你发光字</a>&nbsp;&nbsp;<a href="/">发光字生产厂家</a>&nbsp;&nbsp;<a href="/">亚克力发光字</a>&nbsp;&nbsp;<a href="/">树脂发光字厂家</a>&nbsp;&nbsp;<a href="/">迷你发光字</a></div>
+            <div class="ss">
+                <input name="txtSearch" type="text" id="txtSearch" class="input" />
+                <span>
+                    <input type="image" name="btnSeach" id="btnSeach" src="~/Images/home/fgz_11.jpg" style="border-width:0px;width:34px; height:33px; padding:0" />
+                </span>
+            </div>
+        </div>
+
+        <div class="daohangbeijing">
+            <div class="wrap">
+                <div class="cp_left">
+                    <div><img src="~/Images/home/feilei_1.jpg"></div>
+                    <div id="images">
+                        <ul name="menu5" id="menu5" class="menu">
+
+                            <style>
+                                .hd {
+                                    font-size: 13px;
+                                    font-weight: bold;
+                                    color: #FFF;
+                                    padding-left: 75px;
+                                    padding-top: 2px;
+                                }
+                            </style>
+                            <li style="background-color:#5f686f;padding-bottom:3px">
+                                <a class="collapsed" id="aPro">
+                                    <img class="expandedImg" src="~/Images/home/fold0.jpg" width="22" height="22" border="0" style="padding-top:4px">
+                                    <div class="hd" style="height:25px;padding-top:6px">
+                                        按用途分类
+                                        <div style="clear:both"></div>
+                                    </div>
+                                </a>
+                                <ul id="menu" style="display: block;">
+                                    <div style="width:220px;height:5px;background:#fff"></div>
+                                    <li class="level1-li sub"><a class="level1-a">门头发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a">楼顶发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a">室内发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a">室内发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a">室内发光字</a></li>
+                                    <div style="width:220px;height:10px;background:#fff"></div>
+                                </ul>
+                            </li>
+
+
+                            <li style="background-color:#5f686f; padding-bottom:3px;">
+                                <a class="collapsed" id="aBra">
+                                    <img class="expandedImg" src="~/Images/home/fold0.jpg" width="22" height="22" border="0">
+                                    <div class="hd">
+                                        按行业分类
+                                        <div style="clear:both"></div>
+                                    </div>
+                                </a>
+                                <!--  <div style="background-color:#FFF"><img src="/images/spacer.gif" width="220" height="1"></div>  -->
+                                <ul id="menu" style="display: block;">
+                                    <div style="width:220px;height:5px;background:#fff"></div>
+                                    <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=32">房地产发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=6">商业广场发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=4">医疗机构发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=26">宾馆酒店发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=46">餐饮行业发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=16">学校政府发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=3">银行证券发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=51">娱乐KTV发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=2">珠宝行业发光字</a></li>
+                                    <div style="width:220px;height:10px;background:#fff"></div>
+                                </ul>
+                            </li>
+
+
+
+                            <li style="background-color:#5f686f; padding-bottom:0px">
+                                <a class="collapsed" id="aCar">
+                                    <img class="expandedImg" src="~/Images/home/fold0.jpg" width="22" height="22" border="0">
+                                    <div class="hd">
+                                        按产品分类
+                                        <div style="clear:both"></div>
+                                    </div>
+                                </a>
+                                <ul id="menu" style="display: block;">
+                                    <div style="width:220px;height:5px;background:#fff"></div>
+                                    <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">树脂发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">迷你发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">平面发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">吸塑发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">无边发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">背打光发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">不锈钢发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">黑白板发光字</a></li>
+                                    <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">穿孔外露发光字</a></li>
+                                    <div style="width:220px;height:10px;background:#fff"></div>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <img src="~/Images/home/telephone_1.png" />
+                    </div>
+
+                </div>
+                <div class="cp_right">
+                    <div class="title">
+                        <ul id="tabs">
+                            <li style="background:#5f6870"><a href="product.html" class="tab">热销产品</a></li>
+                            <li style="background:#da251c"><a href="product.html" class="tab">最新产品</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab_box">
+                        <ul id="tab_conbox">
+                            <li>
+                                <div class="more1"><a href="product.html"><img src="~/images/home/more1.jpg"></a></div>
+                                <div class="cp_list">
+                                    <ul>
+
+                                        <li>
+                                            <div class="cp_img"><a href="productDetial-155.html" title="高级树脂三面发光字"><img src="/UpLoad/Product/2016-6-23/201606231428025063.jpg" onload="DrawImage(this,359,196)" alt="高级树脂三面发光字" /></a></div>
+                                            <div class="cp_name"><a href="productDetial-155.html">高级树脂三面发光字</a></div>
+                                            <div class="ckxq">
+                                                <div class="ckxq_left"><a href="productDetial-155.html">查看详情</a></div>
+                                                <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
+                                            </div>
+                                        </li>
+
+                                        <li class="no_mar">
+                                            <div class="cp_img"><a href="productDetial-154.html" title="高级通体三面发光字"><img src="/UpLoad/Product/2016-6-23/201606231426338802.jpg" onload="DrawImage(this,359,196)" alt="高级通体三面发光字" /></a></div>
+                                            <div class="cp_name"><a href="productDetial-154.html">高级通体三面发光字</a></div>
+                                            <div class="ckxq">
+                                                <div class="ckxq_left"><a href="productDetial-154.html">查看详情</a></div>
+                                                <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="cp_img"><a href="productDetial-153.html" title="高级亚克力三面发光字"><img src="/UpLoad/Product/2016-6-23/201606231425046291.jpg" onload="DrawImage(this,359,196)" alt="高级亚克力三面发光字" /></a></div>
+                                            <div class="cp_name"><a href="productDetial-153.html">高级亚克力三面发光字</a></div>
+                                            <div class="ckxq">
+                                                <div class="ckxq_left"><a href="productDetial-153.html">查看详情</a></div>
+                                                <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
+                                            </div>
+                                        </li>
+
+                                        <li class="no_mar">
+                                            <div class="cp_img"><a href="productDetial-152.html" title="树脂三面发光字"><img src="/UpLoad/Product/2016-6-23/201606231423088307.jpg" onload="DrawImage(this,359,196)" alt="树脂三面发光字" /></a></div>
+                                            <div class="cp_name"><a href="productDetial-152.html">树脂三面发光字</a></div>
+                                            <div class="ckxq">
+                                                <div class="ckxq_left"><a href="productDetial-152.html">查看详情</a></div>
+                                                <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="cp_img"><a href="productDetial-151.html" title="通体三面发光字"><img src="/UpLoad/Product/2016-6-23/201606231421178293.jpg" onload="DrawImage(this,359,196)" alt="通体三面发光字" /></a></div>
+                                            <div class="cp_name"><a href="productDetial-151.html">通体三面发光字</a></div>
+                                            <div class="ckxq">
+                                                <div class="ckxq_left"><a href="productDetial-151.html">查看详情</a></div>
+                                                <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
+                                            </div>
+                                        </li>
+
+                                        <li class="no_mar">
+                                            <div class="cp_img"><a href="productDetial-150.html" title="亚克力三面发光字"><img src="/UpLoad/Product/2016-6-23/201606231422400178.jpg" onload="DrawImage(this,359,196)" alt="亚克力三面发光字" /></a></div>
+                                            <div class="cp_name"><a href="productDetial-150.html">亚克力三面发光字</a></div>
+                                            <div class="ckxq">
+                                                <div class="ckxq_left"><a href="productDetial-150.html">查看详情</a></div>
+                                                <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li style="display:none;">
+                                <div class="more1"><a href="product.html"><img src="images/more1.png"></a></div>
+
+                                <div class="cp_list">
+                                    <ul>
+                                        <div class="more1"><a href="product.html"><img src="images/more1.png"></a></div>
+
+                                        <li>
+                                            <div class="cp_img"><a href="productDetial-7.html" title="水晶发光字"><img src="/UpLoad/Product/2016/4/9/201604091150255576.jpg" onload="DrawImage(this,359,196)" alt="水晶发光字" /></a></div>
+                                            <div class="cp_name"><a href="productDetial-7.html">水晶发光字</a></div>
+                                            <div class="ckxq">
+                                                <div class="ckxq_left"><a href="productDetial-7.html">查看详情</a></div>
+                                                <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
+                                            </div>
+                                        </li>
+
+                                        <li class="no_mar">
+                                            <div class="cp_img"><a href="productDetial-6.html" title="水晶发光字"><img src="/UpLoad/Product/2016/4/9/201604091151563339.jpg" onload="DrawImage(this,359,196)" alt="水晶发光字" /></a></div>
+                                            <div class="cp_name"><a href="productDetial-6.html">水晶发光字</a></div>
+                                            <div class="ckxq">
+                                                <div class="ckxq_left"><a href="productDetial-6.html">查看详情</a></div>
+                                                <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="cp_img"><a href="productDetial-5.html" title="树脂发光字"><img src="/UpLoad/Product/2016/4/9/201604091145046523.jpg" onload="DrawImage(this,359,196)" alt="树脂发光字" /></a></div>
+                                            <div class="cp_name"><a href="productDetial-5.html">树脂发光字</a></div>
+                                            <div class="ckxq">
+                                                <div class="ckxq_left"><a href="productDetial-5.html">查看详情</a></div>
+                                                <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
+                                            </div>
+                                        </li>
+
+                                        <li class="no_mar">
+                                            <div class="cp_img"><a href="productDetial-4.html" title="树脂发光字"><img src="/UpLoad/Product/2016/4/9/201604091146532685.jpg" onload="DrawImage(this,359,196)" alt="树脂发光字" /></a></div>
+                                            <div class="cp_name"><a href="productDetial-4.html">树脂发光字</a></div>
+                                            <div class="ckxq">
+                                                <div class="ckxq_left"><a href="productDetial-4.html">查看详情</a></div>
+                                                <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="cp_img"><a href="productDetial-3.html" title="不锈钢发光字"><img src="/UpLoad/Product/2016/4/9/201604091142153535.jpg" onload="DrawImage(this,359,196)" alt="不锈钢发光字" /></a></div>
+                                            <div class="cp_name"><a href="productDetial-3.html">不锈钢发光字</a></div>
+                                            <div class="ckxq">
+                                                <div class="ckxq_left"><a href="productDetial-3.html">查看详情</a></div>
+                                                <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
+                                            </div>
+                                        </li>
+
+                                        <li class="no_mar">
+                                            <div class="cp_img"><a href="productDetial-2.html" title="不锈钢发光字"><img src="/UpLoad/Product/2016/4/9/201604091138353085.png" onload="DrawImage(this,359,196)" alt="不锈钢发光字" /></a></div>
+                                            <div class="cp_name"><a href="productDetial-2.html">不锈钢发光字</a></div>
+                                            <div class="ckxq">
+                                                <div class="ckxq_left"><a href="productDetial-2.html">查看详情</a></div>
+                                                <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <br />
+        <div style="width:1444px;margin:0px auto;">
+            <div class="picture_center"><img src="~/Images/home/fuwubiaoyu_1.jpg" /></div>
+            <br />
+            <div class="picture_center"><img src="~/Images/home/hezuo_1.jpg" /></div>
+            <br />
+            <div class="picture_center"><img src="~/Images/home/xuchuan_1.jpg" /></div>
+            <br />
+            <div class="picture_center"><img src="~/Images/home/danxinweti_1.jpg" /></div>
+            <br />
+            <div class="picture_center"><img src="~/Images/home/danxin_2.jpg" /></div>
+            <br />
+            <div class="picture_center"><img src="~/Images/home/hexinyoushi_1.jpg" /></div>
+        </div>
+
+        <div style="width:1439px;height:1391px;margin:0px auto;background:url('../../Images/home/xuanchuan_2.jpg')">
+
+
+        </div>
+        <div style="width:1444px;margin:0px auto;">
+            <div class="picture_center"><img src="~/Images/home/telephone_2.jpg" /></div>
+            <br />
+            <div class="picture_center"><img src="~/Images/home/kehuzhichi_1.jpg" /></div>
+            <br />
+
+        </div>
+
+        <div class="partner">
+            <div class="content1">
+                <div class="case_t"></div>
+                <div class="content1_left" id="left"><img src="~/Images/home/fgz_19.jpg" /></div>
+                <div class="kehu">
+                    <ul id="center">
+
+                        <li onload="SuchImage(this,193,118)">
+                            <div class="hezuo">
+                                <img src="~/Images/home/dekeshi.jpg" alt="" />
+                                <h2>为德克士连锁门头发光字制作</h2>
+                                <img src="~/Images/home/xian_1.jpg" />
+                                <p>今天,有幸为德克士连锁加盟店制作门头发光字,德克士在武汉有50家加盟店,今天我公司在汉口区域所有加盟店制作门头发光字,安装完后,客户反应效果很</p>
+                                <div class="gengduo"><a href="productDetial-155.html">更多</a></div>
+                            </div>
+
+                        </li>
+
+                        <li onload="SuchImage(this,193,118)">
+                            <div class="hezuo">
+                                <img src="~/Images/home/giant.jpg" alt="" />
+                                <h2>为德克士连锁门头发光字制作</h2>
+                                <img src="~/Images/home/xian_1.jpg" />
+                                <p>今天,有幸为德克士连锁加盟店制作门头发光字,德克士在武汉有50家加盟店,今天我公司在汉口区域所有加盟店制作门头发光字,安装完后,客户反应效果很</p>
+                                <div class="gengduo"><a href="productDetial-155.html">更多</a></div>
+                            </div>
+
+                        </li>
+                        <li onload="SuchImage(this,193,118)">
+                            <div class="hezuo">
+                                <img src="~/Images/home/yijiaren.jpg" alt="" />
+                                <h2>为德克士连锁门头发光字制作</h2>
+                                <img src="~/Images/home/xian_1.jpg" />
+                                <p>今天,有幸为德克士连锁加盟店制作门头发光字,德克士在武汉有50家加盟店,今天我公司在汉口区域所有加盟店制作门头发光字,安装完后,客户反应效果很</p>
+                                <div class="gengduo"><a href="productDetial-155.html">更多</a></div>
+                            </div>
+
+                        </li>
+                        <li onload="SuchImage(this,193,118)">
+                            <div class="hezuo">
+                                <img src="~/Images/home/hailanzhijia.jpg" alt="" />
+                                <h2>为德克士连锁门头发光字制作</h2>
+                                <img src="~/Images/home/xian_1.jpg" />
+                                <p>今天,有幸为德克士连锁加盟店制作门头发光字,德克士在武汉有50家加盟店,今天我公司在汉口区域所有加盟店制作门头发光字,安装完后,客户反应效果很</p>
+                                <div class="gengduo"><a href="productDetial-155.html">更多</a></div>
+                            </div>
+
+                        </li>
+
+                        <li><a href="article-196.html" title="中国联通"><img src="~/Images/home/giant.jpg" alt="中国联通" onload="SuchImage(this,193,118)" /></a></li>
+
+                        <li><a href="article-195.html" title="阿迪达斯"><img src="~/Images/home/yijiaren.jpg" alt="阿迪达斯" onload="SuchImage(this,193,118)" /></a></li>
+
+                        <li><a href="article-194.html" title="耐克"><img src="~/Images/home/hailanzhijia.jpg" alt="耐克" onload="SuchImage(this,193,118)" /></a></li>
+
+                        <li><a href="article-5.html" title="中国移动"><img src="~/Images/home/dekeshi.jpg" alt="中国移动" onload="SuchImage(this,193,118)" /></a></li>
+
+                        <li><a href="article-4.html" title="大润发"><img src="/upload/image/20160409/20160409131121_0439.jpg" alt="大润发" onload="SuchImage(this,193,118)" /></a></li>
+
+                        <li><a href="article-3.html" title="国家电网公司"><img src="/upload/image/20160409/20160409131105_3974.jpg" alt="国家电网公司" onload="SuchImage(this,193,118)" /></a></li>
+
+                        <li><a href="article-2.html" title="万达广场"><img src="/upload/image/20160409/20160409131041_6123.jpg" alt="万达广场" onload="SuchImage(this,193,118)" /></a></li>
+
+                        <li><a href="article-1.html" title="中国华威"><img src="/upload/image/20160409/20160409131016_4746.png" alt="中国华威" onload="SuchImage(this,193,118)" /></a></li>
+
+                    </ul>
+                </div>
+                <div class="content1_right" id="right"><img src="~/Images/home/fgz_20.jpg" /></div>
+            </div>
+        </div>
+
+        <div style="width:1444px;margin:0px auto;">
+            <div class="picture_center"><img src="~/Images/home/dingzhiliucheng_1.jpg" /></div>
+        </div>
+
+       
+
+        <div class="zhanshi">
+            <div class="title">
+                <ul id="tabs">
+                    <li style="background:#5f6870"><a href="product.html" class="tab">创意阳光生产实力展示</a></li>
+                    <li style="background:#da251c"><a href="product.html" class="tab">创意阳光办公展示</a></li>
+                    <li style="background:#838280"><a href="product.html" class="tab">创意阳光员工风采</a></li>
+                </ul>
+            </div>
+            <div class="tab_box">
+                <ul id="tab_conbox">
+                    <li>
+                        <div class="more1"><a href="product.html"><img src="~/images/home/more1.jpg"></a></div>
+                        <div class="zhanshitupian">
+                            <ul>
+
+                                <li>
+                                    <div class="cp_img"><a href="productDetial-155.html" title="高级树脂三面发光字"><img src="~/Images/home/zhanshiImages_1.jpg" onload="DrawImage(this,359,196)" alt="高级树脂三面发光字" /></a></div>
+                                    <div class="cp_name"><a href="productDetial-155.html">高级树脂三面发光字</a></div>
+
+                                </li>
+
+                                <li>
+                                    <div class="cp_img"><a href="productDetial-154.html" title="高级通体三面发光字"><img src="~/Images/home/zhanshiImages_2.jpg" onload="DrawImage(this,359,196)" alt="高级通体三面发光字" /></a></div>
+                                    <div class="cp_name"><a href="productDetial-154.html">高级通体三面发光字</a></div>
+
+                                </li>
+
+                                <li>
+                                    <div class="cp_img"><a href="productDetial-153.html" title="高级亚克力三面发光字"><img src="~/Images/home/zhanshiImages_3.jpg" onload="DrawImage(this,359,196)" alt="高级亚克力三面发光字" /></a></div>
+                                    <div class="cp_name"><a href="productDetial-153.html">高级亚克力三面发光字</a></div>
+
+                                </li>
+
+                                <li class="no_mar">
+                                    <div class="cp_img"><a href="productDetial-152.html" title="树脂三面发光字"><img src="~/Images/home/zhanshiImages_4.jpg" onload="DrawImage(this,359,196)" alt="树脂三面发光字" /></a></div>
+                                    <div class="cp_name"><a href="productDetial-152.html">树脂三面发光字</a></div>
+
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="news">
+            <div class="news_center">
+                <div class="xw">
+                    <div class="news_t">
+                        <ul>
+                          <!--  <li class="xuanz"><a href="JavaScript:;">媒体报道</a></li> -->
+                            <li class="no1"><a href="JavaScript:;">媒体报道</a></li>
+                        </ul>
+                        <div class="more"><a href="news.html" id="news_links"><img src="~/Images/home/more_2.jpg"></a></div>
+                    </div>
+                    <div class="content4">
+
+                        <div class="shang">
+                            <div class="tutu"><a href="article-207.html" title=""><img src="~/Images/home/meitibaodao_1.jpg" alt="" onload="DrawImage(this,120,102)" style="width:230px; height:141px; margin-left: -7.68143px;"></a></div>
+                            <div class="right_news">
+                                <p><a href="article-207.html">标志颜色的选择</a></p>
+                                <span><a href="article-207.html"> 圆地球广告公司，电话18271942104，江岸区铭新街大吉里1号,专业从事广告设计制作全案服务。标志的颜色选择在设计标志的时候我们通常会询问客户以什么颜色为主打系，但这并不是说我们只是想知道客户对哪种颜色偏爱我们就以什么颜色设计，而是想通过他们对颜色的选择来告诉我们他们想对这个标志赋予什么样的定义传递什么样的信息。色彩最能反映出人们的情绪基调以及事物联想，所以在标志设计中色彩的选择和搭配显得尤...</a></span>
+                            </div>
+                        </div>
+
+
+                        <div class="xia">
+                            <ul>
+
+                                <li><a href="article-205.html"><span>2016-07-07</span>发光字的计算方法</a></li>
+
+                                <li><a href="article-203.html"><span>2016-07-05</span>制作标识标牌的铝型材材料</a></li>
+
+                                <li><a href="article-201.html"><span>2016-07-04</span>3D数字标识标牌的应用场合</a></li>
+
+                                <li><a href="article-198.html"><span>2016-06-29</span>招牌内容有哪些要求</a></li>
+
+                                <li><a href="article-189.html"><span>2016-06-28</span>标志的颜色选择</a></li>
+
+                                <li><a href="article-186.html"><span>2016-06-27</span>亚克力灯箱在户外广告中的优势</a></li>
+
+                                <li><a href="article-183.html"><span>2016-06-24</span>标识标牌制设计的艺术特性</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="content4">
+
+                        <div class="shang">
+                            <div class="tutu"><a href="article-199.html" title="标识牌的设计技巧"><img src="/UpLoad/Design/2016-6-29/201606291452353126.jpg" alt="标识牌的设计技巧" onload="DrawImage(this,120,102)" style="width: 120px; height: 119.457px; margin-top: -8.72851px;"></a></div>
+                            <div class="right_news">
+                                <p><a href="article-199.html">标识牌的设计技巧</a></p>
+                                <span><a href="article-199.html">标识牌的设计技巧众所周知，医院是很特殊的集合体。医院所针对的人群是医患、医患家属和医生自己。所以核心是医患和医患家属，如何围绕他们去做标识系统是需要深究的。其次，这些标识标牌中应该带有浓重的医院自身“色彩”。要表现出医院的唯一性，用以区别和其他医院不同的根本性标识差别，这种差别的体现则是需要留给观者深刻的印象，让他们一看到就知道“哦，这个标识是XX医院”。    并不是说标识悬挂或贴在某个地方就表...</a></span>
+                            </div>
+                        </div>
+
+
+                        <div class="xia">
+                            <ul>
+
+                                <li><a href="article-190.html"><span>2016-06-28</span>如何做好医院的标识</a></li>
+
+                                <li><a href="article-187.html"><span>2016-06-27</span>灯箱的分类有哪些</a></li>
+
+                                <li><a href="article-185.html"><span>2016-06-24</span>校园标识系统</a></li>
+
+                                <li><a href="article-184.html"><span>2016-06-24</span>怎样提高招牌的辨识度</a></li>
+
+                                <li><a href="article-181.html"><span>2016-06-23</span>武汉广告牌制作哪家最专业？</a></li>
+
+                                <li><a href="article-179.html"><span>2016-06-22</span>武汉发光字制作，兼顾白天黑夜，魅力无限</a></li>
+
+                                <li><a href="article-175.html"><span>2016-06-21</span>不同行业的招牌设计风格</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <script>
+
+                    </script>
+
+                </div>
+                <div class="yiny"><img src="images/fgz_59.jpg"></div>
+                <div class="wt">
+                    <div class="news_tt">
+                        <div class="news_t2"><a href="common.html">常见问题解答</a></div>
+                        <div class="more"><a href="common.html"><img src="images/more.png"></a></div>
+                    </div>
+                    <div class="wenti_box">
+                        <ul>
+
+                            <li>
+                                <p><img src="images/fgz_57.jpg">：<a href="article-307.html">第三代超级发光字：性能与样式升级</a></p>
+                                <dd><img src="images/fgz_58.jpg">： 第三代超级发光字：性能与样式升级  超级发光字已经面世一年多，在今年的各大广告标识展会上，它都成为人们关注的焦点。广美标识自超级字推出以来就购置生产设备，一年多的时间里，我们根据客户的反馈，将超级字的性能不断改进。近期我司推出第三代超级发光字，并购置一台全新超级字生产设备，第三代超级发光字性能及样式的选择均全面升级。一、单组份液态亚克力  单组份液态亚克力材料无需调配即可使用，树脂层形成需要通过...</dd>
+                            </li>
+
+
+                            <li>
+                                <p><img src="images/fgz_57.jpg">：<a href="article-306.html">常见的门店招牌类型都有哪些</a></p>
+                                <dd><img src="images/fgz_58.jpg">： 常见的门店招牌类型都有哪些生活中我们总能看到形形色色的广告招牌，他们担当着各类门店机构的形象与品牌宣传的作用，今天我们博仪广告在这盘点几款生活中常见的招牌与大家分享。一、墙壁招牌：安装于建筑的外墙，拥有较宽的展示面积，可以用来书写品牌名称及logo。二、楼顶招牌：坐落于门店建筑楼顶的招牌，除了能令远处的人群注意到门店的位置外，还能塑造良好的门店形象。目前使用较多楼顶招牌有穿孔外露字与吸塑字，也有...</dd>
+                            </li>
+
+
+                            <li>
+                                <p><img src="images/fgz_57.jpg">：<a href="article-305.html">树脂字会被超级发光字完全替代吗？</a></p>
+                                <dd><img src="images/fgz_58.jpg">： 树脂字会被超级发光字完全替代吗？据了解，超级发光字的性能在研发时就是根据树脂字的不足而改进的，它解决了树脂字在户外使用易黄变开裂这一大缺陷，超级字的耐候性能更强，那么问题来了，风靡发光字届多年的树脂字将会被替换掉吗？ 首先我们先来聊聊树脂字的优点，能风靡发光字界那么久必有其独到之处。树脂字的树脂层拥有一层特有的匀光层，能对光源有效反射扩散，与传统的亚克力发光字相比，使用相同的灯源，树脂字的表现力...</dd>
+                            </li>
+
+
+                            <li>
+                                <p><img src="images/fgz_57.jpg">：<a href="article-304.html">大型楼顶发光字如何提升抗台风能力</a></p>
+                                <dd><img src="images/fgz_58.jpg">： 大型楼顶发光字如何提升抗台风能力大型楼顶发光字主要以led穿孔外露字为主，安装于楼顶的发光字招牌通常需要承受更大的风力，楼顶发光字招牌抗风能力强弱与发光字的制作与安装方式息息相关，对于台风频发的地带，楼顶发光字招牌的安装安全性非常重要，一、加密外露字角铁焊接密度大型楼顶穿孔外露字在字壳背后一般都要通过焊接角铁来加固笔画之间的牢固度，对于安装在楼顶的穿孔外露字，它起到的不仅是加固外露字笔画作用，也...</dd>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>
+
+
