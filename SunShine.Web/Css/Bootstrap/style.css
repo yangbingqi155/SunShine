@@ -35,7 +35,7 @@ html{overflow-x:hidden}
 
 .banner{ width:100%; max-width:1920px;margin:0px auto;height:446px; overflow:hidden; margin-top:2px;}
 .n_banner{width:1000px;margin:0px auto;height:250px; overflow:hidden;}
-.fullSlide{width:100%;position:relative;height:446px;background:#EEE;margin:0 auto;}
+.fullSlide{width:100%;position:relative;background:#EEE;margin:0 auto;}
 .fullSlide .md{margin:0 auto;position:relative;z-index:0;overflow:hidden;}
 .fullSlide .md ul{width:100% !important;margin:0;padding:0;list-style:none}
 .fullSlide .md li{width:100% !important;height:446px;overflow:hidden;text-align:center;}

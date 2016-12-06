@@ -358,10 +358,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\home\advertise-1.jpg" />
+    <Content Include="Images\home\advertise-2.jpg" />
     <Content Include="Images\home\banner-1.jpg" />
+    <Content Include="Images\home\bottom_logo.jpg" />
     <Content Include="Images\home\fgz_04.jpg" />
     <Content Include="Images\home\home_1.jpg" />
     <Content Include="Images\home\home_banner-1.jpg" />
+    <Content Include="Images\home\honor.jpg" />
     <Content Include="Images\home\sinaLogo.jpg" />
     <Content Include="Images\home\sinaLogo_1.jpg" />
     <Content Include="Images\home\weixinLogo.jpg" />
