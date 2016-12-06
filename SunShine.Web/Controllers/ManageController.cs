@@ -80,6 +80,8 @@ namespace TNet.Controllers
             ViewData["pageCount"] = pageCount;
             ViewData["pageIndex"] = pageIndex;
             ViewData["groupmethod"] = groupmethod;
+
+            
             return View(viewModels);
         }
 
