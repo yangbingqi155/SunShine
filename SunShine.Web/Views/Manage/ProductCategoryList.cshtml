@@ -7,6 +7,7 @@
     Layout = "~/Views/Shared/_ManageLayout.cshtml";
     var pageCount = Convert.ToInt32(ViewData["pageCount"]);
     var pageIndex = Convert.ToInt32(ViewData["pageIndex"]);
+    int groupmethod =Convert.ToInt32(ViewData["groupmethod"].ToString());
 }
 <div class="ManageRightTitle">
     <ol class="breadcrumb">
@@ -18,6 +19,20 @@
     <div>
         <a class="btn btn-primary" href="@Url.Action("ProductCategoryEdit","Manage")">新增</a>
     </div>
+    <form action="@Url.Action("ProductCategoryList","Manage")" method="post">
+        <div class="row searchbox">
+            <div class="filter_label">
+                @(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, string>(en => en.groupmethodname))：
+            </div>
+            <div class="col-xs-1">
+                @Html.DropDownList("groupmethod", new SelectList(ProductCategoryViewModel.GroupMethodTypeSelectItems, "DisplayValue", "DisplayText"), new { @class = "form-control", Value = groupmethod })
+            </div>
+            <div class="col-xs-1">
+                <input type="submit" value="搜索" class="btn btn-primary" placeholder=".col-xs-1" />&nbsp;<a class="btn btn-primary" href="@Url.Action("ProductCategoryEdit","Manage")">新增</a>
+            </div>
+        </div>
+    </form>
+
     <div>
         @Html.Raw(Url.BootstrapPagerHTML(pageCount, pageIndex, "ProductCategoryList", "Manage", ViewContext.RouteData.Values))
     </div>
