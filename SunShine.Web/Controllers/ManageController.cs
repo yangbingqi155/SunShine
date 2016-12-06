@@ -64,7 +64,7 @@ namespace TNet.Controllers
         /// </summary>
         /// <returns></returns>
         [ManageLoginValidation]
-        public ActionResult ProductCategoryList(int pageIndex = 0) {
+        public ActionResult ProductCategoryList(int pageIndex = 0,int groupmethod=0) {
             int pageCount = 0;
             int pageSize = 10;
             List<ProductCategory> entities = ProductCategoryService.GetALL();
@@ -79,7 +79,7 @@ namespace TNet.Controllers
 
             ViewData["pageCount"] = pageCount;
             ViewData["pageIndex"] = pageIndex;
-
+            ViewData["groupmethod"] = groupmethod;
             return View(viewModels);
         }
 
