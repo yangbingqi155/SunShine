@@ -14,7 +14,8 @@ a:focus{outline:0}
 a:hover{color:#ff7c02;text-decoration:none}
 html{overflow-x:hidden}
 
-.header {width:100%; height:151px; background: url(../images/fgz_01.jpg) no-repeat center 0px;}
+hr{margin:0px;padding:0px;}
+.header {width:100%; background: url(../images/fgz_01.jpg) no-repeat center 0px;}
 .top {width:1000px; height:35px; margin:0 auto; }
 .top span {  height:35px; line-height:35px; float:right;}
 .top a {margin:0 5px;}
@@ -33,9 +34,9 @@ html{overflow-x:hidden}
 
 .nav_scroll { margin: 0 auto; position: fixed;top: 0; width: 100%; max-width:1920px; z-index:999}
 
-.banner{ width:100%; max-width:1920px;margin:0px auto;height:446px; overflow:hidden; margin-top:2px;}
+.banner{ width:100%; max-width:1920px;margin:0px auto;height:346px; overflow:hidden; margin-top:2px;}
 .n_banner{width:1000px;margin:0px auto;height:250px; overflow:hidden;}
-.fullSlide{width:100%;position:relative;height:446px;background:#EEE;margin:0 auto;}
+.fullSlide{width:100%;position:relative;background:#EEE;margin:0 auto;}
 .fullSlide .md{margin:0 auto;position:relative;z-index:0;overflow:hidden;}
 .fullSlide .md ul{width:100% !important;margin:0;padding:0;list-style:none}
 .fullSlide .md li{width:100% !important;height:446px;overflow:hidden;text-align:center;}
@@ -81,8 +82,8 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 
 
 
-.cp_right {width:744px; height:905px; float:right; overflow:hidden;}
-.cp_right .title {width:744px; height:46px; line-height:46px; color:#FFF; font-size:20px; font-weight:700;  border-bottom:4px solid #da251c; position:relative;}
+.cp_right {width:744px; height:1050px; float:right; overflow:hidden;}
+.cp_right .title {width:744px; height:46px; line-height:46px; color:#FFF; font-size:20px; font-weight:700;  border-bottom:2px solid #da251c; position:relative;}
 .cp_right .title ul { width:300px; height:46px; overflow:hidden;}
 .cp_right .title ul li { width:129px; height:46px; float:left; text-align:center; }
 .more1 { position:relative; margin:-35px 10px 0 0px; float:right;}
@@ -92,10 +93,10 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 
 .cp_list {width:744px; float:right; overflow:hidden;}
 .cp_list ul { width:744px; overflow:hidden;}
-.cp_list ul li { width:359px; height:263px; margin:22px 26px 0 0; float:left;}
-.cp_list ul li .cp_img { width:357px; height:194px; border:#c9c9c9 solid 1px; overflow:hidden;}
-.cp_name { width:359px; height:28px; line-height:28px; background-color:#a0a0a0; font-size:14px; overflow:hidden; text-align:center}
-.cp_name a{ color:#FFF; text-align:center; display:block;}
+.cp_list ul li { width:357px; height:312px; margin:22px 26px 0 0; float:left;}
+.cp_list ul li .cp_img { width:357px; height:247px; border:#c9c9c9 solid 1px; overflow:hidden;}
+.cp_name { width:357px; height:28px; line-height:28px; background-color:#fff; font-size:14px; overflow:hidden; text-align:center}
+.cp_name a{ color:#333; text-align:center; display:block;font-weight:bold}
 
 .zhanshi{width:1000px;margin:0px auto;height:275px;border:#c9c9c9 solid 1px;}
 .zhanshi .title {width:1000px; height:40px; line-height:40px; background:#dededc; font-size:16px; font-weight:700;  border-bottom:4px solid #fff; position:relative;}
@@ -120,7 +121,7 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 .hezuo h2 {color:black;margin-top:10px;    }
 .hezuo p{line-height:1.8;font-size:14px;}
 
-.ckxq_ljzx {width:168px; height:24px; line-height:24px; background:url(../images/fgz_13.jpg) no-repeat; border:#c9c9c9 1px solid; margin-top:13px; float:right;}
+.ckxq_ljzx {width:168px; height:24px; line-height:24px; background:url(../../Images/home/fgz_13.jpg) repeat; border:#c9c9c9 1px solid; margin-top:13px; float:right;}
 .ckxq_ljzx a { color:#FFF; font-size:14px; text-align:center; display:block;}
 .cp_list .no_mar {margin-right:0px;}
 .zhanshitupian .no_mar{margin-right:0px}
@@ -210,9 +211,9 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 .zx1 a{width: 106px;height: 30px;float: right;margin:5px 239px 20px 10px; text-indent:-9999px;}
 
 .news {width:100%; max-width:1440px; height:424px; margin:30px auto; overflow:hidden;}
-.news_center { width:1000px; margin:0 auto; overflow:hidden;} 
-.xw { width:526px; float:left; overflow:hidden;}
-.news_t {width:508px; height:35px; line-height:35px; color:#333; font-size:25px; font-weight:700; overflow:hidden;}
+.news_center { width:1008px; margin:0 auto; overflow:hidden;} 
+.xw { width:500px; float:left; overflow:hidden;}
+.news_t {width:480px; height:35px; line-height:35px; color:#333; font-size:25px; font-weight:700; overflow:hidden;}
 .news_t ul{overflow:hidden; width:200px; float:left}
 .news_t ul li { float:left;  text-align:left;  }
 
@@ -223,33 +224,38 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 .news_t ul li.xuanz a { color:#ff7c02; }
 .news_t ul li.no1 a { border-left:none; background:none; }
 .news_t ul li:hover { color:#ff7c02; background:url(../images/fgz_53.png) no-repeat bottom center;}
-.news_t .more { float:right; margin-top:8px;}
+.news_t .more { float:right; margin-top:0px;}
 
-.content4 { width:509px; overflow:hidden; margin-top:15px;}
-.shang { width:509px; height:141px; overflow:hidden;}
+.content4 { width:480px; overflow:hidden; margin-top:15px;}
+
+.shang { width:480px; height:141px; overflow:hidden;}
+.youshang { width:509px; height:141px; overflow:hidden;margin-top:15px}
 .tutu { width:230px; height:141px; overflow:hidden;  float:left;}
-.right_news{ float:left; width:369px; margin:0px 0 0 20px; overflow:hidden;}
-.right_news p{ font-size:14px;  color:#333; width:360px;text-overflow:ellipsis; overflow:hidden; white-space:nowrap; display:block; font-weight:bold;}
-.right_news p a{ color:#333;}
+.right_news{ float:left; width:230px; margin:0px 0 0 15px; overflow:hidden;}
+.right_news p{ font-size:13px;  color:#333; width:360px;text-overflow:ellipsis; overflow:hidden; white-space:nowrap; display:block; font-weight:bold;}
+.right_news p a{ color:#333;font-size:14px}
 .right_news p a:hover{ color:#ff7c02;}
-.right_news span{ display:block; height:70px; overflow:hidden; line-height:24px; font-size:13px; color:#666;  margin-top:10px;}
+.right_news span{ display:block; height:120px; overflow:hidden; line-height:22px; font-size:12px; color:#666;  margin-top:10px;}
 .xia { overflow:hidden; margin-top:20px;}
-.xia ul {width:509px; height:274px; overflow:hidden;}
-.xia ul li {width:509px; height:35px; overflow:hidden; border-bottom:1px #e4e4e4 dashed; background:url(../images/fgz_56.png) no-repeat left center; float:left;}
-.xia ul li a { font-size:14px; font-weight:500; height:35px; line-height:35px; text-indent:10px; display:block; }
+.xia ul {width:480px; height:274px; overflow:hidden;}
+.xia ul li {width:480px; height:35px; overflow:hidden;  background:url(../images/fgz_56.png) no-repeat left center; float:left;}
+.xia ul li a { font-size:12px; font-weight:500; height:35px; line-height:35px; text-indent:10px; display:block; }
 .xia ul li a span{float:right;}
+.xia ul li img{float:left}
 
 
 .yiny {float:left;}
 
-.wt{ float:right; width:450px;overflow:hidden}
-.news_t2 {width:320px; height:35px; line-height:35px; color:#333; font-size:20px; font-weight:700; overflow:hidden; float:left;}
-.news_t2 a { padding-left:15px; border-left:4px #ff7c02 solid;}
+.wt{  width:480px;overflow:hidden;margin-left:10px;float:left}
+.news_t2 {width:320px; height:35px; line-height:35px; color:#333; font-size:25px; font-weight:700; overflow:hidden; float:left;}
+.news_t2 a { }
 .news_tt .more { width:59px; float:right; margin-top:8px;}
-.wenti_box{ width:450px; overflow:hidden;}
-.wenti_box ul li{ overflow:hidden; border-bottom:1px dashed #CCC; height:81px; margin: 15px 0 0; }
+.wenti_box{ width:480px; overflow:hidden;}
+.wenti_box ul li{ overflow:hidden; border-bottom:1px dashed #CCC; height:85px; margin: 15px 0 0; padding-bottom:5px }
 .wenti_box ul li p { font-size:14px; height:18px; width:450px; line-height:18px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; float:left; font-weight:bold;}
 .wenti_box ul li dd{width:450px; height:35px; line-height:17px; overflow:hidden; color:#666; float:left; font-size:13px; margin-top:12px; }
+.wenti_box ul li .datetime{width:80px;float:left;height:60px;color:red}
+.wenti_box ul li .wenben{width:390px;float:right;line-height:22px}
 
 .footer { width:100%; max-width:1440px; margin:0 auto; min-height:337px; background:url(../images/fgz_60.jpg) no-repeat; overflow:hidden;}
 .nav { width:860px; margin:130px auto 0; overflow:hidden;}
