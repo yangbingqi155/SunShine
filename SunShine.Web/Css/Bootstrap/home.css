@@ -80,6 +80,7 @@
     width: 1200px;
     margin: 0px auto;
     padding-top: 30px;
+    padding-bottom:30px;
 }
 
 .picture_center {
@@ -843,7 +844,7 @@ ul.thirdLevel {
 }
 
     .honor_box .honor_top {
-        width: 1663px;
+        width: 1310px;
         margin: 0 auto;
     }
 
@@ -881,6 +882,7 @@ ul.thirdLevel {
 }
 .site_bottom_left {
     float:left;
+    margin-top:10px;
 }
 .site_bottom_right {
     float:left;
