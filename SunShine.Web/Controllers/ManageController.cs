@@ -638,12 +638,12 @@ namespace TNet.Controllers
                             if (k == 0)
                             {
                                 initialPreview.AppendFormat("\"{0}\"", Url.Content(resultEntity.Content[k].path));
-                                initialPreviewConfig.Append("{\"url\":\"" + Url.Action("DeleteImage", "Manage") + "\"}");
+                                initialPreviewConfig.Append("{\"url\":\"" + Url.Action("DeleteImages", "Manage") + "\"}");
                             }
                             else
                             {
                                 initialPreview.AppendFormat("\",{0}\"", Url.Content(resultEntity.Content[k].path));
-                                initialPreviewConfig.Append(",{\"url\":\"" + Url.Action("DeleteImage", "Manage") + "\"}");
+                                initialPreviewConfig.Append(",{\"url\":\"" + Url.Action("DeleteImages", "Manage") + "\"}");
                             }
                         }
                         initialPreview.Append("]");
@@ -673,8 +673,16 @@ namespace TNet.Controllers
 
         }
 
+        [ManageLoginValidation]
+        public ActionResult DeleteImages(bool isAjax)
+        {
+            ResultModel<PictureViewModel> resultEntity = new ResultModel<PictureViewModel>();
+            resultEntity.Code = ResponseCodeType.Success;
+            resultEntity.Message = "文件删除成功";
+            return Content(resultEntity.SerializeToJson());
+        }
 
-        public static bool DeleteImages(string idmodule,ModuleType moduleType)
+        public static bool DeleteImages(string idmodule="",ModuleType moduleType= ModuleType.ALL)
         {
             bool result = false;
             try

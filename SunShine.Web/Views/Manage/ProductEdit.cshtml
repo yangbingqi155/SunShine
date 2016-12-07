@@ -115,8 +115,9 @@
             initialPreviewAsData: true,
             language: 'zh', //设置语言
             uploadUrl: uploadUrl, //上传的地址
-            uploadAsync: true,
-            maxFileCount: 5,
+            uploadAsync: false,
+            maxFileCount: 1,
+            validateInitialCount: true,
             overwriteInitial: false,
             allowedPreviewTypes: ['image'],
             allowedFileExtensions: ['jpg', 'png', 'gif'],//接收的文件后缀
@@ -148,7 +149,7 @@
     function initImages() {
         var uploadUrl = "@Url.Action("UploadImage","Manage",new { moduleType= (int)ModuleType.Product,  idmodule = Model.idproduct })";
         var getImageUrl = "@Url.Action("AjaxImageList", "Manage")";
-        var deleteImageUrl = "@Url.Action("DeleteImage", "Manage",new { isAjax =true})";
+        var deleteImageUrl = "@Url.Action("DeleteImages", "Manage",new { isAjax =true})";
         $.post(getImageUrl, { idmodule: "@(Model.idproduct)", moduleType:@((int)ModuleType.Product), isAjax: true }, function (returndata) {
             returndata = eval("(" + returndata + ")");
             var initPreviewImage = [];
