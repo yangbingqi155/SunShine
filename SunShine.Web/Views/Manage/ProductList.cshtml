@@ -28,7 +28,7 @@
                     <input type="text" class="form-control" placeholder="产品名称" name="name" value="@name">
                 </div>
                 <div class="filter_label">
-                    @(AttributeHelper.DisplayAttributeFor<ProductViewModel, string>(en => en.usageCategoryName))：
+                    @(AttributeHelper.DisplayAttributeFor<ProductViewModel, string>(en => en.idusagecategory))：
                 </div>
                 <div class="col-xs-1">
                     @Html.DropDownList("idusagecategory", new SelectList( ProductCategoryService.SelectItems(GroupMethodType.Usage), "DisplayValue", "DisplayText"), new { @class = "form-control", Value = idusagecategory })
@@ -45,7 +45,7 @@
                 <div class="col-xs-1">
                     @Html.DropDownList("idproductcategory", new SelectList(ProductCategoryService.SelectItems(GroupMethodType.Product), "DisplayValue", "DisplayText"), new { @class = "form-control", Value = idproductcategory })
                 </div>
-                <div class="col-xs-1">
+                <div class="col-xs-2">
                     <input type="submit" value="搜索" class="btn btn-primary" placeholder=".col-xs-1" />&nbsp;<a class="btn btn-primary" href="@Url.Action("ProductEdit","Manage")">新增</a>
                 </div>
             </div>
@@ -62,9 +62,7 @@
                     <tr>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, string>(en => en.name))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, String>(en => en.img))</th>
-                        <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, string>(en => en.usageCategoryName))</th>
-                        <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, string>(en => en.industryCategoryName))</th>
-                        <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, string>(en => en.productCategoryName))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, string>(en => en.categoryName))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, DateTime?>(en => en.cretime))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, int?>(en => en.sortno))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, bool>(en => en.inuse))</th>
@@ -81,9 +79,7 @@
                                     <img src="@Url.Content(item.img)" style="width:150px;" />
                                 }
                             </td>
-                            <td>@item.usageCategoryName</td>
-                            <td>@item.industryCategoryName</td>
-                            <td>@item.productCategoryName</td>
+                            <td>@item.categoryName</td>
                             <td>@(item.cretime.Value!=null?item.cretime.Value.ToString("yyyy-MM-dd"):"")</td>
                             <td>@item.sortno</td>
                             <td>

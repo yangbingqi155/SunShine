@@ -23,13 +23,22 @@
         <div class="merc-edit-box ">
             <fieldset>
                 @Html.HiddenFor(model => model.idcategory)
+                @Html.HiddenFor(model => model.categorycode)
                 <div class="form-group">
-                    @Html.LabelFor(model => model.parentid, new { @class = "col-sm-2 control-label" })
+                    @Html.LabelFor(model => model.ParentCategory, new { @class = "col-sm-2 control-label" })
                     <div class="col-sm-3">
                         @Html.DropDownListFor(model => model.parentid, new SelectList(SiteCategoryService.SelectItems(Model.idcategory), "DisplayValue", "DisplayText"), new { @class = "form-control" })
                     </div>
                     @Html.ValidationMessageFor(model => model.parentid)
                 </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.categorycode, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-3">
+                        <p class="form-control-static">@Model.categorycode</p>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.categorycode)
+                </div>
+               
                 <div class="form-group">
                     @Html.LabelFor(model => model.categoryname, new { @class = "col-sm-2 control-label" })
                     <div class="col-sm-3">

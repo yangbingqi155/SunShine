@@ -8,6 +8,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SunShine.Model {
     public enum GroupMethodType {
+        [Display(Name = "所有分类")]
+        ALL =0,
+
         [Display(Name ="用途分类")]
         Usage =100,
 

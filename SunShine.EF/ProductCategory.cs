@@ -13,6 +13,9 @@ namespace SunShine.EF
         [StringLength(50)]
         public string idcategory { get; set; }
 
+        [StringLength(50)]
+        public string categorycode { get; set; }
+
         [Required]
         [StringLength(50)]
         public string categoryname { get; set; }

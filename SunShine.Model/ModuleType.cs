@@ -16,6 +16,12 @@ namespace SunShine.Model
         /// 产品
         /// </summary>
         [Display(Name ="产品")]
-        Product=1
+        Product=1,
+
+        /// <summary>
+        /// 文章
+        /// </summary>
+        [Display(Name = "文章")]
+        Article = 10,
     }
 }

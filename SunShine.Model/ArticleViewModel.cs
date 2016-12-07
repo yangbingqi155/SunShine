@@ -34,9 +34,15 @@ namespace SunShine.Model {
         [Display(Name = "关注量")]
         public new int? follow { get; set; }
 
+        [Display(Name ="排序")]
+        public new int sortno { get; set; }
+
         [Display(Name = "发布时间")]
         public new DateTime? cretime { get; set; }
-        
+
+        [Display(Name ="类别")]
+        public SiteCategory Category { get; set; }
+
         public void CopyFromBase(Article article) {
             this.idarticle = article.idarticle;
             this.title = article.title;

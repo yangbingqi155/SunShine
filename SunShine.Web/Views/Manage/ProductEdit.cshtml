@@ -50,27 +50,12 @@
                     @Html.ValidationMessageFor(model => model.basicinfo)
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(model => model.idusagecategory, new { @class = "col-sm-2 control-label" })
+                    @Html.LabelFor(model => model.idcategory, new { @class = "col-sm-2 control-label" })
                     <div class="col-sm-3">
-                        @Html.DropDownListFor(model => model.idusagecategory, new SelectList(ProductCategoryService.SelectItems(GroupMethodType.Usage), "DisplayValue", "DisplayText"), new { @class = "form-control" })
+                        @Html.DropDownListFor(model => model.idcategory, new SelectList(ProductCategoryService.SelectItems(GroupMethodType.ALL), "DisplayValue", "DisplayText"), new { @class = "form-control" })
                     </div>
-                    @Html.ValidationMessageFor(model => model.idusagecategory)
+                    @Html.ValidationMessageFor(model => model.idcategory)
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.idindustrycategory, new { @class = "col-sm-2 control-label" })
-                    <div class="col-sm-3">
-                        @Html.DropDownListFor(model => model.idindustrycategory, new SelectList(ProductCategoryService.SelectItems(GroupMethodType.Industry), "DisplayValue", "DisplayText"), new { @class = "form-control" })
-                    </div>
-                    @Html.ValidationMessageFor(model => model.idindustrycategory)
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.idproductcategory, new { @class = "col-sm-2 control-label" })
-                    <div class="col-sm-3">
-                        @Html.DropDownListFor(model => model.idproductcategory, new SelectList(ProductCategoryService.SelectItems(GroupMethodType.Product), "DisplayValue", "DisplayText"), new { @class = "form-control" })
-                    </div>
-                    @Html.ValidationMessageFor(model => model.idproductcategory)
-                </div>
-
                 <div class="form-group">
                     @Html.LabelFor(model => model.sortno, new { @class = "col-sm-2 control-label" })
                     <div class="col-sm-3">
@@ -106,7 +91,6 @@
                 @Html.ValidationSummary(true)
                 <div class="form-group">
                     <div class="col-sm-2">
-
                     </div>
                     <div class="col-sm-10" style="padding-top:10px;">
                         <input type="button" value="保存" id="btnSave" class="btn btn-primary" />

@@ -22,6 +22,7 @@
         <div class="merc-edit-box ">
             <fieldset>
                 @Html.HiddenFor(model => model.idcategory)
+                @Html.HiddenFor(model => model.categorycode)
                 <div class="form-group">
                     @Html.LabelFor(model => model.groupmethod, new { @class = "col-sm-2 control-label" })
                     <div class="col-sm-3">
@@ -35,6 +36,13 @@
                         @Html.TextBoxFor(model => model.categoryname, new { @class = "form-control" })
                     </div>
                     @Html.ValidationMessageFor(model => model.categoryname)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.categorycode, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-3">
+                        <p class="form-control-static">@Model.categorycode</p>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.categorycode)
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.sortno, new { @class = "col-sm-2 control-label" })
