@@ -29,6 +29,8 @@ namespace SunShine.EF
 
         public int? follow { get; set; }
 
+        public int? sortno { get; set; }
+
         public DateTime? cretime { get; set; }
     }
 }

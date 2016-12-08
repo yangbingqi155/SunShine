@@ -8,6 +8,7 @@
     var pageCount = Convert.ToInt32(ViewData["pageCount"]);
     var pageIndex = Convert.ToInt32(ViewData["pageIndex"]);
     int groupmethod =Convert.ToInt32(ViewData["groupmethod"].ToString());
+    List<SelectItemViewModel<int>> groupmethodSelectItems = (List<SelectItemViewModel<int>>)ViewData["groupmethodSelectItems"];
 }
 <div class="ManageRightTitle">
     <ol class="breadcrumb">
@@ -16,19 +17,17 @@
     </ol>
 </div>
 <div class="ManageRightContent">
-    <div>
-        <a class="btn btn-primary" href="@Url.Action("ProductCategoryEdit","Manage")">新增</a>
-    </div>
     <form action="@Url.Action("ProductCategoryList","Manage")" method="post">
         <div class="row searchbox">
             <div class="filter_label">
                 @(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, string>(en => en.groupmethodname))：
             </div>
-            <div class="col-xs-1">
-                @Html.DropDownList("groupmethod", new SelectList(ProductCategoryViewModel.GroupMethodTypeSelectItems, "DisplayValue", "DisplayText"), new { @class = "form-control", Value = groupmethod })
+            <div class="col-xs-2">
+                @Html.DropDownList("groupmethod", new SelectList(groupmethodSelectItems, "DisplayValue", "DisplayText"), new { @class = "form-control", Value = groupmethod })
             </div>
-            <div class="col-xs-1">
-                
+
+            <div class="col-xs-2">
+
                 <input type="submit" value="搜索" class="btn btn-primary" placeholder=".col-xs-1" />&nbsp;<a class="btn btn-primary" href="@Url.Action("ProductCategoryEdit","Manage")">新增</a>
             </div>
         </div>
@@ -42,9 +41,10 @@
             <table class="table table-bordered table-hover table-striped">
                 <thead>
                     <tr>
-                        <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, string>(en => en.idcategory))</th>
-                        <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, String>(en => en.categoryname))</th>
+
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, string>(en => en.groupmethodname))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, String>(en => en.categoryname))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, String>(en => en.categorycode))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, int?>(en => en.sortno))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, bool>(en => en.inuse))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, DateTime?>(en => en.cretime))</th>
@@ -54,9 +54,9 @@
                 <tbody>
                     @foreach (var item in Model) {
                         <tr>
-                            <td>@item.idcategory</td>
-                            <td>@item.categoryname</td>
                             <td>@item.groupmethodname</td>
+                            <td>@item.categorycode</td>
+                            <td>@item.categoryname</td>
                             <td>@item.sortno</td>
                             <td>
                                 <div class="switch">
@@ -66,7 +66,7 @@
                             <td>@item.cretime</td>
                             <td>
                                 <a href="@Url.Action("ProductCategoryEdit","Manage",new {idcategory=item.idcategory })" class="btn btn-primary">编辑</a>
-                               
+                                <a href="@Url.Action("ProductEdit","Manage",new {idcategory=item.idcategory })" class="btn btn-primary">新增产品</a>
                             </td>
                         </tr>
                     }

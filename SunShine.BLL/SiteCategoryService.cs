@@ -18,6 +18,29 @@ namespace SunShine.BLL
             return categories;
         }
 
+        public static List<SiteCategoryViewModel> GetALLViewModels() {
+            return ConvertToViewModel(GetALL());
+        }
+
+
+        private static List<SiteCategoryViewModel> ConvertToViewModel(List<SiteCategory> siteCategories) {
+            List<SiteCategoryViewModel> entities = new List<SiteCategoryViewModel>();
+            TN db = new TN();
+            entities = siteCategories.Select(model => {
+                SiteCategoryViewModel viewModel = new SiteCategoryViewModel();
+                viewModel.CopyFromBase(model);
+                List<SiteCategory> parentCategories = new List<SiteCategory>();
+                string parentCategoryName = string.Empty;
+                parentCategories=getParentCategories(model.parentid, parentCategories);
+                for (int i=0;i< parentCategories.Count;i++) {
+                    parentCategoryName += (i == 0 ? parentCategories[i].categoryname : parentCategories[i].categoryname + "-");
+                }
+                viewModel.ParentCategory = new SiteCategory() { categoryname= parentCategoryName };
+                return viewModel;
+            }).ToList();
+            return entities;
+        }
+
         public static List<SelectItemViewModel<string>> SelectItems(string currentidcategory="")
         {
             List<SelectItemViewModel<string>> categoryOptions = new List<SelectItemViewModel<string>>();
@@ -53,7 +76,7 @@ namespace SunShine.BLL
             return categoryOptions;
         }
 
-        private static List<SiteCategory> getParentCategories(string idcategory,List<SiteCategory> list) {
+        public static List<SiteCategory> getParentCategories(string idcategory,List<SiteCategory> list) {
             if (!string.IsNullOrEmpty(idcategory)) {
                 TN db = new TN();
                 SiteCategory current = db.SiteCategories.Find(idcategory);

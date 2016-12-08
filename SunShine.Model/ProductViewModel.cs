@@ -27,26 +27,21 @@ namespace SunShine.Model {
         [StringLength(500)]
         public new string img { get; set; }
 
-        [Display(Name = "用途类别")]
+        [Display(Name = "类别编号")]
         [StringLength(50)]
-        public new string idusagecategory { get; set; }
+        public new string idcategory { get; set; }
+
+        [Display(Name = "类别")]
+        public string categoryName { get; set; }
 
         [Display(Name = "用途类别")]
-        public string usageCategoryName { get; set; }
+        public string idusagecategory { get; set; }
 
         [Display(Name = "行业类别")]
-        [StringLength(50)]
-        public new string idindustrycategory { get; set; }
-
-        [Display(Name = "行业类别")]
-        public string industryCategoryName { get; set; }
+        public string idindustrycategory { get; set; }
 
         [Display(Name = "产品类别")]
-        [StringLength(50)]
-        public new string idproductcategory { get; set; }
-
-        [Display(Name = "产品类别")]
-        public  string productCategoryName { get; set; }
+        public string idproductcategory { get; set; }
 
         [Display(Name = "详细描述")]
         public new string description { get; set; }
@@ -66,9 +61,7 @@ namespace SunShine.Model {
             this.name = product.name;
             this.basicinfo = product.basicinfo;
             this.img = product.img;
-            this.idusagecategory = product.idusagecategory;
-            this.idindustrycategory = product.idindustrycategory;
-            this.idproductcategory = product.idproductcategory;
+            this.idcategory = product.idcategory;
             this.description = product.description;
             this.cretime = product.cretime;
             this.sortno = product.sortno;
@@ -80,9 +73,7 @@ namespace SunShine.Model {
             product.name = this.name;
             product.basicinfo = this.basicinfo;
             product.img = this.img;
-            product.idusagecategory = this.idusagecategory;
-            product.idindustrycategory = this.idindustrycategory;
-            product.idproductcategory = this.idproductcategory;
+            product.idcategory = this.idcategory;
             product.description = this.description;
             product.cretime = this.cretime;
             product.sortno = this.sortno;

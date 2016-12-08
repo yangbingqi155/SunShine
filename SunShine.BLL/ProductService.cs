@@ -24,29 +24,24 @@ namespace SunShine.BLL
             entities = products.Select(model => {
                 ProductViewModel viewModel = new ProductViewModel();
                 viewModel.CopyFromBase(model);
-                ProductCategory usagecategory = categories.Find(en => model.idusagecategory == en.idcategory);
-                ProductCategory industrycategory = categories.Find(en => model.idindustrycategory == en.idcategory);
-                ProductCategory productcategory = categories.Find(en => model.idproductcategory == en.idcategory);
-                viewModel.usageCategoryName = usagecategory != null ? usagecategory.categoryname : "";
-                viewModel.industryCategoryName = industrycategory != null ? industrycategory.categoryname : "";
-                viewModel.productCategoryName = productcategory != null ? productcategory.categoryname : "";
+                ProductCategory category = categories.Find(en => model.idcategory == en.idcategory);
+                viewModel.categoryName = category != null ? category.categoryname : "";
+               
                 return viewModel;
             }).ToList();
             return entities;
         }
 
-        public static List<ProductViewModel> SearchViewModels(string name = "", string idusagecategory = "", string idindustrycategory = "", string idproductcategory = "") {
-            List<Product> list = Search(name,idusagecategory,idindustrycategory,idproductcategory);
+        public static List<ProductViewModel> SearchViewModels(string name = "", string idcategory = "") {
+            List<Product> list = Search(name, idcategory);
             return ConvertToViewModel(list);
         }
 
-        public static List<Product> Search(string name="",string idusagecategory="",string idindustrycategory="",string idproductcategory="") {
+        public static List<Product> Search(string name="",string idcategory = "") {
             List<Product> list = new List<Product>();
             TN db = new TN();
             list=db.Products.Where(en=> 
-            (string.IsNullOrEmpty(idusagecategory)||en.idusagecategory==idusagecategory)&&
-            (string.IsNullOrEmpty(idindustrycategory) || en.idindustrycategory == idindustrycategory) &&
-            (string.IsNullOrEmpty(idproductcategory) || en.idproductcategory == idproductcategory) &&
+            (string.IsNullOrEmpty(idcategory) ||en.idcategory == idcategory) &&
             (string.IsNullOrEmpty(name) || en.name.Contains(name) )
             ).ToList();
             return list;
@@ -67,9 +62,7 @@ namespace SunShine.BLL
             oldProduct.name = product.name;
             oldProduct.basicinfo = product.basicinfo;
             oldProduct.img = product.img;
-            oldProduct.idusagecategory = product.idusagecategory;
-            oldProduct.idindustrycategory = product.idindustrycategory;
-            oldProduct.idproductcategory = product.idproductcategory;
+            oldProduct.idcategory = product.idcategory;
             oldProduct.description = product.description;
             oldProduct.sortno = product.sortno;
             oldProduct.inuse = product.inuse;

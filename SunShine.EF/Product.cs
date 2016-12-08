@@ -24,13 +24,7 @@ namespace SunShine.EF
         public string img { get; set; }
 
         [StringLength(50)]
-        public string idusagecategory { get; set; }
-
-        [StringLength(50)]
-        public string idindustrycategory { get; set; }
-
-        [StringLength(50)]
-        public string idproductcategory { get; set; }
+        public string idcategory { get; set; }
 
         [Column(TypeName = "text")]
         public string description { get; set; }

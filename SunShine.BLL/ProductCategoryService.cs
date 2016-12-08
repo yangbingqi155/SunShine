@@ -15,9 +15,14 @@ namespace SunShine.BLL {
             return db.ProductCategories.OrderBy(en => en.sortno).ToList();
         }
 
+        public static List<ProductCategory> Search(int groupmethod = 0) {
+            TN db = new TN();
+            return db.ProductCategories.Where(en=>(groupmethod==0 ||en.groupmethod==groupmethod)).OrderBy(en => en.sortno).ToList();
+        }
+
         public static List<SelectItemViewModel<string>> SelectItems(GroupMethodType methodType) {
             List<SelectItemViewModel<string>> mercTypeOptions = new List<SelectItemViewModel<string>>();
-            List<ProductCategory> categories = GetALL().Where(en=>en.groupmethod==(int)methodType).ToList();
+            List<ProductCategory> categories = GetALL().Where(en=> methodType== GroupMethodType.ALL || en.groupmethod==(int)methodType).ToList();
             if (categories != null && categories.Count > 0) {
                 for (int i = 0; i < categories.Count; i++) {
                     mercTypeOptions.Add(new SelectItemViewModel<string>() {

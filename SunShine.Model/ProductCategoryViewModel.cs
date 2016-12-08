@@ -16,6 +16,9 @@ namespace SunShine.Model {
         [StringLength(50)]
         public new string idcategory { get; set; }
 
+        [Display(Name = "代码")]
+        public new string categorycode { get; set; }
+
         [Display(Name = "名称")]
         [Required]
         [StringLength(50)]
@@ -60,14 +63,17 @@ namespace SunShine.Model {
 
         public void CopyFromBase(ProductCategory category) {
             this.idcategory = category.idcategory;
+            this.categorycode = category.categorycode;
             this.categoryname = category.categoryname;
             this.sortno = category.sortno;
             this.inuse = category.inuse;
             this.groupmethod = category.groupmethod;
-            this.cretime = category.cretime;        }
+            this.cretime = category.cretime;
+        }
 
         public void CopyToBase(ProductCategory category) {
             category.idcategory = this.idcategory;
+            category.categorycode = this.categorycode;
             category.categoryname = this.categoryname;
             category.sortno = this.sortno;
             category.inuse = this.inuse;

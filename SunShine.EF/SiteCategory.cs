@@ -13,6 +13,9 @@ namespace SunShine.EF
         [StringLength(50)]
         public string idcategory { get; set; }
 
+        [StringLength(50)]
+        public string categorycode { get; set; }
+
         [Required]
         [StringLength(100)]
         public string categoryname { get; set; }
@@ -20,10 +23,10 @@ namespace SunShine.EF
         [StringLength(50)]
         public string parentid { get; set; }
 
+        public int? level { get; set; }
+
         public DateTime? cretime { get; set; }
 
         public bool inuse { get; set; }
-
-        public int level { get; set; }
     }
 }

@@ -13,9 +13,21 @@ namespace SunShine.Model
     public enum ModuleType
     {
         /// <summary>
+        /// 所有
+        /// </summary>
+        [Display(Name = "所有")]
+        ALL = 0,
+
+        /// <summary>
         /// 产品
         /// </summary>
         [Display(Name ="产品")]
-        Product=1
+        Product=1,
+
+        /// <summary>
+        /// 文章
+        /// </summary>
+        [Display(Name = "文章")]
+        Article = 10,
     }
 }
