@@ -57,6 +57,7 @@
 </head>
 <body>
     <form id="form1" >
+        @{Html.RenderAction("HotSale", "Parts");}
         <div class="header">
             <div class="top">
                 <div class="welcome">您好，欢迎来到创意阳光广告有限公司官方网站</div>
@@ -77,7 +78,7 @@
                     <li><a href="product.html">产品中心</a></li>
                     <li><a href="cases.html">成功案例</a></li>
                     <li><a href="customer.html">品牌创意阳光</a></li>
-                    <li><a href="brands.html">联系阳光</a></li>
+                    <li><a href="brands.html">关于创意阳光</a></li>
                 </ul>
             </div>
         </div>
@@ -383,8 +384,13 @@
             <div class="picture_center"><img src="~/Images/home/hexinyoushi_1.jpg" /></div>
         </div>
 
-        <div style="width:1439px;height:1391px;margin:0px auto;background:url('../../Images/home/xuanchuan_2.jpg')">
+        <div class="kanshi_waiceng">
+            <div class="">
+                   <div>
+                       <img src="~/Images/home/kanshili_1.jpg"/>
+                   </div> 
 
+            </div>
 
         </div>
         <div style="width:1444px;margin:0px auto;">

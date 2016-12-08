@@ -28,6 +28,7 @@
                 @Html.DropDownList("groupmethod", new SelectList(ProductCategoryViewModel.GroupMethodTypeSelectItems, "DisplayValue", "DisplayText"), new { @class = "form-control", Value = groupmethod })
             </div>
             <div class="col-xs-1">
+                
                 <input type="submit" value="搜索" class="btn btn-primary" placeholder=".col-xs-1" />&nbsp;<a class="btn btn-primary" href="@Url.Action("ProductCategoryEdit","Manage")">新增</a>
             </div>
         </div>
