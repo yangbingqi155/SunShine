@@ -895,4 +895,10 @@ ul.thirdLevel {
     line-height:24px;
     }
 
-    .kanshi_waiceng{width:1439px;height:1391px;margin:0px auto;background:url(../../Images/home/xuanchuan_2.jpg)}
+    .kanshi_waiceng{width:1439px;height:1391px;margin:0px auto;background:url(../../Images/home/xuanchuan_2.jpg);padding-top:100px}
+    .kanshi_neiceng{width:1000px;height:345px;margin:0px auto;}
+    .kanshi_neiceng .images_tupian{width:390px;height:265px;margin-top:45px;float:left}
+    .miaoshu{float:left;width:525px;height:130px; margin-top: 30px ;margin-left:60px;}
+    .maioshu ul{    list-style: none;    margin: 0;    padding: 0;}
+    .miaoshu ul li{ border-bottom: 1px dashed #CCC;line-height:25px;font-size:20px;height:38px}  
+     .miaoshu ul li img{margin-right:10px}
