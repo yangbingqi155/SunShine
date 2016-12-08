@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Authorize\ManageLoginValidationAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PartsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -815,6 +816,7 @@
     <Content Include="Views\Manage\ArticleList.cshtml" />
     <Content Include="Views\Manage\ArticleEdit.cshtml" />
     <Content Include="Views\Parts\HotSale.cshtml" />
+    <Content Include="Views\Case\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
