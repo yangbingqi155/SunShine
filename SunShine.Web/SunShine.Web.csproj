@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Authorize\ManageLoginValidationAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PartsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -235,6 +236,7 @@
     <Content Include="Css\Bootstrap\bootstrap.min.css" />
     <Content Include="Css\Bootstrap\home.css" />
     <Content Include="Css\Bootstrap\style.css" />
+    <Content Include="Css\case.css" />
     <Content Include="Css\Fonts\font_1469444055_0424716_iconfont.svg" />
     <Content Include="Css\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Css\iCheck\skins\all.css" />
@@ -375,6 +377,18 @@
     <Content Include="Images\Manage\login_bg.jpg" />
     <Content Include="lib\log4net\log4net.dll" />
     <Content Include="lib\log4net\log4net.xml" />
+    <Content Include="Resource\Images\Article\case1.jpg" />
+    <Content Include="Resource\Images\Article\honorcase1.jpg" />
+    <Content Include="Resource\Images\Product\2670991b-0c66-4405-8a3e-ea132b5d5855.jpg" />
+    <Content Include="Resource\Images\Product\399c8835-afab-4876-8b50-0b943ca4181b.jpg" />
+    <Content Include="Resource\Images\Product\6698b6ce-65ec-42fc-a20f-d84b0e77e6f4.jpg" />
+    <Content Include="Resource\Images\Product\9b32d001-e001-4c9e-a214-9e319163a7bf.jpg" />
+    <Content Include="Resource\Images\Product\be8ac339-b616-49d4-aeea-c983dac70e3e.jpg" />
+    <Content Include="Resource\Images\Product\e8523915-2651-4660-bcac-c5991d99e175.jpg" />
+    <Content Include="Resource\Images\Ue\20161205\6361655653116735627666288.jpg" />
+    <Content Include="Resource\Images\Ue\20161205\6361656234069647717144589.jpg" />
+    <Content Include="Resource\Images\Ue\20161205\6361656279530914089195837.jpg" />
+    <Content Include="Resource\Images\Ue\20161205\6361656293692592968058984.jpg" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap-datetimepicker\bootstrap-datetimepicker.js" />
@@ -815,6 +829,7 @@
     <Content Include="Views\Manage\ArticleList.cshtml" />
     <Content Include="Views\Manage\ArticleEdit.cshtml" />
     <Content Include="Views\Parts\HotSale.cshtml" />
+    <Content Include="Views\Case\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

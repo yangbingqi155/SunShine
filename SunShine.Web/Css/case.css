@@ -1,0 +1,156 @@
+﻿.case_box {
+    width:1024px;
+    margin:0 auto;
+}
+.case_left {
+    float:left;
+}
+.success_case_top{
+    width:300px;
+    height:120px;
+    border:1px solid #c3c3c3;
+    color:#FFFFFF;
+    text-align:center;
+    background-color:#da251c;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+}
+.success_case_top .success_case_title {
+      font-size:22px;
+    font-weight:bold;
+}
+.success_case_top .success_case_subtitle {
+     font-size:18px;
+    font-weight:bold;
+}
+
+.success_case_bottom{
+    width:298px;
+    height:300px;
+    border-left:1px solid #c3c3c3;
+    border-right:1px solid #c3c3c3;
+    border-bottom:1px solid #c3c3c3;
+    margin-top:-7px;
+    padding-top:30px;
+}
+
+
+.case_category_title {
+    width:200px;
+    height:34px;
+    font-size:18px;
+    line-height:34px;
+    font-weight:bold;
+    color:#FFFFFF;
+    background-color:#da251c;
+    text-align:center;
+    margin:30px 50px 0 50px;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+}
+
+.case_category_title_current {
+    color:#ffec19;
+}
+    
+.case_honor_top{
+    width:300px;
+    height:120px;
+    border:1px solid #c3c3c3;
+    color:#FFFFFF;
+    text-align:center;
+    background-color:#da251c;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+    margin-top:20px;
+}
+.case_honor_top .case_honor_title {
+      font-size:22px;
+    font-weight:bold;
+}
+.case_honor_bottom{
+    width:298px;
+    height:300px;
+    border-left:1px solid #c3c3c3;
+    border-right:1px solid #c3c3c3;
+    border-bottom:1px solid #c3c3c3;
+    margin-top:-7px;
+    padding-top:30px;
+}
+
+    .honoritem .honor_img{
+        width:200px;
+        margin:0 auto;
+    }
+    .honoritem .honor_img img{
+        width:187px;
+        text-align:center;
+        display:block;
+        margin:0 auto;
+    }
+    .honoritem .honor_img_title{
+        margin-top:10px;
+        text-align:center;
+        font-size:18px;
+        font-weight:bold;
+    }
+
+.case_right {
+    float:left;
+    margin-left:20px;
+    width:704px;
+}
+
+.case_nav {
+    height:50px;
+    border:1px solid #c3c3c3;
+}
+.case_nav .case_nav_icon {
+    background-color:#da251c;
+    width:14px;
+    height:14px;
+    float:left;
+    margin:18px 0 0 16px;
+}
+.case_nav .case_nav_title {
+    line-height:50px;
+    font-size:16px;
+    float:left;
+    margin-left:6px;
+    font-weight:bold;
+    text-align:center;
+}
+.case_list {
+    border-left:1px solid #c3c3c3;
+    border-right:1px solid #c3c3c3;
+    border-bottom:1px solid #c3c3c3;   
+}
+
+.case_list .case_list_item {
+     border-bottom:1px  dashed #c3c3c3;
+     padding:30px 0;
+}
+.case_list_item .itemimg {
+    float:left;
+    margin-left:10px;
+}
+.case_list_item .itemimg img{
+    width:232px;
+}
+.case_list_item .itemdesc {
+    float:left;
+    margin-left:20px;
+}
+.case_list_item .itemdesc .itemtitle{
+    font-size:16px;
+    color:#da251c;
+    font-weight:bold;
+}
+.case_list_item .itemdesc .itemdetail{
+    margin-top:10px;
+    font-weight:bold;
+    font-size:16px;
+}
