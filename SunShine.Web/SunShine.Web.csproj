@@ -361,6 +361,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\case\phone_icon.jpg" />
     <Content Include="Images\home\advertise-1.jpg" />
     <Content Include="Images\home\advertise-2.jpg" />
     <Content Include="Images\home\banner-1.jpg" />
@@ -378,6 +379,7 @@
     <Content Include="lib\log4net\log4net.dll" />
     <Content Include="lib\log4net\log4net.xml" />
     <Content Include="Resource\Images\Article\case1.jpg" />
+    <Content Include="Resource\Images\Article\contactusimg.jpg" />
     <Content Include="Resource\Images\Article\honorcase1.jpg" />
     <Content Include="Resource\Images\Product\2670991b-0c66-4405-8a3e-ea132b5d5855.jpg" />
     <Content Include="Resource\Images\Product\399c8835-afab-4876-8b50-0b943ca4181b.jpg" />
