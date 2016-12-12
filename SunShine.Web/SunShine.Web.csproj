@@ -832,6 +832,12 @@
     <Content Include="Views\Manage\ArticleEdit.cshtml" />
     <Content Include="Views\Parts\HotSale.cshtml" />
     <Content Include="Views\Case\Index.cshtml" />
+    <Content Include="Views\Parts\BottomProductCategory.cshtml" />
+    <Content Include="Views\Parts\Partner.cshtml" />
+    <Content Include="Views\Shared\_HistoryBannerPartial.cshtml" />
+    <Content Include="Views\Shared\_CustomerSupportTitlePartial.cshtml" />
+    <Content Include="Views\Shared\_CustomizeFlowPartial.cshtml" />
+    <Content Include="Views\Shared\_InstroductionCompanyPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
