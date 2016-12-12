@@ -928,3 +928,8 @@ ul.thirdLevel {
 
     .decription_text{width:1000px;height:40px;margin:0px auto}
     .decription_text .decription_kanshi{color:#dd2116;font-size:24px;font-family:微软雅黑;line-height:24px;font-weight:700;margin-top:10px;margin-left:193px;letter-spacing:1px}
+   
+    .gundongbejing{background:url(../../Images/home/hezuo_1.jpg) no-repeat;height:181px;padding-top:25px}
+    .gundongxiaoguo{width:1000px;height:131px;margin:0px auto;overflow: hidden; position: relative;}
+    .gundongxiaoguo ul{padding: 0px; overflow: hidden; position: relative; list-style: none; width: 8604px; left: 0px}
+    .gundongxiaoguo ul li{text-align: center; position: relative; overflow: hidden; float: left;border:2px #efefef solid;margin-left:10px}
