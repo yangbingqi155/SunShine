@@ -2,7 +2,6 @@
     ViewBag.Title = "创意阳光-成功案例";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link href="@Url.Content("~/Css/case.css")" rel="stylesheet" />
 <div class="case_box">
     <div class="case_left">
         <div class="success_case_top">
@@ -126,3 +125,19 @@
     </div>
     <div style="clear:both;"></div>
 </div>
+@{ 
+    Html.RenderAction("HotSale","Parts");
+}
+<div class="classic_case_head">
+    <div class="classic_case_title bgcolor_title_head">
+        经典案例
+    </div>
+    <div class="classic_case_more">更多+</div>
+    <div style="clear:both;"></div>
+</div>
+@{
+    Html.RenderAction("Partner", "Parts");
+    Html.RenderPartial("_HistoryBannerPartial", null);
+    Html.RenderPartial("_CustomizeFlowPartial", null);
+    Html.RenderPartial("_InstroductionCompanyPartial", null);
+}

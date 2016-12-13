@@ -352,6 +352,7 @@
     <Content Include="Css\iCheck\skins\square\yellow.css" />
     <Content Include="Css\iCheck\skins\square\yellow.png" />
     <Content Include="Css\iCheck\skins\square\_all.css" />
+    <Content Include="Css\public.css" />
     <Content Include="Css\Validate\jQuery.Validate.css" />
     <Content Include="Css\Manage\Base.css" />
     <Content Include="Css\Manage\Login.css" />
@@ -387,6 +388,7 @@
     <Content Include="Resource\Images\Product\9b32d001-e001-4c9e-a214-9e319163a7bf.jpg" />
     <Content Include="Resource\Images\Product\be8ac339-b616-49d4-aeea-c983dac70e3e.jpg" />
     <Content Include="Resource\Images\Product\e8523915-2651-4660-bcac-c5991d99e175.jpg" />
+    <Content Include="Resource\Images\Product\hotsalepro.jpg" />
     <Content Include="Resource\Images\Ue\20161205\6361655653116735627666288.jpg" />
     <Content Include="Resource\Images\Ue\20161205\6361656234069647717144589.jpg" />
     <Content Include="Resource\Images\Ue\20161205\6361656279530914089195837.jpg" />
@@ -832,6 +834,12 @@
     <Content Include="Views\Manage\ArticleEdit.cshtml" />
     <Content Include="Views\Parts\HotSale.cshtml" />
     <Content Include="Views\Case\Index.cshtml" />
+    <Content Include="Views\Parts\BottomProductCategory.cshtml" />
+    <Content Include="Views\Parts\Partner.cshtml" />
+    <Content Include="Views\Shared\_HistoryBannerPartial.cshtml" />
+    <Content Include="Views\Shared\_CustomerSupportTitlePartial.cshtml" />
+    <Content Include="Views\Shared\_CustomizeFlowPartial.cshtml" />
+    <Content Include="Views\Shared\_InstroductionCompanyPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

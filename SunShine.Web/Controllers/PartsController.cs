@@ -13,5 +13,13 @@ namespace SunShine.Web.Controllers
         {
             return View();
         }
+
+        /// <summary>
+        /// 合作伙伴
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Partner() {
+            return View();
+        }
     }
 }
