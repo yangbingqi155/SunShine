@@ -30,6 +30,7 @@
                     <tr>
                         <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, SiteCategory>(en => en.ParentCategory))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, String>(en => en.categoryname))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, String>(en => en.englishname))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, String>(en => en.categorycode))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, bool>(en => en.inuse))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, DateTime?>(en => en.cretime))</th>
@@ -42,6 +43,7 @@
                         <tr>
                             <td>@(item.ParentCategory != null ? item.ParentCategory.categoryname : "")</td>
                             <td>@item.categoryname</td>
+                            <td>@item.englishname</td>
                             <td>@item.categorycode</td>
                             <td>
                                 <div class="switch">

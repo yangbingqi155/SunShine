@@ -22,6 +22,10 @@ namespace SunShine.Model {
         [StringLength(100)]
         public new string categoryname { get; set; }
 
+        [Display(Name = "英文名")]
+        [StringLength(100)]
+        public new string englishname { get; set; }
+
         [Display(Name = "父级编号")]
         [StringLength(50)]
         public new string parentid { get; set; }
@@ -42,6 +46,7 @@ namespace SunShine.Model {
             this.idcategory = category.idcategory;
             this.categorycode = category.categorycode;
             this.categoryname = category.categoryname;
+            this.englishname = category.englishname;
             this.inuse = category.inuse;
             this.cretime = category.cretime;
             this.parentid = category.parentid;
@@ -51,6 +56,7 @@ namespace SunShine.Model {
             category.idcategory = this.idcategory;
             category.categorycode = this.categorycode;
             category.categoryname = this.categoryname;
+            category.englishname = this.englishname;
             category.inuse = this.inuse;
             category.cretime = this.cretime;
             category.parentid = this.parentid;
