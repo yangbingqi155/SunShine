@@ -503,6 +503,7 @@
     <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\Bootstrap\home.js" />
     <Content Include="Scripts\Bootstrap\npm.js" />
+    <Content Include="Scripts\Bootstrap\ScrollPic.js" />
     <Content Include="Scripts\CustomerModelValidation\CheckoutRequiredClientValidation.js" />
     <Content Include="Scripts\iCheck\icheck.js" />
     <Content Include="Scripts\iCheck\icheck.min.js" />

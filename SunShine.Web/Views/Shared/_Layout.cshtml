@@ -11,11 +11,9 @@
     <link href="~/Css/Bootstrap/style.css" rel="stylesheet" />
     <link href="~/Css/Bootstrap/home.css" rel="stylesheet" />
     <link href="@Url.Content("~/Css/public.css")" rel="stylesheet" />
-    <script src="js/jquery.js" type="text/javascript"></script>
-    <script src="js/DrawImage.js" type="text/javascript"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/jQuery/jquery-1.10.2.min.js?v=20161114")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/bootstrap.min.js?v=20161114")"></script>
-    <script src="~/Scripts/Bootstrap/home.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/ScrollPic.js")"></script>
     <script type="text/javascript">
         var flag = false;
         function SuchImage(ImgD, iwidth, iheight) {
@@ -72,7 +70,7 @@
         <div class="tablist1" id="pro_list1">
             <div class="tablist">
                 <ul>
-                    <li class='hovers'><a href="index.html">创意阳光首页</a></li>
+                    <li class='hovers'><a href="@Url.Action("Index","Home")">创意阳光首页</a></li>
                     <li><a href="product-1.html">楼顶发光字</a></li>
                     <li><a href="product-3.html">门头发光字</a></li>
                     <li><a href="product-8.html">背景墙发光字</a></li>
@@ -133,7 +131,7 @@
             <div class="ss">
                 <input name="txtSearch" type="text" id="txtSearch" class="input" />
                 <span>
-                    <input type="image" name="btnSeach" id="btnSeach" src="~/Images/home/fgz_11.jpg" style="border-width:0px;width:34px; height:33px; padding:0" />
+                    <input type="image" name="btnSeach" id="btnSeach" src="~/Images/home/fgz_11.gif" style="border-width:0px;width:34px; height:33px; padding:0" />
                 </span>
             </div>
         </div>

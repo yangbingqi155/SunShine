@@ -20,9 +20,9 @@
     }
 
         #menu li.level1-li:hover {
-            background: #FFF;
-            /*  border: 2px solid #871015; */
-            border-width: 2px 0px 2px 2px;
+           /* background: #FFF;
+              border: 2px solid #871015; 
+            border-width: 2px 0px 2px 2px;*/
         }
 
 
@@ -35,11 +35,13 @@
             padding-bottom: 0px;
             text-decoration: none;
             font-size: 13px;
-            /*color: #7e7f81;*/
-            font-weight: bold;
+            /*color: #7e7f81;
+            font-weight: bold;*/
             text-align: left;
             padding-left: 75px;
             padding-top: 2px;
+            font-family:"Microsoft YaHei";
+            font-weight: 400
             /* background: url("../images/linedot.gif") repeat-x left bottom;*/
         }
 
@@ -59,7 +61,7 @@
 
     #menu li.sub a.level1-a {
         /*background: #fff url("../../Images/home/jiantou_1.jpg") no-repeat 205px ;*/
-        color: #333;
+        color: #666;
         z-index: 10001;
     }
 
@@ -184,8 +186,8 @@
         }
 
 #menu li.level1-li:hover > a {
-    background: #FFF url("../images/arrow.gif") no-repeat 205px center;
-    color: #000;
+    background: #c7231c;
+    color: #fff;
     position: relative;
     z-index: 10001;
 }
@@ -931,5 +933,9 @@ ul.thirdLevel {
    
     .gundongbejing{background:url(../../Images/home/hezuo_1.jpg) no-repeat;height:181px;padding-top:25px}
     .gundongxiaoguo{width:1000px;height:131px;margin:0px auto;overflow: hidden; position: relative;}
-    .gundongxiaoguo ul{padding: 0px; overflow: hidden; position: relative; list-style: none; width: 8604px; left: 0px}
-    .gundongxiaoguo ul li{text-align: center; position: relative; overflow: hidden; float: left;border:2px #efefef solid;margin-left:10px}
+    .gundongxiaoguo ul{padding: 0px; overflow: hidden; position: relative; list-style: none; width: 8604px; left: 0px;}
+    .gundongxiaoguo ul li{text-align: center; position: relative; overflow: hidden; float: left;border:2px #efefef solid;margin-left:10px;cursor:pointer}
+
+    
+
+
