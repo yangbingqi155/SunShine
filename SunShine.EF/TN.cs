@@ -122,6 +122,10 @@ namespace SunShine.EF {
                 .IsUnicode(false);
 
             modelBuilder.Entity<SiteCategory>()
+                .Property(e => e.englishname)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SiteCategory>()
                 .Property(e => e.parentid)
                 .IsUnicode(false);
         }

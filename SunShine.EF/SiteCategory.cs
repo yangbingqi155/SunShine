@@ -20,6 +20,9 @@ namespace SunShine.EF
         [StringLength(100)]
         public string categoryname { get; set; }
 
+        [StringLength(100)]
+        public string englishname { get; set; }
+
         [StringLength(50)]
         public string parentid { get; set; }
 
