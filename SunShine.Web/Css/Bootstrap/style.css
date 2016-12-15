@@ -99,9 +99,9 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 .cp_name a{ color:#333; text-align:center; display:block;font-weight:bold}
 
 .zhanshi{width:1000px;margin:0px auto;height:275px;border:#c9c9c9 solid 1px;}
-.zhanshi .title {width:1000px; height:40px; line-height:40px; background:#dededc; font-size:16px; font-weight:700;  border-bottom:4px solid #fff; position:relative;}
+.zhanshi .title {width:1000px; height:40px; line-height:40px; background:#dededc; font-size:16px; font-weight:700;  border-bottom:0px solid #fff; position:relative;}
 .zhanshi .title ul { width:750px; height:40px; overflow:hidden;}
-.zhanshi .title ul li { width:250px; height:40px; float:left; text-align:center; }
+.zhanshi .title ul li { width:250px; height:40px; float:left; text-align:center;color:#fff }
 .more1 { position:relative; margin:-35px 10px 0 0px; float:right;}
 .zhanshi .title ul li a{ height:46px; color:#fff; display:block;}
 
