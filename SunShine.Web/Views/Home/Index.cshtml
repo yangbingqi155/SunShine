@@ -1,96 +1,16 @@
-﻿@{
+﻿@using SunShine.Model;
+@{
     ViewBag.Title = "创意阳光首页";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<ProductViewModel> hotProducts = (List<ProductViewModel>)ViewData["hotProducts"];
+    List<ProductViewModel> newProducts = (List<ProductViewModel>)ViewData["newProducts"];
 }
 <div class="daohangbeijing">
     <div class="wrap">
         <div class="cp_left">
-            <div><img src="~/Images/home/feilei_1.jpg"></div>
-            <div id="images">
-                <ul name="menu5" id="menu5" class="menu">
-
-                    <style>
-                        .hd {
-                            font-size: 13px;
-                            font-weight: bold;
-                            color: #FFF;
-                            padding-left: 75px;
-                            padding-top: 2px;
-                        }
-                    </style>
-                    <li style="background-color:#5f686f;padding-bottom:3px">
-                        <a class="collapsed" id="aPro">
-                            <img class="expandedImg" src="~/Images/home/fold0.jpg" width="22" height="22" border="0" style="padding-top:4px">
-                            <div class="hd" style="height:25px;padding-top:6px">
-                                按用途分类
-                                <div style="clear:both"></div>
-                            </div>
-                        </a>
-                        <ul id="menu" style="display: block;">
-                            <div style="width:220px;height:5px;background:#fff"></div>
-                            <li class="level1-li sub"><a class="level1-a">门头发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a">楼顶发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a">室内发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a">室内发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a">室内发光字</a></li>
-                            <div style="width:220px;height:10px;background:#fff"></div>
-                        </ul>
-                    </li>
-
-
-                    <li style="background-color:#5f686f; padding-bottom:3px;">
-                        <a class="collapsed" id="aBra">
-                            <img class="expandedImg" src="~/Images/home/fold0.jpg" width="22" height="22" border="0">
-                            <div class="hd">
-                                按行业分类
-                                <div style="clear:both"></div>
-                            </div>
-                        </a>
-                        <!--  <div style="background-color:#FFF"><img src="/images/spacer.gif" width="220" height="1"></div>  -->
-                        <ul id="menu" style="display: block;">
-                            <div style="width:220px;height:5px;background:#fff"></div>
-                            <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=32">房地产发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=6">商业广场发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=4">医疗机构发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=26">宾馆酒店发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=46">餐饮行业发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=16">学校政府发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=3">银行证券发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=51">娱乐KTV发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="/product/productlist4.aspx?coid=2">珠宝行业发光字</a></li>
-                            <div style="width:220px;height:10px;background:#fff"></div>
-                        </ul>
-                    </li>
-
-
-
-                    <li style="background-color:#5f686f; padding-bottom:0px">
-                        <a class="collapsed" id="aCar">
-                            <img class="expandedImg" src="~/Images/home/fold0.jpg" width="22" height="22" border="0">
-                            <div class="hd">
-                                按产品分类
-                                <div style="clear:both"></div>
-                            </div>
-                        </a>
-                        <ul id="menu" style="display: block;">
-                            <div style="width:220px;height:5px;background:#fff"></div>
-                            <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">树脂发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">迷你发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">平面发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">吸塑发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">无边发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">背打光发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">不锈钢发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">黑白板发光字</a></li>
-                            <li class="level1-li sub"><a class="level1-a" href="javascript:void(0);">穿孔外露发光字</a></li>
-                            <div style="width:220px;height:10px;background:#fff"></div>
-
-                        </ul>
-                    </li>
-
-                </ul>
-                <img src="~/Images/home/telephone_1.png" />
-            </div>
+           @{ 
+               Html.RenderAction("LeftProductCategory", "Parts");
+           }
 
         </div>
         <div class="cp_right">
@@ -103,130 +23,16 @@
             <div class="tab_box">
                 <ul id="tab_conbox">
                     <li>
-                        <div class="more1"><a href="product.html"><img src="~/images/home/more1.jpg"></a></div>
-                        <div class="cp_list">
-                            <ul>
-
-                                <li>
-                                    <div class="cp_img"><a href="productDetial-155.html" title=""><img src="~/Images/home/product_1.jpg" onload="DrawImage(this,359,196)" alt="" /></a></div>
-                                    <div class="cp_name"><a href="productDetial-155.html">不锈钢发光字</a></div>
-                                    <div class="ckxq">
-                                        <div class="ckxq_left"><a href="productDetial-155.html">查看详情</a></div>
-                                        <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
-                                    </div>
-                                </li>
-
-                                <li class="no_mar">
-                                    <div class="cp_img"><a href="productDetial-154.html" title=""><img src="~/Images/home/product_1.jpg" onload="DrawImage(this,359,196)" alt="" /></a></div>
-                                    <div class="cp_name"><a href="productDetial-154.html">不锈钢发光字</a></div>
-                                    <div class="ckxq">
-                                        <div class="ckxq_left"><a href="productDetial-154.html">查看详情</a></div>
-                                        <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="cp_img"><a href="productDetial-153.html" title=""><img src="~/Images/home/product_1.jpg" onload="DrawImage(this,359,196)" alt="" /></a></div>
-                                    <div class="cp_name"><a href="productDetial-153.html">不锈钢发光字</a></div>
-                                    <div class="ckxq">
-                                        <div class="ckxq_left"><a href="productDetial-153.html">查看详情</a></div>
-                                        <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
-                                    </div>
-                                </li>
-
-                                <li class="no_mar">
-                                    <div class="cp_img"><a href="productDetial-152.html" title=""><img src="~/Images/home/product_1.jpg" onload="DrawImage(this,359,196)" alt="" /></a></div>
-                                    <div class="cp_name"><a href="productDetial-152.html">不锈钢发光字</a></div>
-                                    <div class="ckxq">
-                                        <div class="ckxq_left"><a href="productDetial-152.html">查看详情</a></div>
-                                        <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="cp_img"><a href="productDetial-151.html" title=""><img src="~/Images/home/product_1.jpg" onload="DrawImage(this,359,196)" alt="" /></a></div>
-                                    <div class="cp_name"><a href="productDetial-151.html">不锈钢发光字</a></div>
-                                    <div class="ckxq">
-                                        <div class="ckxq_left"><a href="productDetial-151.html">查看详情</a></div>
-                                        <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
-                                    </div>
-                                </li>
-
-                                <li class="no_mar">
-                                    <div class="cp_img"><a href="productDetial-150.html" title=""><img src="~/Images/home/product_1.jpg" onload="DrawImage(this,359,196)" alt="" /></a></div>
-                                    <div class="cp_name"><a href="productDetial-150.html">不锈钢发光字</a></div>
-                                    <div class="ckxq">
-                                        <div class="ckxq_left"><a href="productDetial-150.html">查看详情</a></div>
-                                        <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
+                        <div class="more1"><a href="@Url.Action("List","Product")"><img src="~/images/home/more1.jpg"></a></div>
+                        @{ 
+                            Html.RenderPartial("_ProductItemPartial", hotProducts);
+                        }
                     </li>
                     <li style="display:none;">
                         <div class="more1"><a href="product.html"><img src="images/more1.png"></a></div>
-
-                        <div class="cp_list">
-                            <ul>
-                                <div class="more1"><a href="product.html"><img src="images/more1.png"></a></div>
-
-                                <li>
-                                    <div class="cp_img"><a href="productDetial-7.html" title="水晶发光字"><img src="/UpLoad/Product/2016/4/9/201604091150255576.jpg" onload="DrawImage(this,359,196)" alt="水晶发光字" /></a></div>
-                                    <div class="cp_name"><a href="productDetial-7.html">水晶发光字</a></div>
-                                    <div class="ckxq">
-                                        <div class="ckxq_left"><a href="productDetial-7.html">查看详情</a></div>
-                                        <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
-                                    </div>
-                                </li>
-
-                                <li class="no_mar">
-                                    <div class="cp_img"><a href="productDetial-6.html" title="水晶发光字"><img src="/UpLoad/Product/2016/4/9/201604091151563339.jpg" onload="DrawImage(this,359,196)" alt="水晶发光字" /></a></div>
-                                    <div class="cp_name"><a href="productDetial-6.html">水晶发光字</a></div>
-                                    <div class="ckxq">
-                                        <div class="ckxq_left"><a href="productDetial-6.html">查看详情</a></div>
-                                        <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="cp_img"><a href="productDetial-5.html" title="树脂发光字"><img src="/UpLoad/Product/2016/4/9/201604091145046523.jpg" onload="DrawImage(this,359,196)" alt="树脂发光字" /></a></div>
-                                    <div class="cp_name"><a href="productDetial-5.html">树脂发光字</a></div>
-                                    <div class="ckxq">
-                                        <div class="ckxq_left"><a href="productDetial-5.html">查看详情</a></div>
-                                        <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
-                                    </div>
-                                </li>
-
-                                <li class="no_mar">
-                                    <div class="cp_img"><a href="productDetial-4.html" title="树脂发光字"><img src="/UpLoad/Product/2016/4/9/201604091146532685.jpg" onload="DrawImage(this,359,196)" alt="树脂发光字" /></a></div>
-                                    <div class="cp_name"><a href="productDetial-4.html">树脂发光字</a></div>
-                                    <div class="ckxq">
-                                        <div class="ckxq_left"><a href="productDetial-4.html">查看详情</a></div>
-                                        <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="cp_img"><a href="productDetial-3.html" title="不锈钢发光字"><img src="/UpLoad/Product/2016/4/9/201604091142153535.jpg" onload="DrawImage(this,359,196)" alt="不锈钢发光字" /></a></div>
-                                    <div class="cp_name"><a href="productDetial-3.html">不锈钢发光字</a></div>
-                                    <div class="ckxq">
-                                        <div class="ckxq_left"><a href="productDetial-3.html">查看详情</a></div>
-                                        <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
-                                    </div>
-                                </li>
-
-                                <li class="no_mar">
-                                    <div class="cp_img"><a href="productDetial-2.html" title="不锈钢发光字"><img src="/UpLoad/Product/2016/4/9/201604091138353085.png" onload="DrawImage(this,359,196)" alt="不锈钢发光字" /></a></div>
-                                    <div class="cp_name"><a href="productDetial-2.html">不锈钢发光字</a></div>
-                                    <div class="ckxq">
-                                        <div class="ckxq_left"><a href="productDetial-2.html">查看详情</a></div>
-                                        <div class="ckxq_ljzx"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3393145782&amp;site=qq&amp;menu=yes" target="_blank">立即咨询</a></div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
+                        @{
+                            Html.RenderPartial("_ProductItemPartial", newProducts);
+                        }
                     </li>
                 </ul>
             </div>

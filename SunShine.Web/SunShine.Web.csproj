@@ -201,6 +201,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PartsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UeditorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -847,6 +848,9 @@
     <Content Include="Views\Shared\_CaseListItemsPartial.cshtml" />
     <Content Include="Views\Shared\_CaseFloatListItemsPartial.cshtml" />
     <Content Include="Views\Shared\_CaseItemPartial.cshtml" />
+    <Content Include="Views\Parts\LeftProductCategory.cshtml" />
+    <Content Include="Views\Shared\_ProductItemPartial.cshtml" />
+    <Content Include="Views\Product\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -17,6 +17,11 @@ namespace SunShine.BLL
             return db.Products.OrderBy(en => en.sortno).ToList();
         }
 
+        public static List<ProductViewModel> GetALLViewModels() {
+            TN db = new TN();
+            return ConvertToViewModel(db.Products.OrderBy(en => en.sortno).ToList());
+        }
+
         private static List<ProductViewModel> ConvertToViewModel(List<Product> products) {
             List<ProductViewModel> entities = new List<ProductViewModel>();
             TN db = new TN();

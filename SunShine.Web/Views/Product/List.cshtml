@@ -1,0 +1,34 @@
+﻿@using SunShine.Model;
+@model List<ProductViewModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "创意阳光-产品中心";
+}
+<div class="daohangbeijing">
+    <div class="wrap">
+        <div class="cp_left">
+            @{
+                Html.RenderAction("LeftProductCategory", "Parts");
+            }
+
+        </div>
+        <div class="cp_right">
+            <div class="title">
+                <ul id="tabs">
+                    <li style="background:#5f6870"><a href="product.html" class="tab">产品中心</a></li>
+                </ul>
+            </div>
+            <div class="tab_box">
+                <ul id="tab_conbox">
+                    <li>
+                        <div class="more1"><a href="@Url.Action("List","Product")"><img src="~/images/home/more1.jpg"></a></div>
+                        @{
+                            Html.RenderPartial("_ProductItemPartial", Model);
+                        }
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
