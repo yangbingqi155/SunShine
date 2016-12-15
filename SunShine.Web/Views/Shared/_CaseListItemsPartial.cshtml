@@ -1,0 +1,27 @@
+﻿@using SunShine.Model;
+@model List<ArticleViewModel>
+@{
+    Layout = null;
+}
+@{
+    if (Model != null && Model.Count > 0) {
+        for (int i = 0; i < Model.Count; i++) {
+            <div class="case_list_item">
+                <div class="itemimg">
+                    @if (!string.IsNullOrEmpty(Model[i].img)) {
+                        <img src="@Url.Content(Model[i].img)" />
+                    }
+                </div>
+                <div class="itemdesc">
+                    <div class="itemtitle">@Model[i].title</div>
+                    <div class="itemdetail">@Model[i].content</div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        }
+
+    }
+    else {
+        <h3>暂无数据！</h3>
+    }
+}
