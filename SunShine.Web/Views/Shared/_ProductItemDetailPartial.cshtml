@@ -18,7 +18,11 @@
             <div class="p_basic">
                 @Model.basicinfo
             </div>
-            <div class="p_ask"></div>
+            <div class="p_ask">
+                <div class="btn_ask">
+                    立即咨询
+                </div>
+            </div>
         </div>
         <div style="clear:both;"></div>
     </div>
@@ -27,12 +31,16 @@
             <div class="bgcolor_title_head desc_tab">
                 详情展示
             </div>
-            <div class="bgcolor_title_head desc_tab">
+            <div class="bgcolor_title_head desc_tab not_current">
                 联系我们
             </div>
             <div style="clear:both;"></div>
         </div>
-        
+        <div class="p_product_show_title">
+            产品展示
+        </div>
+        <div class="p_product_show_title_line">
+        </div>
         <div class="p_description_body">
             @Html.Raw(Model.description)
         </div>

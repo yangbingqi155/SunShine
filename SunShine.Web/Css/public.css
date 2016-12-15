@@ -447,6 +447,15 @@
 .p_basic_info .p_ask {
     margin-top: 80px;
 }
+.p_basic_info .btn_ask {
+    background-color:#F4F1EA;
+    border:1px solid #da251c;
+    padding:4px 0;
+    font-size:16px;
+    font-weight:bold;
+    width:124px;
+    text-align:center;
+}
 
 .product_detail_bottom {
     margin-top: 38px;
@@ -462,11 +471,27 @@
     padding-left: 26px;
     padding-right: 26px;
 }
-.product_detail_bottom .p_description_header .desc_tab {
+.product_detail_bottom .p_description_header .not_current {
     background-color:#dededc;
     color:#060503;
 }
 
+.p_product_show_title {
+    margin-top:22px;
+    line-height:44px;
+    font-size:30px;
+    font-weight:900;
+    color:#FFFFFF;
+    background-color:#272F44;
+    text-align:center;
+}
+
+.p_product_show_title_line {
+    margin-top:8px;
+    border-bottom:2px solid #272F44;
+}
+
 .p_description_body {
     margin-top:22px;
+    font-size:16px;
 }
