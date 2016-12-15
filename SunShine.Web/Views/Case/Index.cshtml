@@ -1,132 +1,66 @@
-﻿@{
-    ViewBag.Title = "创意阳光-成功案例";
+﻿@using SunShine.EF;
+@using SunShine.Model;
+@using SunShine.Utils;
+@using SunShine.Web.Utils;
+@model List<ArticleViewModel>
+@{
+    ViewBag.Title = "创意阳光";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    string currentCategoryCode = ViewData["currentCategoryCode"].ToString();
+    List<SiteCategory> navPath = (List<SiteCategory>)ViewData["navPath"];
+    var pageCount = Convert.ToInt32(ViewData["pageCount"]);
+    var pageIndex = Convert.ToInt32(ViewData["pageIndex"]);
 }
 <div class="case_box">
     <div class="case_left">
-        <div class="success_case_top">
-            <div class="success_case_title">成功案例</div>
-            <div class="success_case_subtitle">
-                <div class="subtitle_left"></div>
-                <div class="subtitle_center">CASES</div>
-                <div class="subtitle_right"></div>
-                <div style="clear:both;"></div>
-            </div>
-        </div>
-        <div class="success_case_bottom">
-            <div class="case_category_title" style="margin-top:0px;">近期工程案例</div>
-            <div class="case_category_title">近期工程案例</div>
-            <div class="case_category_title">近期工程案例</div>
-        </div>
-        <div class="case_honor_top">
-            <div class="case_honor_title">荣誉资质</div>
-            <div class="case_honor_more">更多+</div>
-            <div style="clear:both;"></div>
-        </div>
-        <div class="case_honor_bottom">
-            <div class="honoritem">
-                <div class="honor_img">
-                    <img src="@Url.Content("~/Resource/Images/Article/honorcase1.jpg")" />
-                </div>
-                <div class="honor_img_title">
-                    荣誉证书
-                </div>
-            </div>
-            <div class="honoritem">
-                <div class="honor_img">
-                    <img src="@Url.Content("~/Resource/Images/Article/honorcase1.jpg")" />
-                </div>
-                <div class="honor_img_title">
-                    荣誉证书
-                </div>
-            </div>
-            <div class="honoritem">
-                <div class="honor_img">
-                    <img src="@Url.Content("~/Resource/Images/Article/honorcase1.jpg")" />
-                </div>
-                <div class="honor_img_title">
-                    荣誉证书
-                </div>
-            </div>
-        </div>
-        <div class="case_contactus_top">
-            <div class="case_contactus_title">联系我们</div>
-            <div class="case_contactus_more">更多+</div>
-            <div style="clear:both;"></div>
-        </div>
-        <div class="case_contactus_bottom">
-            <div class="contactusimg">
-                <img src="@Url.Content("~/Resource/Images/Article/contactusimg.jpg")" />
-            </div>
-            <div class="contactusphone">
-                <div class="contactus_phone_icon">
-                    <img src="@Url.Content("~/Images/case/phone_icon.jpg")" />
-                </div>
-                <div class="contactus_phone_info">
-                    <div class="contactus_phone_title">
-                        全国免费咨询热线
-                    </div>
-                    <div class="contactus_phone_no">
-                        4008-778-652
-                    </div>
-                </div>
-                <div style="clear:both;"></div>
-            </div>
-            <div class="contactuslist">
-                <ul >
-                    <li style="margin-top:0;">咨询热线:027-85587586</li>
-                    <li>咨询手机:15671566365</li>
-                    <li>QQ客服:3317300173</li>
-                    <li>501881468</li>
-                    <li>地址:武汉市江汉区前进一路御美广场二楼2836/2837</li>
-                </ul>
-            </div>
-            
-        </div>
+        @{
+            Html.RenderAction("NavSuccessCases", "Parts", new { categoryCode = Request["categoryCode"], currentCategoryCode=Request["currentCategoryCode"] });
+            Html.RenderAction("NavHonors", "Parts");
+            Html.RenderAction("NavContactUs", "Parts");
+        }
     </div>
     <div class="case_right">
         <div class="case_nav">
             <div class="case_nav_icon"></div>
-            <div class="case_nav_title">您现在的位置:首页&nbsp;>&nbsp;成功案例&nbsp;>&nbsp;近期工程案例</div>
+            <div class="case_nav_title">
+                您现在的位置:
+                @for (int i = 0; i < navPath.Count; i++) {
+
+                    ViewBag.Title += navPath[i].categoryname+" ";
+                    if (i == 0) {
+                        <span>@navPath[i].categoryname&nbsp;</span>
+                        }
+                    else {
+                        <span>
+                            >&nbsp;@navPath[i].categoryname
+                        </span>
+                    }
+                }
+            </div>
         </div>
         <div style="clear:both;"></div>
         <div class="case_list">
-            <div class="case_list_item">
-                <div class="itemimg">
-                    <img src="@Url.Content("~/Resource/images/Article/case1.jpg")" />
-                </div>
-                <div class="itemdesc">
-                    <div class="itemtitle">为碧桂园-欢迎城设计、制作安装商业系统</div>
-                    <div class="itemdetail">fdfdsafdasfds</div>
-                </div>
-                <div style="clear:both;"></div>
-            </div>
-            <div class="case_list_item">
-                <div class="itemimg">
-                    <img src="@Url.Content("~/Resource/images/Article/case1.jpg")" />
-                </div>
-                <div class="itemdesc">
-                    <div class="itemtitle">为碧桂园-欢迎城设计、制作安装商业系统</div>
-                    <div class="itemdetail">fdfdsafdasfds</div>
-                </div>
-                <div style="clear:both;"></div>
-            </div>
-            <div class="case_list_item">
-                <div class="itemimg">
-                    <img src="@Url.Content("~/Resource/images/Article/case1.jpg")" />
-                </div>
-                <div class="itemdesc">
-                    <div class="itemtitle">为碧桂园-欢迎城设计、制作安装商业系统</div>
-                    <div class="itemdetail">fdfdsafdasfds</div>
-                </div>
-                <div style="clear:both;"></div>
-            </div>
+            @if (Model.Count == 1) {
+                Html.RenderPartial("_CaseItemPartial", Model.First());
+            }
+            else {
+                if (currentCategoryCode == "serviceflow" || currentCategoryCode == "honor") {
+                    Html.RenderPartial("_CaseFloatListItemsPartial", Model);
+                }
+                else {
+                    Html.RenderPartial("_CaseListItemsPartial", Model);
+                }
+            }
+            
+        </div>
+        <div>
+            @Html.Raw(Url.BootstrapPagerHTML(pageCount, pageIndex, "Index", "Case", ViewContext.RouteData.Values))
         </div>
     </div>
     <div style="clear:both;"></div>
 </div>
-@{ 
-    Html.RenderAction("HotSale","Parts");
+@{
+    Html.RenderAction("HotSale", "Parts");
 }
 <div class="classic_case_head">
     <div class="classic_case_title bgcolor_title_head">

@@ -1,17 +1,82 @@
-﻿@{
+﻿@using SunShine.Model;
+@model List<ProductCategoryViewModel>
+@{
     Layout = null;
+    List<ProductCategoryViewModel> usageCategories = new List<ProductCategoryViewModel>();
+    List<ProductCategoryViewModel> industryCategories = new List<ProductCategoryViewModel>();
+    List<ProductCategoryViewModel> productCategories = new List<ProductCategoryViewModel>();
+    if (Model != null && Model.Count > 0) {
+        usageCategories = Model.Where(en => en.groupmethod == (int)GroupMethodType.Usage).ToList();
+        industryCategories = Model.Where(en => en.groupmethod == (int)GroupMethodType.Industry).ToList();
+        productCategories = Model.Where(en => en.groupmethod == (int)GroupMethodType.Product).ToList();
+    }
 }
 
-<!DOCTYPE html>
+@{
+    if (Model != null && Model.Count > 0) {
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
-    </div>
-</body>
-</html>
+        <div class="category_box">
+            @if (usageCategories != null && usageCategories.Count > 0) {
+                <div class="category_item">
+                    <div class="category_left">
+                        <div class="category_title">按用途分类</div>
+                    </div>
+                    <div class="category_right category_right_one">
+                        @for (int i = 0; i < usageCategories.Count; i++) {
+                            if (i == usageCategories.Count - 1) {
+                                <span>@usageCategories[i].categoryname&nbsp;</span>
+                            }
+                            else {
+                                <span>@usageCategories[i].categoryname&nbsp;|</span>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+            @if (industryCategories != null && industryCategories.Count > 0) {
+                <div class="category_item">
+                    <div class="category_left">
+                        <div class="category_title">按行业分类</div>
+                    </div>
+                    <div class="category_right category_right_two">
+                       @for (int i = 0; i < industryCategories.Count; i++) {
+                           if (i == industryCategories.Count - 1) {
+                            <span>@industryCategories[i].categoryname&nbsp;</span>
+                           }
+                           else {
+                            <span>@industryCategories[i].categoryname&nbsp;|</span>
+                           }
+                           if (i == 4) {
+                            <br />
+                           }
+                       }
+                    </div>
+                </div>
+            }
+           @if (productCategories != null && productCategories.Count > 0) {
+            <div class="category_item" style="margin-bottom:20px;">
+                <div class="category_left">
+                    <div class="category_title">按产品分类</div>
+                </div>
+                <div class="category_right category_right_two">
+                   @for (int i = 0; i < productCategories.Count; i++) {
+                       if (i == usageCategories.Count - 1) {
+                        <span>@productCategories[i].categoryname&nbsp;</span>
+                       }
+                       else {
+                        <span>@productCategories[i].categoryname&nbsp;|</span>
+                       }
+                       if (i == 4) {
+                        <br />
+                       }
+                   }
+                </div>
+            </div>
+           }
+            
+        </div>
+        <div style="clear:both;"></div>
+    }
+
+}
+

@@ -41,7 +41,7 @@ namespace SunShine.BLL
             return entities;
         }
 
-        public static List<SelectItemViewModel<string>> SelectItems(string currentidcategory="")
+        public static List<SelectItemViewModel<string>> SelectItems(string currentidcategory="",string rootCategoryName="根目录",string categorySplitChar="-")
         {
             List<SelectItemViewModel<string>> categoryOptions = new List<SelectItemViewModel<string>>();
             List<SiteCategory> categories = GetALL().ToList();
@@ -70,7 +70,7 @@ namespace SunShine.BLL
             }
             categoryOptions.Insert(0, new SelectItemViewModel<string>()
             {
-                DisplayText = "根类别",
+                DisplayText = rootCategoryName,
                 DisplayValue = ""
             });
             return categoryOptions;
@@ -87,6 +87,27 @@ namespace SunShine.BLL
                 return list;
             }
             
+        }
+
+
+        public static List<SiteCategory> GetNavPath(string categoryCode) {
+            List<SiteCategory> navPathCategories = new List<SiteCategory>();
+            navPathCategories = SiteCategoryService.getParentCategories(GetByCode(categoryCode).idcategory, navPathCategories);
+            navPathCategories = navPathCategories.OrderBy(en => en.level).ToList();
+            navPathCategories.Insert(0, new SiteCategory() { idcategory="",categoryname="首页" });
+            return navPathCategories;
+        }
+        
+        public static SiteCategory GetByCode(string code) {
+            TN db = new TN();
+            return db.SiteCategories.Where(en => en.categorycode == code).FirstOrDefault();
+        }
+
+        public static List<SiteCategoryViewModel> GetChildCategoriesByCode(string code) {
+            TN db = new TN();
+            SiteCategory parentCategory = GetByCode(code);
+            List<SiteCategory> categories= db.SiteCategories.Where(en => en.parentid== parentCategory.idcategory).ToList();
+            return ConvertToViewModel(categories);
         }
 
         public static SiteCategory Get(string idcategory)

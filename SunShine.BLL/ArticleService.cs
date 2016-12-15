@@ -44,6 +44,15 @@ namespace SunShine.BLL
             return list;
         }
 
+        public static List<ArticleViewModel> GetArticlesByCategoryCode(string categoryCode) {
+            List<ArticleViewModel> viewModels = new List<ArticleViewModel>();
+            SiteCategory parentCategory =SiteCategoryService.GetByCode(categoryCode);
+            TN db = new TN();
+            List<Article> articles = db.Articles.Where(en => en.idcategory == parentCategory.idcategory).ToList();
+            viewModels = ConvertToViewModel(articles);
+            return viewModels;
+        }
+
         public static Article Get(string idarticle) {
             TN db = new TN();
             return db.Articles.Where(en => en.idarticle == idarticle).FirstOrDefault();
