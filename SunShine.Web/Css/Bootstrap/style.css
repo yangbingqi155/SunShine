@@ -93,7 +93,7 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 
 .cp_list {width:744px; float:right; overflow:hidden;}
 .cp_list ul { width:744px; overflow:hidden;}
-.cp_list ul li { width:357px; height:312px; margin:22px 26px 0 0; float:left;}
+.cp_list ul li { width:346px; height:312px; margin:22px 26px 0 0; float:left;}
 .cp_list ul li .cp_img { width:357px; height:247px; border:#c9c9c9 solid 1px; overflow:hidden;}
 .cp_name { width:357px; height:28px; line-height:28px; background-color:#fff; font-size:14px; overflow:hidden; text-align:center}
 .cp_name a{ color:#333; text-align:center; display:block;font-weight:bold}

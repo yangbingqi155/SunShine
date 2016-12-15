@@ -134,7 +134,7 @@
     }
 
     function initImages() {
-        var uploadUrl = "@Url.Action("UploadImage","Manage",new { moduleType= (int)ModuleType.Product,  idmodule = Model.idarticle })";
+        var uploadUrl = "@Url.Action("UploadImage","Manage",new { moduleType= (int)ModuleType.Article,  idmodule = Model.idarticle })";
         var getImageUrl = "@Url.Action("AjaxImageList", "Manage")";
         var deleteImageUrl = "@Url.Action("DeleteImages", "Manage",new { isAjax =true})";
         $.post(getImageUrl, { idmodule: "@(Model.idarticle)", moduleType:@((int)ModuleType.Article), isAjax: true }, function (returndata) {

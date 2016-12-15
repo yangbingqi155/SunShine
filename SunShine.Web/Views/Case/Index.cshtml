@@ -40,7 +40,7 @@
         </div>
         <div style="clear:both;"></div>
         <div class="case_list">
-            @if (Model.Count == 1) {
+            @if (Model.Count == 1 && pageIndex == 0) {
                 Html.RenderPartial("_CaseItemPartial", Model.First());
             }
             else {
@@ -53,7 +53,7 @@
             }
             
         </div>
-        <div>
+        <div class="sunshine_pager">
             @Html.Raw(Url.BootstrapPagerHTML(pageCount, pageIndex, "Index", "Case", ViewContext.RouteData.Values))
         </div>
     </div>
@@ -61,15 +61,7 @@
 </div>
 @{
     Html.RenderAction("HotSale", "Parts");
-}
-<div class="classic_case_head">
-    <div class="classic_case_title bgcolor_title_head">
-        经典案例
-    </div>
-    <div class="classic_case_more">更多+</div>
-    <div style="clear:both;"></div>
-</div>
-@{
+    Html.RenderPartial("_PartnerHeader");
     Html.RenderAction("Partner", "Parts");
     Html.RenderPartial("_HistoryBannerPartial", null);
     Html.RenderPartial("_CustomizeFlowPartial", null);

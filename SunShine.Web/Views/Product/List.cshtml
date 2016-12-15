@@ -1,10 +1,14 @@
 ﻿@using SunShine.Model;
+@using SunShine.Utils;
+@using SunShine.Web.Utils;
 @model List<ProductViewModel>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "创意阳光-产品中心";
+    var pageCount = Convert.ToInt32(ViewData["pageCount"]);
+    var pageIndex = Convert.ToInt32(ViewData["pageIndex"]);
 }
-<div class="daohangbeijing">
+<div class="daohangbeijing" style="background-color:#FFFFFF;">
     <div class="wrap">
         <div class="cp_left">
             @{
@@ -13,18 +17,28 @@
 
         </div>
         <div class="cp_right">
-            <div class="title">
-                <ul id="tabs">
-                    <li style="background:#5f6870"><a href="product.html" class="tab">产品中心</a></li>
-                </ul>
+            <div class="case_nav">
+                <div class="case_nav_icon"></div>
+                <div class="case_nav_title">
+                    您现在的位置:<span>首页>&nbsp;产品中心</span>
+                </div>
             </div>
+            <div style="clear:both;"></div>
             <div class="tab_box">
                 <ul id="tab_conbox">
                     <li>
-                        <div class="more1"><a href="@Url.Action("List","Product")"><img src="~/images/home/more1.jpg"></a></div>
-                        @{
-                            Html.RenderPartial("_ProductItemPartial", Model);
+                        @*<div class="more1"><a href="@Url.Action("List","Product")"><img src="~/images/home/more1.jpg"></a></div>*@
+                        @{ 
+                            if (Model.Count == 1&& pageIndex==0) {
+                                Html.RenderPartial("_ProductItemDetailPartial", Model.First());
+                            }
+                            else {
+                                Html.RenderPartial("_ProductItemPartial", Model);
+                            }
                         }
+                        <div class="sunshine_pager">
+                            @Html.Raw(Url.BootstrapPagerHTML(pageCount, pageIndex, "List", "Product", ViewContext.RouteData.Values))
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -32,3 +46,16 @@
         </div>
     </div>
 </div>
+<div style="width:1444px;margin:0px auto;">
+    @{
+        Html.RenderPartial("_CaseListItemsScroll");
+    }
+</div>
+@{
+    Html.RenderAction("HotSale", "Parts");
+    Html.RenderPartial("_PartnerHeader");
+    Html.RenderAction("Partner", "Parts");
+    Html.RenderPartial("_HistoryBannerPartial", null);
+    Html.RenderPartial("_CustomizeFlowPartial", null);
+    Html.RenderPartial("_InstroductionCompanyPartial", null);
+}

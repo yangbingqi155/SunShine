@@ -397,7 +397,14 @@
 }
 
     .case_float_list_item .itemdesc .itemtitle {
-        text-align:center;
+        text-align: center;
         font-size: 14px;
         font-weight: bold;
     }
+
+.sunshine_pager {
+    margin: 0 auto;
+    width:300px;
+}
+
+    

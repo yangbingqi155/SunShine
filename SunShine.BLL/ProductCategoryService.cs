@@ -43,6 +43,11 @@ namespace SunShine.BLL {
             return db.ProductCategories.Where(en => en.idcategory == idcategory).FirstOrDefault();
         }
 
+        public static ProductCategory GetByCategoryCode(string categoryCode) {
+            TN db = new TN();
+            return db.ProductCategories.Where(en => en.categorycode == categoryCode).FirstOrDefault();
+        }
+
         public static ProductCategory Edit(ProductCategory category) {
             TN db = new TN();
             ProductCategory oldCategory = db.ProductCategories.Where(en => en.idcategory == category.idcategory).FirstOrDefault();

@@ -57,6 +57,20 @@ namespace SunShine.BLL
             TN db = new TN();
             return db.Products.Where(en => en.idproduct == idproduct).FirstOrDefault();
         }
+        public static ProductViewModel GetViewModel(string idproduct) {
+            TN db = new TN();
+            return ConvertToViewModel( db.Products.Where(en => en.idproduct == idproduct).ToList()).First();
+        }
+
+        public static List<ProductViewModel> GetViewModelsByCategoryCode(string categoryCode) {
+            TN db = new TN();
+            ProductCategory category = ProductCategoryService.GetByCategoryCode(categoryCode);
+            return GetViewModelsByCategory(category.idcategory);
+        }
+        public static List<ProductViewModel> GetViewModelsByCategory(string idcategory) {
+            TN db = new TN();
+            return ConvertToViewModel(db.Products.Where(en => en.idcategory == idcategory).ToList());
+        }
 
         public static Product Edit(Product product)
         {

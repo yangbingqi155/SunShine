@@ -42,22 +42,9 @@
 </div>
 <br /> 
 <div style="width:1444px;margin:0px auto;">
-    <div class="picture_center"><img src="~/Images/home/fuwubiaoyu_1.jpg" /></div>
-    <br />
-    <div class="gundongbejing">
-        <div class="gundongxiaoguo"  >
-            <ul>
-                <li><a href=""><img src="~/Images/home/hezuohuoban_1.jpg" /></a></li>
-                <li><a href=""><img src="~/Images/home/hezuohuoban_2.jpg" /></a></li>
-                <li><a href=""><img src="~/Images/home/hezuohuoban_3.jpg" /></a></li>
-                <li><a href=""><img src="~/Images/home/hezuohuoban_2.jpg" /></a></li>
-                <li><a href=""><img src="~/Images/home/hezuohuoban_1.jpg" /></a></li>
-                <li><a href=""><img src="~/Images/home/hezuohuoban_1.jpg" /></a></li>
-                <li><a href=""><img src="~/Images/home/hezuohuoban_1.jpg" /></a></li>
-                <li><a href=""><img src="~/Images/home/hezuohuoban_1.jpg" /></a></li>
-            </ul>
-        </div>
-    </div>
+    @{ 
+        Html.RenderPartial("_CaseListItemsScroll");
+    }
     <br />
     <div class="picture_center"><img src="~/Images/home/xuchuan_1.jpg" /></div>
     <br />
