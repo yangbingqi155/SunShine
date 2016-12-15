@@ -1,0 +1,89 @@
+﻿@using SunShine.Model;
+@model List<ProductCategoryViewModel>
+@{
+    Layout = null;
+    List<ProductCategoryViewModel> usageCategories = new List<ProductCategoryViewModel>();
+    List<ProductCategoryViewModel> industryCategories = new List<ProductCategoryViewModel>();
+    List<ProductCategoryViewModel> productCategories = new List<ProductCategoryViewModel>();
+    if (Model != null && Model.Count > 0) {
+        usageCategories = Model.Where(en => en.groupmethod == (int)GroupMethodType.Usage).ToList();
+        industryCategories = Model.Where(en => en.groupmethod == (int)GroupMethodType.Industry).ToList();
+        productCategories = Model.Where(en => en.groupmethod == (int)GroupMethodType.Product).ToList();
+    }
+}
+@{
+    if (Model != null && Model.Count > 0) {
+        <div><img src="~/Images/home/feilei_1.jpg"></div>
+        <div id="images">
+            <ul name="menu5" id="menu5" class="menu">
+
+                <style>
+                    .hd {
+                        font-size: 13px;
+                        font-weight: bold;
+                        color: #FFF;
+                        padding-left: 75px;
+                        padding-top: 2px;
+                    }
+                </style>
+                @if (usageCategories != null && usageCategories.Count > 0) {
+                    <li style="background-color:#5f686f;padding-bottom:3px">
+                        <a class="collapsed" id="aPro">
+                            <img class="expandedImg" src="~/Images/home/fold0.jpg" width="22" height="22" border="0" style="padding-top:4px">
+                            <div class="hd" style="height:25px;padding-top:6px">
+                                按用途分类
+                                <div style="clear:both"></div>
+                            </div>
+                        </a>
+                        <ul id="menu" style="display: block;">
+                            <div style="width:220px;height:5px;background:#fff"></div>
+                            @for (int i = 0; i < usageCategories.Count; i++) {
+                                <li class="level1-li sub"><a href="@Url.Action("List","Product",new { idcategory=usageCategories[i].idcategory})" class="level1-a">@usageCategories[i].categoryname</a></li>
+                            }
+                            <div style="width:220px;height:10px;background:#fff"></div>
+                        </ul>
+                    </li>
+                }
+                @if (industryCategories != null && industryCategories.Count > 0) {
+                    <li style="background-color:#5f686f; padding-bottom:3px;">
+                        <a class="collapsed" id="aBra">
+                            <img class="expandedImg" src="~/Images/home/fold0.jpg" width="22" height="22" border="0">
+                            <div class="hd">
+                                按行业分类
+                                <div style="clear:both"></div>
+                            </div>
+                        </a>
+                        <!--  <div style="background-color:#FFF"><img src="/images/spacer.gif" width="220" height="1"></div>  -->
+                        <ul id="menu" style="display: block;">
+                            <div style="width:220px;height:5px;background:#fff"></div>
+                            @for (int i = 0; i < industryCategories.Count; i++) {
+                                <li class="level1-li sub"><a  href="@Url.Action("List","Product",new { idcategory=industryCategories[i].idcategory})"  class="level1-a">@industryCategories[i].categoryname</a></li>
+                            }
+                            <div style="width:220px;height:10px;background:#fff"></div>
+                        </ul>
+                    </li>
+                }
+                @if (productCategories != null && productCategories.Count > 0) {
+                    <li style="background-color:#5f686f; padding-bottom:0px">
+                        <a class="collapsed" id="aCar">
+                            <img class="expandedImg" src="~/Images/home/fold0.jpg" width="22" height="22" border="0">
+                            <div class="hd">
+                                按产品分类
+                                <div style="clear:both"></div>
+                            </div>
+                        </a>
+                        <ul id="menu" style="display: block;">
+                            <div style="width:220px;height:5px;background:#fff"></div>
+                           @for (int i = 0; i < productCategories.Count; i++) {
+                            <li class="level1-li sub"><a  href="@Url.Action("List","Product",new { idcategory=productCategories[i].idcategory})" class="level1-a">@productCategories[i].categoryname</a></li>
+                           }
+                            <div style="width:220px;height:10px;background:#fff"></div>
+
+                        </ul>
+                    </li>
+                }
+            </ul>
+            <img src="~/Images/home/telephone_1.png" />
+        </div>
+    }
+}

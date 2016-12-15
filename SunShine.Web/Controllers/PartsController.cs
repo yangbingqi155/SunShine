@@ -64,5 +64,20 @@ namespace SunShine.Web.Controllers
             }).ToList();
             return View(categories);
         }
+
+        /// <summary>
+        /// 左边产品分类
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult LeftProductCategory() {
+            List<ProductCategoryViewModel> categories = new List<ProductCategoryViewModel>();
+            List<ProductCategory> tempCategories = ProductCategoryService.GetALL();
+            categories = tempCategories.Select(model => {
+                ProductCategoryViewModel category = new ProductCategoryViewModel();
+                category.CopyFromBase(model);
+                return category;
+            }).ToList();
+            return View(categories);
+        }
     }
 }
