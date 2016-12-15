@@ -4,4 +4,37 @@
     Layout = null;
 }
 
-<h3>产品详情</h3>
+<div class="product_detail_box">
+    <div class="product_detail_top">
+        <div class="pimg">
+            @if (!string.IsNullOrEmpty(Model.img)) {
+                <img src="@Url.Content(Model.img)" />
+            }
+        </div>
+        <div class="p_basic_info">                     
+            <div class="p_title">
+                @Model.name
+            </div>
+            <div class="p_basic">
+                @Model.basicinfo
+            </div>
+            <div class="p_ask"></div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <div class="product_detail_bottom">
+        <div class="p_description_header">
+            <div class="bgcolor_title_head desc_tab">
+                详情展示
+            </div>
+            <div class="bgcolor_title_head desc_tab">
+                联系我们
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        
+        <div class="p_description_body">
+            @Html.Raw(Model.description)
+        </div>
+    </div>
+</div>

@@ -404,7 +404,69 @@
 
 .sunshine_pager {
     margin: 0 auto;
-    width:300px;
+    width: 300px;
 }
 
-    
+
+.product_detail_box {
+    margin-top: 38px;
+}
+
+.product_detail_top {
+}
+
+    .product_detail_top .pimg {
+        float: left;
+        width: 425px;
+    }
+
+        .product_detail_top .pimg img {
+            width: 425px;
+        }
+
+    .product_detail_top .p_basic_info {
+        float: left;
+        margin-left: 32px;
+        width:280px;
+    }
+
+.p_basic_info .p_title {
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 1px dashed #c3c3c3;
+}
+
+.p_basic_info .p_basic {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.p_basic_info .p_ask {
+    margin-top: 80px;
+}
+
+.product_detail_bottom {
+    margin-top: 38px;
+}
+
+.p_description_header {
+    border-bottom:2px solid #da251c;
+}
+
+.p_description_header .desc_tab{
+    float: left;
+    text-align: center;
+    padding-left: 26px;
+    padding-right: 26px;
+}
+.product_detail_bottom .p_description_header .desc_tab {
+    background-color:#dededc;
+    color:#060503;
+}
+
+.p_description_body {
+    margin-top:22px;
+}
