@@ -58,6 +58,12 @@ namespace SunShine.BLL
             return db.Articles.Where(en => en.idarticle == idarticle).FirstOrDefault();
         }
 
+        public static ArticleViewModel GetViewModel(string idarticle)
+        {
+            TN db = new TN();
+            return  ConvertToViewModel( db.Articles.Where(en => en.idarticle == idarticle).ToList()).FirstOrDefault();
+        }
+
         public static Article Edit(Article article) {
             TN db = new TN();
             Article oldArticle = db.Articles.Where(en => en.idarticle == article.idarticle).FirstOrDefault();

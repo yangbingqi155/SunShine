@@ -79,5 +79,14 @@ namespace SunShine.Web.Controllers
             }).ToList();
             return View(categories);
         }
+
+        /// <summary>
+        /// 合作伙伴
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult CaseListItemsScroll() {
+            string categoryCode = "partner";
+            return View(ArticleService.GetArticlesByCategoryCode(categoryCode));
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace SunShine.Web.Controllers
     public class CaseController : Controller
     {
         // GET: Case
-        public ActionResult Index(string categoryCode,string currentCategoryCode="",int pageIndex = 0)
+        public ActionResult Index(string categoryCode,string currentCategoryCode="",string idarticle="",int pageIndex = 0)
         {
             int pageCount = 0;
             int pageSize = 10;
@@ -26,8 +26,17 @@ namespace SunShine.Web.Controllers
                     return RedirectToAction("Index","Home");
                 }
             }
-            
-            List<ArticleViewModel> articles= ArticleService.GetArticlesByCategoryCode(currentCategoryCode);
+
+            List<ArticleViewModel> articles = new List<ArticleViewModel>();
+            if (!string.IsNullOrEmpty(idarticle))
+            {
+                articles.Add(ArticleService.GetViewModel(idarticle));
+            }
+            else
+            {
+                articles = ArticleService.GetArticlesByCategoryCode(currentCategoryCode);
+            }
+
             List<ArticleViewModel> pageList = articles.Pager<ArticleViewModel>(pageIndex, pageSize, out pageCount);
 
             ViewData["pageCount"] = pageCount;
