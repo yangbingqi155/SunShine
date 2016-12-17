@@ -16,20 +16,20 @@
         <div class="cp_right">
             <div class="title">
                 <ul id="tabs">
-                    <li style="background:#5f6870"><a href="product.html" class="tab">热销产品</a></li>
-                    <li style="background:#da251c"><a href="product.html" class="tab">最新产品</a></li>
+                    <li class="title_PopularProduct" style="background:#da251c"><a href="" class="tab">热销产品</a></li>
+                    <li class="title_NewestProduct" style="background:#5f6870"><a href="" class="tab">最新产品</a></li>
                 </ul>
             </div>
             <div class="tab_box">
                 <ul id="tab_conbox">
-                    <li>
-                        <div class="more1"><a href="@Url.Action("List","Product")"><img src="~/images/home/more1.jpg"></a></div>
+                    <li class="PopularProduct">
+                        <div class="more1"><a href="@Url.Action("List","Product")"><span style="font-size:17px;font-weight:500;font-family:'Microsoft YaHei'">More +</span>&nbsp;&nbsp;<img src="~/images/home/more1.jpg"></a></div>
                         @{ 
                             Html.RenderPartial("_ProductItemPartial", hotProducts);
                         }
                     </li>
-                    <li style="display:none;">
-                        <div class="more1"><a href="product.html"><img src="images/more1.png"></a></div>
+                    <li class="NewestProduct" style="display:none;">
+                        <div class="more1"><a href="product.html"><span style="font-size:17px;font-weight:500;font-family:'Microsoft YaHei'">More +</span>&nbsp;&nbsp;<img src="~/images/home/more1.jpg"></a></div>
                         @{
                             Html.RenderPartial("_ProductItemPartial", newProducts);
                         }
@@ -43,7 +43,7 @@
 <br /> 
 <div style="width:1444px;margin:0px auto;">
     @{ 
-        Html.RenderPartial("_CaseListItemsScroll");
+        Html.RenderAction("CaseListItemsScroll", "Parts");
     }
     <br />
     <div class="picture_center"><img src="~/Images/home/xuchuan_1.jpg" /></div>

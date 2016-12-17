@@ -852,9 +852,9 @@
     <Content Include="Views\Parts\LeftProductCategory.cshtml" />
     <Content Include="Views\Shared\_ProductItemPartial.cshtml" />
     <Content Include="Views\Product\List.cshtml" />
-    <Content Include="Views\Shared\_CaseListItemsScroll.cshtml" />
     <Content Include="Views\Shared\_PartnerHeader.cshtml" />
     <Content Include="Views\Shared\_ProductItemDetailPartial.cshtml" />
+    <Content Include="Views\Parts\CaseListItemsScroll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
