@@ -115,6 +115,8 @@
             $(".yuangongfengcai").hide();
             $(".bangongzhanshi").show();
             $(this).css("background", "#da251c");
+            $(".tab_1").css("background", "#5f6870");
+            $(".tab_3").css("background", "#838280");
         })
 
         $(".tab_1").mouseover(function () {
@@ -122,6 +124,8 @@
             $(".yuangongfengcai").hide();
             $(".bangongzhanshi").hide();
             $(this).css("background", "#da251c");
+            $(".tab_2").css("background", "#5f6870");
+            $(".tab_3").css("background", "#838280");
         })
 
         $(".tab_3").mouseover(function () {
@@ -129,6 +133,22 @@
             $(".yuangongfengcai").show();
             $(".bangongzhanshi").hide();
             $(this).css("background", "#da251c");
+            $(".tab_1").css("background", "#5f6870");
+            $(".tab_2").css("background", "#838280");
+        })
+
+        $(".title_PopularProduct").mouseover(function () {
+            $(this).css("background", "#da251c");
+            $(".title_NewestProduct").css("background", "#838280");
+            $(".PopularProduct").show();
+            $(".NewestProduct").hide();
+        })
+
+        $(".title_NewestProduct").mouseover(function () {
+            $(this).css("background", "#da251c");
+            $(".title_PopularProduct").css("background", "#838280");
+            $(".PopularProduct").hide();
+            $(".NewestProduct").show();
         })
 
     })
