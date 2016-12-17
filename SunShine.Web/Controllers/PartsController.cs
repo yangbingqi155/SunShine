@@ -93,5 +93,14 @@ namespace SunShine.Web.Controllers
             string categoryCode = "partner";
             return View(ArticleService.GetArticlesByCategoryCode(categoryCode));
         }
+
+        /// <summary>
+        /// 公司介绍
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult InstroductionCompany() {
+            string categoryCode = "partner";
+            return View(ArticleService.GetArticlesByCategoryCode(categoryCode));
+        }
     }
 }

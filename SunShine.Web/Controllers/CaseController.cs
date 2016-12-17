@@ -16,7 +16,7 @@ namespace SunShine.Web.Controllers
         public ActionResult Index(string categoryCode,string currentCategoryCode="",string idarticle="",int pageIndex = 0)
         {
             int pageCount = 0;
-            int pageSize = 10;
+            int pageSize = 2;
             if (string.IsNullOrEmpty(currentCategoryCode)) {
                List<SiteCategoryViewModel> childrenCategories= SiteCategoryService.GetChildCategoriesByCode(categoryCode);
                 if (childrenCategories != null && childrenCategories.Count > 0) {
@@ -30,7 +30,9 @@ namespace SunShine.Web.Controllers
             List<ArticleViewModel> articles = new List<ArticleViewModel>();
             if (!string.IsNullOrEmpty(idarticle))
             {
-                articles.Add(ArticleService.GetViewModel(idarticle));
+                ArticleViewModel viewModel = ArticleService.GetViewModel(idarticle);
+                currentCategoryCode = viewModel.Category.categorycode;
+                articles.Add(viewModel);
             }
             else
             {

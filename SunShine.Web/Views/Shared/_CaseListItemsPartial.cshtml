@@ -10,7 +10,7 @@
             <div class="case_list_item">
                 <div class="itemimg">
                     @if (!string.IsNullOrEmpty(Model[i].img)) {
-                        <img src="@Url.Content(Model[i].img)" />
+                        <a href="@Url.Action("Index","Case",new { categoryCode="",currentCategoryCode=""})"><img src="@Url.Content(Model[i].img)" /></a>
                     }
                 </div>
                 <div class="itemdesc">
