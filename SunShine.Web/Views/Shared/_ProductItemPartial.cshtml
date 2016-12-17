@@ -6,13 +6,12 @@
 
 @{
     if (Model != null && Model.Count > 0) {
-
         <div class="cp_list">
             <ul>
                 @foreach (var item in Model) {
                     <li>
-                        <div class="cp_img"><a href="productDetial-155.html" title=""><img src="@Url.Content(item.img)" onload="DrawImage(this,359,196)" alt="" /></a></div>
-                        <div class="cp_name"><a href="productDetial-155.html">@item.name</a></div>
+                        <div class="cp_img"><a href="@Url.Action("List","Product",new { idproduct=item.idproduct})" title=""><img src="@Url.Content(item.img)" onload="DrawImage(this,359,196)" alt="" /></a></div>
+                        <div class="cp_name"><a href="@Url.Action("List","Product",new { idproduct=item.idproduct})">@item.name</a></div>
                         <div class="ckxq">
                             <div class="ckxq_left"><a href="@Url.Action("List","Product",new { idproduct=item.idproduct})">查看详情</a></div>
                             <div class="ckxq_ljzx"><a href="javascript:void(0);" target="_blank">立即咨询</a></div>
@@ -23,6 +22,6 @@
         </div>
     }
     else {
-        <h3>暂无产品</h3>
+        <div class="no_data_div">暂无产品</div>
     }
 }
