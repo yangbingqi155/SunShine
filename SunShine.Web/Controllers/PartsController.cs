@@ -14,7 +14,11 @@ namespace SunShine.Web.Controllers
         // GET: HotSale
         public ActionResult HotSale()
         {
-            return View();
+            List<ProductViewModel> products= ProductService.GetALLViewModels().Where(en=>en.ishot).ToList();
+            if (products!=null&& products.Count>3) {
+                products=products.Take(3).ToList();
+            }
+            return View(products);
         }
 
         /// <summary>
@@ -22,7 +26,8 @@ namespace SunShine.Web.Controllers
         /// </summary>
         /// <returns></returns>
         public ActionResult Partner() {
-            return View();
+            string categoryCode = "lastestcase";
+            return View(ArticleService.GetArticlesByCategoryCode(categoryCode));
         }
 
         /// <summary>

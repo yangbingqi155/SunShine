@@ -34,5 +34,9 @@ namespace SunShine.EF
         public int? sortno { get; set; }
 
         public bool inuse { get; set; }
+
+        public bool ishot { get; set; }
+
+        public bool isnew { get; set; }
     }
 }

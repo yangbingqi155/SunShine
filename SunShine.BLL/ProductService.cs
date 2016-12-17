@@ -85,6 +85,8 @@ namespace SunShine.BLL
             oldProduct.description = product.description;
             oldProduct.sortno = product.sortno;
             oldProduct.inuse = product.inuse;
+            oldProduct.ishot = product.ishot;
+            oldProduct.isnew = product.isnew;
             db.SaveChanges();
             return oldProduct;
         }

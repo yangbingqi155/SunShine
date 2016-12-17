@@ -55,6 +55,12 @@ namespace SunShine.Model {
         [Display(Name = "启用")]
         public new bool inuse { get; set; }
 
+        [Display(Name ="是否热销")]
+        public new bool ishot { get; set; }
+
+        [Display(Name ="是否最新")]
+        public new bool isnew { get; set; }
+
 
         public void CopyFromBase(Product product) {
             this.idproduct = product.idproduct;
@@ -66,6 +72,8 @@ namespace SunShine.Model {
             this.cretime = product.cretime;
             this.sortno = product.sortno;
             this.inuse = product.inuse;
+            this.ishot = product.ishot;
+            this.isnew = product.isnew;
         }
 
         public void CopyToBase(Product product) {
@@ -78,6 +86,8 @@ namespace SunShine.Model {
             product.cretime = this.cretime;
             product.sortno = this.sortno;
             product.inuse = this.inuse;
+            product.ishot = this.ishot;
+            product.isnew = this.isnew;
         }
     }
 }

@@ -855,6 +855,7 @@
     <Content Include="Views\Shared\_PartnerHeader.cshtml" />
     <Content Include="Views\Shared\_ProductItemDetailPartial.cshtml" />
     <Content Include="Views\Parts\CaseListItemsScroll.cshtml" />
+    <Content Include="Views\Parts\InstroductionCompany.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

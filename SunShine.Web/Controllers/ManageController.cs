@@ -238,6 +238,58 @@ namespace TNet.Controllers
         }
 
         /// <summary>
+        /// 设置产品是否热销
+        /// </summary>
+        /// <param name="idproduct"></param>
+        /// <param name="ishot"></param>
+        /// <param name="isAjax"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ManageLoginValidation]
+        public ActionResult ProductHot(string idproduct, bool ishot, bool isAjax) {
+            ResultModel<ProductViewModel> resultEntity = new ResultModel<ProductViewModel>();
+            resultEntity.Code = ResponseCodeType.Success;
+            resultEntity.Message = "成功";
+            try {
+                Product product = ProductService.Get(idproduct);
+                product.ishot = ishot;
+                ProductService.Edit(product);
+            }
+            catch (Exception ex) {
+                resultEntity.Code = ResponseCodeType.Fail;
+                resultEntity.Message = ex.ToString();
+            }
+
+            return Content(resultEntity.SerializeToJson());
+        }
+
+        /// <summary>
+        /// 设置产品是否热销
+        /// </summary>
+        /// <param name="idproduct"></param>
+        /// <param name="isnew"></param>
+        /// <param name="isAjax"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ManageLoginValidation]
+        public ActionResult ProductNew(string idproduct, bool isnew, bool isAjax) {
+            ResultModel<ProductViewModel> resultEntity = new ResultModel<ProductViewModel>();
+            resultEntity.Code = ResponseCodeType.Success;
+            resultEntity.Message = "成功";
+            try {
+                Product product = ProductService.Get(idproduct);
+                product.isnew = isnew;
+                ProductService.Edit(product);
+            }
+            catch (Exception ex) {
+                resultEntity.Code = ResponseCodeType.Fail;
+                resultEntity.Message = ex.ToString();
+            }
+
+            return Content(resultEntity.SerializeToJson());
+        }
+
+        /// <summary>
         /// 新增\编辑产品
         /// </summary>
         /// <param name="idproduct"></param>

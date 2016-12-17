@@ -66,6 +66,8 @@
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, DateTime?>(en => en.cretime))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, int?>(en => en.sortno))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, bool>(en => en.inuse))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, bool>(en => en.ishot))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, bool>(en => en.isnew))</th>
                         <th>操作</th>
                     </tr>
                 </thead>
@@ -88,6 +90,16 @@
                                 </div>
                             </td>
                             <td>
+                                <div class="switch">
+                                    <input type="checkbox" onchange="enableModel('@Url.Action("ProductHot", "Manage", new { idproduct = item.idproduct, ishot = !item.ishot, isAjax = true })','@Url.Action("Login", "Manage")')" name="hotProduct" @(item.ishot ? "checked" : "") />
+                                </div>
+                            </td>
+                            <td>
+                                <div class="switch">
+                                    <input type="checkbox" onchange="enableModel('@Url.Action("ProductNew", "Manage", new { idproduct = item.idproduct, isnew = !item.isnew, isAjax = true })','@Url.Action("Login", "Manage")')" name="newProduct" @(item.isnew ? "checked" : "") />
+                                </div>
+                            </td>
+                            <td>
                                 <a href="@Url.Action("ProductEdit","Manage",new {idproduct=item.idproduct })" class="btn btn-primary">编辑</a>
 
                             </td>
@@ -105,8 +117,8 @@
 </div>
 <script type="text/javascript">
     $(function () {
-        $.fn.bootstrapSwitch.defaults.onText = '启用';
-        $.fn.bootstrapSwitch.defaults.offText = '禁用';
-        $("[name='enableProduct']").bootstrapSwitch();
+        $("[name='enableProduct']").bootstrapSwitch({onText:"启用",offText:"禁用"});
+        $("[name='hotProduct']").bootstrapSwitch({onText:"是",offText:"否"});
+        $("[name='newProduct']").bootstrapSwitch({onText:"是",offText:"否"});
     });
 </script>
