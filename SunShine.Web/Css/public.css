@@ -32,7 +32,7 @@
     float: left;
     border: 1px solid #FFFFFF;
     margin-left: 5%;
-    width: 25%;
+    width: 20%;
     margin-top: 10px;
 }
 
@@ -41,14 +41,14 @@
     float: left;
     font-size: 18px;
     font-weight: bold;
-    width: 38%;
+    width: 49%;
 }
 
 .success_case_subtitle .subtitle_right {
     float: right;
     border: 1px solid #FFFFFF;
     margin-right: 5%;
-    width: 25%;
+    width: 20%;
     margin-top: 10px;
 }
 
@@ -104,11 +104,15 @@
 
     .case_honor_top .case_honor_more {
         padding-top: 2px;
-        font-size: 14px;
-        font-weight: bold;
-        float: right;
         margin-right: 16px;
     }
+
+        .case_honor_top .case_honor_more a {
+            font-size: 14px;
+            font-weight: bold;
+            float: right;
+            color: #FFFFFF;
+        }
 
 .case_honor_bottom {
     border-left: 1px solid #c3c3c3;
@@ -134,9 +138,12 @@
 .honoritem .honor_img_title {
     margin-top: 10px;
     text-align: center;
-    font-size: 18px;
-    font-weight: bold;
 }
+
+    .honoritem .honor_img_title a {
+        font-size: 18px;
+        font-weight: bold;
+    }
 
 .case_contactus_top {
     border: 1px solid #c3c3c3;
@@ -159,11 +166,16 @@
 
     .case_contactus_top .case_contactus_more {
         padding-top: 2px;
-        font-size: 14px;
-        font-weight: bold;
         float: right;
         margin-right: 16px;
+        text-align: center;
     }
+
+        .case_contactus_top .case_contactus_more a {
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: bold;
+        }
 
 .case_contactus_bottom {
     border-left: 1px solid #c3c3c3;
@@ -271,10 +283,10 @@
 .case_list_item .itemdesc {
     float: left;
     margin-left: 32px;
-    width:450px;
+    width: 450px;
 }
 
-    .case_list_item .itemdesc .itemtitle {
+    .case_list_item .itemdesc .itemtitle a {
         font-size: 14px;
         color: #da251c;
         font-weight: bold;
@@ -284,6 +296,28 @@
         margin-top: 10px;
         font-weight: bold;
         font-size: 16px;
+    }
+
+/**/
+.case_list .case_question_item {
+    border-bottom: 1px dashed #c3c3c3;
+    padding: 26px 10px 20px 10px;
+}
+
+.case_question_item .itemdesc {
+    margin-left: 30px;
+    width: 676px;
+}
+
+    .case_question_item .itemdesc .itemtitle a {
+        font-size: 14px;
+        color: #da251c;
+        font-weight: bold;
+    }
+
+    .case_question_item .itemdesc .itemdetail {
+        margin-top: 10px;
+        font-size: 14px;
     }
 
 

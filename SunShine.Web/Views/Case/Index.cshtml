@@ -7,6 +7,7 @@
     ViewBag.Title = "创意阳光";
     Layout = "~/Views/Shared/_Layout.cshtml";
     string currentCategoryCode = ViewData["currentCategoryCode"].ToString();
+    string categoryCode = ViewData["categoryCode"].ToString();
     List<SiteCategory> navPath = (List<SiteCategory>)ViewData["navPath"];
     var pageCount = Convert.ToInt32(ViewData["pageCount"]);
     var pageIndex = Convert.ToInt32(ViewData["pageIndex"]);
@@ -14,7 +15,7 @@
 <div class="case_box">
     <div class="case_left">
         @{
-            Html.RenderAction("NavSuccessCases", "Parts", new { categoryCode = Request["categoryCode"], currentCategoryCode=Request["currentCategoryCode"] });
+            Html.RenderAction("NavSuccessCases", "Parts", new { categoryCode = categoryCode, currentCategoryCode= currentCategoryCode });
             Html.RenderAction("NavHonors", "Parts");
             Html.RenderAction("NavContactUs", "Parts");
         }
@@ -46,6 +47,10 @@
             else {
                 if (currentCategoryCode == "serviceflow" || currentCategoryCode == "honor") {
                     Html.RenderPartial("_CaseFloatListItemsPartial", Model);
+                }
+                else if( currentCategoryCode == "commonquestion")
+                {
+                    Html.RenderPartial("_CaseQuestionItemsPartial", Model);
                 }
                 else {
                     Html.RenderPartial("_CaseListItemsPartial", Model);

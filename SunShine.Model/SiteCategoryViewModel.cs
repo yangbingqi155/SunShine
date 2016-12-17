@@ -9,8 +9,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SunShine.Model {
     [NotMapped]
-    public class SiteCategoryViewModel:SiteCategory {
-        [Display(Name ="类别编号")]
+    public class SiteCategoryViewModel : SiteCategory {
+        [Display(Name = "类别编号")]
         [StringLength(50)]
         public new string idcategory { get; set; }
 
@@ -40,6 +40,9 @@ namespace SunShine.Model {
 
         [Display(Name = "父级类别")]
         public SiteCategory ParentCategory { get; set; }
+
+        [Display(Name = "父级类别路径")]
+        public string ParentCategoryNamePath { get; set; }
 
 
         public void CopyFromBase(SiteCategory category) {

@@ -30,12 +30,14 @@ namespace SunShine.BLL
                 SiteCategoryViewModel viewModel = new SiteCategoryViewModel();
                 viewModel.CopyFromBase(model);
                 List<SiteCategory> parentCategories = new List<SiteCategory>();
-                string parentCategoryName = string.Empty;
-                parentCategories=getParentCategories(model.parentid, parentCategories);
-                for (int i=0;i< parentCategories.Count;i++) {
-                    parentCategoryName += (i == 0 ? parentCategories[i].categoryname : parentCategories[i].categoryname + "-");
-                }
-                viewModel.ParentCategory = new SiteCategory() { categoryname= parentCategoryName };
+                //string parentCategoryName = string.Empty;
+                //parentCategories=getParentCategories(model.parentid, parentCategories);
+                //for (int i=0;i< parentCategories.Count;i++) {
+                //    parentCategoryName += (i == 0 ? parentCategories[i].categoryname : parentCategories[i].categoryname + "-");
+                //}
+                SiteCategoryViewModel parentViewModel = new SiteCategoryViewModel();
+                viewModel.ParentCategory = Get(model.parentid);
+
                 return viewModel;
             }).ToList();
             return entities;
@@ -101,6 +103,12 @@ namespace SunShine.BLL
         public static SiteCategory GetByCode(string code) {
             TN db = new TN();
             return db.SiteCategories.Where(en => en.categorycode == code).FirstOrDefault();
+        }
+
+        public static SiteCategoryViewModel GetViewModelByCode(string code)
+        {
+            TN db = new TN();
+            return ConvertToViewModel(db.SiteCategories.Where(en => en.categorycode == code).ToList()).FirstOrDefault();
         }
 
         public static List<SiteCategoryViewModel> GetChildCategoriesByCode(string code) {

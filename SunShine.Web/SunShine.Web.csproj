@@ -363,7 +363,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\case\anwer.jpg" />
     <Content Include="Images\case\phone_icon.jpg" />
+    <Content Include="Images\case\question.jpg" />
     <Content Include="Images\home\advertise-1.jpg" />
     <Content Include="Images\home\advertise-2.jpg" />
     <Content Include="Images\home\banner-1.jpg" />
@@ -855,6 +857,7 @@
     <Content Include="Views\Shared\_ProductItemDetailPartial.cshtml" />
     <Content Include="Views\Parts\CaseListItemsScroll.cshtml" />
     <Content Include="Views\Parts\InstroductionCompany.cshtml" />
+    <Content Include="Views\Shared\_CaseQuestionItemsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

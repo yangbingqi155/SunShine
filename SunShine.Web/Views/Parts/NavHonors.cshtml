@@ -7,7 +7,7 @@
     if (Model != null && Model.Count > 0) {
         <div class="case_honor_top">
             <div class="case_honor_title">@Model.First().Category.categoryname</div>
-            <div class="case_honor_more">更多+</div>
+            <div class="case_honor_more"><a href="@Url.Action("Index","Case",new { categoryCode="successcase",currentCategoryCode="honor"})">更多+</a></div>
             <div style="clear:both;"></div>
         </div>
         <div class="case_honor_bottom">
@@ -15,11 +15,11 @@
                 <div class="honoritem">
                     <div class="honor_img">
                         @if (!string.IsNullOrEmpty(Model[i].img)) {
-                            <img src="@Url.Content(Model[i].img)" />
+                            <a href="@Url.Action("Index","Case",new {idarticle=Model[i].idarticle })"><img src="@Url.Content(Model[i].img)" /></a>
                         }
                     </div>
                     <div class="honor_img_title">
-                        @Model[i].title
+                        <a href="@Url.Action("Index","Case",new {idarticle=Model[i].idarticle })">@Model[i].title</a>
                     </div>
                 </div>
             }
