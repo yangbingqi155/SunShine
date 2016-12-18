@@ -793,6 +793,14 @@ ul.thirdLevel {
     width: 1024px;
     margin: 20px auto;
 }
+    .category_box .category_header {
+        font-size:22px;
+        color:#D82021;
+        text-align:left;
+        padding-left:20px;
+        font-weight:bold;
+        border-bottom: 1px solid #C0C0C0;
+    }
 
     .category_box .category_item {
         margin-top: 20px;

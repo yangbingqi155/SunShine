@@ -23,7 +23,7 @@
             <div class="tab_box">
                 <ul id="tab_conbox">
                     <li class="PopularProduct">
-                        <div class="more1"><a href="@Url.Action("List","Product")"><span style="font-size:17px;font-weight:500;font-family:'Microsoft YaHei'">More +</span>&nbsp;&nbsp;<img src="~/images/home/more1.jpg"></a></div>
+                        <div class="more1"><a href="@Url.Action("List", "Product")"><span style="font-size:17px;font-weight:500;font-family:'Microsoft YaHei'">More +</span>&nbsp;&nbsp;<img src="~/images/home/more1.jpg"></a></div>
                         @{ 
                             Html.RenderPartial("_ProductItemPartial", hotProducts);
                         }
@@ -130,7 +130,7 @@
 @{ 
     Html.RenderPartial("_HistoryBannerPartial", null);
     Html.RenderPartial("_CustomerSupportTitlePartial", null);
-    Html.RenderAction("Partner","Parts");
+    Html.RenderAction("Partner", "Parts");
     Html.RenderPartial("_CustomizeFlowPartial", null);
     Html.RenderAction("InstroductionCompany", "Parts");
 }
@@ -138,85 +138,13 @@
 
     <div class="news">
         <div class="news_center">
-                <div class="xw">
-                    <div class="news_t">
-                        <ul>
-                            <!--  <li class="xuanz"><a href="JavaScript:;">媒体报道</a></li> -->
-                            <li class="no1"><a href="JavaScript:;">媒体报道</a></li>
-                        </ul>
-                        <div class="more"><a href="news.html" id="news_links"><img src="~/Images/home/more_2.jpg"></a></div>
-                    </div>
-                    <div class="content4">
-
-                        <div class="shang">
-                            <div class="tutu"><a href="article-207.html" title=""><img src="~/Images/home/meitibaodao_1.jpg" alt="" onload="DrawImage(this,120,102)" style="width:230px; height:141px; margin-left: -7.68143px;"></a></div>
-                            <div class="right_news">
-                                <p><a href="article-207.html">我公司为顺天德酒楼制作安装发光字</a></p>
-                                <span><a href="article-207.html">今天,接到顺天德陈总打来电话,要求为他的酒楼设计制作发光字<br />陈总因为以前就跟我们公司合作过,所以现在特别信赖我们公司的产品......<br /><div style="color:red">了解更多</div></a></span>
-                            </div>
-                        </div>
-
-
-                        <div class="xia">
-                            <ul>
-
-                                <li><img src="~/Images/home/jiantou_3.jpg"><a href="article-205.html"><span>2016-09-01</span>武汉创意阳光广告公司为肯德基设计制作发光字</a></li>
-
-                                <li><img src="~/Images/home/jiantou_3.jpg"><a href="article-203.html"><span>2016-10-05</span>楼顶发光字的效果不错,得到客户的一致认可,客户再次下单制作</a></li>
-
-                                <li><img src="~/Images/home/jiantou_3.jpg"><a href="article-201.html"><span>2016-10-24</span>武汉创意阳光广告公司为肯德基设计制作发光字</a></li>
-
-                                <li><img src="~/Images/home/jiantou_3.jpg"><a href="article-198.html"><span>2016-10-25</span>武汉大洋百货购物广场迷你发光字全部是我公司制作安装</a></li>
-
-                                <li><img src="~/Images/home/jiantou_3.jpg"><a href="article-189.html"><span>2016-10-30</span>武汉创意阳光广告公司为肯德基设计制作发光字</a></li>
-
-                                <li><img src="~/Images/home/jiantou_3.jpg"><a href="article-186.html"><span>2016-11-01</span>武汉创意阳光广告公司为肯德基设计制作发光字</a></li>
-
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
+                @{ 
+                    Html.RenderAction("NavNews","Parts");
+                }
                  <div class="yiny"><img src="~/Images/home/fgz_59.jpg"></div> 
-                <div class="wt">
-                    <div class="news_tt">
-                        <div class="news_t2"><a href="common.html">常见问题</a></div>
-                        <div class="more"><a href="common.html"><img src="~/Images/home/more_2.jpg"></a></div>
-                    </div>
-
-                    <div class="youshang">
-                        <div class="tutu"><a href="article-207.html" title=""><img src="/Images/home/qiaojiangnan_1.jpg" alt="" onload="DrawImage(this,120,102)" style="width:230px; height:141px; margin-left: -7.68143px;"></a></div>
-                        <div class="right_news">
-                            <p><a href="article-207.html">我公司为顺天德酒楼制作安装发光字</a></p>
-                            <span><a href="article-207.html">今天,接到顺天德陈总打来电话,要求为他的酒楼设计制作发光字<br>陈总因为以前就跟我们公司合作过,所以现在特别信赖我们公司的产品......<br><div style="color:red">了解更多</div></a></span>
-                        </div>
-                    </div>
-
-                    <div class="wenti_box">
-                        <ul>
-
-                            <li>
-                                <div class="datetime">2016-09-01</div>
-                                <div class="wenben">高分子亚克力雕刻，由高分子亚克板材正反面雕刻成型的新型发光字,四边有烤漆,外观效果十分精美雅致,美观醒目又色彩鲜明还具有小巧高贵,时尚靓丽的特点 <br />超高亮模组灯,高品质原厂蛇缠LED模组灯带，更广寿命达到50000+小时,厂家月销售10万件0退货,夜间发光均匀,柔和饱满,亮光不刺眼</div>
-                            </li>
-
-
-                            <li>
-                                <div class="datetime">2016-09-01</div>
-                                <div class="wenben">高分子亚克力雕刻，由高分子亚克板材正反面雕刻成型的新型发光字,四边有烤漆,外观效果十分精美雅致,美观醒目又色彩鲜明还具有小巧高贵,时尚靓丽的特点 <br />超高亮模组灯,高品质原厂蛇缠LED模组灯带，更广寿命达到50000+小时,厂家月销售10万件0退货,夜间发光均匀,柔和饱满,亮光不刺眼</div>
-                            </li>
-
-
-                            <li>
-                                <div class="datetime">2016-09-01</div>
-                                <div class="wenben">高分子亚克力雕刻，由高分子亚克板材正反面雕刻成型的新型发光字,四边有烤漆,外观效果十分精美雅致,美观醒目又色彩鲜明还具有小巧高贵,时尚靓丽的特点 <br />超高亮模组灯,高品质原厂蛇缠LED模组灯带，更广寿命达到50000+小时,厂家月销售10万件0退货,夜间发光均匀,柔和饱满,亮光不刺眼</div>
-                            </li>
-
-
-                        </ul>
-                    </div>
-                </div>
+                @{
+                    Html.RenderAction("NavQuestions", "Parts");
+                }
                 <div style="clear:both;"></div>
 </div>
     </div>

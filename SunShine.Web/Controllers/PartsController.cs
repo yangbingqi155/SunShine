@@ -99,7 +99,31 @@ namespace SunShine.Web.Controllers
         /// </summary>
         /// <returns></returns>
         public ActionResult InstroductionCompany() {
-            string categoryCode = "partner";
+            string showProductionCategoryCode = "showproduction";
+            string showOfficeCategoryCode = "showoffice";
+            string showTeamCategoryCode = "showteam";
+            List<ArticleViewModel> showProductionCategories = ArticleService.GetArticlesByCategoryCode(showProductionCategoryCode);
+            List<ArticleViewModel> showOfficeCategories = ArticleService.GetArticlesByCategoryCode(showOfficeCategoryCode);
+            List<ArticleViewModel> showTeamnCategories = ArticleService.GetArticlesByCategoryCode(showTeamCategoryCode);
+
+            showProductionCategories = showProductionCategories.Count > 4 ? showProductionCategories.Take(4).ToList() : showProductionCategories;
+            showOfficeCategories = showOfficeCategories.Count > 4 ? showOfficeCategories.Take(4).ToList() : showOfficeCategories;
+            showTeamnCategories = showTeamnCategories.Count > 4 ? showTeamnCategories.Take(4).ToList() : showTeamnCategories;
+
+            ViewData["showProductionCategories"] = showProductionCategories;
+            ViewData["showOfficeCategories"] = showOfficeCategories;
+            ViewData["showTeamnCategories"] = showTeamnCategories;
+            return View();
+        }
+
+        public ActionResult NavNews() {
+            string categoryCode = "mediareport";
+            return View(ArticleService.GetArticlesByCategoryCode(categoryCode));
+        }
+
+        public ActionResult NavQuestions()
+        {
+            string categoryCode = "commonquestion";
             return View(ArticleService.GetArticlesByCategoryCode(categoryCode));
         }
     }

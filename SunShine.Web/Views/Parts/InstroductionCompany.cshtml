@@ -2,6 +2,15 @@
 
 @{
     Layout = null;
+
+    List<ArticleViewModel> showProductionCategories =( List<ArticleViewModel>)ViewData["showProductionCategories"];
+    List<ArticleViewModel> showOfficeCategories =( List<ArticleViewModel>)ViewData["showOfficeCategories"];
+    List<ArticleViewModel> showTeamnCategories =( List<ArticleViewModel>)ViewData["showTeamnCategories"];
+    showProductionCategories = showProductionCategories == null ? new List<ArticleViewModel>() : showProductionCategories;
+    showOfficeCategories = showOfficeCategories == null ? new List<ArticleViewModel>() : showOfficeCategories;
+    showTeamnCategories = showTeamnCategories == null ? new List<ArticleViewModel>() : showTeamnCategories;
+
+
 }
 <div class="zhanshi">
     <div class="title">
@@ -14,93 +23,59 @@
     <div class="tab_box">
         <ul id="tab_conbox">
             <li>
-                <div class="more1"><a href="product.html"><img src="/images/home/more1.jpg"></a></div>
+                <div class="more1"><a href="@Url.Action("Index","Case",new { categoryCode="show"})"><img src="/images/home/more1.jpg"></a></div>
                 <div class="zhanshitupian">
                     <ul class="shengchanshilizhan">
-
-                        <li>
-                            <div class="cp_img"><a href="productDetial-155.html" title="高级树脂三面发光字"><img src="/Images/home/zhanshiImages_1.jpg" onload="DrawImage(this,359,196)" alt="高级树脂三面发光字"></a></div>
-                            <div class="cp_name"><a href="productDetial-155.html">高级树脂三面发光字</a></div>
-
-                        </li>
-
-                        <li>
-                            <div class="cp_img"><a href="productDetial-154.html" title="高级通体三面发光字"><img src="/Images/home/zhanshiImages_2.jpg" onload="DrawImage(this,359,196)" alt="高级通体三面发光字"></a></div>
-                            <div class="cp_name"><a href="productDetial-154.html">高级通体三面发光字</a></div>
-
-                        </li>
-
-                        <li>
-                            <div class="cp_img"><a href="productDetial-153.html" title="高级亚克力三面发光字"><img src="/Images/home/zhanshiImages_3.jpg" onload="DrawImage(this,359,196)" alt="高级亚克力三面发光字"></a></div>
-                            <div class="cp_name"><a href="productDetial-153.html">高级亚克力三面发光字</a></div>
-
-                        </li>
-
-                        <li class="no_mar">
-                            <div class="cp_img"><a href="productDetial-152.html" title="树脂三面发光字"><img src="/Images/home/zhanshiImages_4.jpg" onload="DrawImage(this,359,196)" alt="树脂三面发光字"></a></div>
-                            <div class="cp_name"><a href="productDetial-152.html">树脂三面发光字</a></div>
-
-                        </li>
-
-
+                        @foreach (var item in showProductionCategories)
+                        {
+                            <li>
+                                <div class="cp_img">
+                                    @if (!string.IsNullOrEmpty(item.img))
+                                    {
+                                        <a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})" title="@item.title">
+                                            <img src="@Url.Content(item.img)" onload="DrawImage(this,359,196)" alt="@item.title">
+                                        </a>
+                                    }
+                                    
+                                </div>
+                                <div class="cp_name"><a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})">@item.title</a></div>
+                            </li>
+                        }
                     </ul>
 
                     <ul class="bangongzhanshi" style="display:none">
+                        @foreach (var item in showOfficeCategories)
+                        {
+                            <li>
+                                <div class="cp_img">
+                                    @if (!string.IsNullOrEmpty(item.img))
+                                    {
+                                        <a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})" title="@item.title">
+                                            <img src="@Url.Content(item.img)" onload="DrawImage(this,359,196)" alt="@item.title">
+                                        </a>
+                                    }
 
-                        <li>
-                            <div class="cp_img"><a href="productDetial-155.html" title="高级树脂三面发光字"><img src="/Images/home/zhanshiImages_4.jpg" onload="DrawImage(this,359,196)" alt="高级树脂三面发光字"></a></div>
-                            <div class="cp_name"><a href="productDetial-155.html">高级树脂三面发光字</a></div>
-
-                        </li>
-
-                        <li>
-                            <div class="cp_img"><a href="productDetial-154.html" title="高级通体三面发光字"><img src="/Images/home/zhanshiImages_3.jpg" onload="DrawImage(this,359,196)" alt="高级通体三面发光字"></a></div>
-                            <div class="cp_name"><a href="productDetial-154.html">高级通体三面发光字</a></div>
-
-                        </li>
-
-                        <li>
-                            <div class="cp_img"><a href="productDetial-153.html" title="高级亚克力三面发光字"><img src="/Images/home/zhanshiImages_2.jpg" onload="DrawImage(this,359,196)" alt="高级亚克力三面发光字"></a></div>
-                            <div class="cp_name"><a href="productDetial-153.html">高级亚克力三面发光字</a></div>
-
-                        </li>
-
-                        <li class="no_mar">
-                            <div class="cp_img"><a href="productDetial-152.html" title="树脂三面发光字"><img src="/Images/home/zhanshiImages_1.jpg" onload="DrawImage(this,359,196)" alt="树脂三面发光字"></a></div>
-                            <div class="cp_name"><a href="productDetial-152.html">树脂三面发光字</a></div>
-
-                        </li>
-
-
+                                </div>
+                                <div class="cp_name"><a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})">@item.title</a></div>
+                            </li>
+                        }
                     </ul>
 
                     <ul class="yuangongfengcai" style="display:none">
-
-                        <li>
-                            <div class="cp_img"><a href="productDetial-155.html" title="高级树脂三面发光字"><img src="/Images/home/zhanshiImages_2.jpg" onload="DrawImage(this,359,196)" alt="高级树脂三面发光字"></a></div>
-                            <div class="cp_name"><a href="productDetial-155.html">高级树脂三面发光字</a></div>
-
-                        </li>
-
-                        <li>
-                            <div class="cp_img"><a href="productDetial-154.html" title="高级通体三面发光字"><img src="/Images/home/zhanshiImages_4.jpg" onload="DrawImage(this,359,196)" alt="高级通体三面发光字"></a></div>
-                            <div class="cp_name"><a href="productDetial-154.html">高级通体三面发光字</a></div>
-
-                        </li>
-
-                        <li>
-                            <div class="cp_img"><a href="productDetial-153.html" title="高级亚克力三面发光字"><img src="/Images/home/zhanshiImages_3.jpg" onload="DrawImage(this,359,196)" alt="高级亚克力三面发光字"></a></div>
-                            <div class="cp_name"><a href="productDetial-153.html">高级亚克力三面发光字</a></div>
-
-                        </li>
-
-                        <li class="no_mar">
-                            <div class="cp_img"><a href="productDetial-152.html" title="树脂三面发光字"><img src="/Images/home/zhanshiImages_1.jpg" onload="DrawImage(this,359,196)" alt="树脂三面发光字"></a></div>
-                            <div class="cp_name"><a href="productDetial-152.html">树脂三面发光字</a></div>
-
-                        </li>
-
-
+                        @foreach (var item in showTeamnCategories)
+                        {
+                            <li>
+                                <div class="cp_img">
+                                    @if (!string.IsNullOrEmpty(item.img))
+                                    {
+                                        <a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})" title="@item.title">
+                                            <img src="@Url.Content(item.img)" onload="DrawImage(this,359,196)" alt="@item.title">
+                                        </a>
+                                    }
+                                </div>
+                                <div class="cp_name"><a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})">@item.title</a></div>
+                            </li>
+                        }
                     </ul>
                 </div>
             </li>

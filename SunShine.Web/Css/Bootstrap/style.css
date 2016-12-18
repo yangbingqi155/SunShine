@@ -107,8 +107,9 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 
 .zhanshitupian {width:1000px; float:right; overflow:hidden;}
 .zhanshitupian ul { width:1000px; overflow:hidden;}
-.zhanshitupian ul li { width:235px; height:200px; margin:22px 20px 0 0; float:left;}
-.zhanshitupian ul li .cp_img { width:235px; height:160px;  overflow:hidden;}
+.zhanshitupian ul li { width:230px; height:200px; margin:22px 20px 0 0; float:left;}
+.zhanshitupian ul li .cp_img { width:230px; height:160px;  overflow:hidden;}
+.zhanshitupian ul li .cp_img a img{ width:230px; height:160px; }
 .zhanshitupian ul li .cp_name { width:234px; height:28px; line-height:28px; background-color:#fff; font-size:14px; overflow:hidden; text-align:center;margin-top:5px}
 .zhanshitupian ul li .cp_name a{ color:#666; text-align:center; display:block;}
 
