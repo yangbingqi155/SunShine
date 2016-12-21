@@ -14,45 +14,8 @@
     <script type="text/javascript" src="@Url.Content("~/Scripts/jQuery/jquery-1.10.2.min.js?v=20161114")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/bootstrap.min.js?v=20161114")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/ScrollPic.js")"></script>
-    <script type="text/javascript">
-        var flag = false;
-        function SuchImage(ImgD, iwidth, iheight) {
-            var image = new Image();
-            image.src = ImgD.src;
-            if (image.width > 0 && image.height > 0) {
-                flag = true;
-                if (image.width / image.height >= iwidth / iheight) {
-                    if (image.width > iwidth) {
-                        ImgD.width = iwidth;
-                        ImgD.style.paddingTop = (iheight - (image.height * iwidth) / image.width) / 2 + "px";
-                        ImgD.style.paddingBottom = (iheight - (image.height * iwidth) / image.width) / 2 + "px";
-                        ImgD.height = (image.height * iwidth) / image.width;
-                    } else {
 
-                        if (iheight > image.height) {
-                            ImgD.style.paddingTop = (iheight - image.height) / 2 + "px";
-                            ImgD.style.paddingBottom = (iheight - image.height) / 2 + "px";
-                            ImgD.height = image.height;
-                            ImgD.width = image.height * iwidth / iheight;
-                        }
-                    }
-
-                }
-                else {
-                    if (image.height > iheight) {
-                        ImgD.height = iheight;
-                        ImgD.width = (image.width * iheight) / image.height;
-                    }
-                    else {
-                        ImgD.style.paddingTop = (iheight - image.height) / 2 + "px";
-                        ImgD.style.paddingBottom = (iheight - image.height) / 2 + "px";
-                        ImgD.height = image.height;
-                        ImgD.width = image.height * iwidth / iheight;
-                    }
-                }
-            }
-        }
-    </script>
+      
 </head>
 <body>
     <form id="form1">
