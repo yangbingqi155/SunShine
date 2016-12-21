@@ -16,8 +16,11 @@ namespace SunShine.Web.Controllers {
             List<ProductViewModel> allProducts = new List<ProductViewModel>();
             allProducts = ProductService.GetALLViewModels();
 
-            newProducts = allProducts.Count > 10 ? allProducts.Take(10).ToList(): allProducts;
-            hotProducts = newProducts;
+            newProducts = allProducts.Where(en => en.isnew).ToList();
+            hotProducts = allProducts.Where(en => en.ishot).ToList();
+
+            newProducts = newProducts.Count > 6 ? newProducts.Take(6).ToList(): newProducts;
+            hotProducts = hotProducts.Count > 6 ? hotProducts.Take(6).ToList() : hotProducts;
 
             ViewData["hotProducts"] = hotProducts;
             ViewData["newProducts"] = newProducts;
