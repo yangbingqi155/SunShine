@@ -111,7 +111,7 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 .zhanshitupian ul li .cp_img { width:230px; height:160px;  overflow:hidden;}
 .zhanshitupian ul li .cp_img a img{ width:230px; height:160px; }
 .zhanshitupian ul li .cp_name { width:234px; height:28px; line-height:28px; background-color:#fff; font-size:14px; overflow:hidden; text-align:center;margin-top:5px}
-.zhanshitupian ul li .cp_name a{ color:#666; text-align:center; display:block;}
+.zhanshitupian ul li .cp_name a{ color:#666; text-align:center; display:block;margin-left:2px}
 
 .ckxq { width:359px; height:39px; line-height:39px;}
 .ckxq_left {width:168px; height:24px; line-height:24px; border:#c9c9c9 1px solid; margin-top:13px; float:left;}

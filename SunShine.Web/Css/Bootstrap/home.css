@@ -250,6 +250,8 @@
     width: 220px;
 }
 
+
+
     .menu ul {
         display: none;
         list-style: none;
@@ -848,7 +850,7 @@ ul.thirdLevel {
 
 .honor_box {
     width: 100%;
-    background-color: #CC2826;
+    background-color: #c21119;
     padding-top: 30px;
     padding-bottom:10px;
 }
