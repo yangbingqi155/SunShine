@@ -16,7 +16,7 @@ namespace SunShine.Web.Controllers
         public ActionResult Index(string categoryCode="",string currentCategoryCode="",string idarticle="",int pageIndex = 0)
         {
             int pageCount = 0;
-            int pageSize = 2;
+            int pageSize = 6;
             
 
             List<ArticleViewModel> articles = new List<ArticleViewModel>();

@@ -16,7 +16,7 @@ namespace SunShine.Web.Controllers
         public ActionResult List(string idproduct="",string idcategory="",string categoryCode="", int pageIndex = 0)
         {
             int pageCount = 0;
-            int pageSize = 2;
+            int pageSize = 6;
             bool result = true;
             List<ProductViewModel> productViewModels = new List<ProductViewModel>();
             if (!string.IsNullOrEmpty(idproduct)&& result) {
