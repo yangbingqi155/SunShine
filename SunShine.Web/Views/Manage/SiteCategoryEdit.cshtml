@@ -54,6 +54,20 @@
                     @Html.ValidationMessageFor(model => model.englishname)
                 </div>
                 <div class="form-group">
+                    @Html.LabelFor(model => model.keyword, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-3">
+                        @Html.TextAreaFor(model => model.keyword, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.keyword)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.description, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-3">
+                        @Html.TextAreaFor(model => model.description, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.description)
+                </div>
+                <div class="form-group">
                     @Html.LabelFor(model => model.inuse, new { @class = "col-sm-2 control-label" })
                     <div class="col-sm-3">
                         @Html.CheckBoxFor(model => model.inuse, new { @class = "form-control" })

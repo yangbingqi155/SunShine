@@ -35,7 +35,13 @@ namespace SunShine.Model {
 
         [Display(Name = "创建时间")]
         public new DateTime? cretime { get; set; }
-        
+
+        [Display(Name = "SEO关键字")]
+        public new string keyword { get; set; }
+
+        [Display(Name = "SEO描述")]
+        public new string description { get; set; }
+
         public static List<SelectItemViewModel<int>> GroupMethodTypeSelectItems {
             get { 
             List<SelectItemViewModel<int>> list = new List<SelectItemViewModel<int>>();
@@ -69,6 +75,8 @@ namespace SunShine.Model {
             this.inuse = category.inuse;
             this.groupmethod = category.groupmethod;
             this.cretime = category.cretime;
+            this.description = category.description;
+            this.keyword = category.keyword;
         }
 
         public void CopyToBase(ProductCategory category) {
@@ -79,6 +87,8 @@ namespace SunShine.Model {
             category.inuse = this.inuse;
             category.groupmethod = this.groupmethod;
             category.cretime = this.cretime;
+            category.description = this.description;
+            category.keyword = this.keyword;
         }
     }
 }
