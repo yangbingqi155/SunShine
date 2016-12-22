@@ -112,6 +112,8 @@
     border-bottom: 1px solid #c3c3c3;
     margin-top: -7px;
     padding-top: 30px;
+    width:248px;
+    height:600px;
 }
 
 .honoritem .honor_img {
