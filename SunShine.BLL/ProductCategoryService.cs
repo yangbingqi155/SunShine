@@ -57,7 +57,8 @@ namespace SunShine.BLL {
             oldCategory.groupmethod = category.groupmethod;
             oldCategory.sortno = category.sortno;
             oldCategory.inuse = category.inuse;
-
+            oldCategory.keyword = category.keyword;
+            oldCategory.description = category.description;
             db.SaveChanges();
             return oldCategory;
         }

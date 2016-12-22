@@ -109,6 +109,14 @@ namespace SunShine.EF {
                 .Property(e => e.categoryname)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<ProductCategory>()
+                .Property(e => e.keyword)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ProductCategory>()
+                .Property(e => e.description)
+                .IsUnicode(false);
+
             modelBuilder.Entity<SiteCategory>()
                 .Property(e => e.idcategory)
                 .IsUnicode(false);
@@ -127,6 +135,14 @@ namespace SunShine.EF {
 
             modelBuilder.Entity<SiteCategory>()
                 .Property(e => e.parentid)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SiteCategory>()
+                .Property(e => e.keyword)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SiteCategory>()
+                .Property(e => e.description)
                 .IsUnicode(false);
         }
     }

@@ -27,5 +27,11 @@ namespace SunShine.EF
         public int groupmethod { get; set; }
 
         public DateTime? cretime { get; set; }
+
+        [StringLength(500)]
+        public string keyword { get; set; }
+
+        [StringLength(5000)]
+        public string description { get; set; }
     }
 }

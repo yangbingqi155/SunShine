@@ -44,6 +44,11 @@ namespace SunShine.Model {
         [Display(Name = "父级类别路径")]
         public string ParentCategoryNamePath { get; set; }
 
+        [Display(Name = "SEO关键字")]
+        public new string keyword { get; set; }
+
+        [Display(Name = "SEO描述")]
+        public new string description { get; set; }
 
         public void CopyFromBase(SiteCategory category) {
             this.idcategory = category.idcategory;
@@ -53,6 +58,8 @@ namespace SunShine.Model {
             this.inuse = category.inuse;
             this.cretime = category.cretime;
             this.parentid = category.parentid;
+            this.description = category.description;
+            this.keyword = category.keyword;
         }
 
         public void CopyToBase(SiteCategory category) {
@@ -63,6 +70,8 @@ namespace SunShine.Model {
             category.inuse = this.inuse;
             category.cretime = this.cretime;
             category.parentid = this.parentid;
+            category.description = this.description;
+            category.keyword = this.keyword;
         }
     }
 }

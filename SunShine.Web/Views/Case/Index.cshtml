@@ -45,7 +45,7 @@
                 Html.RenderPartial("_CaseItemPartial", Model.First());
             }
             else {
-                if (currentCategoryCode == "serviceflow" || currentCategoryCode == "honor") {
+                if (currentCategoryCode == "partner" || currentCategoryCode == "honor") {
                     Html.RenderPartial("_CaseFloatListItemsPartial", Model);
                 }
                 else if( currentCategoryCode == "commonquestion")

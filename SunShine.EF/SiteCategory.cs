@@ -31,5 +31,11 @@ namespace SunShine.EF
         public DateTime? cretime { get; set; }
 
         public bool inuse { get; set; }
+
+        [StringLength(500)]
+        public string keyword { get; set; }
+
+        [StringLength(5000)]
+        public string description { get; set; }
     }
 }

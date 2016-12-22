@@ -135,6 +135,8 @@ namespace SunShine.BLL
             oldCategory.parentid = category.parentid;
             oldCategory.level = string.IsNullOrEmpty(category.parentid) ? 1 : db.SiteCategories.Find(category.parentid).level + 1;
             oldCategory.inuse = category.inuse;
+            oldCategory.description = category.description;
+            oldCategory.keyword = category.keyword;
 
             db.SaveChanges();
             return oldCategory;
