@@ -11,7 +11,9 @@ namespace SunShine.Utils {
     public static class StringExtension {
         
         public static string RemoveHTMLAndGetByNum(this string str,int num) {
+            //str = str.Replace("<p>", "&&").Replace("</p>", "%%%");
             str = SpecialStringHelper.HtmlToTxt(str);
+            //str = str.Replace("&&", "<p>").Replace("%%%", "</p>");
             if (string.IsNullOrEmpty(str)) { return ""; }
             return str.Length > num ? str.Substring(0, num)+"..." : str;
         }

@@ -259,7 +259,7 @@
 
 .case_list_item .itemimg {
     float: left;
-    margin-left: 12px;
+    margin-left: 0px;
 }
 
     .case_list_item .itemimg img {

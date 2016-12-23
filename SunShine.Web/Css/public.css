@@ -276,7 +276,7 @@
 
 .case_list_item .itemimg {
     float: left;
-    margin-left: 12px;
+    margin-left: 0px;
 }
 
     .case_list_item .itemimg img {
@@ -286,7 +286,7 @@
 .case_list_item .itemdesc {
     float: left;
     margin-left: 32px;
-    width: 450px;
+    width: 438px;
 }
 
     .case_list_item .itemdesc .itemtitle a {

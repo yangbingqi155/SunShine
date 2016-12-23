@@ -1,377 +1,134 @@
-﻿
-jQuery(document).ready(function () {
+﻿//滚动效果
+$.fn.imgscroll = function (o) {
+    var defaults = {
+        speed: 40,
+        amount: 30,
+        width: 1,
+        dir: "up"
+    };
+    o = $.extend(defaults, o);
 
-    jQuery(".hd").click(function () {
-        alert("aaa");
-    })
-
-    
-
-    if (jQuery.query.get("kw") != "") {
-        if (jQuery("#Keywords").hasClass("keywordB")) {
-            jQuery("#Keywords").removeClass("keywordB");
-        }
-        jQuery("#Keywords").val(jQuery.query.get("kw"));
-    }
-    jQuery("#Keywords").focus(function () {
-        if (jQuery("#Keywords").hasClass("keywordB")) {
-            jQuery("#Keywords").removeClass("keywordB");
-            jQuery("#Keywords").keyup();
-        }
-    });
-    jQuery("#Keywords").blur(function () {
-        if (jQuery("#Keywords").val() != "") {
-            if (jQuery("#Keywords").hasClass("keywordB")) {
-                jQuery("#Keywords").removeClass("keywordB");
-            }
-        }
-        else {
-            if (!jQuery("#Keywords").hasClass("keywordB")) {
-                jQuery("#Keywords").addClass("keywordB");
-            }
-        }
-    });
-
-
-    //结果搜索文本框
-    jQuery("#ResultKW").focus(function () {
-        if (jQuery("#ResultKW").hasClass("keywordB")) {
-            jQuery("#ResultKW").removeClass("keywordB");
-        }
-    });
-    jQuery("#ResultKW").blur(function () {
-        if (jQuery("#ResultKW").val() != "") {
-            if (jQuery("#ResultKW").hasClass("keywordB")) {
-                jQuery("#ResultKW").removeClass("keywordB");
-            }
-        }
-        else {
-            if (!jQuery("#ResultKW").hasClass("keywordB")) {
-                jQuery("#ResultKW").addClass("keywordB");
-            }
-        }
-    });
-
-    jQuery("#logmail").focus(function () {
-        if (jQuery("#logmail").hasClass("email")) {
-            jQuery("#logmail").removeClass("email");
-        }
-    });
-    jQuery("#logmail").blur(function () {
-        if (jQuery("#logmail").val() != "") {
-            if (jQuery("#logmail").hasClass("email")) {
-                2
-                jQuery("#logmail").removeClass("email");
-            }
-        }
-        else {
-            if (!jQuery("#logmail").hasClass("email")) {
-                jQuery("#logmail").addClass("email");
-            }
-        }
-    });
-    jQuery("#logpwd").focus(function () {
-        if (jQuery("#logpwd").hasClass("password")) {
-            jQuery("#logpwd").removeClass("password");
-        }
-    });
-    jQuery("#logpwd").blur(function () {
-        if (jQuery("#logpwd").val() != "") {
-            if (jQuery("#logpwd").hasClass("password")) {
-                jQuery("#logpwd").removeClass("password");
-            }
-        }
-        else {
-            if (!jQuery("#logpwd").hasClass("password")) {
-                jQuery("#logpwd").addClass("password");
-            }
-        }
-    });
-
-    jQuery(".listCol> ul >div>li").hover(function () {
-        var parentLi = jQuery(this);
-        jQuery(this).addClass("hover");
-        if (jQuery(this).attr("hasChildren") == "true") {
-            return false;
-        }
-        else {
-            if (jQuery(this).find(".thirdLevel").length > 0) {
-                jQuery(this).find(".thirdLevel").show();
-            }
-            else {
-
-                var url = "/GetPhoneStyleChildren.aspx?psid=" + jQuery(this).attr("key") + "&index=" + jQuery(this).attr("index");
-                jQuery.get(url, null, function (redata) {
-                    jQuery(parentLi).append(redata);
-                    jQuery(parentLi).find(".thirdLevel >li").hover(function () {
-                        jQuery(this).addClass("thirdHover");
-                    }, function () {
-                        jQuery(this).removeClass("thirdHover");
-                    });
-                    jQuery(this).find(".thirdLevel").show();
-                });
-            }
-        }
-
-    }, function () {
-        jQuery(this).removeClass("hover");
-        jQuery(this).find(".thirdLevel").hide();
-    });
-
-    var urlArr = new Array();
-    urlArr.push("/product/NewArrival.aspx");
-    urlArr.push("/product/comingsoon.aspx");
-    urlArr.push("/main/Comments.aspx|/service/service.aspx");
-    urlArr.push("/UPSTrack.aspx");
-    urlArr.push("/main/company.aspx|/legal/legal.aspx|/careers.aspx");
-    urlArr.push("/product/Special.aspx");
-    var aIdArr = new Array();
-    aIdArr.push("#aNewArrival");
-    aIdArr.push("#acomingsoon");
-    aIdArr.push("#aservice");
-    aIdArr.push("#aups");
-    aIdArr.push("#acompany");
-    aIdArr.push("#clearance");
-    var j = 0;
-    for (var i = 0; i < urlArr.length; i++) {
-        var urlArrSame = urlArr[i].split("|");
-        for (var k = 0; k < urlArrSame.length; k++) {
-            if (window.location.href.toLowerCase().indexOf(urlArrSame[k].toLowerCase()) >= 0) {
-                jQuery("#nav > ul>li>a").each(function () {
-                    jQuery(aIdArr[i]).addClass("currentItem");
-                    j++;
-                });
-            }
-        }
-
-    }
-    if (j == 0) {
-        jQuery("#ahome").addClass("currentItem");
-    }
-    if (jQuery.query.get("IsPromotion") == "1") {
-        jQuery("#chkClearance").attr("checked", true);
-    }
-    if (window.location.href.indexOf("productquicklyorder.aspx") >= 0) {
-        jQuery("#chkQuickly").attr("checked", true);
-    }
-    jQuery.get("/GetPageSize.aspx", { randNum: getDateNum() }, function (redata) {
-        jQuery("#pagesize").val(redata);
-    });
-
-    jQuery("#pagesize").change(function () {
-        jQuery.post("/AddSession.aspx", { ckname: "pagesize", ckval: jQuery("#pagesize").val() }, function () {
-            window.location.href = window.location.href;
-        });
-    });
-
-    // Accordion
-    // jQuery('#menu5 > li > a.expanded + ul').slideToggle('medium');
-    var i = 0;
-    jQuery('#menu5 > li > a').click(function () {
-        jQuery('#menu5 > li > a.expanded').not(this).toggleClass('expanded').toggleClass('collapsed').parent().find('> ul').slideToggle('medium');
-        jQuery(this).toggleClass('expanded').toggleClass('collapsed').parent().find('> ul').slideToggle('medium');
-
-        var evt = this;
-        jQuery(evt).children().first().removeClass();
-        if (jQuery(evt).children().first().attr("src").indexOf("expand0.gif") >= 0) {
-            jQuery(evt).children().first().attr("src", "/images/fold0.gif");
-        }
-        else {
-            jQuery(evt).children().first().attr("src", "/images/expand0.gif");
-        }
-
-        jQuery(evt).children().first().removeClass()
-        jQuery(evt).children().first().addClass("expandedImg1");
-        jQuery('.expandedImg').each(function () {
-            jQuery(this).attr("src", "/images/fold0.gif");
-        });
-        jQuery(evt).children().first().removeClass()
-        jQuery(evt).children().first().addClass("expandedImg");
-
-        i++;
-    });
-
-    function nextKeyword(next) {
-        var index = -1;
-        jQuery("#SmartTips li").each(function (i, d) {
-            if (jQuery(d).hasClass("hover")) {
-                index = i;
-                keywordMouseOut(jQuery(d));
-
-            }
-        });
-        if (next == 1) {
-            if (index == jQuery("#SmartTips li").length - 1) {
-                index = -1;
-            }
-        }
-        else if (next == -1) {
-            if (index == 0) {
-                index == jQuery("#SmartTips li").length - 1;
-            }
-            else if (index == -1) {
-                index = 1;
-            }
-        }
-
-        index = index + next;
-
-        keywordMouseIn(jQuery("#SmartTips li").eq(index));
-    }
-
-    function keywordMouseIn(obj) {
-        if (!jQuery(obj).hasClass("hover")) {
-            jQuery(obj).addClass("hover");
-            if (jQuery(obj).html() != "Close") {
-                jQuery("#Keywords").val(jQuery(obj).text());
-            }
-
-        }
-    }
-
-    function keywordMouseOut(obj) {
-        if (jQuery(obj).hasClass("hover")) {
-            jQuery(obj).removeClass("hover");
-        }
-    }
-
-    var ajaxResult = null;
-    var timer1;
-    jQuery("#Keywords").keyup(function (event) {
-        if (event.which == 40) {
-            nextKeyword(1);
-            return;
-        }
-        else if (event.which == 38) {
-            nextKeyword(-1);
-            return;
-        }
-        //        jQuery(".SmartTips").hide();
-        //        jQuery("#SmartTips li").children().remove();
-        var url = "/Product/SearchSmartTips.aspx";
-        var data = { keyword: jQuery(this).val(), randNum: getDateNum() };
-        if (ajaxResult != null) {
-            ajaxResult.abort();
-        }
-
-        clearInterval(timer1);
-        timer1 = setTimeout(function () {
-            ajaxResult = jQuery.get(url, data, function (redata) {
-                jQuery("#SmartTips").children().remove();
-                if (redata == "") {
-                    return;
-                }
-                redata = eval("(" + redata + ")");
-                if (redata.length > 0) {
-                    jQuery(".SmartTips").show();
-                }
-                for (var i = 0; i < redata.length; i++) {
-                    var keyword = redata[i].Keyword;
-                    keyword = keyword.replace(/'/g, '\\\'');
-                    keyword = keyword.replace(/"/g, '\\"');
-                    var linkpath = redata[i].Path;
-                    linkpath = "/Oservice/smallimages/" + linkpath;
-                    if (i % 2 == 0) {
-                        jQuery("#SmartTips").append("<li onclick=\"getKeyword('" + keyword + "'," + redata[i].Num + "," + redata[i].Pid + ");\" class='colorstyletest2' >" + "<img src='" + linkpath + "' height='51px' width='51px' />" + "<p>" + redata[i].Keyword + "</p>" + "</li>");
-                    }
-                    else {
-                        jQuery("#SmartTips").append("<li onclick=\"getKeyword('" + keyword + "'," + redata[i].Num + "," + redata[i].Pid + ");\" class='colorstyletest' >" + "<img src='" + linkpath + "' height='51px' width='51px' />" + "<p>" + redata[i].Keyword + "</p>" + "</li>");
-                    }
-                }
-                jQuery("#SmartTips").append("<li style=\"text-align:right;height:25px;\"  onclick=\"closeSmartTips()\">Close</li>");
-
-                jQuery("#SmartTips li").mouseover(function () {
-                    keywordMouseIn(jQuery(this));
-                });
-                jQuery("#SmartTips li").mouseout(function () {
-                    keywordMouseOut(jQuery(this));
-                });
-
-            });
-        }, 500);
-    });
-    setTimeout(function () {
-        if (i == 0)
-            jQuery('#aBra').click();
-    }, 250);
-    jQuery("#btnSearch").click(function () {
-        SearchProducts();
-    });
-    jQuery(".SmartTips").hover(function () { }, function () {
-        jQuery(".SmartTips").hide();
-    });
-});
-function SearchProducts() {
-    var isPromotion = "-1";
-    if (jQuery("#chkClearance").attr("checked")) {
-        isPromotion = "1";
-    }
-    var keyword = Trim(jQuery("#Keywords").val());
-    if (Trim(keyword) != "") {
-        window.location.href = "/product/productsearch.aspx?kw=" + escape(keyword) + "&IsPromotion=" + isPromotion;
-
-    }
-}
-
-function closeSmartTips() {
-    jQuery(".SmartTips").hide();
-}
-function getKeyword(keyword, num, pid) {
-    keyword = Trim(keyword);
-    var isPromotion = "-1";
-    if (jQuery("#chkClearance").attr("checked")) {
-        isPromotion = "1";
-    }
-    if (Trim(keyword) != "") {
-        window.location.href = "/product/productsearch.aspx?kw=" + escape(keyword) + "&IsPromotion=" + isPromotion;
-
-    }
-}
-
-function imgError(img) {
-    jQuery(img).attr("src", "/webpic/model/0001.jpg");
-}
-
-var obje;
-var str = "";
-function picOver(id) {
-    obje = "#divcpm" + id;
-    if (str.indexOf(id + ",") >= 0) {
-        jQuery("#divcpm" + id).show();
-    }
-    else {
-        jQuery("#divcpm" + id).find("img").attr("src", jQuery("#divcpm" + id).find("img").attr("link"));
-        jQuery("#divcpm" + id).find("img").load(
-                    function () {
-                        if (obje == "#divcpm" + id) {
-                            jQuery("#divcpm" + id).show();
-
-                        } str += id + ",";
-                    });
-
-    }
-}
-
-function picOut(id) {
-    jQuery("#divcpm" + id).hide();
-    obje = "";
-}
-
-jQuery(document).ready(function () {
-    jQuery("#nav-one li").hover(
-		function () { jQuery("ul", this).fadeIn("fast"); },
-		function () { }
-	);
-    if (document.all) {
-        jQuery("#nav-one li").hoverClass("sfHover");
-    }
-});
-
-jQuery.fn.hoverClass = function (c) {
     return this.each(function () {
-        jQuery(this).hover(
-			function () { jQuery(this).addClass(c); },
-			function () { jQuery(this).removeClass(c); }
-		);
+        var _li = $("li", this);
+        _li.parent().parent().css({ overflow: "hidden", position: "relative" }); //div
+        _li.parent().css({ padding: "0", overflow: "hidden", position: "relative", "list-style": "none" }); //ul
+        _li.css({ position: "relative", overflow: "hidden" }); //li
+        if (o.dir == "left") _li.css({ float: "left" });
+
+        //初始大小
+        var _li_size = 0;
+        for (var i = 0; i < _li.size() ; i++)
+            _li_size += o.dir == "left" ? _li.eq(i).outerWidth(true) : _li.eq(i).outerHeight(true);
+
+        //循环所需要的元素
+        if (o.dir == "left") _li.parent().css({ width: (_li_size * 3) + "px" });
+        _li.parent().empty().append(_li.clone()).append(_li.clone()).append(_li.clone());
+        _li = $("li", this);
+
+        //滚动
+        var _li_scroll = 0;
+        function goto() {
+            _li_scroll += o.width;
+            if (_li_scroll > _li_size) {
+                _li_scroll = 0;
+                _li.parent().css(o.dir == "left" ? { left: -_li_scroll } : { top: -_li_scroll });
+                _li_scroll += o.width;
+            }
+            _li.parent().animate(o.dir == "left" ? { left: -_li_scroll } : { top: -_li_scroll }, o.amount);
+        }
+
+        //开始
+        var move = setInterval(function () { goto(); }, o.speed);
+        _li.parent().hover(function () {
+            clearInterval(move);
+        }, function () {
+            clearInterval(move);
+            move = setInterval(function () { goto(); }, o.speed);
+        });
     });
 };
+
+
+var flag = false;
+function DrawImage(ImgD, iwidth, iheight, count) {
+    var image = new Image();
+    image.src = ImgD.src;
+    var zoom_height = iwidth * image.height / image.width;//缩放后的高度
+    if (zoom_height > iheight) {//按照宽度显示
+        ImgD.width = iwidth;
+        ImgD.height = zoom_height;
+        ImgD.style.marginTop = (iheight - zoom_height) / 2 + "px";
+    }
+    else//按照高度显示
+    {
+        ImgD.width = iheight * image.width / image.height;
+        ImgD.height = iheight;
+        ImgD.style.marginLeft = (iwidth - (iheight * image.width / image.height)) / 2 + "px";
+    }
+}
+function DrawImage1(ImgD, iwidth, iheight, mount) {
+    var image = new Image();
+    var parentEl = ImgD;
+    for (var i = 0; i < mount; i++) {
+        parentEl = parentEl.parentElement;
+        parentEl.style.textAlign = "center";
+    }
+    image.src = ImgD.src;
+    if (image.width > 0 && image.height > 0) {
+        flag = true;
+        if (image.width / image.height >= iwidth / iheight) {
+            if (image.width > iwidth) {
+                ImgD.width = iwidth;
+                ImgD.style.paddingTop = (iheight - (image.height * iwidth) / image.width) / 2 + "px";
+                ImgD.height = (image.height * iwidth) / image.width;
+            } else {
+
+                if (iheight > image.height) {
+                    ImgD.style.paddingTop = (iheight - image.height) / 2 + "px";
+                    ImgD.height = image.height;
+                    ImgD.width = image.height * iwidth / iheight;
+                }
+            }
+
+        }
+        else {
+            if (image.height > iheight) {
+                ImgD.height = iheight;
+                ImgD.width = (image.width * iheight) / image.height;
+            }
+            else {
+                ImgD.style.paddingTop = (iheight - image.height) / 2 + "px";
+                ImgD.height = image.height;
+                ImgD.width = image.height * iwidth / iheight;
+            }
+        }
+    }
+}
+
+
+
+function DrawImageWidth(ywidth, yheight, iwidth, iheight) {
+    if (ywidth > 0 && yheight > 0) {
+        flag = true;
+        if (ywidth / yheight >= iwidth / iheight) {
+            if (ywidth >= iwidth) {
+                return "width:" + iwidth + "px;height:" + (yheight * iwidth) / ywidth + "px;padding-top:" + (iheight - (yheight * iwidth) / ywidth) / 2 + "px";
+            } else {
+
+                if (iheight >= yheight) {
+                    return "width:" + yheight * iwidth / iheight + "px;height:" + yheight + "px;padding-top:" + (iheight - yheight) / 2 + "px";
+                }
+            }
+
+        }
+        else {
+            if (yheight >= iheight) {
+                return "width:" + (ywidth * iheight) / yheight + "px;height:" + iheight + "px;";
+
+            }
+            else {
+                return "width:" + ywidth * iwidth / iheight + "px;height:" + yheight + "px;padding-top:" + (iheight - yheight) / 2 + "px";
+            }
+        }
+    }
+}
