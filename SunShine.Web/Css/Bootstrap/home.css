@@ -15,8 +15,8 @@
         height: 35px;
         width: 220px;
         z-index: 10001;
-        background: url("../../Images/home/jiantou_2.jpg");
         padding-bottom: 0px;
+        background:#fff url("../../images/home/xuxian_3.jpg") repeat-x;
     }
 
         #menu li.level1-li:hover {
@@ -25,12 +25,23 @@
             border-width: 2px 0px 2px 2px;*/
         }
 
+         .hd {
+                        font-size: 17px;
+                        
+                        color: #FFF;
+                        padding-left: 45px;
+                        padding-top: 0px;
+                        width:150px;
+                        height:43px;
+                        line-height:43px;
+                        font-family:"Microsoft YaHei";
+                    }
 
 
 
         #menu li.level1-li a.level1-a {
             display: block;
-            height: 25px;
+            height: 30px;
             line-height: 25px;
             padding-bottom: 0px;
             text-decoration: none;
@@ -38,7 +49,7 @@
             /*color: #7e7f81;
             font-weight: bold;*/
             text-align: left;
-            padding-left: 75px;
+            padding-left: 45px;
             padding-top: 2px;
             font-family:"Microsoft YaHei";
             font-weight: 400
@@ -66,10 +77,11 @@
     }
 
 .expandedImg {
-    padding-left: 45px;
+    padding-left: 10px;
     /*padding-top:2px; */
     padding-bottom: 2px;
     padding-bottom: 2px;
+    float:left;
 }
 
 .level1-li sub {
@@ -78,8 +90,8 @@
 }
 
 .daohangbeijing {
-    background: #dededc;
-    width: 1200px;
+    background:#fff
+    width: 1000px;
     margin: 0px auto;
     padding-top: 30px;
     padding-bottom:30px;
@@ -826,7 +838,7 @@ ul.thirdLevel {
                 text-align: center;
                 -moz-border-radius: 9px;
                 -webkit-border-radius: 9px;
-                border-radius: 9px;
+                border-radius: 20px;
             }
 
         .category_box .category_item .category_right {

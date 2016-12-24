@@ -85,15 +85,15 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 .cp_right {width:744px; float:right; overflow:hidden;}
 .cp_right .title {width:744px; height:46px; line-height:46px; color:#FFF; font-size:20px; font-weight:700;  border-bottom:2px solid #da251c; position:relative;}
 .cp_right .title ul { width:300px; height:46px; overflow:hidden;}
-.cp_right .title ul li { width:129px; height:44px; float:left; text-align:center;margin-right:8px }
+.cp_right .title ul li { width:129px; height:44px; float:left; text-align:center;margin-right:8px;border-radius:21px }
 .more1 { position:relative; margin:-35px 10px 0 0px; float:right;}
 .cp_right .title ul li a{ height:44px; color:#fff; display:block;}
 
 .thistab a.tab{ background-color:#ff7c02;}
 
-.cp_list {width:744px; float:right; overflow:hidden;}
-.cp_list ul { width:744px; overflow:hidden;}
-.cp_list ul li { width:346px; height:312px; margin:22px 26px 0 0; float:left;}
+.cp_list {width:744px; float:right; }
+.cp_list ul { width:744px; }
+.cp_list ul li { width:346px; height:319px; margin:22px 26px 0 0; float:left;}
 .cp_list ul li .cp_img { width:357px; height:247px; border:#c9c9c9 solid 1px; overflow:hidden;}
 .cp_name { width:357px; height:28px; line-height:28px; background-color:#fff; font-size:14px; overflow:hidden; text-align:center}
 .cp_name a{ color:#333; text-align:center; display:block;font-weight:bold}
@@ -114,10 +114,10 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 .zhanshitupian ul li .cp_name a{ color:#666; text-align:center; display:block;margin-left:2px}
 
 .ckxq { width:359px; height:39px; line-height:39px;}
-.ckxq_left {width:168px; height:24px; line-height:24px; border:#c9c9c9 1px solid; margin-top:13px; float:left;}
+.ckxq_left {width:168px; height:30px; line-height:28px; border:#c9c9c9 1px solid; margin-top:13px; float:left;border-radius:20px;background:#ccc}
 .ckxq_left a { font-size:14px; text-align:center; display:block;}
-.gengduo {width:100px; height:28px; line-height:28px; border:#c9c9c9 1px solid; margin:10px auto;}
-.gengduo a { font-size:14px; text-align:center; display:block;}
+.gengduo {width:100px; height:30px; line-height:28px; border:#c9c9c9 1px solid; margin:10px auto;  background: url(../../Images/home/fgz_13.jpg) no-repeat;border-radius:20px}
+.gengduo a { font-size:14px; text-align:center; display:block;color:#fff}
 .hezuo {width:190px;height:340px;margin:10px auto;}
 .hezuo h2 {color:black;margin-top:10px;    }
 .hezuo p{line-height:1.8;font-size:14px;}
@@ -126,7 +126,7 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
     height:126px;
 }
 
-.ckxq_ljzx {width:168px; height:24px; line-height:24px; background:url(../../Images/home/fgz_13.jpg) repeat; border:#c9c9c9 1px solid; margin-top:13px; float:right;}
+.ckxq_ljzx {width:168px; height:30px; line-height:28px; background:url(../../Images/home/fgz_13.jpg) repeat; border:#c9c9c9 1px solid; margin-top:13px; float:right;border-radius:20px}
 .ckxq_ljzx a { color:#FFF; font-size:14px; text-align:center; display:block;}
 .cp_list .no_mar {margin-right:0px;}
 .zhanshitupian .no_mar{margin-right:0px}
