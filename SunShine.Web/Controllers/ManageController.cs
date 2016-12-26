@@ -374,6 +374,37 @@ namespace TNet.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// 删除产品
+        /// </summary>
+        /// <param name="idproducts"></param>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpPost]
+        public ActionResult ProductDelete(string[] idproducts)
+        {
+            ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+            ResultModel<ProductViewModel> resultEntity = new ResultModel<ProductViewModel>();
+            resultEntity.Code = ResponseCodeType.Success;
+            resultEntity.Message = "产品删除成功";
+
+            if (idproducts == null || idproducts.Count() == 0)
+            {
+                resultEntity.Code = ResponseCodeType.Fail;
+                resultEntity.Message = "产品删除失败，参数错误。";
+                return Content(resultEntity.SerializeToJson());
+            }
+
+            if (!ProductService.Delete(idproducts.ToList()))
+            {
+                resultEntity.Code = ResponseCodeType.Fail;
+                resultEntity.Message = "产品删除失败。";
+                return Content(resultEntity.SerializeToJson());
+            }
+
+            return Content(resultEntity.SerializeToJson());
+        }
+
 
         /// <summary>
         /// 网站类别列表
@@ -603,6 +634,132 @@ namespace TNet.Controllers
             }
 
             return Content(resultEntity.SerializeToJson());
+        }
+
+
+        /// <summary>
+        /// 编辑网站信息
+        /// </summary>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpGet]
+        public ActionResult WebsiteInfoEdit()
+        {
+            WebsiteInfoViewModel model = new WebsiteInfoViewModel();
+            List<WebSiteInfo> list= WebSiteInfoService.GetALL();
+            if (list.Count>=1) {
+                 model.CopyFromBase(list.First());
+            }
+
+            return View(model);
+        }
+
+        /// <summary>
+        /// 编辑网站信息
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult WebsiteInfoEdit(WebsiteInfoViewModel model)
+        {
+            WebSiteInfo info = new WebSiteInfo();
+            model.CopyToBase(info);
+            if (string.IsNullOrEmpty(info.idsite))
+            {
+                info.idsite = Pub.ID();
+
+                //新增
+                info = WebSiteInfoService.Add(info);
+            }
+            else
+            {
+                //编辑
+                info = WebSiteInfoService.Edit(info);
+            }
+
+            ViewData["Message"] = "保存成功";
+            return Content("<script>alert('保存成功!');window.location.href=window.location.href;</script>");
+
+            //return View(model);
+        }
+
+
+        /// <summary>
+        /// 友情链接列表
+        /// </summary>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        public ActionResult FriendURLList(int pageIndex = 0)
+        {
+            int pageCount = 0;
+            int pageSize = 10;
+            List<FriendURL> entities = FriendURLService.GetALL();
+            List<FriendURL> pageList = entities.Pager<FriendURL>(pageIndex, pageSize, out pageCount);
+
+
+            List<FriendURLViewModel> viewModels = pageList.Select(model => {
+                FriendURLViewModel viewModel = new FriendURLViewModel();
+                viewModel.CopyFromBase(model);
+                return viewModel;
+            }).ToList();
+
+            ViewData["pageCount"] = pageCount;
+            ViewData["pageIndex"] = pageIndex;
+
+            return View(viewModels);
+        }
+
+
+        /// <summary>
+        /// 新增\编辑友情链接
+        /// </summary>
+        /// <param name="idurl"></param>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpGet]
+        public ActionResult FriendURLEdit(string idurl = "")
+        {
+            FriendURLViewModel model = new FriendURLViewModel();
+            if (!string.IsNullOrEmpty(idurl))
+            {
+                FriendURL friendURL = FriendURLService.Get(idurl);
+                if (friendURL != null) { model.CopyFromBase(friendURL); }
+            }
+
+            return View(model);
+        }
+
+        /// <summary>
+        /// 新增\编辑友情链接
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpPost]
+        public ActionResult FriendURLEdit(FriendURLViewModel model)
+        {
+            FriendURL friendURL = new FriendURL();
+            model.CopyToBase(friendURL);
+            if (string.IsNullOrEmpty(friendURL.idurl))
+            {
+                friendURL.idurl = Pub.ID();
+                //新增
+                friendURL = FriendURLService.Add(friendURL);
+            }
+            else
+            {
+                //编辑
+                friendURL = FriendURLService.Edit(friendURL);
+            }
+
+            //修改后重新加载
+            model.CopyFromBase(friendURL);
+
+            ModelState.AddModelError("", "保存成功.");
+
+            return View(model);
         }
 
 

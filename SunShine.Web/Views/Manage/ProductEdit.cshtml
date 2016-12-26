@@ -34,6 +34,7 @@
             <fieldset>
                 @Html.HiddenFor(model => model.idproduct)
                 @Html.HiddenFor(model => model.description)
+                @Html.HiddenFor(model => model.basicinfo)
                 <input type="hidden" name="productImages" id="productImages" value="" />
                 <div class="form-group">
                     @Html.LabelFor(model => model.name, new { @class = "col-sm-2 control-label" })
@@ -42,10 +43,15 @@
                     </div>
                     @Html.ValidationMessageFor(model => model.name)
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="margin:0px">
                     @Html.LabelFor(model => model.basicinfo, new { @class = "col-sm-2 control-label" })
-                    <div class="col-sm-3">
-                        @Html.TextBoxFor(model => model.basicinfo, new { @class = "form-control" })
+
+                </div>
+                <div class="form-group" style="margin:0px">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-10" style="display:block;padding:0px;">
+                        <script id="basic_editor" type="text/plain" style="display:block;width:100%;height:200px;">
+                        </script>
                     </div>
                     @Html.ValidationMessageFor(model => model.basicinfo)
                 </div>
@@ -215,6 +221,13 @@
             UE.getEditor('editor').setContent('@Html.Raw(Model.description)');
         });
 
+        var basic_ue = UE.getEditor('basic_editor');
+        //对编辑器的操作最好在编辑器ready之后再做
+        basic_ue.ready(function () {
+            //设置编辑器的内容
+            UE.getEditor('basic_editor').setContent('@Html.Raw(Model.basicinfo)');
+        });
+
         $("#btnSave").click(function () {
             var productImages = "";
             $(".kv-file-content").find("img").each(function (i, d) {
@@ -228,6 +241,9 @@
             $("#productImages").val(productImages);
             var html = UE.getEditor('editor').getContent();
             $("#@Html.IdFor(model=>model.description)").val(html);
+            var basic_info = UE.getEditor('basic_editor').getContent();
+            $("#@Html.IdFor(model=>model.basicinfo)").val(basic_info);
+
             $("#form1").submit();
         });
     });

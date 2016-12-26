@@ -4,7 +4,6 @@
 @model List<ProductViewModel>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "创意阳光-产品中心";
     var pageCount = Convert.ToInt32(ViewData["pageCount"]);
     var pageIndex = Convert.ToInt32(ViewData["pageIndex"]);
 }
@@ -20,7 +19,7 @@
             <div class="case_nav">
                 <div class="case_nav_icon"></div>
                 <div class="case_nav_title">
-                    您现在的位置:<span>首页>&nbsp;产品中心</span>
+                    您现在的位置:<span><a href="@Url.Action("Index","Home")">首页</a> >&nbsp;<a href="@Url.Action("List","Product")">产品中心</a></span>
                 </div>
             </div>
             <div style="clear:both;"></div>

@@ -260,7 +260,11 @@
         margin-left: 6px;
         font-weight: bold;
         text-align: center;
+        
     }
+        .case_nav .case_nav_title span a {
+        color:#666666 ;
+        }
 
 .case_list {
     border-left: 1px solid #c3c3c3;
@@ -516,6 +520,7 @@
         text-align: center;
         padding-left: 26px;
         padding-right: 26px;
+        cursor:pointer;
     }
 
 .product_detail_bottom .p_description_header .not_current {

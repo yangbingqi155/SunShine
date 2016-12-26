@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticleViewModel.cs" />
+    <Compile Include="FriendURLViewModel.cs" />
     <Compile Include="GroupMethodType.cs" />
     <Compile Include="ManageUserViewModel.cs" />
     <Compile Include="ModuleType.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="ResultModel.cs" />
     <Compile Include="SelectItemViewModel.cs" />
     <Compile Include="SiteCategoryViewModel.cs" />
+    <Compile Include="WebsiteInfoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SunShine.EF\SunShine.EF.csproj">

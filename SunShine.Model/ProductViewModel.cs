@@ -61,6 +61,11 @@ namespace SunShine.Model {
         [Display(Name ="是否最新")]
         public new bool isnew { get; set; }
 
+        /// <summary>
+        /// 父级类型
+        /// </summary>
+        public ProductCategory ParentCategory { get; set; }
+
 
         public void CopyFromBase(Product product) {
             this.idproduct = product.idproduct;

@@ -4,7 +4,6 @@
 @using SunShine.Web.Utils;
 @model List<ArticleViewModel>
 @{
-    ViewBag.Title = "创意阳光";
     Layout = "~/Views/Shared/_Layout.cshtml";
     string currentCategoryCode = ViewData["currentCategoryCode"].ToString();
     string categoryCode = ViewData["categoryCode"].ToString();
@@ -26,8 +25,7 @@
             <div class="case_nav_title">
                 您现在的位置:
                 @for (int i = 0; i < navPath.Count; i++) {
-
-                    ViewBag.Title += navPath[i].categoryname+" ";
+                    
                     if (i == 0) {
                         <span>@navPath[i].categoryname&nbsp;</span>
                         }

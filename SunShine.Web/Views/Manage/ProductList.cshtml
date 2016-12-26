@@ -46,7 +46,7 @@
                     @Html.DropDownList("idproductcategory", new SelectList(ProductCategoryService.SelectItems(GroupMethodType.Product), "DisplayValue", "DisplayText"), new { @class = "form-control", Value = idproductcategory })
                 </div>
                 <div class="col-xs-2">
-                    <input type="submit" value="搜索" class="btn btn-primary" placeholder=".col-xs-1" />&nbsp;<a class="btn btn-primary" href="@Url.Action("ProductEdit","Manage")">新增</a>
+                    <input type="submit" value="搜索" class="btn btn-primary" placeholder=".col-xs-1" />&nbsp;<a class="btn btn-primary" href="@Url.Action("ProductEdit","Manage")">新增</a>&nbsp;<a class="btn btn-danger" href="javascript:void(0);" id="btn_del_selected">删除</a>
                 </div>
             </div>
         </form>
@@ -60,6 +60,9 @@
             <table class="table table-bordered table-hover table-striped">
                 <thead>
                     <tr>
+                        <th>
+                            <input type="checkbox" id="chk_all" />
+                        </th>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, string>(en => en.name))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, String>(en => en.img))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductViewModel, string>(en => en.categoryName))</th>
@@ -75,6 +78,9 @@
                     @foreach (var item in Model)
                     {
                         <tr>
+                            <td>
+                                <input type="checkbox" name="chk_list_item" value="@item.idproduct" />
+                            </td>
                             <td>@item.name</td>
                             <td>
                                 @if (!string.IsNullOrEmpty(item.img)) {
@@ -101,7 +107,7 @@
                             </td>
                             <td>
                                 <a href="@Url.Action("ProductEdit","Manage",new {idproduct=item.idproduct })" class="btn btn-primary">编辑</a>
-
+                                <a href="javascript:void(0);" class="btn btn-danger" name="btn_del" value="@item.idproduct">删除</a>
                             </td>
                         </tr>
                     }
@@ -119,6 +125,23 @@
     $(function () {
         $("[name='enableProduct']").bootstrapSwitch({onText:"启用",offText:"禁用"});
         $("[name='hotProduct']").bootstrapSwitch({onText:"是",offText:"否"});
-        $("[name='newProduct']").bootstrapSwitch({onText:"是",offText:"否"});
+        $("[name='newProduct']").bootstrapSwitch({ onText: "是", offText: "否" });
+        checkbox_select_all('chk_all', 'chk_list_item');
+        var delUrl = "@Url.Action("ProductDelete", "Manage")";
+        $("#btn_del_selected").click(function () {
+            checkbox_selected_del("chk_list_item", function (data) {
+                var postData = { idproducts: data };
+                ajax_del(delUrl, postData);
+            });
+        });
+        $("[name='btn_del']").click(function () {
+            if (!confirm("确认要删除该记录吗？")) {
+                return;
+            }
+            var data = new Array();
+            data.push($(this).attr("value"));
+            var postData = { idproducts: data };
+            ajax_del(delUrl, postData);
+        });
     });
 </script>
