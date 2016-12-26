@@ -24,6 +24,7 @@
             <fieldset>
                 @Html.HiddenFor(model => model.idcategory)
                 @Html.HiddenFor(model => model.categorycode)
+                @Html.HiddenFor(model => model.inuse)
                 <div class="form-group">
                     @Html.LabelFor(model => model.ParentCategory, new { @class = "col-sm-2 control-label" })
                     <div class="col-sm-3">
@@ -67,13 +68,13 @@
                     </div>
                     @Html.ValidationMessageFor(model => model.description)
                 </div>
-                <div class="form-group">
+                @*<div class="form-group">
                     @Html.LabelFor(model => model.inuse, new { @class = "col-sm-2 control-label" })
                     <div class="col-sm-3">
                         @Html.CheckBoxFor(model => model.inuse, new { @class = "form-control" })
                     </div>
                     @Html.ValidationMessageFor(model => model.inuse)
-                </div>
+                </div>*@
                 @Html.ValidationSummary(true)
                 <div class="form-group">
                     <div class="col-sm-2">
@@ -87,10 +88,10 @@
         </div>
     </form>
 </div>
-<script type="text/javascript">
+@*<script type="text/javascript">
     $(function () {
         $.fn.bootstrapSwitch.defaults.onText = '启用';
         $.fn.bootstrapSwitch.defaults.offText = '禁用';
         $("#@Html.IdFor(model => model.inuse)").bootstrapSwitch();
     });
-</script>
+</script>*@

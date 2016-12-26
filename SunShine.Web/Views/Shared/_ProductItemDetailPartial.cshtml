@@ -2,25 +2,46 @@
 @model ProductViewModel
 @{
     Layout = null;
+    string contactus = ViewData["contactus"].ToString();
 }
+<script type="text/javascript">
+    $(function () {
+        $("[name='desc_tab']").click(function () {
+            if ($(this).hasClass("not_current")) {
+                if ($(this).attr("id") == "detail_show") {
+                    $("#detail_show").removeClass("not_current");
+                    $("#contact_us").addClass("not_current");
+                    $("#product_desc_zone").show();
+                    $("#contact_us_zone").hide();
+                } else if ($(this).attr("id") == "contact_us") {
+                    $("#detail_show").addClass("not_current");
+                    $("#contact_us").removeClass("not_current");
+                    $("#product_desc_zone").hide();
+                    $("#contact_us_zone").show();
+                }
+            }
+        });
+    });
 
+</script>
 <div class="product_detail_box">
     <div class="product_detail_top">
         <div class="pimg">
-            @if (!string.IsNullOrEmpty(Model.img)) {
+            @if (!string.IsNullOrEmpty(Model.img))
+            {
                 <img src="@Url.Content(Model.img)" />
             }
         </div>
-        <div class="p_basic_info">                     
+        <div class="p_basic_info">
             <div class="p_title">
                 @Model.name
             </div>
             <div class="p_basic">
-                @Model.basicinfo
+                @Html.Raw( Model.basicinfo)
             </div>
             <div class="p_ask">
                 <div class="btn_ask">
-                    立即咨询
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3317300173&site=qq&menu=yes">立即咨询</a>
                 </div>
             </div>
         </div>
@@ -28,21 +49,26 @@
     </div>
     <div class="product_detail_bottom">
         <div class="p_description_header">
-            <div class="bgcolor_title_head desc_tab">
+            <div name="desc_tab" id="detail_show" class="bgcolor_title_head desc_tab">
                 详情展示
             </div>
-            <div class="bgcolor_title_head desc_tab not_current">
+            <divv name="desc_tab" id="contact_us" class="bgcolor_title_head desc_tab not_current">
                 联系我们
-            </div>
+            </divv>
             <div style="clear:both;"></div>
         </div>
-        <div class="p_product_show_title">
-            产品展示
+        <div class="product_desc" id="product_desc_zone">
+            <div class="p_product_show_title">
+                产品展示
+            </div>
+            <div class="p_product_show_title_line">
+            </div>
+            <div class="p_description_body">
+                @Html.Raw(Model.description)
+            </div>
         </div>
-        <div class="p_product_show_title_line">
-        </div>
-        <div class="p_description_body">
-            @Html.Raw(Model.description)
-        </div>
+        <div class="contact_us"  id="contact_us_zone" style="display:none;">
+            @Html.Raw(contactus)
     </div>
+</div>
 </div>

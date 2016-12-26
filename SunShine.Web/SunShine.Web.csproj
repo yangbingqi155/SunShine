@@ -860,6 +860,9 @@
     <Content Include="Views\Shared\_CaseQuestionItemsPartial.cshtml" />
     <Content Include="Views\Parts\NavNews.cshtml" />
     <Content Include="Views\Parts\NavQuestions.cshtml" />
+    <Content Include="Views\Manage\WebsiteInfoEdit.cshtml" />
+    <Content Include="Views\Manage\FriendURLList.cshtml" />
+    <Content Include="Views\Manage\FriendURLEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

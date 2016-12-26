@@ -16,9 +16,9 @@
     </ol>
 </div>
 <div class="ManageRightContent">
-    <div>
+    @*<div>
         <a class="btn btn-primary" href="@Url.Action("SiteCategoryEdit","Manage")">新增</a>
-    </div>
+    </div>*@
     <div>
         @Html.Raw(Url.BootstrapPagerHTML(pageCount, pageIndex, "SiteCategoryList", "Manage", ViewContext.RouteData.Values))
     </div>
@@ -32,7 +32,7 @@
                         <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, String>(en => en.categoryname))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, String>(en => en.englishname))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, String>(en => en.categorycode))</th>
-                        <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, bool>(en => en.inuse))</th>
+                        @*<th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, bool>(en => en.inuse))</th>*@
                         <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, DateTime?>(en => en.cretime))</th>
                         <th>操作</th>
                     </tr>
@@ -45,11 +45,11 @@
                             <td>@item.categoryname</td>
                             <td>@item.englishname</td>
                             <td>@item.categorycode</td>
-                            <td>
+                            @*<td>
                                 <div class="switch">
                                     <input type="checkbox" onchange="enableModel('@Url.Action("SiteCategoryEnable", "Manage", new { idcategory = item.idcategory, enable = !item.inuse, isAjax = true })','@Url.Action("Login", "Manage")')" name="enableSiteCategory" @(item.inuse ? "checked" : "") />
                                 </div>
-                            </td>
+                            </td>*@
                             <td>@item.cretime</td>
                             <td>
                                 <a href="@Url.Action("SiteCategoryEdit","Manage",new {idcategory=item.idcategory })" class="btn btn-primary">编辑</a>

@@ -27,7 +27,7 @@
 </head>
 <body root="@Url.Content("~/")">
     <div class="T">
-        <div class="TL">您好: @ViewBag.MUName</div>
+        <div class="TL">您好: @ViewBag.MUName-@(SunShine.Utils.Pub.ID())</div>
         <div class="TR"><a href="@Url.Action("SignOut","Manage")">注销</a></div>
     </div>
     <div class="C">
@@ -42,6 +42,16 @@
                 <div class="list-group">
                     <a class="list-group-item" id="articleList" href="@Url.Action("ArticleList","Manage")">文章列表</a>
                     <a class="list-group-item" id="siteCategory" href="@Url.Action("SiteCategoryList","Manage")">网站类别</a>
+                </div>
+                <div class="panel-heading parentMenu">网站管理</div>
+                <div class="list-group">
+                    <a class="list-group-item" id="EditWebsite" href="@Url.Action("WebsiteInfoEdit","Manage")">网站信息</a>
+                    <a class="list-group-item" id="FriendURLList" href="@Url.Action("FriendURLList","Manage")">友情链接</a>
+                </div>
+                <div class="panel-heading parentMenu">SEO</div>
+                <div class="list-group">
+                    <a class="list-group-item" id="EditWebsite" href="@Url.Action("SEOEdit","Manage")">首页SEO</a>
+                    <a class="list-group-item" id="EditWebsite" href="@Url.Action("ProductListSEOEdit","Manage")">产品中心页面SEO</a>
                 </div>
             </div>
         </div>

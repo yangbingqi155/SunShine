@@ -31,7 +31,7 @@ namespace SunShine.BLL
                 viewModel.CopyFromBase(model);
                 ProductCategory category = categories.Find(en => model.idcategory == en.idcategory);
                 viewModel.categoryName = category != null ? category.categoryname : "";
-               
+                viewModel.ParentCategory = category;
                 return viewModel;
             }).ToList();
             return entities;
@@ -127,6 +127,22 @@ namespace SunShine.BLL
             }
 
             return result;
+        }
+
+        public static bool Delete(List<string> idproducts)
+        {
+            int count = 0;
+            TN db = new TN();
+            for (int i = 0; i < idproducts.Count; i++)
+            {
+                Product product = db.Products.Remove(db.Products.Find(idproducts[i]));
+                if (product != null)
+                {
+                    count++;
+                }
+            }
+            db.SaveChanges();
+            return count > 0 ? true : false;
         }
     }
 }

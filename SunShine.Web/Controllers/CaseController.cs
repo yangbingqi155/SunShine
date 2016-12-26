@@ -49,11 +49,28 @@ namespace SunShine.Web.Controllers
 
             List<ArticleViewModel> pageList = articles.Pager<ArticleViewModel>(pageIndex, pageSize, out pageCount);
 
+            List<SiteCategory> parentCategories = SiteCategoryService.GetNavPath(currentCategoryCode);
+
             ViewData["pageCount"] = pageCount;
             ViewData["pageIndex"] = pageIndex;
-            ViewData["navPath"] = SiteCategoryService.GetNavPath(currentCategoryCode);
+            ViewData["navPath"] = parentCategories;
             ViewData["currentCategoryCode"] = currentCategoryCode;
             ViewData["categoryCode"] = categoryCode;
+
+
+            SiteCategory category = SiteCategoryService.GetByCode(currentCategoryCode);
+            ViewBag.Keywords = category != null ? category.keyword : "";
+            ViewBag.Description = category != null ? category.description : "";
+            List<SiteCategory> titleParentCategories= parentCategories.Where(en => en.idcategory != "").ToList();
+            string seoTitle = "创意阳光";
+            foreach (var item in titleParentCategories)
+            {
+                seoTitle += "-"+ item.categoryname;
+            }
+            if (!string.IsNullOrEmpty(idarticle)) {
+                seoTitle += "-"+ (articles.Count>0?articles.First().title:"");
+            }
+            ViewBag.Title = seoTitle;
 
             RouteData.Values.Add("categoryCode", categoryCode);
             RouteData.Values.Add("currentCategoryCode", currentCategoryCode);

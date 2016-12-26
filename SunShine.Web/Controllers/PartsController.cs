@@ -14,7 +14,7 @@ namespace SunShine.Web.Controllers
         // GET: HotSale
         public ActionResult HotSale()
         {
-            List<ProductViewModel> products= ProductService.GetALLViewModels().Where(en=>en.ishot).ToList();
+            List<ProductViewModel> products= ProductService.GetALLViewModels().Where(en=>en.ishot&&en.inuse).ToList();
             if (products!=null&& products.Count>3) {
                 products=products.Take(3).ToList();
             }
@@ -27,7 +27,7 @@ namespace SunShine.Web.Controllers
         /// <returns></returns>
         public ActionResult Partner() {
             string categoryCode = "lastestcase";
-            return View(ArticleService.GetArticlesByCategoryCode(categoryCode));
+            return View(ArticleService.GetArticlesByCategoryCode(categoryCode).ToList());
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace SunShine.Web.Controllers
         /// <returns></returns>
         public ActionResult BottomProductCategory() {
             List<ProductCategoryViewModel> categories = new List<ProductCategoryViewModel>();
-            List<ProductCategory> tempCategories = ProductCategoryService.GetALL();
+            List<ProductCategory> tempCategories = ProductCategoryService.GetALL().Where(en => en.inuse).ToList();
             categories = tempCategories.Select(model=> {
                 ProductCategoryViewModel category = new ProductCategoryViewModel();
                 category.CopyFromBase(model);
@@ -76,7 +76,7 @@ namespace SunShine.Web.Controllers
         /// <returns></returns>
         public ActionResult LeftProductCategory() {
             List<ProductCategoryViewModel> categories = new List<ProductCategoryViewModel>();
-            List<ProductCategory> tempCategories = ProductCategoryService.GetALL();
+            List<ProductCategory> tempCategories = ProductCategoryService.GetALL().Where(en => en.inuse).ToList();
             categories = tempCategories.Select(model => {
                 ProductCategoryViewModel category = new ProductCategoryViewModel();
                 category.CopyFromBase(model);
