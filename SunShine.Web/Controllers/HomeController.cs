@@ -24,7 +24,11 @@ namespace SunShine.Web.Controllers {
 
             ViewData["hotProducts"] = hotProducts;
             ViewData["newProducts"] = newProducts;
-
+            SEO seo = SEOService.GetByCode("Home");
+            ViewBag.Title = seo != null ? seo.seotitle : "";
+            ViewBag.Keywords = seo != null ? seo.seokeywords : "";
+            ViewBag.Description = seo != null ? seo.seodescription : "";
+            
             return View();
         }
 

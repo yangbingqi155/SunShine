@@ -126,5 +126,22 @@ namespace SunShine.Web.Controllers
             string categoryCode = "commonquestion";
             return View(ArticleService.GetArticlesByCategoryCode(categoryCode));
         }
+
+        public ActionResult FriendURL() {
+            return View(FriendURLService.GetALL());
+        }
+
+        public ActionResult BottomWebsiteInfo() {
+            WebsiteInfoViewModel model = new WebsiteInfoViewModel();
+            List<WebSiteInfo> all = WebSiteInfoService.GetALL();
+            if (all.Count > 0) {
+                model.CopyFromBase(all.First());
+            }
+            else {
+                model = null;
+            }
+            return View(model);
+        }
     }
+
 }
