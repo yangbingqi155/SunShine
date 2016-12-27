@@ -47,7 +47,9 @@ namespace SunShine.BLL
             TN db = new TN();
             list=db.Products.Where(en=> 
             (string.IsNullOrEmpty(idcategory) ||en.idcategory == idcategory) &&
-            (string.IsNullOrEmpty(name) || en.name.Contains(name) )
+            (string.IsNullOrEmpty(name) || en.name.Contains(name)
+            || en.basicinfo.Contains(name)||en.description.Contains(name)
+            )
             ).ToList();
             return list;
         }

@@ -27,7 +27,7 @@
 
 </head>
 <body>
-    <form id="form1">
+
 
         <div class="header">
             <div class="top">
@@ -43,10 +43,13 @@
                 <a href="@Url.Action("Index", "Home")">  <img src="~/Images/home/fgz_05.jpg" width="690" height="116" />    </a>
             </div>
             <div class="telephonenumber">
+
                 @*<div class="guhua_shouji">
                   <span class="guhua">4008 -778-652</span><br />
                   <span class="shouji">156&nbsp;7156&nbsp;6365</span>
                 </div>*@
+
+             
             </div>
         </div>
 
@@ -75,10 +78,12 @@
 
             <div class="keyword"><b>其他人同时也在搜索：</b><a href="/">迷你发光字</a>&nbsp;&nbsp;<a href="/">发光字生产厂家</a>&nbsp;&nbsp;<a href="/">亚克力发光字</a>&nbsp;&nbsp;<a href="/">树脂发光字厂家</a>&nbsp;&nbsp;<a href="/">迷你发光字</a></div>
             <div class="ss">
-                <input name="txtSearch" type="text" id="txtSearch" class="input" />
-                <span>
-                    <input type="image" name="btnSeach" id="btnSeach" src="~/Images/home/fgz_11.gif" style="border-width:0px;width:34px; height:33px; padding:0" />
-                </span>
+                <form id="form1" action="@Url.Action("List","Product")">
+                    <input name="keyword" type="text" id="txtSearch" class="input" />
+                    <span>
+                        <input type="image" name="btnSeach" id="btnSeach" src="~/Images/home/fgz_11.gif" style="border-width:0px;width:34px; height:33px; padding:0" />
+                    </span>
+                </form>
             </div>
         </div>
         @RenderBody()
@@ -104,6 +109,5 @@
             </div>
 
         </div>
-    </form>
 </body>
 </html>

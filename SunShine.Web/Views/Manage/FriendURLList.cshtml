@@ -18,6 +18,7 @@
 <div class="ManageRightContent">
     <div>
         <a class="btn btn-primary" href="@Url.Action("FriendURLEdit","Manage")">新增</a>
+        &nbsp;<a class="btn btn-danger" href="javascript:void(0);" id="btn_del_selected">删除</a>
     </div>
     <div>
         @Html.Raw(Url.BootstrapPagerHTML(pageCount, pageIndex, "FriendURLList", "Manage", ViewContext.RouteData.Values))
@@ -28,7 +29,9 @@
             <table class="table table-bordered table-hover table-striped">
                 <thead>
                     <tr>
-
+                        <th>
+                            <input type="checkbox" id="chk_all" />
+                        </th>
                         <th>@(AttributeHelper.DisplayAttributeFor<FriendURLViewModel, string>(en => en.url))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<FriendURLViewModel, String>(en => en.title))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<FriendURLViewModel, int?>(en => en.sortno))</th>
@@ -39,11 +42,15 @@
                     @foreach (var item in Model)
                     {
                         <tr>
+                            <td>
+                                <input type="checkbox" name="chk_list_item" value="@item.idurl" />
+                            </td>
                             <td>@item.url</td>
                             <td>@item.title</td>
                             <td>@item.sortno</td>
                             <td>
                                 <a href="@Url.Action("FriendURLEdit","Manage",new {idurl=item.idurl })" class="btn btn-primary">编辑</a>
+                                <a href="javascript:void(0);" class="btn btn-danger" name="btn_del" value="@item.idurl">删除</a>
                             </td>
                         </tr>
                     }
@@ -57,3 +64,25 @@
 
     </div>
 </div>
+<script type="text/javascript">
+    $(function () {
+        checkbox_select_all('chk_all', 'chk_list_item');
+        var delUrl = "@Url.Action("FriendURLDelete", "Manage")";
+        $("#btn_del_selected").click(function () {
+            checkbox_selected_del("chk_list_item", function (data) {
+                var postData = { idurls: data };
+                ajax_del(delUrl, postData);
+            });
+        });
+        $("[name='btn_del']").click(function () {
+            if (!confirm("确认要删除该记录吗？")) {
+                return;
+            }
+            var data = new Array();
+            data.push($(this).attr("value"));
+            var postData = { idurls: data };
+            ajax_del(delUrl, postData);
+        });
+    });
+
+</script>

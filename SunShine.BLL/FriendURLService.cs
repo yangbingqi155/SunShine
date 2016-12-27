@@ -47,5 +47,18 @@ namespace SunShine.BLL
             db.SaveChanges();
             return friendURL;
         }
+
+        public static bool Delete(List<string> idurls) {
+            int count = 0;
+            TN db = new TN();
+            for (int i = 0; i < idurls.Count; i++) {
+                FriendURL friendURL = db.FriendURLs.Remove(db.FriendURLs.Find(idurls[i]));
+                if (friendURL != null) {
+                    count++;
+                }
+            }
+            db.SaveChanges();
+            return count > 0 ? true : false;
+        }
     }
 }
