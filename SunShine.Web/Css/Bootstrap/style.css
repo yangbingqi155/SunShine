@@ -85,7 +85,7 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 .cp_right {width:744px; float:right; overflow:hidden;}
 .cp_right .title {width:744px; height:46px; line-height:46px; color:#FFF; font-size:20px; font-weight:700;  border-bottom:2px solid #da251c; position:relative;}
 .cp_right .title ul { width:300px; height:46px; overflow:hidden;}
-.cp_right .title ul li { width:129px; height:44px; float:left; text-align:center;margin-right:8px;border-radius:21px }
+.cp_right .title ul li { width:129px; height:44px; float:left; text-align:center;margin-right:8px; }
 .more1 { position:relative; margin:-35px 10px 0 0px; float:right;}
 .cp_right .title ul li a{ height:44px; color:#fff; display:block;}
 
@@ -110,8 +110,8 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 .zhanshitupian ul li { width:230px; height:200px; margin:22px 20px 0 0; float:left;}
 .zhanshitupian ul li .cp_img { width:230px; height:160px;  overflow:hidden;}
 .zhanshitupian ul li .cp_img a img{ width:230px; height:160px; }
-.zhanshitupian ul li .cp_name { width:234px; height:28px; line-height:28px; background-color:#fff; font-size:14px; overflow:hidden; text-align:center;margin-top:5px}
-.zhanshitupian ul li .cp_name a{ color:#666; text-align:center; display:block;margin-left:2px}
+.zhanshitupian ul li .cp_name { width:234px; height:28px; line-height:28px; background-color:#fff; font-size:14px; overflow:hidden; text-align:center;margin-top:5px;margin-left:2px}
+.zhanshitupian ul li .cp_name a{ color:#666; text-align:center; display:block;}
 
 .ckxq { width:359px; height:39px; line-height:39px;}
 .ckxq_left {width:168px; height:30px; line-height:28px; border:#c9c9c9 1px solid; margin-top:13px; float:left;border-radius:20px;background:#ccc}
@@ -255,7 +255,7 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 .news_t2 {width:320px; height:35px; line-height:35px; color:#333; font-size:25px; font-weight:700; overflow:hidden; float:left;}
 .news_t2 a { }
 .news_tt .more { width:59px; float:right; margin-top:8px;}
-.wenti_box{ width:480px; overflow:hidden;}
+.wenti_box{ width:480px; overflow:hidden;margin-top:10px}
 .wenti_box ul li{ overflow:hidden; border-bottom:1px dashed #CCC; height:85px; margin: 15px 0 0; padding-bottom:5px }
 .wenti_box ul li p { font-size:14px; height:18px; width:450px; line-height:18px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; float:left; font-weight:bold;}
 .wenti_box ul li dd{width:450px; height:35px; line-height:17px; overflow:hidden; color:#666; float:left; font-size:13px; margin-top:12px; }
