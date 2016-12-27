@@ -17,7 +17,7 @@
             <div class="carousel-inner" role="listbox">
                 @for (int i = 0; i < Model.Count; i++) {
                     <div class="item active" @(i==0?"class=\"item active\"":"class=\"item\"")>
-                        <img src="@Url.Content(Model[i].img)" alt="">
+                        <img src="@Url.Content(Model[i].path)" alt="">
                         <div class="carousel-caption">
                         </div>
                     </div>
