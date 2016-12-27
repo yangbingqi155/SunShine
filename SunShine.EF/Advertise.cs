@@ -13,9 +13,10 @@ namespace SunShine.EF
         [StringLength(50)]
         public string idadvertise { get; set; }
 
-        [StringLength(500)]
-        public string path { get; set; }
+        [StringLength(50)]
+        public string code { get; set; }
 
-        public int? sortno { get; set; }
+        [StringLength(100)]
+        public string title { get; set; }
     }
 }

@@ -75,6 +75,7 @@ namespace SunShine.BLL
             oldArticle.idcategory = article.idcategory;
             oldArticle.follow = article.follow;
             oldArticle.sortno = article.sortno;
+            oldArticle.introduction = article.introduction;
           
             db.SaveChanges();
             return oldArticle;

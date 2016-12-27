@@ -926,8 +926,9 @@ ul.thirdLevel {
     .kanshi_neiceng .images_tupian{width:390px;height:265px;margin-top:45px;float:left}
     .miaoshu{float:left;width:525px;height:130px; margin-top: 30px ;margin-left:60px;}
     .maioshu ul{    list-style: none;    margin: 0;    padding: 0;}
-    .miaoshu ul li{ border-bottom: 1px dashed #CCC;line-height:43px;font-size:17px;height:42px;font-weight:500;font-family:微软雅黑;color:#000;letter-spacing:1px;overflow:hidden}  
+    .miaoshu ul li{ border-bottom: 1px dashed #CCC;line-height:43px;font-size:17px;height:42px;font-weight:500;font-family:微软雅黑;color:#000;letter-spacing:1px;}  
     .miaoshu ul li img{margin-right:10px}
+    .miaoshu ul li p{display:inline;}
     .miaoshu  a img{margin-left:40px;margin-top:30px;width:110px}
     .shilizhashi_text{color:#dd2116;font-size:24px;font-family:微软雅黑;line-height:24px;font-weight:700;margin-top:153px;margin-right:185px;letter-spacing:1px;float:right;width:310px;}
 

@@ -757,6 +757,76 @@ namespace TNet.Controllers {
             return Content("<script>alert('保存成功!');window.location.href=\"" + Url.Action("FriendURLEdit", "Manage", new { idurl = model.idurl }) + "\";</script>");
         }
 
+        /// <summary>
+        /// 新增\编辑广告
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpGet]
+        public ActionResult AdvertiseEdit(string code) {
+            AdvertiseViewModel model = new AdvertiseViewModel();
+            if (!string.IsNullOrEmpty(code)) {
+                Advertise advertise = AdvertiseService.GetByCode(code);
+                if (advertise != null) { model.CopyFromBase(advertise); }
+            }
+            else {
+            }
+
+            return View(model);
+        }
+
+        /// <summary>
+        /// 新增\编辑产品
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult AdvertiseEdit(AdvertiseViewModel model, string advertiseImages = "") {
+            Advertise advertise = new Advertise();
+            model.CopyToBase(advertise);
+            if (string.IsNullOrEmpty(advertise.idadvertise)) {
+                advertise.idadvertise = Pub.ID();
+
+                //新增
+                advertise = AdvertiseService.Add(advertise);
+            }
+            else {
+                //编辑
+                advertise = AdvertiseService.Edit(advertise);
+            }
+
+            //修改后重新加载
+            model.CopyFromBase(advertise);
+
+            DeleteImages(advertise.idadvertise, ModuleType.Advertise);
+
+            if (!string.IsNullOrEmpty(advertiseImages)) {
+                List<Picture> list = new List<Picture>();
+                string[] imgs = advertiseImages.Split(',');
+                int i = 0;
+                foreach (var item in imgs) {
+                    list.Add(new Picture() {
+                        idimage = Pub.ID(),
+                        idmodule = advertise.idadvertise,
+                        moduletype = (int)ModuleType.Advertise,
+                        path = item,
+                        sortno = i + 1,
+                        cretime = DateTime.Now
+                    });
+                    i++;
+                }
+                if (list.Count > 0) {
+                    PictureService.AddMuti(list);
+                }
+            }
+
+            ModelState.AddModelError("", "保存成功.");
+            return Content("<script>alert('保存成功!');window.location.href=\"" + Url.Action("AdvertiseEdit", "Manage", new { code = model.code }) + "\";</script>");
+
+        }
 
         [ManageLoginValidation]
         public ActionResult UploadImage(ModuleType moduleType, string idmodule = "") {
@@ -771,6 +841,9 @@ namespace TNet.Controllers {
             }
             else if (moduleType == ModuleType.Article) {
                 path += "Article/";
+            }
+            else if (moduleType == ModuleType.Advertise) {
+                path += "Advertise/";
             }
             string filename = string.Empty;
             string message = string.Empty;

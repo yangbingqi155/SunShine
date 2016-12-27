@@ -33,6 +33,7 @@
             <fieldset>
                 @Html.HiddenFor(model => model.idarticle)
                 @Html.HiddenFor(model => model.content)
+                @Html.HiddenFor(model => model.introduction)
                 <input type="hidden" name="articleImages" id="articleImages" value="" />
                 <div class="form-group">
                     @Html.LabelFor(model => model.title, new { @class = "col-sm-2 control-label" })
@@ -67,6 +68,19 @@
                     <div class="col-sm-10">
                         <input type="file" name="image" id="mymercimage" multiple class="file-loading" />
                     </div>
+                </div>
+                
+                <div class="form-group" style="margin:0px">
+                    @Html.LabelFor(model => model.introduction, new { @class = "col-sm-2 control-label" })
+
+                </div>
+                <div class="form-group" style="margin:0px">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-10" style="display:block;padding:0px;">
+                        <script id="introduction_editor" type="text/plain" style="display:block;width:100%;height:200px;">
+                        </script>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.introduction)
                 </div>
                 <div class="form-group" style="margin:0px">
                     @Html.LabelFor(model => model.content, new { @class = "col-sm-2 control-label" })
@@ -185,8 +199,17 @@
         //对编辑器的操作最好在编辑器ready之后再做
         ue.ready(function () {
             //设置编辑器的内容
-            UE.getEditor('editor').setContent('@Html.Raw(Model.content)');
+            UE.getEditor('editor').setContent('@Html.Raw(!string.IsNullOrEmpty(Model.content) ? Model.content.Replace("\r", "").Replace("\n", "") : "")');
         });
+
+        var introduction_ue = UE.getEditor('introduction_editor');
+        //对编辑器的操作最好在编辑器ready之后再做
+        introduction_ue.ready(function () {
+            //设置编辑器的内容
+            UE.getEditor('introduction_editor').setContent('@Html.Raw(!string.IsNullOrEmpty(Model.introduction) ? Model.introduction.Replace("\r", "").Replace("\n", "") : "")');
+        });
+
+
 
         $("#btnSave").click(function () {
             var productImages = "";
@@ -201,6 +224,9 @@
             $("#articleImages").val(productImages);
             var html = UE.getEditor('editor').getContent();
             $("#@Html.IdFor(model=>model.content)").val(html);
+            var introduction_html = UE.getEditor('introduction_editor').getContent();
+            $("#@Html.IdFor(model=>model.introduction)").val(introduction_html);
+            
             $("#form1").submit();
         });
     });

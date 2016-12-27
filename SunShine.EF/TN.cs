@@ -1,15 +1,12 @@
-namespace SunShine.EF
-{
+namespace SunShine.EF {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class TN : DbContext
-    {
+    public partial class TN : DbContext {
         public TN()
-            : base("name=TN")
-        {
+            : base("name=TN") {
         }
 
         public virtual DbSet<Advertise> Advertises { get; set; }
@@ -23,14 +20,17 @@ namespace SunShine.EF
         public virtual DbSet<SiteCategory> SiteCategories { get; set; }
         public virtual DbSet<WebSiteInfo> WebSiteInfoes { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
+        protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             modelBuilder.Entity<Advertise>()
                 .Property(e => e.idadvertise)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Advertise>()
-                .Property(e => e.path)
+                .Property(e => e.code)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Advertise>()
+                .Property(e => e.title)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Article>()
@@ -43,6 +43,10 @@ namespace SunShine.EF
 
             modelBuilder.Entity<Article>()
                 .Property(e => e.img)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Article>()
+                .Property(e => e.introduction)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Article>()
