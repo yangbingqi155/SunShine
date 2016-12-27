@@ -805,7 +805,7 @@ ul.thirdLevel {
 .category_box {
     border: 1px solid #C0C0C0;
     width: 1024px;
-    margin: 20px auto 0;
+    margin: 20px auto;
 }
     .category_box .category_header {
         font-size:22px;

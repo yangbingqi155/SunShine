@@ -294,15 +294,15 @@
 }
 
     .case_list_item .itemdesc .itemtitle a {
-        font-size: 14px;
+        font-size: 18px;
         color: #da251c;
         font-weight: bold;
     }
 
     .case_list_item .itemdesc .itemdetail {
         margin-top: 10px;
-        font-weight: bold;
-        font-size: 16px;
+        font-weight: 400;
+        font-size: 15px;
     }
 
 /**/
