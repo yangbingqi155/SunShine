@@ -44,7 +44,10 @@ namespace SunShine.Web.Controllers
 
             if (result)
             {
-                ViewBag.Title = "创意阳光-产品中心";
+                SEO seo = SEOService.GetByCode("Home");
+                ViewBag.Title = seo != null ? seo.seotitle : "";
+                ViewBag.Keywords = seo != null ? seo.seokeywords : "";
+                ViewBag.Description = seo != null ? seo.seodescription : "";
             }
             else
             {

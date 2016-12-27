@@ -16,29 +16,23 @@ using SunShine.Utils;
 using SunShine.Web.Authorize;
 using SunShine.Web.Utils;
 
-namespace TNet.Controllers
-{
-    public class ManageController : Controller
-    {
+namespace TNet.Controllers {
+    public class ManageController : Controller {
         [HttpGet]
-        public ActionResult Login()
-        {
+        public ActionResult Login() {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Login(ManageUserViewModel model)
-        {
+        public ActionResult Login(ManageUserViewModel model) {
             ManageUser user = ManageUserService.GetManageUserByUserName(model.username);
-            if (user == null)
-            {
+            if (user == null) {
                 ModelState.AddModelError("", "没有找到该用户名或者帐号被禁用.");
                 return View(model);
             }
             string md5Password = string.Empty;
             md5Password = Crypto.GetPwdhash(model.ClearPassword, user.md5salt);
-            if (md5Password.ToUpper() != user.password.ToUpper())
-            {
+            if (md5Password.ToUpper() != user.password.ToUpper()) {
                 ModelState.AddModelError("", "密码不正确.");
                 return View(model);
             }
@@ -47,8 +41,7 @@ namespace TNet.Controllers
         }
 
         [ManageLoginValidation]
-        public ActionResult SignOut()
-        {
+        public ActionResult SignOut() {
             Session["ManageUser"] = null;
             return RedirectToAction("Login", "Manage");
         }
@@ -64,7 +57,7 @@ namespace TNet.Controllers
         /// </summary>
         /// <returns></returns>
         [ManageLoginValidation]
-        public ActionResult ProductCategoryList(int pageIndex = 0,int groupmethod=0) {
+        public ActionResult ProductCategoryList(int pageIndex = 0, int groupmethod = 0) {
             int pageCount = 0;
             int pageSize = 10;
             List<ProductCategory> entities = ProductCategoryService.Search(groupmethod);
@@ -81,11 +74,11 @@ namespace TNet.Controllers
             ViewData["pageIndex"] = pageIndex;
             ViewData["groupmethod"] = groupmethod;
             RouteData.Values.Add("groupmethod", groupmethod);
-            
-            List<SelectItemViewModel<int>> groupmethodSelectItems= ProductCategoryViewModel.GroupMethodTypeSelectItems;
-            groupmethodSelectItems.Insert(0,new SelectItemViewModel<int>() {
-                 DisplayText="所有分类",
-                 DisplayValue=0
+
+            List<SelectItemViewModel<int>> groupmethodSelectItems = ProductCategoryViewModel.GroupMethodTypeSelectItems;
+            groupmethodSelectItems.Insert(0, new SelectItemViewModel<int>() {
+                DisplayText = "所有分类",
+                DisplayValue = 0
             });
             ViewData["groupmethodSelectItems"] = groupmethodSelectItems;
             return View(viewModels);
@@ -164,7 +157,7 @@ namespace TNet.Controllers
 
             ModelState.AddModelError("", "保存成功.");
 
-            return View(model);
+            return Content("<script>alert('保存成功!');window.location.href=\"" + Url.Action("ProductCategoryEdit", "Manage", new { idcategory = model.idcategory }) + "\";</script>");
         }
 
 
@@ -174,8 +167,7 @@ namespace TNet.Controllers
         /// </summary>
         /// <returns></returns>
         [ManageLoginValidation]
-        public ActionResult ProductList(int pageIndex = 0,string name = "", string idusagecategory = "", string idindustrycategory = "", string idproductcategory = "")
-        {
+        public ActionResult ProductList(int pageIndex = 0, string name = "", string idusagecategory = "", string idindustrycategory = "", string idproductcategory = "") {
             int pageCount = 0;
             int pageSize = 10;
             string idcategory = string.Empty;
@@ -190,7 +182,7 @@ namespace TNet.Controllers
             }
             List<ProductViewModel> entities = ProductService.SearchViewModels(name, idcategory);
             List<ProductViewModel> pageList = entities.Pager<ProductViewModel>(pageIndex, pageSize, out pageCount);
-            
+
             ViewData["pageCount"] = pageCount;
             ViewData["pageIndex"] = pageIndex;
 
@@ -217,19 +209,16 @@ namespace TNet.Controllers
         /// <returns></returns>
         [HttpPost]
         [ManageLoginValidation]
-        public ActionResult ProductEnable(string idproduct, bool enable, bool isAjax)
-        {
+        public ActionResult ProductEnable(string idproduct, bool enable, bool isAjax) {
             ResultModel<ProductViewModel> resultEntity = new ResultModel<ProductViewModel>();
             resultEntity.Code = ResponseCodeType.Success;
             resultEntity.Message = "成功";
-            try
-            {
+            try {
                 Product product = ProductService.Get(idproduct);
                 product.inuse = enable;
                 ProductService.Edit(product);
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 resultEntity.Code = ResponseCodeType.Fail;
                 resultEntity.Message = ex.ToString();
             }
@@ -296,16 +285,13 @@ namespace TNet.Controllers
         /// <returns></returns>
         [ManageLoginValidation]
         [HttpGet]
-        public ActionResult ProductEdit(string idproduct = "",string idcategory="")
-        {
+        public ActionResult ProductEdit(string idproduct = "", string idcategory = "") {
             ProductViewModel model = new ProductViewModel();
-            if (!string.IsNullOrEmpty(idproduct))
-            {
+            if (!string.IsNullOrEmpty(idproduct)) {
                 Product product = ProductService.Get(idproduct);
                 if (product != null) { model.CopyFromBase(product); }
             }
-            else
-            {
+            else {
                 model.idcategory = idcategory;
                 model.inuse = true;
             }
@@ -321,19 +307,16 @@ namespace TNet.Controllers
         [ManageLoginValidation]
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult ProductEdit(ProductViewModel model, string productImages = "")
-        {
+        public ActionResult ProductEdit(ProductViewModel model, string productImages = "") {
             Product product = new Product();
             model.CopyToBase(product);
-            if (string.IsNullOrEmpty(product.idproduct))
-            {
+            if (string.IsNullOrEmpty(product.idproduct)) {
                 product.idproduct = Pub.ID();
                 product.cretime = DateTime.Now;
                 //新增
                 product = ProductService.Add(product);
             }
-            else
-            {
+            else {
                 //编辑
                 product = ProductService.Edit(product);
             }
@@ -341,37 +324,33 @@ namespace TNet.Controllers
             //修改后重新加载
             model.CopyFromBase(product);
 
-            DeleteImages(product.idproduct,ModuleType.Product);
+            DeleteImages(product.idproduct, ModuleType.Product);
 
-            if (!string.IsNullOrEmpty(productImages))
-            {
+            if (!string.IsNullOrEmpty(productImages)) {
                 List<Picture> list = new List<Picture>();
                 string[] imgs = productImages.Split(',');
                 int i = 0;
-                foreach (var item in imgs)
-                {
-                    list.Add(new Picture()
-                    {
+                foreach (var item in imgs) {
+                    list.Add(new Picture() {
                         idimage = Pub.ID(),
                         idmodule = product.idproduct,
-                         moduletype=(int)ModuleType.Product,
+                        moduletype = (int)ModuleType.Product,
                         path = item,
                         sortno = i + 1,
-                        cretime=DateTime.Now
+                        cretime = DateTime.Now
                     });
                     i++;
                 }
-                if (list.Count > 0)
-                {
+                if (list.Count > 0) {
                     PictureService.AddMuti(list);
                 }
             }
-            
+
             ProductService.SetDefaultImage(product.idproduct);
 
             ModelState.AddModelError("", "保存成功.");
+            return Content("<script>alert('保存成功!');window.location.href=\"" + Url.Action("ProductEdit", "Manage", new { idcategory = model.idcategory, idproduct=model.idproduct }) + "\";</script>");
 
-            return View(model);
         }
 
         /// <summary>
@@ -381,22 +360,19 @@ namespace TNet.Controllers
         /// <returns></returns>
         [ManageLoginValidation]
         [HttpPost]
-        public ActionResult ProductDelete(string[] idproducts)
-        {
+        public ActionResult ProductDelete(string[] idproducts) {
             ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
             ResultModel<ProductViewModel> resultEntity = new ResultModel<ProductViewModel>();
             resultEntity.Code = ResponseCodeType.Success;
             resultEntity.Message = "产品删除成功";
 
-            if (idproducts == null || idproducts.Count() == 0)
-            {
+            if (idproducts == null || idproducts.Count() == 0) {
                 resultEntity.Code = ResponseCodeType.Fail;
                 resultEntity.Message = "产品删除失败，参数错误。";
                 return Content(resultEntity.SerializeToJson());
             }
 
-            if (!ProductService.Delete(idproducts.ToList()))
-            {
+            if (!ProductService.Delete(idproducts.ToList())) {
                 resultEntity.Code = ResponseCodeType.Fail;
                 resultEntity.Message = "产品删除失败。";
                 return Content(resultEntity.SerializeToJson());
@@ -411,13 +387,12 @@ namespace TNet.Controllers
         /// </summary>
         /// <returns></returns>
         [ManageLoginValidation]
-        public ActionResult SiteCategoryList(int pageIndex = 0)
-        {
+        public ActionResult SiteCategoryList(int pageIndex = 0) {
             int pageCount = 0;
             int pageSize = 10;
             List<SiteCategoryViewModel> entities = SiteCategoryService.GetALLViewModels();
             List<SiteCategoryViewModel> pageList = entities.Pager<SiteCategoryViewModel>(pageIndex, pageSize, out pageCount);
-            
+
             ViewData["pageCount"] = pageCount;
             ViewData["pageIndex"] = pageIndex;
 
@@ -434,19 +409,16 @@ namespace TNet.Controllers
         /// <returns></returns>
         [HttpPost]
         [ManageLoginValidation]
-        public ActionResult SiteCategoryEnable(string idcategory, bool enable, bool isAjax)
-        {
+        public ActionResult SiteCategoryEnable(string idcategory, bool enable, bool isAjax) {
             ResultModel<SiteCategoryViewModel> resultEntity = new ResultModel<SiteCategoryViewModel>();
             resultEntity.Code = ResponseCodeType.Success;
             resultEntity.Message = "成功";
-            try
-            {
+            try {
                 SiteCategory category = SiteCategoryService.Get(idcategory);
                 category.inuse = enable;
                 SiteCategoryService.Edit(category);
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 resultEntity.Code = ResponseCodeType.Fail;
                 resultEntity.Message = ex.ToString();
             }
@@ -461,16 +433,13 @@ namespace TNet.Controllers
         /// <returns></returns>
         [ManageLoginValidation]
         [HttpGet]
-        public ActionResult SiteCategoryEdit(string idcategory = "")
-        {
+        public ActionResult SiteCategoryEdit(string idcategory = "") {
             SiteCategoryViewModel model = new SiteCategoryViewModel();
-            if (!string.IsNullOrEmpty(idcategory))
-            {
+            if (!string.IsNullOrEmpty(idcategory)) {
                 SiteCategory category = SiteCategoryService.Get(idcategory);
                 if (category != null) { model.CopyFromBase(category); }
             }
-            else
-            {
+            else {
                 model.inuse = true;
             }
 
@@ -484,19 +453,16 @@ namespace TNet.Controllers
         /// <returns></returns>
         [ManageLoginValidation]
         [HttpPost]
-        public ActionResult SiteCategoryEdit(SiteCategoryViewModel model)
-        {
+        public ActionResult SiteCategoryEdit(SiteCategoryViewModel model) {
             SiteCategory category = new SiteCategory();
             model.CopyToBase(category);
-            if (string.IsNullOrEmpty(category.idcategory))
-            {
+            if (string.IsNullOrEmpty(category.idcategory)) {
                 category.idcategory = Pub.ID();
                 category.cretime = DateTime.Now;
                 //新增
                 category = SiteCategoryService.Add(category);
             }
-            else
-            {
+            else {
                 //编辑
                 category = SiteCategoryService.Edit(category);
             }
@@ -505,8 +471,7 @@ namespace TNet.Controllers
             model.CopyFromBase(category);
 
             ModelState.AddModelError("", "保存成功.");
-
-            return RedirectToAction("SiteCategoryList", "Manage");
+            return Content("<script>alert('保存成功!');window.location.href=\"" + Url.Action("SiteCategoryEdit", "Manage", new { idcategory = model.idcategory }) + "\";</script>");
         }
 
 
@@ -542,7 +507,7 @@ namespace TNet.Controllers
         /// <returns></returns>
         [ManageLoginValidation]
         [HttpGet]
-        public ActionResult ArticleEdit(string idarticle = "",string idcategory = "") {
+        public ActionResult ArticleEdit(string idarticle = "", string idcategory = "") {
             ArticleViewModel model = new ArticleViewModel();
             if (!string.IsNullOrEmpty(idarticle)) {
                 Article article = ArticleService.Get(idarticle);
@@ -603,9 +568,7 @@ namespace TNet.Controllers
 
             ArticleService.SetDefaultImage(article.idarticle);
 
-            ModelState.AddModelError("", "保存成功.");
-
-            return View(model);
+            return Content("<script>alert('保存成功!');window.location.href=\"" + Url.Action("ArticleEdit", "Manage", new { idcategory = model.idcategory,idarticle=model.idarticle }) + "\";</script>");
         }
 
         /// <summary>
@@ -643,12 +606,11 @@ namespace TNet.Controllers
         /// <returns></returns>
         [ManageLoginValidation]
         [HttpGet]
-        public ActionResult WebsiteInfoEdit()
-        {
+        public ActionResult WebsiteInfoEdit() {
             WebsiteInfoViewModel model = new WebsiteInfoViewModel();
-            List<WebSiteInfo> list= WebSiteInfoService.GetALL();
-            if (list.Count>=1) {
-                 model.CopyFromBase(list.First());
+            List<WebSiteInfo> list = WebSiteInfoService.GetALL();
+            if (list.Count >= 1) {
+                model.CopyFromBase(list.First());
             }
 
             return View(model);
@@ -662,19 +624,16 @@ namespace TNet.Controllers
         [ManageLoginValidation]
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult WebsiteInfoEdit(WebsiteInfoViewModel model)
-        {
+        public ActionResult WebsiteInfoEdit(WebsiteInfoViewModel model) {
             WebSiteInfo info = new WebSiteInfo();
             model.CopyToBase(info);
-            if (string.IsNullOrEmpty(info.idsite))
-            {
+            if (string.IsNullOrEmpty(info.idsite)) {
                 info.idsite = Pub.ID();
 
                 //新增
                 info = WebSiteInfoService.Add(info);
             }
-            else
-            {
+            else {
                 //编辑
                 info = WebSiteInfoService.Edit(info);
             }
@@ -687,12 +646,55 @@ namespace TNet.Controllers
 
 
         /// <summary>
+        /// 编辑SEO信息
+        /// </summary>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpGet]
+        public ActionResult SEOEdit(string code) {
+            SEOViewModel model = new SEOViewModel();
+            SEO seo = SEOService.GetByCode(code);
+            if (seo==null) {
+                return Content("<script>alert('该页面SEO信息不存在!');window.location.href=\""+Url.Action("Index","Manage")+"\";</script>");
+            }
+            model.CopyFromBase(seo);
+
+            return View(model);
+        }
+
+        /// <summary>
+        /// 编辑SEO信息
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult SEOEdit(SEOViewModel model) {
+            SEO seo = new SEO();
+            model.CopyToBase(seo);
+            string message = "保存成功";
+            if (string.IsNullOrEmpty(seo.idseo)) {
+                message = "该页面没有设置SEO";
+            }
+            else {
+                //编辑
+                seo = SEOService.Edit(seo);
+            }
+
+            ViewData["Message"] = message;
+            return Content("<script>alert('保存成功!');window.location.href=\""+ Url.Action("SEOEdit", "Manage",new { code = seo.code }) + "\";</script>");
+
+            //return View(model);
+        }
+
+
+        /// <summary>
         /// 友情链接列表
         /// </summary>
         /// <returns></returns>
         [ManageLoginValidation]
-        public ActionResult FriendURLList(int pageIndex = 0)
-        {
+        public ActionResult FriendURLList(int pageIndex = 0) {
             int pageCount = 0;
             int pageSize = 10;
             List<FriendURL> entities = FriendURLService.GetALL();
@@ -719,11 +721,9 @@ namespace TNet.Controllers
         /// <returns></returns>
         [ManageLoginValidation]
         [HttpGet]
-        public ActionResult FriendURLEdit(string idurl = "")
-        {
+        public ActionResult FriendURLEdit(string idurl = "") {
             FriendURLViewModel model = new FriendURLViewModel();
-            if (!string.IsNullOrEmpty(idurl))
-            {
+            if (!string.IsNullOrEmpty(idurl)) {
                 FriendURL friendURL = FriendURLService.Get(idurl);
                 if (friendURL != null) { model.CopyFromBase(friendURL); }
             }
@@ -738,18 +738,15 @@ namespace TNet.Controllers
         /// <returns></returns>
         [ManageLoginValidation]
         [HttpPost]
-        public ActionResult FriendURLEdit(FriendURLViewModel model)
-        {
+        public ActionResult FriendURLEdit(FriendURLViewModel model) {
             FriendURL friendURL = new FriendURL();
             model.CopyToBase(friendURL);
-            if (string.IsNullOrEmpty(friendURL.idurl))
-            {
+            if (string.IsNullOrEmpty(friendURL.idurl)) {
                 friendURL.idurl = Pub.ID();
                 //新增
                 friendURL = FriendURLService.Add(friendURL);
             }
-            else
-            {
+            else {
                 //编辑
                 friendURL = FriendURLService.Edit(friendURL);
             }
@@ -757,15 +754,12 @@ namespace TNet.Controllers
             //修改后重新加载
             model.CopyFromBase(friendURL);
 
-            ModelState.AddModelError("", "保存成功.");
-
-            return View(model);
+            return Content("<script>alert('保存成功!');window.location.href=\"" + Url.Action("FriendURLEdit", "Manage", new { idurl = model.idurl }) + "\";</script>");
         }
 
 
         [ManageLoginValidation]
-        public ActionResult UploadImage(ModuleType moduleType,string idmodule="")
-        {
+        public ActionResult UploadImage(ModuleType moduleType, string idmodule = "") {
             ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
             ResultModel<PictureViewModel> resultEntity = new ResultModel<PictureViewModel>();
             resultEntity.Code = ResponseCodeType.Success;
@@ -775,15 +769,13 @@ namespace TNet.Controllers
             if (moduleType == ModuleType.Product) {
                 path += "Product/";
             }
-            else if(moduleType == ModuleType.Article) {
+            else if (moduleType == ModuleType.Article) {
                 path += "Article/";
             }
             string filename = string.Empty;
             string message = string.Empty;
-            try
-            {
-                if (Request.Files != null && Request.Files.Count > 0)
-                {
+            try {
+                if (Request.Files != null && Request.Files.Count > 0) {
                     //if (Request.Files.Count > 1)
                     //{
                     //    resultEntity.Code = ResponseCodeType.Fail;
@@ -792,19 +784,16 @@ namespace TNet.Controllers
                     //}
                     resultEntity.Content = new List<PictureViewModel>();
                     int i = 0;
-                    foreach (string upload in Request.Files)
-                    {
+                    foreach (string upload in Request.Files) {
                         GUID = System.Guid.NewGuid().ToString();
-                        if (!Request.Files[i].HasFile())
-                        {
+                        if (!Request.Files[i].HasFile()) {
                             resultEntity.Code = ResponseCodeType.Fail;
                             resultEntity.Message = "文件大小不能0.";
                             return Content(resultEntity.SerializeToJson());
                         }
 
 
-                        if (!CheckFileType((HttpPostedFileWrapper)((HttpFileCollectionWrapper)Request.Files)[i]))
-                        {
+                        if (!CheckFileType((HttpPostedFileWrapper)((HttpFileCollectionWrapper)Request.Files)[i])) {
                             resultEntity.Code = ResponseCodeType.Fail;
                             resultEntity.Message = "文件类型只能是jpg,bmp,gif,PNG..";
                             return Content(resultEntity.SerializeToJson());
@@ -814,8 +803,7 @@ namespace TNet.Controllers
                         string originFileName = Request.Files[i].FileName;
                         string originFileNameSuffix = string.Empty;
                         int lastIndex = originFileName.LastIndexOf(".");
-                        if (lastIndex < 0)
-                        {
+                        if (lastIndex < 0) {
                             resultEntity.Code = ResponseCodeType.Fail;
                             resultEntity.Message = "文件类型只能是jpg,bmp,gif,PNG..";
                             return Content(resultEntity.SerializeToJson());
@@ -823,16 +811,14 @@ namespace TNet.Controllers
                         originFileNameSuffix = originFileName.Substring(lastIndex, originFileName.Length - lastIndex);
 
                         filename = GUID + originFileNameSuffix;
-                        if (!Directory.Exists(Server.MapPath(path)))
-                        {
+                        if (!Directory.Exists(Server.MapPath(path))) {
                             Directory.CreateDirectory(Server.MapPath(path));
                         }
 
                         Request.Files[i].SaveAs(Path.Combine(Server.MapPath(path), filename));
-                        PictureViewModel model = new PictureViewModel()
-                        {
+                        PictureViewModel model = new PictureViewModel() {
                             idmodule = idmodule,
-                             path = path + filename,
+                            path = path + filename,
                             sortno = 0
                         };
 
@@ -842,15 +828,12 @@ namespace TNet.Controllers
                         StringBuilder initialPreviewConfig = new StringBuilder();
                         initialPreviewConfig.Append(",\"initialPreviewConfig\":[");
                         initialPreview.Append("{\"initialPreview\":[");
-                        for (int k = 0; k < resultEntity.Content.Count; k++)
-                        {
-                            if (k == 0)
-                            {
+                        for (int k = 0; k < resultEntity.Content.Count; k++) {
+                            if (k == 0) {
                                 initialPreview.AppendFormat("\"{0}\"", Url.Content(resultEntity.Content[k].path));
                                 initialPreviewConfig.Append("{\"url\":\"" + Url.Action("DeleteImages", "Manage") + "\"}");
                             }
-                            else
-                            {
+                            else {
                                 initialPreview.AppendFormat("\",{0}\"", Url.Content(resultEntity.Content[k].path));
                                 initialPreviewConfig.Append(",{\"url\":\"" + Url.Action("DeleteImages", "Manage") + "\"}");
                             }
@@ -863,15 +846,13 @@ namespace TNet.Controllers
                     }
 
                 }
-                else
-                {
+                else {
                     resultEntity.Code = ResponseCodeType.Fail;
                     resultEntity.Message = "文件上传失败.";
                     return Content(resultEntity.SerializeToJson());
                 }
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 log.Error(ex.ToString());
                 resultEntity.Code = ResponseCodeType.Fail;
                 resultEntity.Message = "没有选择要上传的文件.";
@@ -883,26 +864,22 @@ namespace TNet.Controllers
         }
 
         [ManageLoginValidation]
-        public ActionResult DeleteImages(bool isAjax)
-        {
+        public ActionResult DeleteImages(bool isAjax) {
             ResultModel<PictureViewModel> resultEntity = new ResultModel<PictureViewModel>();
             resultEntity.Code = ResponseCodeType.Success;
             resultEntity.Message = "文件删除成功";
             return Content(resultEntity.SerializeToJson());
         }
 
-        public static bool DeleteImages(string idmodule="",ModuleType moduleType= ModuleType.ALL)
-        {
+        public static bool DeleteImages(string idmodule = "", ModuleType moduleType = ModuleType.ALL) {
             bool result = false;
-            try
-            {
+            try {
                 TN db = new TN();
-                db.Pictures.RemoveRange(db.Pictures.Where(en => en.idmodule == idmodule && en.moduletype==(int)moduleType));
+                db.Pictures.RemoveRange(db.Pictures.Where(en => en.idmodule == idmodule && en.moduletype == (int)moduleType));
                 db.SaveChanges();
                 result = true;
             }
-            catch (Exception)
-            {
+            catch (Exception) {
                 result = false;
             }
 
@@ -917,16 +894,13 @@ namespace TNet.Controllers
         /// <param name="isAjax"></param>
         /// <returns></returns>
         [ManageLoginValidation]
-        public ActionResult AjaxImageList(string idmodule,ModuleType moduleType, bool isAjax)
-        {
+        public ActionResult AjaxImageList(string idmodule, ModuleType moduleType, bool isAjax) {
             ResultModel<PictureViewModel> resultEntity = new ResultModel<PictureViewModel>();
             resultEntity.Code = ResponseCodeType.Success;
             resultEntity.Message = "成功";
-            try
-            {
+            try {
                 List<Picture> entities = PictureService.GetImagesByIdmodule(idmodule, moduleType);
-                List<PictureViewModel> viewModels = entities.Select(model =>
-                {
+                List<PictureViewModel> viewModels = entities.Select(model => {
                     PictureViewModel viewModel = new PictureViewModel();
                     viewModel.CopyFromBase(model);
                     viewModel.path = Url.Content(viewModel.path);
@@ -934,8 +908,7 @@ namespace TNet.Controllers
                 }).ToList();
                 resultEntity.Content = viewModels;
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 resultEntity.Code = ResponseCodeType.Fail;
                 resultEntity.Message = ex.ToString();
             }
@@ -946,8 +919,7 @@ namespace TNet.Controllers
         /// <summary>
         /// 判断上传文件类型
         /// </summary>
-        private bool CheckFileType(HttpPostedFileWrapper postedFile)
-        {
+        private bool CheckFileType(HttpPostedFileWrapper postedFile) {
 
             bool result = true;
             /*  文件扩展名说明  
@@ -961,8 +933,7 @@ namespace TNet.Controllers
             string fileTypeStr = "255216, 6677, 7173, 13780, 3780";
             ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
             int fileLength = postedFile.ContentLength;
-            if (fileLength <= 0)
-            {
+            if (fileLength <= 0) {
                 return false;
             }
             byte[] imgArray = new byte[fileLength];
@@ -974,27 +945,23 @@ namespace TNet.Controllers
             System.IO.BinaryReader r = new System.IO.BinaryReader(fs);
             string fileclass = string.Empty;
             byte buffer;
-            try
-            {
+            try {
                 buffer = r.ReadByte();
                 fileclass = buffer.ToString();
                 buffer = r.ReadByte();
                 fileclass += buffer.ToString();
             }
-            catch (Exception)
-            {
+            catch (Exception) {
                 result = false;
                 //Log.Error(ex.ToString());
             }
-            finally
-            {
+            finally {
                 r.Close();
                 fs.Close();
                 r.Dispose();
                 fs.Dispose();
             }
-            if (fileTypeStr.IndexOf(fileclass) < 0)
-            {
+            if (fileTypeStr.IndexOf(fileclass) < 0) {
                 result = false;
             }
 

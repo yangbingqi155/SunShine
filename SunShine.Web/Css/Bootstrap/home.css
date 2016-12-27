@@ -886,13 +886,15 @@ ul.thirdLevel {
 }
 
 .honor_bottom .friend_link {
-    color: #FFFFFF;
-    font-size: 16px;
-    line-height: 20px;
     float: left;
     width: 180px;
     padding-top: 5px;
     padding-bottom: 10px;
+}
+.honor_bottom .friend_link a{
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 .site_bottom_bg {

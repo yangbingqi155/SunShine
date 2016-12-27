@@ -27,7 +27,7 @@
 </head>
 <body root="@Url.Content("~/")">
     <div class="T">
-        <div class="TL">您好: @ViewBag.MUName-@(SunShine.Utils.Pub.ID())</div>
+        <div class="TL">您好: @ViewBag.MUName</div>
         <div class="TR"><a href="@Url.Action("SignOut","Manage")">注销</a></div>
     </div>
     <div class="C">
@@ -50,8 +50,8 @@
                 </div>
                 <div class="panel-heading parentMenu">SEO</div>
                 <div class="list-group">
-                    <a class="list-group-item" id="EditWebsite" href="@Url.Action("SEOEdit","Manage")">首页SEO</a>
-                    <a class="list-group-item" id="EditWebsite" href="@Url.Action("ProductListSEOEdit","Manage")">产品中心页面SEO</a>
+                    <a class="list-group-item" id="EditWebsite" href="@Url.Action("SEOEdit","Manage",new {code="Home" })">首页SEO</a>
+                    <a class="list-group-item" id="EditWebsite" href="@Url.Action("SEOEdit","Manage",new {code="ProductList" })">产品中心页面SEO</a>
                 </div>
             </div>
         </div>

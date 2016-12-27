@@ -218,14 +218,14 @@
         //对编辑器的操作最好在编辑器ready之后再做
         ue.ready(function () {
             //设置编辑器的内容
-            UE.getEditor('editor').setContent('@Html.Raw(Model.description)');
+            UE.getEditor('editor').setContent('@Html.Raw(Model.description.Replace("\r","").Replace("\n", ""))');
         });
 
         var basic_ue = UE.getEditor('basic_editor');
         //对编辑器的操作最好在编辑器ready之后再做
         basic_ue.ready(function () {
             //设置编辑器的内容
-            UE.getEditor('basic_editor').setContent('@Html.Raw(Model.basicinfo)');
+            UE.getEditor('basic_editor').setContent('@Html.Raw(Model.basicinfo.Replace("\r", "").Replace("\n", ""))');
         });
 
         $("#btnSave").click(function () {

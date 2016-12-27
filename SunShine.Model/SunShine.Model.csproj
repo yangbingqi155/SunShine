@@ -55,6 +55,7 @@
     <Compile Include="ResponseCodeType.cs" />
     <Compile Include="ResultModel.cs" />
     <Compile Include="SelectItemViewModel.cs" />
+    <Compile Include="SEOViewModel.cs" />
     <Compile Include="SiteCategoryViewModel.cs" />
     <Compile Include="WebsiteInfoViewModel.cs" />
   </ItemGroup>
