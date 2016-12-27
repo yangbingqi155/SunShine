@@ -1,0 +1,84 @@
+﻿@using SunShine.Model;
+@{
+    Layout = null;
+    List<ArticleViewModel> ablity = (List<ArticleViewModel>)ViewData["ablity"];
+    List<ArticleViewModel> quality = (List<ArticleViewModel>)ViewData["quality"];
+    List<ArticleViewModel> goodprice = (List<ArticleViewModel>)ViewData["goodprice"];
+    List<ArticleViewModel> saleservice = (List<ArticleViewModel>)ViewData["saleservice"];
+
+}
+<div style="width:1444px;margin:0px auto;">
+    <div class="picture_center"><img src="~/Images/home/hexinyoushi_1.jpg" /></div>
+</div>
+<div class="kanshi_waiceng">
+    <div class="decription_text">
+        <div class="decription_kanshi"><p>11年发光字经验,2389家企事业单位的信赖</p></div>
+    </div>
+
+    <div class="kanshi_neiceng">
+        <div class="images_tupian">
+            <img src="~/Images/home/kanshili_1.jpg" />
+        </div>
+        <div class="miaoshu">
+            <ul>
+                @foreach (var item in ablity) {
+                    <li><img src="~/Images/home/hongsejiantou.jpg" />@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                }
+            </ul>
+            <a href="@Url.Action("Index","Case",new {categoryCode="contactsunshine",currentCategoryCode="designteam" })"><img src="~/Images/home/chakangengduo_1.JPG"></a>
+        </div>
+        <div class="shilizhashi_text"><p>质量过硬,是我们的核心优势</p></div>
+
+    </div>
+
+    <div class="kanzhiliang">
+        <div class="miaoshu">
+            <ul>
+                @foreach (var item in quality) {
+                    <li><img src="~/Images/home/hongsejiantou.jpg" />@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                }
+
+            </ul>
+            <a href="@Url.Action("Index","Case",new {categoryCode="contactsunshine",currentCategoryCode="designteam" })"><img src="~/Images/home/chakangengduo_1.JPG"></a>
+        </div>
+        <div class="images_tupian">
+            <img src="~/Images/home/kanshili_2.jpg" />
+        </div>
+        <div class="kanzhiliang_text"><p>设计、制作、安装一条龙服务</p></div>
+    </div>
+
+    <div class="kanxingjiabi">
+
+        <div class="images_tupian">
+            <img src="~/Images/home/kanshili_3.jpg" />
+        </div>
+        <div class="miaoshu">
+            <ul>
+                @foreach (var item in goodprice) {
+                <li><img src="~/Images/home/hongsejiantou.jpg" />@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+            }
+
+        </ul>
+        <a href="@Url.Action("Index","Case",new {categoryCode="contactsunshine",currentCategoryCode="designteam" })"><img src="~/Images/home/chakangengduo_1.JPG"></a>
+    </div>
+    <div class="kanxingjiabi_text"><p>按时保质保量完成供货,全程放心无忧</p> </div>
+</div>
+
+<div class="kanshouhou">
+    <div class="miaoshu">
+        <ul>
+            @foreach (var item in saleservice) {
+                <li><img src="~/Images/home/hongsejiantou.jpg" />@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+            }
+        </ul>
+        <a href="@Url.Action("Index","Case",new {categoryCode="contactsunshine",currentCategoryCode="designteam" })"><img src="~/Images/home/chakangengduo_1.JPG"></a>
+        <div class="telephone_yellow">
+            <img src="~/Images/home/telephone_yellow.jpg" />
+        </div>
+    </div>
+    <div class="images_tupian">
+        <img src="~/Images/home/kanshili_4.jpg" />
+    </div>
+</div>
+
+</div>

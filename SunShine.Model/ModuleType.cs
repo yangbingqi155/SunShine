@@ -29,5 +29,11 @@ namespace SunShine.Model
         /// </summary>
         [Display(Name = "文章")]
         Article = 10,
+
+        /// <summary>
+        /// 广告
+        /// </summary>
+        [Display(Name = "广告")]
+        Advertise = 20,
     }
 }

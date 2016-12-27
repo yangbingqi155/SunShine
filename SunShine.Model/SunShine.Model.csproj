@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvertiseViewModel.cs" />
     <Compile Include="ArticleViewModel.cs" />
     <Compile Include="FriendURLViewModel.cs" />
     <Compile Include="GroupMethodType.cs" />

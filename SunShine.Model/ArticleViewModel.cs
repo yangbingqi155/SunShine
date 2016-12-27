@@ -23,6 +23,10 @@ namespace SunShine.Model {
         [StringLength(500)]
         public new string img { get; set; }
 
+        [Display(Name = "内容简介")]
+        [StringLength(5000)]
+        public new string introduction{get;set;}
+
         [Display(Name = "内容")]
         public new string content { get; set; }
 
@@ -51,6 +55,7 @@ namespace SunShine.Model {
             this.idcategory = article.idcategory;
             this.follow = article.follow;
             this.cretime = article.cretime;
+            this.introduction = article.introduction;
         }
 
         public void CopyToBase(Article article) {
@@ -61,6 +66,7 @@ namespace SunShine.Model {
             article.idcategory = this.idcategory;
             article.follow = this.follow;
             article.cretime = this.cretime;
+            article.introduction = this.introduction;
         }
     }
 }

@@ -142,6 +142,30 @@ namespace SunShine.Web.Controllers
             }
             return View(model);
         }
+        public ActionResult CoreAdvance() {
+            List<ArticleViewModel> ablity = ArticleService.GetArticlesByCategoryCode("ablity");
+            List<ArticleViewModel> quality = ArticleService.GetArticlesByCategoryCode("quality");
+            List<ArticleViewModel> goodprice = ArticleService.GetArticlesByCategoryCode("goodprice");
+            List<ArticleViewModel> saleservice = ArticleService.GetArticlesByCategoryCode("saleservice");
+
+            ViewData["ablity"] = ablity;
+            ViewData["quality"] = quality;
+            ViewData["goodprice"] = goodprice;
+            ViewData["saleservice"] = saleservice;
+
+
+            return View();
+        }
+
+        public ActionResult HomeAdvertise() {
+            string code = "home";
+            Advertise advertise = AdvertiseService.GetByCode(code);
+            if (advertise==null) {
+                return View();
+            }
+            return View( PictureService.GetImagesByIdmodule(advertise.idadvertise, ModuleType.Advertise));
+
+        }
     }
 
 }

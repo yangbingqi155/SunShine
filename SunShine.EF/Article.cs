@@ -20,6 +20,9 @@ namespace SunShine.EF
         [StringLength(500)]
         public string img { get; set; }
 
+        [StringLength(5000)]
+        public string introduction { get; set; }
+
         [Column(TypeName = "text")]
         public string content { get; set; }
 
