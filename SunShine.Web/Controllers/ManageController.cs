@@ -757,6 +757,35 @@ namespace TNet.Controllers {
             return Content("<script>alert('保存成功!');window.location.href=\"" + Url.Action("FriendURLEdit", "Manage", new { idurl = model.idurl }) + "\";</script>");
         }
 
+
+        /// <summary>
+        /// 删除友情链接
+        /// </summary>
+        /// <param name="idurls"></param>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpPost]
+        public ActionResult FriendURLDelete(string[] idurls) {
+            ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+            ResultModel<FriendURLViewModel> resultEntity = new ResultModel<FriendURLViewModel>();
+            resultEntity.Code = ResponseCodeType.Success;
+            resultEntity.Message = "友情链接删除成功";
+
+            if (idurls == null || idurls.Count() == 0) {
+                resultEntity.Code = ResponseCodeType.Fail;
+                resultEntity.Message = "友情链接删除失败，参数错误。";
+                return Content(resultEntity.SerializeToJson());
+            }
+
+            if (!FriendURLService.Delete(idurls.ToList())) {
+                resultEntity.Code = ResponseCodeType.Fail;
+                resultEntity.Message = "友情链接删除失败。";
+                return Content(resultEntity.SerializeToJson());
+            }
+
+            return Content(resultEntity.SerializeToJson());
+        }
+
         /// <summary>
         /// 新增\编辑广告
         /// </summary>
