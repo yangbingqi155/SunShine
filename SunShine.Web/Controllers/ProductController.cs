@@ -13,7 +13,7 @@ namespace SunShine.Web.Controllers
     public class ProductController : Controller
     {
         // GET: Product
-        public ActionResult List(string idproduct="",string idcategory="",string categoryCode="", int pageIndex = 0)
+        public ActionResult List(string idproduct="",string idcategory="",string categoryCode="",string keyword="", int pageIndex = 0)
         {
             string contactusStr = string.Empty;
             int pageCount = 0;
@@ -38,13 +38,20 @@ namespace SunShine.Web.Controllers
                 category = ProductCategoryService.GetByCategoryCode(categoryCode);
                 result = false;
             }
+           
             if (result) {
-                productViewModels = ProductService.GetALLViewModels().Where(en => en.inuse).ToList();
+                if (!string.IsNullOrEmpty(keyword)) {
+                    productViewModels = ProductService.SearchViewModels(keyword).Where(en => en.inuse).ToList();
+                }
+                else {
+                    productViewModels = ProductService.GetALLViewModels().Where(en => en.inuse).ToList();
+                }
+                
             }
 
             if (result)
             {
-                SEO seo = SEOService.GetByCode("Home");
+                SEO seo = SEOService.GetByCode("ProductList");
                 ViewBag.Title = seo != null ? seo.seotitle : "";
                 ViewBag.Keywords = seo != null ? seo.seokeywords : "";
                 ViewBag.Description = seo != null ? seo.seodescription : "";
@@ -66,7 +73,9 @@ namespace SunShine.Web.Controllers
             ViewData["pageCount"] = pageCount;
             ViewData["pageIndex"] = pageIndex;
             ViewData["contactus"] = contactusStr;
+            ViewData["keyword"] = keyword;
 
+            RouteData.Values.Add("keyword", keyword);
             RouteData.Values.Add("idproduct", idproduct);
             RouteData.Values.Add("idcategory", idcategory);
             RouteData.Values.Add("categoryCode", categoryCode);
