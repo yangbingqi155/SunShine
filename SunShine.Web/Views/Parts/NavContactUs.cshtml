@@ -28,8 +28,8 @@
     </div>
     <div class="contactuslist">
         <ul>
-            <li style="margin-top:0;">咨询热线：Model.hotphone</li>
-            <li>咨询手机：Model.phone</li>
+            <li style="margin-top:0;">咨询热线：@Model.hotphone</li>
+            <li>咨询手机：@Model.phone</li>
             @if (!string.IsNullOrEmpty(Model.qq)) {
                 string[] qqs = Model.qq.Split(' ');
                 for (int i = 0; i < qqs.Length; i++) {
@@ -37,11 +37,13 @@
                         <li>QQ客服：@qqs[i]</li>
                     }
                     else {
-                        <li><span>@qqs[i]</span></li>
+                        if (!string.IsNullOrEmpty(qqs[i])) {
+                            <li><span>@qqs[i]</span></li>
+                        }
                     }
                 }
             }
-            <li>地址：Model.address</li>
+            <li>地址：@Model.address</li>
         </ul>
     </div>
 
