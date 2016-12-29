@@ -218,6 +218,14 @@ namespace SunShine.EF {
                 .IsUnicode(false);
 
             modelBuilder.Entity<WebSiteInfo>()
+                .Property(e => e.hotphoneallcountry)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<WebSiteInfo>()
+                .Property(e => e.hotphone)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<WebSiteInfo>()
                 .Property(e => e.phone)
                 .IsUnicode(false);
 

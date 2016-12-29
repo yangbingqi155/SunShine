@@ -43,9 +43,10 @@ namespace SunShine.Model {
 
         [Display(Name = "发布时间")]
         public new DateTime? cretime { get; set; }
-
+        
         [Display(Name ="类别")]
         public SiteCategory Category { get; set; }
+
 
         public void CopyFromBase(Article article) {
             this.idarticle = article.idarticle;

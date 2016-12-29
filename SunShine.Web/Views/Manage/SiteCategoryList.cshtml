@@ -33,6 +33,7 @@
                         <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, String>(en => en.englishname))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, String>(en => en.categorycode))</th>
                         @*<th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, bool>(en => en.inuse))</th>*@
+                        <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, int>(en => en.pagesize))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<SiteCategoryViewModel, DateTime?>(en => en.cretime))</th>
                         <th>操作</th>
                     </tr>
@@ -50,6 +51,7 @@
                                     <input type="checkbox" onchange="enableModel('@Url.Action("SiteCategoryEnable", "Manage", new { idcategory = item.idcategory, enable = !item.inuse, isAjax = true })','@Url.Action("Login", "Manage")')" name="enableSiteCategory" @(item.inuse ? "checked" : "") />
                                 </div>
                             </td>*@
+                            <th>@item.pagesize</th>
                             <td>@item.cretime</td>
                             <td>
                                 <a href="@Url.Action("SiteCategoryEdit","Manage",new {idcategory=item.idcategory })" class="btn btn-primary">编辑</a>

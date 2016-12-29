@@ -52,7 +52,15 @@ namespace SunShine.Web.Controllers
         /// </summary>
         /// <returns></returns>
         public ActionResult NavContactUs() {
-            return View();
+            WebsiteInfoViewModel model = new WebsiteInfoViewModel();
+            List<WebSiteInfo> all = WebSiteInfoService.GetALL();
+            if (all.Count > 0) {
+                model.CopyFromBase(all.First());
+            }
+            else {
+                model = null;
+            }
+            return View(model);
         }
 
         /// <summary>

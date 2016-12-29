@@ -196,7 +196,7 @@ namespace TNet.Controllers {
             ViewData["idindustrycategory"] = idindustrycategory;
             ViewData["idproductcategory"] = idproductcategory;
 
-            return View(entities);
+            return View(pageList);
         }
 
 
@@ -497,7 +497,7 @@ namespace TNet.Controllers {
             ViewData["idcategory"] = idcategory;
             List<SelectItemViewModel<string>> categorySelectItems = SiteCategoryService.SelectItems("");
             ViewData["categorySelectItems"] = categorySelectItems;
-            return View(entities);
+            return View(pageList);
         }
 
         /// <summary>

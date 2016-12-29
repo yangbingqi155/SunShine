@@ -137,6 +137,7 @@ namespace SunShine.BLL
             oldCategory.inuse = category.inuse;
             oldCategory.description = category.description;
             oldCategory.keyword = category.keyword;
+            oldCategory.pagesize = category.pagesize;
 
             db.SaveChanges();
             return oldCategory;

@@ -50,6 +50,9 @@ namespace SunShine.Model {
         [Display(Name = "SEO描述")]
         public new string description { get; set; }
 
+        [Display(Name = "每页记录数")]
+        public new int pagesize { get; set; }
+
         public void CopyFromBase(SiteCategory category) {
             this.idcategory = category.idcategory;
             this.categorycode = category.categorycode;
@@ -60,6 +63,7 @@ namespace SunShine.Model {
             this.parentid = category.parentid;
             this.description = category.description;
             this.keyword = category.keyword;
+            this.pagesize = category.pagesize;
         }
 
         public void CopyToBase(SiteCategory category) {
@@ -72,6 +76,7 @@ namespace SunShine.Model {
             category.parentid = this.parentid;
             category.description = this.description;
             category.keyword = this.keyword;
+            category.pagesize = this.pagesize;
         }
     }
 }

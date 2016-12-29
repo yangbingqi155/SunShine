@@ -22,6 +22,12 @@ namespace SunShine.EF
         [StringLength(500)]
         public string address { get; set; }
 
+        [StringLength(50)]
+        public string hotphoneallcountry { get; set; }
+
+        [StringLength(500)]
+        public string hotphone { get; set; }
+
         [StringLength(500)]
         public string phone { get; set; }
 

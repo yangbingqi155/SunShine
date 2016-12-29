@@ -32,28 +32,42 @@
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.copyright, new { @class = "col-sm-2 control-label" })
-                    <div class="col-sm-3">
+                    <div class="col-sm-7">
                         @Html.TextBoxFor(model => model.copyright, new { @class = "form-control" })
                     </div>
                     @Html.ValidationMessageFor(model => model.copyright)
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.address, new { @class = "col-sm-2 control-label" })
-                    <div class="col-sm-3">
+                    <div class="col-sm-7">
                         @Html.TextBoxFor(model => model.address, new { @class = "form-control" })
                     </div>
                     @Html.ValidationMessageFor(model => model.address)
                 </div>
                 <div class="form-group">
+                    @Html.LabelFor(model => model.hotphoneallcountry, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.hotphoneallcountry, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.hotphoneallcountry)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.hotphone, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.hotphone, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.hotphone)
+                </div>
+                <div class="form-group">
                     @Html.LabelFor(model => model.phone, new { @class = "col-sm-2 control-label" })
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.phone, new { @class = "form-control" })
                     </div>
                     @Html.ValidationMessageFor(model => model.phone)
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.qq, new { @class = "col-sm-2 control-label" })
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.qq, new { @class = "form-control" })
                     </div>
                     @Html.ValidationMessageFor(model => model.qq)

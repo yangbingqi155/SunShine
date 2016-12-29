@@ -120,8 +120,8 @@
     border-bottom: 1px solid #c3c3c3;
     margin-top: 0px;
     padding-top: 30px;
-    width:248px;
-    height:600px;
+    width: 248px;
+    height: 600px;
 }
 
 .honoritem .honor_img {
@@ -260,22 +260,22 @@
         margin-left: 6px;
         font-weight: bold;
         text-align: center;
-        
     }
+
         .case_nav .case_nav_title span a {
-        color:#666666 ;
+            color: #666666;
         }
 
 .case_list {
     border-left: 1px solid #c3c3c3;
     border-right: 1px solid #c3c3c3;
     border-bottom: 1px solid #c3c3c3;
-    padding:5px 20px;
+    padding: 5px 20px;
 }
 
     .case_list .case_list_item {
         border-bottom: 1px dashed #c3c3c3;
-        padding: 42px 0 40px 0;
+        padding: 42px 0 10px 0;
     }
 
 .case_list_item .itemimg {
@@ -304,6 +304,12 @@
         font-weight: bold;
         font-size: 16px;
     }
+
+.case_list_item .create_time {
+    margin-top: 20px;
+    text-align: right;
+    padding: 10px 0;
+}
 
 /**/
 .case_list .case_question_item {
@@ -453,7 +459,7 @@
 
 .sunshine_pager {
     margin: 0 auto;
-    width: 300px;
+    width: 700px;
 }
 
 
@@ -520,7 +526,7 @@
         text-align: center;
         padding-left: 26px;
         padding-right: 26px;
-        cursor:pointer;
+        cursor: pointer;
     }
 
 .product_detail_bottom .p_description_header .not_current {
@@ -555,4 +561,46 @@
     padding: 20px 0;
 }
 
-.fuwuliucheng_home {width:1022px;margin:0 auto;text-align: center;}
+.fuwuliucheng_home {
+    width: 1022px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+nav .pager {
+    margin: 10px 0 0 0;
+}
+.pager {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+}
+.pager>li {
+    display: inline;
+    margin-left:5px;
+}
+.pager>li:first-child>a, .pager>li:first-child>span {
+    margin-left: 0;
+}
+.pager>li>a, .pager>li>span {
+    position: relative;
+    float: left;
+    padding: 2px 8px;
+    margin-left: 4px;
+    line-height: 1.42857143;
+    color: #333333;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+        border-radius: 0px;
+}
+
+.pager>.active>a, .pager>.active>a:focus, .pager>.active>a:hover, .pager>.active>span, .pager>.active>span:focus, .pager>.active>span:hover {
+    z-index: 2;
+    cursor: default;
+    border:0px;
+    /*color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;*/
+}

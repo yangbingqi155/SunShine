@@ -1,4 +1,6 @@
-﻿@{
+﻿@using SunShine.Model;
+@model WebsiteInfoViewModel
+@{
     Layout = null;
 }
 <div class="case_contactus_top">
@@ -19,18 +21,27 @@
                 全国免费咨询热线
             </div>
             <div class="contactus_phone_no">
-                4008-778-652
+                @Model.hotphoneallcountry
             </div>
         </div>
         <div style="clear:both;"></div>
     </div>
     <div class="contactuslist">
         <ul>
-            <li style="margin-top:0;">咨询热线:027-85587586</li>
-            <li>咨询手机:15671566365</li>
-            <li>QQ客服:3317300173</li>
-            <li>501881468</li>
-            <li>地址:武汉市江汉区前进一路御美广场二楼2836/2837</li>
+            <li style="margin-top:0;">咨询热线:@Model.hotphone</li>
+            <li>咨询手机:@Model.phone</li>
+            @if (!string.IsNullOrEmpty(Model.qq)) {
+                string[] qqs = Model.qq.Split(' ');
+                for (int i = 0; i < qqs.Length; i++) {
+                    if (i == 0) {
+                        <li>QQ客服:@qqs[i]</li>
+                    }
+                    else {
+                        <li>@qqs[i]</li>
+                    }
+                }
+            }
+            <li>地址:@Model.address</li>
         </ul>
     </div>
 

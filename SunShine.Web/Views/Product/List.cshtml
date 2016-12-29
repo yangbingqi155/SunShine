@@ -12,6 +12,11 @@
         <div class="cp_left">
             @{
                 Html.RenderAction("LeftProductCategory", "Parts");
+                if (!string.IsNullOrEmpty(Request["idproduct"])) {
+                    Html.RenderAction("NavHonors", "Parts");
+                    Html.RenderAction("NavContactUs", "Parts");
+                }
+
             }
 
         </div>
@@ -36,7 +41,7 @@
                             }
                         }
                         <div class="sunshine_pager">
-                            @Html.Raw(Url.BootstrapPagerHTML(pageCount, pageIndex, "List", "Product", ViewContext.RouteData.Values))
+                            @Html.Raw(Url.PagerHTML(pageCount, pageIndex, "List", "Product", ViewContext.RouteData.Values))
                         </div>
                     </li>
                 </ul>

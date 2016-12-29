@@ -18,6 +18,7 @@
                     <div class="itemdetail">@Html.Raw(!string.IsNullOrEmpty(Model[i].introduction) ? Model[i].introduction : (string.IsNullOrEmpty(Model[i].content) ? "" : Model[i].content.RemoveHTMLAndGetByNum(100)))</div>
                 </div>
             <div style="clear:both;"></div>
+                <div class="create_time">发布日期：@Model[i].cretime</div>
         </div>
         }
 

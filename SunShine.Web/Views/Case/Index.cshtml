@@ -14,8 +14,10 @@
 <div class="case_box">
     <div class="case_left">
         @{
-            Html.RenderAction("NavSuccessCases", "Parts", new { categoryCode = categoryCode, currentCategoryCode= currentCategoryCode });
-            Html.RenderAction("NavHonors", "Parts");
+            Html.RenderAction("NavSuccessCases", "Parts", new { categoryCode = categoryCode, currentCategoryCode = currentCategoryCode });
+            if (currentCategoryCode != "honor") {
+                Html.RenderAction("NavHonors", "Parts");
+            }
             Html.RenderAction("NavContactUs", "Parts");
         }
     </div>
@@ -57,7 +59,7 @@
             
         </div>
         <div class="sunshine_pager">
-            @Html.Raw(Url.BootstrapPagerHTML(pageCount, pageIndex, "Index", "Case", ViewContext.RouteData.Values))
+            @Html.Raw(Url.PagerHTML(pageCount, pageIndex, "Index", "Case", ViewContext.RouteData.Values))
         </div>
     </div>
     <div style="clear:both;"></div>

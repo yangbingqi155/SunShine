@@ -25,6 +25,7 @@ namespace SunShine.Web.Controllers
                 ArticleViewModel viewModel = ArticleService.GetViewModel(idarticle);
                 currentCategoryCode = viewModel.Category.categorycode;
                 categoryCode = SiteCategoryService.GetViewModelByCode(currentCategoryCode).ParentCategory.categorycode;
+                pageSize = viewModel.Category.pagesize;
                 articles.Add(viewModel);
             }
             else
@@ -32,17 +33,18 @@ namespace SunShine.Web.Controllers
                 if (string.IsNullOrEmpty(categoryCode)) {
                     return RedirectToAction("Index", "Home");
                 }
-                if (string.IsNullOrEmpty(currentCategoryCode))
-                {
+                if (string.IsNullOrEmpty(currentCategoryCode)) {
                     List<SiteCategoryViewModel> childrenCategories = SiteCategoryService.GetChildCategoriesByCode(categoryCode);
-                    if (childrenCategories != null && childrenCategories.Count > 0)
-                    {
+                    if (childrenCategories != null && childrenCategories.Count > 0) {
                         currentCategoryCode = childrenCategories.First().categorycode;
+                        pageSize = childrenCategories.First().pagesize;
                     }
-                    else
-                    {
+                    else {
                         return RedirectToAction("Index", "Home");
                     }
+                }
+                else {
+                    pageSize = SiteCategoryService.GetByCode(currentCategoryCode).pagesize;
                 }
                 articles = ArticleService.GetArticlesByCategoryCode(currentCategoryCode);
             }
