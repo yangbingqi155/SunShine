@@ -15,17 +15,19 @@
 <div class="zhanshi">
     <div class="title">
         <ul id="tabs">
-            <li style="background:#5f6870" class="tab_1">创意阳光生产实力展示</li>
-            <li style="background:#da251c" class="tab_2">创意阳光办公展示</li>
+            <li style="background:#da251c" class="tab_1">创意阳光生产实力展示</li>
+            <li style="background:#5f6870" class="tab_2">创意阳光办公展示</li>
             <li style="background:#838280" class="tab_3">创意阳光员工风采</li>
         </ul>
     </div>
     <div class="tab_box">
         <ul id="tab_conbox">
-            <li>
+            <li class="shengchanshilizhan">
                 <div class="more1"><a href="@Url.Action("Index","Case",new { categoryCode="show"})"><img src="/images/home/more1.jpg"></a></div>
                 <div class="zhanshitupian">
-                    <ul class="shengchanshilizhan">
+
+                    <ul>
+
                         @foreach (var item in showProductionCategories)
                         {
                             <li>
@@ -33,17 +35,23 @@
                                     @if (!string.IsNullOrEmpty(item.img))
                                     {
                                         <a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})" title="@item.title">
-                                            <img src="@Url.Content(item.img)"  alt="@item.title">
+                                            <img src="@Url.Content(item.img)" alt="@item.title">
                                         </a>
                                     }
-                                    
+
                                 </div>
                                 <div class="cp_name"><a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})">@item.title</a></div>
                             </li>
                         }
                     </ul>
+                </div>
+            </li>
 
-                    <ul class="bangongzhanshi" style="display:none">
+            <li class="bangongzhanshi" style="display:none">
+                <div class="more1"><a href="@Url.Action("Index","Case",new { categoryCode="show",currentCategoryCode= "showoffice" })"><img src="/images/home/more1.jpg"></a></div>
+                <div class="zhanshitupian">
+                    <ul>
+
                         @foreach (var item in showOfficeCategories)
                         {
                             <li>
@@ -51,7 +59,7 @@
                                     @if (!string.IsNullOrEmpty(item.img))
                                     {
                                         <a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})" title="@item.title">
-                                            <img src="@Url.Content(item.img)"  alt="@item.title">
+                                            <img src="@Url.Content(item.img)" alt="@item.title">
                                         </a>
                                     }
 
@@ -60,8 +68,14 @@
                             </li>
                         }
                     </ul>
+                </div>
+            </li>
 
-                    <ul class="yuangongfengcai" style="display:none">
+            <li class="yuangongfengcai" style="display:none">
+                <div class="more1"><a href="@Url.Action("Index","Case",new { categoryCode="show",currentCategoryCode="showteam"})"><img src="/images/home/more1.jpg"></a></div>
+                <div class="zhanshitupian">
+
+                    <ul>
                         @foreach (var item in showTeamnCategories)
                         {
                             <li>
@@ -69,7 +83,7 @@
                                     @if (!string.IsNullOrEmpty(item.img))
                                     {
                                         <a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})" title="@item.title">
-                                            <img src="@Url.Content(item.img)"  alt="@item.title">
+                                            <img src="@Url.Content(item.img)" alt="@item.title">
                                         </a>
                                     }
                                 </div>

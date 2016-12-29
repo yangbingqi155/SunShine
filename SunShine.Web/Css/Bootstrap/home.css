@@ -880,7 +880,7 @@ ul.thirdLevel {
 .honor_bottom .friend_link_title {
     color: #FFFFFF;
     font-size: 22px;
-    width: 100px;
+    width: 110px;
     height: 70px;
     float: left;
 }
@@ -965,6 +965,9 @@ ul.thirdLevel {
     .telephonenumber{width:310px;height:116px;float:left;background:url(../../Images/home/fgz_06.jpg) no-repeat}
     .telephonenumber .guhua{;margin-top:-5px;}
     .telephonenumber .guhua_shouji{font-size:20px;color:#e51d1f;font-weight:bold;margin-top:50px;margin-left:90px;letter-spacing:1px}
+
+
+    .contactuslist ul  span{margin-left:66px;}
 
     
 
