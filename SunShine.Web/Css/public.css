@@ -224,7 +224,7 @@
     }
 
 .case_contactus_bottom .contactuslist ul {
-    margin: 14px 0 0 30px;
+    margin: 14px 10px 0 30px;
     list-style-type: none;
 }
 
@@ -294,15 +294,15 @@
 }
 
     .case_list_item .itemdesc .itemtitle a {
-        font-size: 14px;
+        font-size: 18px;
         color: #da251c;
         font-weight: bold;
     }
 
     .case_list_item .itemdesc .itemdetail {
         margin-top: 10px;
-        font-weight: bold;
-        font-size: 16px;
+        font-weight: 400;
+        font-size: 15px;
     }
 
 .case_list_item .create_time {
