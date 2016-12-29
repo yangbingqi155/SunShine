@@ -8,12 +8,8 @@
 }
 
     #menu li.level1-li {
-        /* border: 2px solid rgb(205,205,205);
-    border-width: 2px 0px 2px 2px;
-    
-    float: left; */
         height: 35px;
-        width: 220px;
+        width: 243px;
         z-index: 10001;
         padding-bottom: 0px;
         background:#fff url("../../images/home/xuxian_3.jpg") repeat-x;
@@ -37,7 +33,7 @@
                         font-family:"Microsoft YaHei";
                     }
 
-
+         #images{border-left:1px solid #ccc; border-right:1px solid #ccc}
 
         #menu li.level1-li a.level1-a {
             display: block;
@@ -259,7 +255,7 @@
     margin: 0;
     padding: 0;
     vertical-align: center;
-    width: 220px;
+    width: 243px;
 }
 
 

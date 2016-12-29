@@ -6,7 +6,7 @@
 
 .case_left {
     float: left;
-    width: 248px;
+    width: 245px;
 }
 
 .success_case_top {
@@ -120,7 +120,7 @@
     border-bottom: 1px solid #c3c3c3;
     margin-top: 0px;
     padding-top: 30px;
-    width: 248px;
+    width: 245px;
     height: 600px;
 }
 
