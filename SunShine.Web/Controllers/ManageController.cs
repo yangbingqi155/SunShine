@@ -805,6 +805,66 @@ namespace TNet.Controllers {
             return View(model);
         }
 
+
+        /// <summary>
+        /// 修改管理员密码
+        /// </summary>
+        /// <param name="manageUserId"></param>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpGet]
+        public ActionResult ManageUserPasswordEdit(string iduser) {
+            ManageUserViewModel model = new ManageUserViewModel();
+
+            ManageUser manageUser = ManageUserService.Get(iduser);
+
+            if (manageUser != null) { model.CopyFromBase(manageUser); }
+
+            model.password = "";
+            model.ConfirmPassword = "";
+
+            return View(model);
+        }
+
+        /// <summary>
+        /// 修改管理员密码
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [ManageLoginValidation]
+        [HttpPost]
+        public ActionResult ManageUserPasswordEdit(ManageUserViewModel model) {
+
+            if (string.IsNullOrEmpty(model.currentpassword)) {
+                ModelState.AddModelError("", "原密码不能为空.");
+                return View(model);
+            }
+            ManageUser oldManage = ManageUserService.Get(model.iduser);
+            string checkPassword= Crypto.GetPwdhash(model.currentpassword, oldManage.md5salt);
+            if (checkPassword!= oldManage.password) {
+                ModelState.AddModelError("", "原密码不正确.");
+                return View(model);
+            }
+
+            if (model.newpassword != model.ConfirmPassword) {
+                ModelState.AddModelError("", "密码与确认密码必须一致.");
+                return View(model);
+            }
+            ManageUser manageUser = new ManageUser();
+            model.CopyToBase(manageUser);
+            string md5Password = string.Empty;
+            string md5Salt = string.Empty;
+            Crypto.GetPwdhashAndSalt(model.newpassword, out md5Salt, out md5Password);
+            manageUser.password = md5Password;
+            manageUser.md5salt = md5Salt;
+
+            //修改密码
+            manageUser = ManageUserService.PasswordEdit(manageUser);
+
+            return RedirectToAction("ManageUserList", "Manage");
+        }
+
+
         /// <summary>
         /// 新增\编辑产品
         /// </summary>

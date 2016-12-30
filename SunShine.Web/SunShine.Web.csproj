@@ -869,6 +869,7 @@
     <Content Include="Views\Parts\CoreAdvance.cshtml" />
     <Content Include="Views\Manage\AdvertiseEdit.cshtml" />
     <Content Include="Views\Parts\HomeAdvertise.cshtml" />
+    <Content Include="Views\Manage\ManageUserPasswordEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
