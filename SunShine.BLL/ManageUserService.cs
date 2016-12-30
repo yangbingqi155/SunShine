@@ -19,9 +19,9 @@ namespace SunShine.BLL {
             return GetALL().Where(en => en.username == userName).FirstOrDefault();
         }
 
-        public static ManageUser Get(string manageUserId) {
+        public static ManageUser Get(string iduser) {
             TN tn = new TN();
-            return tn.ManageUsers.Find(manageUserId);
+            return tn.ManageUsers.Find(iduser);
         }
 
         public static ManageUser Add(ManageUser manageUser)
@@ -43,6 +43,18 @@ namespace SunShine.BLL {
             oldManageUser.notes = manageUser.notes;
             oldManageUser.inuse = manageUser.inuse;
             
+            db.SaveChanges();
+            return oldManageUser;
+        }
+
+        public static ManageUser PasswordEdit(ManageUser manageUser) {
+            TN db = new TN();
+            ManageUser oldManageUser = db.ManageUsers.Where(en => en.iduser == manageUser.iduser).FirstOrDefault();
+
+            oldManageUser.iduser = manageUser.iduser;
+            oldManageUser.md5salt = manageUser.md5salt;
+            oldManageUser.password = manageUser.password;
+
             db.SaveChanges();
             return oldManageUser;
         }

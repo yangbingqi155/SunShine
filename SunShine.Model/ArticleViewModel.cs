@@ -47,6 +47,16 @@ namespace SunShine.Model {
         [Display(Name ="类别")]
         public SiteCategory Category { get; set; }
 
+        [Display(Name = "SEO标题")]
+        [StringLength(500)]
+        public new string seotitle { get; set; }
+
+        [Display(Name = "SEO关键字")]
+        public new string seokeyword { get; set; }
+
+        [Display(Name = "SEO描述")]
+        public new string seodescription { get; set; }
+
 
         public void CopyFromBase(Article article) {
             this.idarticle = article.idarticle;
@@ -57,6 +67,9 @@ namespace SunShine.Model {
             this.follow = article.follow;
             this.cretime = article.cretime;
             this.introduction = article.introduction;
+            this.seotitle = article.seotitle;
+            this.seokeyword = article.seokeyword;
+            this.seodescription = article.seodescription;
         }
 
         public void CopyToBase(Article article) {
@@ -68,6 +81,9 @@ namespace SunShine.Model {
             article.follow = this.follow;
             article.cretime = this.cretime;
             article.introduction = this.introduction;
+            article.seotitle = this.seotitle;
+            article.seokeyword = this.seokeyword;
+            article.seodescription = this.seodescription;
         }
     }
 }

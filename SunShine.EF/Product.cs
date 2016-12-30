@@ -38,5 +38,12 @@ namespace SunShine.EF
         public bool ishot { get; set; }
 
         public bool isnew { get; set; }
+
+        [StringLength(500)]
+        public string seotitle { get; set; }
+
+        public string seokeyword { get; set; }
+
+        public string seodescription { get; set; }
     }
 }

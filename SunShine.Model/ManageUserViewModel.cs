@@ -25,6 +25,11 @@ namespace SunShine.Model
         [StringLength(18)]
         public string ClearPassword { get; set; }
 
+        [Display(Name = "新密码确认")]
+        [Required]
+        [StringLength(18)]
+        public string ConfirmPassword { get; set; }
+
         [Display(Name = "密码")]
         [Required]
         [StringLength(100)]
@@ -47,6 +52,13 @@ namespace SunShine.Model
         [Display(Name = "启用")]
         public new bool inuse { get; set; }
 
+        [Required]
+        [Display(Name ="原密码")]
+        public string currentpassword { get; set; }
+
+        [Required]
+        [Display(Name = "新密码")]
+        public string newpassword { get; set; }
 
         public void CopyFromBase(ManageUser user)
         {

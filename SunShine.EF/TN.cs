@@ -57,6 +57,18 @@ namespace SunShine.EF {
                 .Property(e => e.idcategory)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Article>()
+                .Property(e => e.seotitle)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Article>()
+                .Property(e => e.seokeyword)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Article>()
+                .Property(e => e.seodescription)
+                .IsUnicode(false);
+
             modelBuilder.Entity<FriendURL>()
                 .Property(e => e.idurl)
                 .IsUnicode(false);
@@ -127,6 +139,18 @@ namespace SunShine.EF {
 
             modelBuilder.Entity<Product>()
                 .Property(e => e.description)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Product>()
+                .Property(e => e.seotitle)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Product>()
+                .Property(e => e.seokeyword)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Product>()
+                .Property(e => e.seodescription)
                 .IsUnicode(false);
 
             modelBuilder.Entity<ProductCategory>()
