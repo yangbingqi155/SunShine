@@ -870,6 +870,7 @@
     <Content Include="Views\Manage\AdvertiseEdit.cshtml" />
     <Content Include="Views\Parts\HomeAdvertise.cshtml" />
     <Content Include="Views\Manage\ManageUserPasswordEdit.cshtml" />
+    <Content Include="Views\Shared\_ProductItemPartial1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

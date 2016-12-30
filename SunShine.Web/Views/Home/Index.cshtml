@@ -22,16 +22,16 @@
             </div>
             <div class="tab_box">
                 <ul id="tab_conbox">
-                    <li class="PopularProduct">
+                    <li class="PopularProduct" >
                         <div class="more1"><a href="@Url.Action("List", "Product")"><span style="font-size:17px;font-weight:500;font-family:'Microsoft YaHei'">More +</span>&nbsp;&nbsp;<img src="~/images/home/more1.jpg"></a></div>
                         @{ 
-                            Html.RenderPartial("_ProductItemPartial", hotProducts);
+                            Html.RenderPartial("_ProductItemPartial1", hotProducts);
                         }
                     </li>
                     <li class="NewestProduct" style="display:none;">
                         <div class="more1"><a href="@Url.Action("List", "Product")"><span style="font-size:17px;font-weight:500;font-family:'Microsoft YaHei'">More +</span>&nbsp;&nbsp;<img src="~/images/home/more1.jpg"></a></div>
                         @{
-                            Html.RenderPartial("_ProductItemPartial", newProducts);
+                            Html.RenderPartial("_ProductItemPartial1", newProducts);
                         }
                     </li>
                 </ul>

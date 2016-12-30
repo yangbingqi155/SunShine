@@ -5,24 +5,27 @@
 }
 
 @{
-    if (Model != null && Model.Count > 0) {
-        <div class="cp_list">
+    if (Model != null && Model.Count > 0)
+    {
+        <div class="cp_list1">
             <ul>
-                @foreach (var item in Model) {
+                @foreach (var item in Model)
+                {
                     <li>
-                        <div class="cp_img"><a href="@Url.Action("List","Product",new { idproduct=item.idproduct})" title="@item.name"><img src="@Url.Content(item.img)" onload="DrawImage(this,357,247)"  alt="@item.name" /></a></div>
+                        <div class="cp_img"><a href="@Url.Action("List","Product",new { idproduct=item.idproduct})" title="@item.name"><img src="@Url.Content(item.img)" onload="DrawImage(this,357,247)" alt="@item.name" /></a></div>
                         <div class="cp_name"><a href="@Url.Action("List","Product",new { idproduct=item.idproduct})">@item.name</a></div>
                         <div class="ckxq">
                             <div class="ckxq_left"><a href="@Url.Action("List","Product",new { idproduct=item.idproduct})">查看详情</a></div>
-                            <div class="ckxq_ljzx"><a  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3317300173&site=qq&menu=yes" >立即咨询</a></div>
+                            <div class="ckxq_ljzx"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3317300173&site=qq&menu=yes">立即咨询</a></div>
                         </div>
                     </li>
                 }
             </ul>
         </div>
-        <div style="clear:both"></div>
     }
-    else {
+    else
+    {
         <div class="no_data_div">暂无产品</div>
     }
 }
+
