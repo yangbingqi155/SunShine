@@ -76,7 +76,10 @@ namespace SunShine.BLL
             oldArticle.follow = article.follow;
             oldArticle.sortno = article.sortno;
             oldArticle.introduction = article.introduction;
-          
+            oldArticle.seotitle = article.seotitle;
+            oldArticle.seokeyword = article.seokeyword;
+            oldArticle.seodescription = article.seodescription;
+
             db.SaveChanges();
             return oldArticle;
         }

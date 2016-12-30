@@ -35,5 +35,12 @@ namespace SunShine.EF
         public int? sortno { get; set; }
 
         public DateTime? cretime { get; set; }
+
+        [StringLength(500)]
+        public string seotitle { get; set; }
+
+        public string seokeyword { get; set; }
+
+        public string seodescription { get; set; }
     }
 }

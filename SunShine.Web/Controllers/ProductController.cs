@@ -58,15 +58,22 @@ namespace SunShine.Web.Controllers
             }
             else
             {
+
                 string productTitle = "";
                 if (!string.IsNullOrEmpty(idproduct)) {
                     productTitle = productViewModels.Count > 0 ? "-" + productViewModels.First().name : "";
                 }
                 ViewBag.Title = "创意阳光-产品中心"+ (string.IsNullOrEmpty(category.categoryname)?"":("-"+ category.categoryname))+ productTitle;
+                if (!string.IsNullOrEmpty(idproduct)) {
+                    ViewBag.Title = productViewModels.First().seotitle;
+                    ViewBag.Keywords = productViewModels.First().seokeyword;
+                    ViewBag.Description = productViewModels.First().seodescription;
+                }
+                else {
+                    ViewBag.Keywords = category != null ? category.keyword : "";
+                    ViewBag.Description = category != null ? category.description : "";
+                }
             }
-
-            ViewBag.Keywords = category != null ? category.keyword : "";
-            ViewBag.Description = category != null ? category.description : "";
 
             List<ProductViewModel> pageList = productViewModels.Pager<ProductViewModel>(pageIndex, pageSize, out pageCount);
 

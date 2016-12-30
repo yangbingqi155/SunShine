@@ -89,6 +89,9 @@ namespace SunShine.BLL
             oldProduct.inuse = product.inuse;
             oldProduct.ishot = product.ishot;
             oldProduct.isnew = product.isnew;
+            oldProduct.seotitle = product.seotitle;
+            oldProduct.seokeyword = product.seokeyword;
+            oldProduct.seodescription = product.seodescription;
             db.SaveChanges();
             return oldProduct;
         }

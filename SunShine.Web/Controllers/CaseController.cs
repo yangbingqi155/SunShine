@@ -17,12 +17,12 @@ namespace SunShine.Web.Controllers
         {
             int pageCount = 0;
             int pageSize = 6;
-            
+            ArticleViewModel viewModel = null;
 
             List<ArticleViewModel> articles = new List<ArticleViewModel>();
             if (!string.IsNullOrEmpty(idarticle))
             {
-                ArticleViewModel viewModel = ArticleService.GetViewModel(idarticle);
+                 viewModel = ArticleService.GetViewModel(idarticle);
                 currentCategoryCode = viewModel.Category.categorycode;
                 categoryCode = SiteCategoryService.GetViewModelByCode(currentCategoryCode).ParentCategory.categorycode;
                 pageSize = viewModel.Category.pagesize;
@@ -47,33 +47,40 @@ namespace SunShine.Web.Controllers
                     pageSize = SiteCategoryService.GetByCode(currentCategoryCode).pagesize;
                 }
                 articles = ArticleService.GetArticlesByCategoryCode(currentCategoryCode);
+
+               
             }
 
             List<ArticleViewModel> pageList = articles.Pager<ArticleViewModel>(pageIndex, pageSize, out pageCount);
 
             List<SiteCategory> parentCategories = SiteCategoryService.GetNavPath(currentCategoryCode);
 
+            if (!string.IsNullOrEmpty(idarticle)) {
+                ViewBag.Keywords = viewModel.seokeyword;
+                ViewBag.Description = viewModel.seodescription;
+                ViewBag.Title = viewModel.seotitle;
+            }
+            else {
+                SiteCategory category = SiteCategoryService.GetByCode(currentCategoryCode);
+                ViewBag.Keywords = category != null ? category.keyword : "";
+                ViewBag.Description = category != null ? category.description : "";
+                List<SiteCategory> titleParentCategories = parentCategories.Where(en => en.idcategory != "").ToList();
+                string seoTitle = "创意阳光";
+                foreach (var item in titleParentCategories) {
+                    seoTitle += "-" + item.categoryname;
+                }
+                if (!string.IsNullOrEmpty(idarticle)) {
+                    seoTitle += "-" + (articles.Count > 0 ? articles.First().title : "");
+                }
+                ViewBag.Title = seoTitle;
+            }
+
             ViewData["pageCount"] = pageCount;
             ViewData["pageIndex"] = pageIndex;
             ViewData["navPath"] = parentCategories;
             ViewData["currentCategoryCode"] = currentCategoryCode;
             ViewData["categoryCode"] = categoryCode;
-
-
-            SiteCategory category = SiteCategoryService.GetByCode(currentCategoryCode);
-            ViewBag.Keywords = category != null ? category.keyword : "";
-            ViewBag.Description = category != null ? category.description : "";
-            List<SiteCategory> titleParentCategories= parentCategories.Where(en => en.idcategory != "").ToList();
-            string seoTitle = "创意阳光";
-            foreach (var item in titleParentCategories)
-            {
-                seoTitle += "-"+ item.categoryname;
-            }
-            if (!string.IsNullOrEmpty(idarticle)) {
-                seoTitle += "-"+ (articles.Count>0?articles.First().title:"");
-            }
-            ViewBag.Title = seoTitle;
-
+            
             RouteData.Values.Add("categoryCode", categoryCode);
             RouteData.Values.Add("currentCategoryCode", currentCategoryCode);
             return View(pageList);

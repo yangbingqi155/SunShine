@@ -61,6 +61,16 @@ namespace SunShine.Model {
         [Display(Name ="是否最新")]
         public new bool isnew { get; set; }
 
+        [Display(Name = "SEO标题")]
+        [StringLength(500)]
+        public new string seotitle { get; set; }
+
+        [Display(Name = "SEO关键字")]
+        public new string seokeyword { get; set; }
+
+        [Display(Name = "SEO描述")]
+        public new string seodescription { get; set; }
+
         /// <summary>
         /// 父级类型
         /// </summary>
@@ -79,6 +89,9 @@ namespace SunShine.Model {
             this.inuse = product.inuse;
             this.ishot = product.ishot;
             this.isnew = product.isnew;
+            this.seotitle = product.seotitle;
+            this.seokeyword = product.seokeyword;
+            this.seodescription = product.seodescription;
         }
 
         public void CopyToBase(Product product) {
@@ -93,6 +106,9 @@ namespace SunShine.Model {
             product.inuse = this.inuse;
             product.ishot = this.ishot;
             product.isnew = this.isnew;
+            product.seotitle = this.seotitle;
+            product.seokeyword = this.seokeyword;
+            product.seodescription = this.seodescription;
         }
     }
 }
