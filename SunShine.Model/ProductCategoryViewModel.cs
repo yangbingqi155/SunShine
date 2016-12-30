@@ -36,7 +36,7 @@ namespace SunShine.Model {
         [Display(Name = "创建时间")]
         public new DateTime? cretime { get; set; }
 
-        [Display(Name = "SEO关键字")]
+        [Display(Name = "SEO关键词")]
         public new string keyword { get; set; }
 
         [Display(Name = "SEO描述")]

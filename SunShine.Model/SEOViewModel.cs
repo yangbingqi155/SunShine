@@ -25,7 +25,7 @@ namespace SunShine.Model {
         [StringLength(5000)]
         public new string seotitle { get; set; }
 
-        [Display(Name = "SEO关键字")]
+        [Display(Name = "SEO关键词")]
         [StringLength(5000)]
         public new string seokeywords { get; set; }
 

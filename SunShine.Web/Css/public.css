@@ -41,7 +41,7 @@
     float: left;
     font-size: 18px;
     font-weight: bold;
-    width: 49%;
+    width: 50%;
 }
 
 .success_case_subtitle .subtitle_right {
@@ -434,7 +434,7 @@
 
 .case_list .case_float_list_item {
     float: left;
-    margin: 34px 0 0 20px;
+    margin: 34px 0 0 24px;
 }
 
 .case_float_list_item .itemimg {

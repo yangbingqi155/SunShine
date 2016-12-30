@@ -44,7 +44,7 @@ namespace SunShine.Model {
         [Display(Name = "父级类别路径")]
         public string ParentCategoryNamePath { get; set; }
 
-        [Display(Name = "SEO关键字")]
+        [Display(Name = "SEO关键词")]
         public new string keyword { get; set; }
 
         [Display(Name = "SEO描述")]

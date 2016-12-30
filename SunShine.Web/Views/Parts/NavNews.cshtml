@@ -19,7 +19,7 @@
                 <div class="tutu">
                     @if (!string.IsNullOrEmpty(Model.First().img)) {
                         <a href="@Url.Action("Index","Case",new {idarticle=Model.First().idarticle })" title="">
-                            <img src="@Url.Content(Model.First().img)" alt="" onload="DrawImage(this,120,102)" style="width:230px; height:141px; margin-left: -7.68143px;">
+                            <img src="@Url.Content(Model.First().img)" alt="" onload="DrawImage(this,120,102)" style="width:230px; height:141px;">
                         </a>
                     }
                 </div>
