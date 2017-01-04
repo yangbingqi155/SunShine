@@ -7,7 +7,7 @@
     Layout = "~/Views/Shared/_ManageLayout.cshtml";
     var pageCount = Convert.ToInt32(ViewData["pageCount"]);
     var pageIndex = Convert.ToInt32(ViewData["pageIndex"]);
-    int groupmethod =Convert.ToInt32(ViewData["groupmethod"].ToString());
+    int groupmethod = Convert.ToInt32(ViewData["groupmethod"].ToString());
     List<SelectItemViewModel<int>> groupmethodSelectItems = (List<SelectItemViewModel<int>>)ViewData["groupmethodSelectItems"];
 }
 <div class="ManageRightTitle">
@@ -47,6 +47,7 @@
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, String>(en => en.categorycode))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, int?>(en => en.sortno))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, bool>(en => en.inuse))</th>
+                        <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, bool?>(en => en.isintro))</th>
                         <th>@(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, DateTime?>(en => en.cretime))</th>
                         <th>操作</th>
                     </tr>
@@ -61,6 +62,11 @@
                             <td>
                                 <div class="switch">
                                     <input type="checkbox" onchange="enableModel('@Url.Action("ProductCategoryEnable", "Manage", new { idcategory = item.idcategory, enable = !item.inuse, isAjax = true })','@Url.Action("Login", "Manage")')" name="enableProductCategory" @(item.inuse ? "checked" : "") />
+                                </div>
+                            </td>
+                            <td>
+                                <div class="switch">
+                                    <input type="checkbox" onchange="enableModel('@Url.Action("ProductCategoryIntro", "Manage", new { idcategory = item.idcategory, enable = !item.isintro, isAjax = true })','@Url.Action("Login", "Manage")')" name="isintroProductCategory" @(item.isintro ? "checked" : "") />
                                 </div>
                             </td>
                             <td>@item.cretime</td>
@@ -81,8 +87,7 @@
 </div>
 <script type="text/javascript">
     $(function () {
-        $.fn.bootstrapSwitch.defaults.onText = '启用';
-        $.fn.bootstrapSwitch.defaults.offText = '禁用';
-        $("[name='enableProductCategory']").bootstrapSwitch();
+        $("[name='enableProductCategory']").bootstrapSwitch({onText:'启用',offText:'禁用'});
+        $("[name='isintroProductCategory']").bootstrapSwitch({onText:'推荐',offText:'不推荐'});
     });
 </script>

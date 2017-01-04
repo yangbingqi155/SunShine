@@ -25,6 +25,7 @@ namespace SunShine.Web.Controllers
                  viewModel = ArticleService.GetViewModel(idarticle);
                 currentCategoryCode = viewModel.Category.categorycode;
                 categoryCode = SiteCategoryService.GetViewModelByCode(currentCategoryCode).ParentCategory.categorycode;
+
                 pageSize = viewModel.Category.pagesize;
                 articles.Add(viewModel);
             }

@@ -871,6 +871,7 @@
     <Content Include="Views\Parts\HomeAdvertise.cshtml" />
     <Content Include="Views\Manage\ManageUserPasswordEdit.cshtml" />
     <Content Include="Views\Shared\_ProductItemPartial1.cshtml" />
+    <Content Include="Views\Parts\HotSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

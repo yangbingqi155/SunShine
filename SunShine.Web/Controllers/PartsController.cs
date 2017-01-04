@@ -79,6 +79,21 @@ namespace SunShine.Web.Controllers
         }
 
         /// <summary>
+        /// 底部产品分类
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult HotSearch() {
+            List<ProductCategoryViewModel> categories = new List<ProductCategoryViewModel>();
+            List<ProductCategory> tempCategories = ProductCategoryService.GetALL().Where(en => en.inuse).ToList();
+            categories = tempCategories.Select(model => {
+                ProductCategoryViewModel category = new ProductCategoryViewModel();
+                category.CopyFromBase(model);
+                return category;
+            }).Where(en=>en.isintro).ToList();
+            return View(categories);
+        }
+
+        /// <summary>
         /// 左边产品分类
         /// </summary>
         /// <returns></returns>

@@ -34,13 +34,13 @@
                                 <div class="cp_img">
                                     @if (!string.IsNullOrEmpty(item.img))
                                     {
-                                        <a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})" title="@item.title">
+                                        <a href="@Url.Action("Index","Case",new { categoryCode="show"})" title="@item.title">
                                             <img src="@Url.Content(item.img)" alt="@item.title">
                                         </a>
                                     }
 
                                 </div>
-                                <div class="cp_name"><a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})">@item.title</a></div>
+                                <div class="cp_name"><a href="@Url.Action("Index","Case",new { categoryCode="show"})">@item.title</a></div>
                             </li>
                         }
                     </ul>
@@ -58,13 +58,13 @@
                                 <div class="cp_img">
                                     @if (!string.IsNullOrEmpty(item.img))
                                     {
-                                        <a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})" title="@item.title">
+                                        <a href="@Url.Action("Index","Case",new { categoryCode="show",currentCategoryCode= "showoffice" })" title="@item.title">
                                             <img src="@Url.Content(item.img)" alt="@item.title">
                                         </a>
                                     }
 
                                 </div>
-                                <div class="cp_name"><a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})">@item.title</a></div>
+                                <div class="cp_name"><a href="@Url.Action("Index","Case",new { categoryCode="show",currentCategoryCode= "showoffice" })">@item.title</a></div>
                             </li>
                         }
                     </ul>
@@ -82,12 +82,12 @@
                                 <div class="cp_img">
                                     @if (!string.IsNullOrEmpty(item.img))
                                     {
-                                        <a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})" title="@item.title">
+                                        <a href="@Url.Action("Index","Case",new { categoryCode="show",currentCategoryCode="showteam"})" title="@item.title">
                                             <img src="@Url.Content(item.img)" alt="@item.title">
                                         </a>
                                     }
                                 </div>
-                                <div class="cp_name"><a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})">@item.title</a></div>
+                                <div class="cp_name"><a href="@Url.Action("Index","Case",new { categoryCode="show",currentCategoryCode="showteam"})">@item.title</a></div>
                             </li>
                         }
                     </ul>

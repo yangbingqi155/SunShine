@@ -112,6 +112,32 @@ namespace TNet.Controllers {
         }
 
         /// <summary>
+        /// 搜索推荐类型
+        /// </summary>
+        /// <param name="idcategory"></param>
+        /// <param name="enable"></param>
+        /// <param name="isAjax"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ManageLoginValidation]
+        public ActionResult ProductCategoryIntro(string idcategory, bool enable, bool isAjax) {
+            ResultModel<ProductCategoryViewModel> resultEntity = new ResultModel<ProductCategoryViewModel>();
+            resultEntity.Code = ResponseCodeType.Success;
+            resultEntity.Message = "成功";
+            try {
+                ProductCategory category = ProductCategoryService.Get(idcategory);
+                category.isintro = enable;
+                ProductCategoryService.Edit(category);
+            }
+            catch (Exception ex) {
+                resultEntity.Code = ResponseCodeType.Fail;
+                resultEntity.Message = ex.ToString();
+            }
+
+            return Content(resultEntity.SerializeToJson());
+        }
+
+        /// <summary>
         /// 新增\编辑产品类别
         /// </summary>
         /// <param name="idcategory"></param>
