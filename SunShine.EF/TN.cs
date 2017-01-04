@@ -256,6 +256,10 @@ namespace SunShine.EF {
             modelBuilder.Entity<WebSiteInfo>()
                 .Property(e => e.qq)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<WebSiteInfo>()
+                .Property(e => e.qq2)
+                .IsUnicode(false);
         }
     }
 }

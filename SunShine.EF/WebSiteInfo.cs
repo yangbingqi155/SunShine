@@ -33,5 +33,8 @@ namespace SunShine.EF
 
         [StringLength(500)]
         public string qq { get; set; }
+
+        [StringLength(500)]
+        public string qq2 { get; set; }
     }
 }

@@ -37,6 +37,7 @@ namespace SunShine.BLL
             oldWebsiteInfo.hotphone = websiteInfo.hotphone;
             oldWebsiteInfo.phone = websiteInfo.phone;
             oldWebsiteInfo.qq = websiteInfo.qq;
+            oldWebsiteInfo.qq2 = websiteInfo.qq2;
 
             db.SaveChanges();
             return oldWebsiteInfo;
