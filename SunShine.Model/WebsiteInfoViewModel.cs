@@ -44,6 +44,10 @@ namespace SunShine.Model
         [StringLength(500)]
         public new string qq { get; set; }
 
+        [Display(Name = "QQ2")]
+        [StringLength(500)]
+        public new string qq2 { get; set; }
+
 
         public void CopyFromBase(WebSiteInfo websiteInfo)
         {
@@ -55,6 +59,7 @@ namespace SunShine.Model
             this.hotphone = websiteInfo.hotphone;
             this.phone = websiteInfo.phone;
             this.qq = websiteInfo.qq;
+            this.qq2 = websiteInfo.qq2;
         }
 
         public void CopyToBase(WebSiteInfo websiteInfo)
@@ -67,6 +72,7 @@ namespace SunShine.Model
             websiteInfo.hotphone = this.hotphone;
             websiteInfo.phone = this.phone;
             websiteInfo.qq = this.qq;
+            websiteInfo.qq2 = this.qq2;
         }
     }
 }
