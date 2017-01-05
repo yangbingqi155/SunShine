@@ -20,7 +20,7 @@
                                 }
                                 <a href="@Url.Action("Index","Case",new { categoryCode="successcase",currentCategoryCode="lastestcase",idarticle=item.idarticle})"><h2>@item.title</h2></a>
                                 <img src="~/Images/home/xian_1.jpg" />
-                                <p>@(string.IsNullOrEmpty(item.content)?"": item.content.RemoveHTMLAndGetByNum(50))</p>
+                                <p>@(string.IsNullOrEmpty(item.content)?"": item.content.RemoveHTMLAndGetByNum(48))</p>
                                 <div class="gengduo"><a href="@Url.Action("Index","Case",new { categoryCode="successcase",currentCategoryCode="lastestcase"})">更多</a></div>
                             </div>
                         </li>
