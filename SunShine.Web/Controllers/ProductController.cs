@@ -48,7 +48,7 @@ namespace SunShine.Web.Controllers
                 }
                 
             }
-
+            
             if (result)
             {
                 SEO seo = SEOService.GetByCode("ProductList");
@@ -81,6 +81,7 @@ namespace SunShine.Web.Controllers
             ViewData["pageIndex"] = pageIndex;
             ViewData["contactus"] = contactusStr;
             ViewData["keyword"] = keyword;
+            ViewData["category"] = category;
 
             RouteData.Values.Add("keyword", keyword);
             RouteData.Values.Add("idproduct", idproduct);

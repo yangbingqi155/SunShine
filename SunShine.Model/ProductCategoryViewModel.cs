@@ -42,6 +42,9 @@ namespace SunShine.Model {
         [Display(Name = "SEO描述")]
         public new string description { get; set; }
 
+        [Display(Name = "搜索推荐")]
+        public new bool isintro { get; set; }
+
         public static List<SelectItemViewModel<int>> GroupMethodTypeSelectItems {
             get { 
             List<SelectItemViewModel<int>> list = new List<SelectItemViewModel<int>>();
@@ -77,6 +80,7 @@ namespace SunShine.Model {
             this.cretime = category.cretime;
             this.description = category.description;
             this.keyword = category.keyword;
+            this.isintro = category.isintro;
         }
 
         public void CopyToBase(ProductCategory category) {
@@ -89,6 +93,7 @@ namespace SunShine.Model {
             category.cretime = this.cretime;
             category.description = this.description;
             category.keyword = this.keyword;
+            category.isintro = this.isintro;
         }
     }
 }

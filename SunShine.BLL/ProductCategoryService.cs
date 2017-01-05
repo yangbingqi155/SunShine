@@ -59,6 +59,7 @@ namespace SunShine.BLL {
             oldCategory.inuse = category.inuse;
             oldCategory.keyword = category.keyword;
             oldCategory.description = category.description;
+            oldCategory.isintro = category.isintro;
             db.SaveChanges();
             return oldCategory;
         }

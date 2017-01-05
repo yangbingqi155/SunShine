@@ -33,5 +33,7 @@ namespace SunShine.EF
 
         [StringLength(5000)]
         public string description { get; set; }
+
+        public bool isintro { get; set; }
     }
 }

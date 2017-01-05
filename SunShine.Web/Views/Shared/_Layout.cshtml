@@ -86,8 +86,10 @@
         }
 
         <div class="search">
-
-            <div class="keyword"><b>其他人同时也在搜索：</b><a href="/">迷你发光字</a>&nbsp;&nbsp;<a href="/">发光字生产厂家</a>&nbsp;&nbsp;<a href="/">亚克力发光字</a>&nbsp;&nbsp;<a href="/">树脂发光字厂家</a>&nbsp;&nbsp;<a href="/">迷你发光字</a></div>
+            @{
+                Html.RenderAction("HotSearch", "Parts");
+            }
+            
             <div class="ss">
                 <form id="form1" action="@Url.Action("List","Product")">
                     <input name="keyword" type="text" id="txtSearch" class="input" value="@Request["keyword"]" />
