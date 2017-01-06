@@ -18,7 +18,7 @@
 <script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap-fileinput/plugins/sortable.min.js")"></script>
 <script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap-fileinput/fileinput.min.js")"></script>
 <script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap-fileinput/locales/zh.js")"></script>
-
+<script type="text/javascript"  src="@Url.Content("~/ueditor/ueditor.parse.min.js")"></script>
 
 <div class="ManageRightTitle">
     <ol class="breadcrumb">
@@ -216,14 +216,17 @@
         initImages();
         var timeout = window.setInterval(bindDrag, 1000);
 
-        var ue = UE.getEditor('editor');
+        @*uParse('editor', {
+            rootPath: '@Url.Content("~/ueditor/third-party")'
+        });*@
+        var ue = UE.getEditor('editor',{allowDivTransToP: false});
         //对编辑器的操作最好在编辑器ready之后再做
         ue.ready(function () {
             //设置编辑器的内容
             UE.getEditor('editor').setContent('@Html.Raw(!string.IsNullOrEmpty(Model.content) ? Model.content.Replace("\r", "").Replace("\n", "") : "")');
+            
         });
-
-        var introduction_ue = UE.getEditor('introduction_editor');
+        var introduction_ue = UE.getEditor('introduction_editor',{allowDivTransToP: false});
         //对编辑器的操作最好在编辑器ready之后再做
         introduction_ue.ready(function () {
             //设置编辑器的内容
@@ -247,7 +250,7 @@
             $("#@Html.IdFor(model=>model.content)").val(html);
             var introduction_html = UE.getEditor('introduction_editor').getContent();
             $("#@Html.IdFor(model=>model.introduction)").val(introduction_html);
-            
+
             $("#form1").submit();
         });
     });
