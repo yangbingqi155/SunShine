@@ -289,7 +289,7 @@
 
 .case_list_item .itemdesc {
     float: left;
-    margin-left: 32px;
+    margin-left: 30px;
     width: 438px;
 }
 
@@ -339,7 +339,7 @@
     font-size: 20px;
     padding: 6px 0;
     color: #FFFFFF;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 .hot_sale_product {
@@ -378,7 +378,7 @@
 
     .hot_sale_product_list .hot_sale_product_item {
         float: left;
-        margin-left: 8px;
+        margin-left: 7px;
     }
 
         .hot_sale_product_list .hot_sale_product_item .hot_sale_product_img {
@@ -503,6 +503,7 @@
 
 .p_basic_info .p_ask {
     margin-top: 37px;
+    margin-left:74px;
 }
 
 .p_basic_info .btn_ask {
@@ -538,17 +539,18 @@
 
 .p_product_show_title {
     margin-top: 22px;
-    line-height: 44px;
+    line-height: 52px;
     font-size: 30px;
     font-weight: 900;
     color: #FFFFFF;
-    background-color: #272F44;
+    background-color: #1c1c1c;
     text-align: center;
+    height:55px;
 }
 
 .p_product_show_title_line {
     margin-top: 8px;
-    border-bottom: 2px solid #272F44;
+    border-bottom: 2px solid #1c1c1c;
 }
 
 .p_description_body {

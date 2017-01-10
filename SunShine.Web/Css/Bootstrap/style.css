@@ -82,7 +82,7 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 
 
 .cp_right {width:744px; float:right; overflow:hidden;}
-.cp_right .title {width:744px; height:46px; line-height:46px; color:#FFF; font-size:20px; font-weight:700;  border-bottom:2px solid #da251c; position:relative;}
+.cp_right .title {width:744px; height:46px; line-height:46px; color:#FFF; font-size:20px; font-weight:500;  border-bottom:2px solid #da251c; position:relative;}
 .cp_right .title ul { width:300px; height:46px; overflow:hidden;}
 .cp_right .title ul li { width:129px; height:44px; float:left; text-align:center;margin-right:8px; }
 .more1 { position:relative; margin:-35px 10px 0 0px; float:right;}
