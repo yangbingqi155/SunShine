@@ -7,78 +7,153 @@
     List<ArticleViewModel> saleservice = (List<ArticleViewModel>)ViewData["saleservice"];
 
 }
-<div style="width:1444px;margin:0px auto;">
-    <div class="picture_center"><img src="~/Images/home/hexinyoushi_1.jpg" /></div>
+<div class="sidahexinyoushi">
+    @*<div class="picture_center"><img src="~/Images/home/hexinyoushi.jpg" style="width:1441px" /></div>*@
+    <div class="lijizixun"><a href="http://wpa.qq.com/msgrd?v=3&uin=3317300173&site=qq&menu=yes" target="_blank">立即咨询</a></div>
 </div>
 <div class="kanshi_waiceng">
-    <div class="decription_text">
-        <div class="decription_kanshi"><p>11年发光字经验,2389家企事业单位的信赖</p></div>
-    </div>
+    @*<div class="decription_text">
+        <div class="decription_kanshi"><p></p></div>
+    </div>*@
 
     <div class="kanshi_neiceng">
-        <div class="images_tupian">
-            <img src="~/Images/home/kanshili_1.jpg" />
-        </div>
+        @*<div class="images_tupian">
+            
+        </div>*@
         <div class="miaoshu">
             <ul>
                 @foreach (var item in ablity) {
-                    <li><img src="~/Images/home/hongsejiantou.jpg" />@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                    <li>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
                 }
             </ul>
-            <a href="@Url.Action("Index","Case",new {categoryCode="contactsunshine",currentCategoryCode="designteam" })"><img src="~/Images/home/chakangengduo_1.JPG"></a>
+           @* <a href="@Url.Action("Index","Case",new {categoryCode="contactsunshine",currentCategoryCode="designteam" })"></a>*@
         </div>
-        <div class="shilizhashi_text"><p>质量过硬,是我们的核心优势</p></div>
-
+        @*<div class="shilizhashi_text"><p></p></div>*@
+        <div style="clear:both"></div>
     </div>
 
     <div class="kanzhiliang">
         <div class="miaoshu">
             <ul>
                 @foreach (var item in quality) {
-                    <li><img src="~/Images/home/hongsejiantou.jpg" />@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                    <li>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
                 }
 
             </ul>
-            <a href="@Url.Action("Index","Case",new {categoryCode="contactsunshine",currentCategoryCode="designteam" })"><img src="~/Images/home/chakangengduo_1.JPG"></a>
+           @* <a href="@Url.Action("Index","Case",new {categoryCode="contactsunshine",currentCategoryCode="designteam" })"></a>*@
         </div>
-        <div class="images_tupian">
-            <img src="~/Images/home/kanshili_2.jpg" />
+        @*<div class="images_tupian">
+           
         </div>
-        <div class="kanzhiliang_text"><p>设计、制作、安装一条龙服务</p></div>
+        <div class="kanzhiliang_text"><p></p></div>*@
     </div>
 
     <div class="kanxingjiabi">
 
-        <div class="images_tupian">
-            <img src="~/Images/home/kanshili_3.jpg" />
-        </div>
+        @*<div class="images_tupian">
+           
+        </div>*@
         <div class="miaoshu">
             <ul>
                 @foreach (var item in goodprice) {
-                <li><img src="~/Images/home/hongsejiantou.jpg" />@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                <li>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
             }
 
         </ul>
-        <a href="@Url.Action("Index","Case",new {categoryCode="contactsunshine",currentCategoryCode="designteam" })"><img src="~/Images/home/chakangengduo_1.JPG"></a>
+        @*<a href="@Url.Action("Index","Case",new {categoryCode="contactsunshine",currentCategoryCode="designteam" })"></a>*@
     </div>
-    <div class="kanxingjiabi_text"><p>按时保质保量完成供货,全程放心无忧</p> </div>
+    @*<div class="kanxingjiabi_text"><p></p> </div>*@
 </div>
 
 <div class="kanshouhou">
     <div class="miaoshu">
         <ul>
             @foreach (var item in saleservice) {
-                <li><img src="~/Images/home/hongsejiantou.jpg" />@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                <li>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
             }
         </ul>
-        <a href="@Url.Action("Index","Case",new {categoryCode="contactsunshine",currentCategoryCode="designteam" })"><img src="~/Images/home/chakangengduo_1.JPG"></a>
-        <div class="telephone_yellow">
-            <img src="~/Images/home/telephone_yellow.jpg" />
-        </div>
+       @* <a href="@Url.Action("Index","Case",new {categoryCode="contactsunshine",currentCategoryCode="designteam" })"></a>*@
+        @*<div class="telephone_yellow">
+            
+        </div>*@
     </div>
-    <div class="images_tupian">
+    @*<div class="images_tupian">
         <img src="~/Images/home/kanshili_4.jpg" />
-    </div>
+    </div>*@
 </div>
 
 </div>
+
+<div style="clear:both"></div>
+
+<div style="width:1440px;margin:0 auto">
+    <img width="1440" src="~/Images/home/yongxinzuofuwu.jpg" />
+</div>
+
+<div class="chanpinduibi">
+   <div class="womenVSputomg">
+       <div class="womendechanpin">
+           <div class="wenzishuoming"><p>我们选取的超高亮LED模组灯，亮度、发光均匀，使用寿命长</p></div>
+           <img src="~/Images/home/vs_1.jpg" />
+       </div>
+
+       <div class="VS">
+           <img src="~/Images/home/VS.JPG" />
+       </div>
+       
+       <div class="putongdechanpin">
+           <img src="~/Images/home/vs_2.jpg" />
+           <div class="wenzishuoming"><p>普通发光子造价低、亮度低、发光不均匀、光衰严重</p></div>
+       </div>
+   </div>
+
+    <div class="womenVSputomg">
+        <div class="womendechanpin">
+            <div class="wenzishuoming"><p>进口亚克历颜色亮丽，不易褪色，发光均匀、亮度高，光线穿透和均匀扩散。</p></div>
+            <img src="~/Images/home/vs_3.jpg" />
+        </div>
+
+        <div class="VS">
+            <img src="~/Images/home/VS.JPG" />
+        </div>
+
+        <div class="putongdechanpin">
+            <img src="~/Images/home/vs_4.jpg" />
+            <div class="wenzishuoming"><p>普通发光子普通亚历克材料，易破裂、易褪色，不锈钢部分，容易生锈。</p></div>
+        </div>
+    </div>
+        
+    <div class="womenVSputomg">
+        <div class="womendechanpin">
+            <div class="wenzishuoming"><p>我们可根据客户的需求，随意调配颜色，满足客户个性化需求。</p></div>
+            <img src="~/Images/home/vs_5.jpg" />
+        </div>
+
+        <div class="VS">
+            <img src="~/Images/home/VS.JPG" />
+        </div>
+
+        <div class="putongdechanpin">
+            <img src="~/Images/home/vs_6.jpg" />
+            <div class="wenzishuoming"><p>普通发光字颜色不鲜艳，易破裂、容易褪色</p></div>
+        </div>
+    </div>
+    
+    <div class="womenVSputomg">
+        <div class="womendechanpin">
+            <div class="wenzishuoming"><p>优质亚克力面板，坚固耐用，色泽亮丽，发光均匀</p></div>
+            <img src="~/Images/home/vs_7.jpg" />
+        </div>
+
+        <div class="VS">
+            <img src="~/Images/home/VS.JPG" />
+        </div>
+
+        <div class="putongdechanpin">
+            <img src="~/Images/home/vs_8.jpg" />
+            <div class="wenzishuoming"><p>普通发光字发光不均匀，亮度不够</p></div>
+        </div>
+    </div> 
+
+</div>
+

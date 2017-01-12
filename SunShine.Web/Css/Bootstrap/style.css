@@ -142,7 +142,7 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
             margin-top:13px; 
 }
 
-.gengduo {width:100px; height:30px; line-height:28px; border:#c9c9c9 1px solid; margin:10px auto;  background: url(../../Images/home/fgz_13.jpg) no-repeat;border-radius:20px}
+.gengduo {width:100px; height:30px; line-height:28px; border:#c9c9c9 1px solid; margin:10px auto;  background: #da251c;border-radius:20px}
 .gengduo a { font-size:14px; text-align:center; display:block;color:#fff}
 .hezuo {width:190px;height:340px;margin:10px auto;}
 .hezuo h2 {color:black;margin-top:10px; font-weight:bold;font-size:15px;   }
@@ -159,7 +159,7 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
     text-align: center;
     float:right;
     margin-top:13px; 
-    background:url(../../Images/home/fgz_13.jpg) repeat; 
+    background:#da251c; 
 }
     .ckxq_ljzx a {color:#fff}
 

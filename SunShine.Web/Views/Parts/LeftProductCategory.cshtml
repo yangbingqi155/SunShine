@@ -13,7 +13,16 @@
 }
 @{
     if (Model != null && Model.Count > 0) {
-        <div><img src="~/Images/home/feilei_1.jpg"></div>
+        @*<div ><img src="~/Images/home/feilei_1.jpg"></div>*@
+        <div class="success_case_top">
+            <div class="success_case_title">发光字产品分类</div>
+            <div class="success_case_subtitle">
+                <div class="subtitle_left"></div>
+                <div class="subtitle_center">PRODUCT</div>
+                <div class="subtitle_right"></div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
         <div id="images">
             <ul name="menu5" id="menu5" class="menu">
 
@@ -70,7 +79,13 @@
                     </li>
                 }
             </ul>
-            <img src="~/Images/home/telephone_1.jpg" />
+            <div class="telephone_1">
+                <div class="telephone_2">
+                    <div class="img"><img src="~/Images/home/telephonestyle.jpg" /></div>
+                    <div class="tel">4008-778-652</div>
+                </div>
+                <div style="clear:both"></div>
+            </div>
         </div>
     }
 }
