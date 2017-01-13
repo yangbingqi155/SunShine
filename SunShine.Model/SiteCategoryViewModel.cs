@@ -44,6 +44,9 @@ namespace SunShine.Model {
         [Display(Name = "父级类别路径")]
         public string ParentCategoryNamePath { get; set; }
 
+        [Display(Name = "SEO标题")]
+        public new string title { get; set; }
+
         [Display(Name = "SEO关键词")]
         public new string keyword { get; set; }
 
@@ -63,6 +66,7 @@ namespace SunShine.Model {
             this.parentid = category.parentid;
             this.description = category.description;
             this.keyword = category.keyword;
+            this.title = category.title;
             this.pagesize = category.pagesize;
         }
 
@@ -76,6 +80,7 @@ namespace SunShine.Model {
             category.parentid = this.parentid;
             category.description = this.description;
             category.keyword = this.keyword;
+            category.title = this.title;
             category.pagesize = this.pagesize;
         }
     }

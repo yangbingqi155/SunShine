@@ -29,6 +29,9 @@ namespace SunShine.EF
         public DateTime? cretime { get; set; }
 
         [StringLength(500)]
+        public string title { get; set; }
+
+        [StringLength(500)]
         public string keyword { get; set; }
 
         [StringLength(5000)]

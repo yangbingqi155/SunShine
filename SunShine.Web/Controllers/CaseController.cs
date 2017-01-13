@@ -63,17 +63,9 @@ namespace SunShine.Web.Controllers
             }
             else {
                 SiteCategory category = SiteCategoryService.GetByCode(currentCategoryCode);
+                ViewBag.Title = category != null ? category.title : "";
                 ViewBag.Keywords = category != null ? category.keyword : "";
                 ViewBag.Description = category != null ? category.description : "";
-                List<SiteCategory> titleParentCategories = parentCategories.Where(en => en.idcategory != "").ToList();
-                string seoTitle = "创意阳光";
-                foreach (var item in titleParentCategories) {
-                    seoTitle += "-" + item.categoryname;
-                }
-                if (!string.IsNullOrEmpty(idarticle)) {
-                    seoTitle += "-" + (articles.Count > 0 ? articles.First().title : "");
-                }
-                ViewBag.Title = seoTitle;
             }
 
             ViewData["pageCount"] = pageCount;

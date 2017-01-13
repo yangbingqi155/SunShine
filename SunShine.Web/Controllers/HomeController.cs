@@ -32,9 +32,33 @@ namespace SunShine.Web.Controllers {
             return View();
         }
 
-        public ActionResult About() {
-            ViewBag.Message = "Your application description page.";
+        public ActionResult SiteMap() {
+            //产品分类
+            List<ProductCategoryViewModel> categories = new List<ProductCategoryViewModel>();
+            List<ProductCategory> tempCategories = ProductCategoryService.GetALL().Where(en => en.inuse).ToList();
+            categories = tempCategories.Select(model => {
+                ProductCategoryViewModel category = new ProductCategoryViewModel();
+                category.CopyFromBase(model);
+                return category;
+            }).ToList();
 
+            //成功案例
+            List<SiteCategoryViewModel> successcase = SiteCategoryService.GetChildCategoriesByCode("successcase");
+
+            //品牌创意阳光
+            List<SiteCategoryViewModel> sunshinebrand = SiteCategoryService.GetChildCategoriesByCode("sunshinebrand");
+
+            //关于创意阳光
+            List<SiteCategoryViewModel> contactsunshine = SiteCategoryService.GetChildCategoriesByCode("contactsunshine");
+
+            //创意阳光展示
+            List<SiteCategoryViewModel> show = SiteCategoryService.GetChildCategoriesByCode("show");
+
+            ViewData["categories"] = categories;
+            ViewData["successcase"] = successcase;
+            ViewData["sunshinebrand"] = sunshinebrand;
+            ViewData["contactsunshine"] = contactsunshine;
+            ViewData["show"] = show;
             return View();
         }
 

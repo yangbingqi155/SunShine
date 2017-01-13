@@ -166,6 +166,10 @@ namespace SunShine.EF {
                 .IsUnicode(false);
 
             modelBuilder.Entity<ProductCategory>()
+                .Property(e => e.title)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ProductCategory>()
                 .Property(e => e.keyword)
                 .IsUnicode(false);
 
@@ -215,6 +219,10 @@ namespace SunShine.EF {
 
             modelBuilder.Entity<SiteCategory>()
                 .Property(e => e.parentid)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SiteCategory>()
+                .Property(e => e.title)
                 .IsUnicode(false);
 
             modelBuilder.Entity<SiteCategory>()

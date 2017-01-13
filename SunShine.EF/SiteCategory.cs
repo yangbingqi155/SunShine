@@ -33,6 +33,9 @@ namespace SunShine.EF
         public bool inuse { get; set; }
 
         [StringLength(500)]
+        public string title { get; set; }
+
+        [StringLength(500)]
         public string keyword { get; set; }
 
         [StringLength(5000)]

@@ -57,6 +57,7 @@ namespace SunShine.BLL {
             oldCategory.groupmethod = category.groupmethod;
             oldCategory.sortno = category.sortno;
             oldCategory.inuse = category.inuse;
+            oldCategory.title = category.title;
             oldCategory.keyword = category.keyword;
             oldCategory.description = category.description;
             oldCategory.isintro = category.isintro;

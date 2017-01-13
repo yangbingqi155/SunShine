@@ -36,6 +36,9 @@ namespace SunShine.Model {
         [Display(Name = "创建时间")]
         public new DateTime? cretime { get; set; }
 
+        [Display(Name = "SEO标题")]
+        public new string title { get; set; }
+
         [Display(Name = "SEO关键词")]
         public new string keyword { get; set; }
 
@@ -80,6 +83,7 @@ namespace SunShine.Model {
             this.cretime = category.cretime;
             this.description = category.description;
             this.keyword = category.keyword;
+            this.title = category.title;
             this.isintro = category.isintro;
         }
 
@@ -93,6 +97,7 @@ namespace SunShine.Model {
             category.cretime = this.cretime;
             category.description = this.description;
             category.keyword = this.keyword;
+            category.title = this.title;
             category.isintro = this.isintro;
         }
     }
