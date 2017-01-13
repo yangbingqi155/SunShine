@@ -521,6 +521,7 @@
     <Content Include="Scripts\Manage\Base.js" />
     <Content Include="Scripts\Manage\checkbox_tool.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\posfixed.js" />
     <Content Include="Scripts\Pub.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />

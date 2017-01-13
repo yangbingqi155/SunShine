@@ -23,7 +23,7 @@ hr{margin:0px;padding:0px;}
 .logo { float:left; }
 .phone { float:right; }
 
-.tablist { width:100%; height:53px; background:#da251c;  max-width:1920px;}
+.tablist { width:100%; height:53px; background:#da251c;  max-width:1920px;z-index:9999}
 .tablist ul { width:1000px; height:53px; line-height:53px; margin:0 auto; overflow:hidden; }
 .tablist ul li { float:left; font-size:16px;   text-align:center; height:53px; line-height:53px;width:111px;margin:0 7px}
 .tablist .no { background:none;}
