@@ -17,19 +17,28 @@
     <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/bootstrap.min.js?v=20161114")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/ScrollPic.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Bootstrap/home.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/posfixed.js")"></script>
     <script type="text/javascript">
         $(document).ready(function () { $(".gundongxiaoguo").imgscroll({ speed: 40, amount: 0, width: 2, dir: "left" }); });
         $(document).ready(function () { $(".case_honor_bottom").imgscroll({ speed: 40, amount: 0, width: 2, dir: "up" }); });
         $(document).ready(function () { $(".wenti_box").imgscroll({ speed: 40, amount: 0, width: 2, dir: "up" }); });
 
-        function getQueryByName(name) {
-            var result = location.search.match(
-            new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
-            if (result == null || result.length < 1) {
-                return "";
-            }
-            return result[1];
-        }
+        $(document).ready(function () {
+            $(".tablist").posfixed({
+                distance: 0,
+                pos: "top",
+                type: "while",
+                hide: false
+            });
+        });
+        //function getQueryByName(name) {
+        //    var result = location.search.match(
+        //    new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+        //    if (result == null || result.length < 1) {
+        //        return "";
+        //    }
+        //    return result[1];
+        //}
        
         //function ChangBackgroundColor(obj) {
 

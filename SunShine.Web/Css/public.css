@@ -25,6 +25,12 @@
         font-weight: bold;
     }
 
+    .cp_left .success_case_top .success_case_title{
+        font-size: 22px;
+        font-weight:400;
+    }
+    .cp_left .success_case_subtitle .subtitle_center{font-weight:400;}
+
     .success_case_top .success_case_subtitle {
     }
 
