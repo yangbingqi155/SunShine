@@ -41,7 +41,7 @@
                         }
                     }
                 }
-                @if (Model.Count == 1 && pageIndex == 0 && !string.IsNullOrEmpty(Request["idarticle"])) {
+                @if (Model.Count == 1 && pageIndex == 0 && !string.IsNullOrEmpty(Request["idarticle"])&& Model.First().Category.categorycode != "commonquestion") {
                     <span>
                         >&nbsp;@Model.First().title
                     </span>
