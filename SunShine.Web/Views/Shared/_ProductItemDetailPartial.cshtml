@@ -18,6 +18,10 @@
                     $("#contact_us").removeClass("not_current");
                     $("#product_desc_zone").hide();
                     $("#contact_us_zone").show();
+                    var map;
+                    $(function () {
+                        initMap();
+                    });
                 }
             }
         });
@@ -45,16 +49,17 @@
                 </div>
             </div>
         </div>
-        <div style="clear:both;"></div>
+        
     </div>
+    <div style="clear:both;"></div>
     <div class="product_detail_bottom">
         <div class="p_description_header">
             <div name="desc_tab" id="detail_show" class="bgcolor_title_head desc_tab">
                 详情展示
             </div>
-            <divv name="desc_tab" id="contact_us" class="bgcolor_title_head desc_tab not_current">
+            <div name="desc_tab" id="contact_us" class="bgcolor_title_head desc_tab not_current">
                 联系我们
-            </divv>
+            </div>
             <div style="clear:both;"></div>
         </div>
         <div class="product_desc" id="product_desc_zone">
@@ -127,10 +132,7 @@
                 var overviewControl = new BMap.OverviewMapControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: true });
                 map.addControl(overviewControl);
             }
-            var map;
-            $(function () {
-                initMap();
-            });
+         
             </script>
     </div>
 </div>

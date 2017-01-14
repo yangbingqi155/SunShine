@@ -261,11 +261,12 @@
 
     .case_nav .case_nav_title {
         line-height: 50px;
-        font-size: 14px;
+        font-size: 15px;
         float: left;
         margin-left: 6px;
-        font-weight: bold;
+        /*font-weight: bold;*/
         text-align: center;
+
     }
 
         .case_nav .case_nav_title span a {
@@ -337,6 +338,7 @@
     .case_question_item .itemdesc .itemdetail {
         margin-top: 10px;
         font-size: 14px;
+        width:658px;
     }
 
 
@@ -641,7 +643,7 @@ nav .pager {
     .site_map_box .map_item_content {
         text-align: left;
         padding: 10px;
-        margin-left:20px;
+        margin-left:-5px;
         font-size:14px;
     }
     .map_item_content .second_header{
@@ -660,7 +662,7 @@ nav .pager {
         text-align: left;
         padding: 5px;
         font-size:12px;
-        margin-left:20px;
+        margin-left:60px;
     }
     .map_items a{
         margin-left:10px;

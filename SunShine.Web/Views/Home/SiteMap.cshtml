@@ -23,19 +23,19 @@
     </div>
     <div class="map_item_header"><a href="@Url.Action("List","Product")">创意阳光广告产品</a></div>
     <div class="map_item_content">
-        <div class="second_header">按用途分</div>
+        <div class="second_header">按用途分类</div>
         <div class="map_items">
             @foreach (var item in usageCategories) {
                 <a href="@Url.Action("List","Product",new { idcategory=item.idcategory})">@item.categoryname</a>
             }
         </div>
-        <div class="second_header">按行业分</div>
+        <div class="second_header">按行业分类</div>
         <div class="map_items">
             @foreach (var item in industryCategories) {
                 <a href="@Url.Action("List","Product",new { idcategory=item.idcategory})">@item.categoryname</a>
             }
         </div>
-        <div class="second_header">按产品分</div>
+        <div class="second_header">按产品分类</div>
         <div class="map_items">
             @foreach (var item in productCategories) {
                 <a href="@Url.Action("List","Product",new { idcategory=item.idcategory})">@item.categoryname</a>

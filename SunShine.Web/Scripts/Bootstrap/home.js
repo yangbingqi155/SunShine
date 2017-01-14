@@ -3,7 +3,7 @@ $.fn.imgscroll = function (o) {
     var defaults = {
         speed: 40,
         amount: 30,
-        width: 1,
+        width: 2,
         dir: "up"
     };
     o = $.extend(defaults, o);

@@ -954,7 +954,7 @@ ul.thirdLevel {
     .gundongbejing{background:url(../../Images/home/hezuo_1.jpg) no-repeat;height:181px;}
     .gundongxiaoguo{width:1000px;height:181px;margin:0px auto;overflow: hidden; position: relative;}
     .gundongxiaoguo ul{padding: 0px; overflow: hidden; position: relative; list-style: none; width: 8604px; left: 0px;}
-    .gundongxiaoguo ul li{text-align: center; position: relative; overflow: hidden; float: left;border:2px #efefef solid;margin-left:10px;cursor:pointer}
+    .gundongxiaoguo ul li{text-align: center; position: relative; overflow: hidden; float: left;border:2px #efefef solid;margin-left:10px;cursor:pointer;width:260px;}
 
     .logo{width:690px ;height:116px;float:left}
     .telephonenumber{width:310px;height:116px;float:left;background:url(../../Images/home/fgz_06.jpg) no-repeat}
@@ -989,6 +989,31 @@ ul.thirdLevel {
     .telephone_2{font-size:18px;color:#fff;font-weight:600;margin-left:20px;margin-top:16px;  letter-spacing:2px;float:left; }
     .telephone_2 .img{float:left;}
     .telephone_2 .tel{float:left;margin-left:5px;margin-top:3px}
+    #map Label{max-width:200px}
+
+    .fud {
+    background: url(../../Images/home/fubg_03.gif) repeat-x;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+    z-index: 9999;
+}
+    .fudong {
+    width: 980px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+    a {
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    blr: expression(this.onFocus=this.blur());
+    color: #666666;
+    border: none;
+}
 
 
 

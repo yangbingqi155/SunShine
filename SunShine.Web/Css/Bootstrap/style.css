@@ -53,7 +53,7 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 .ss {width:295px; float:right; position:relative; }
 .ss input { width:245px; height:31px;  border:1px solid #c9c9c9; padding-left:5px;}
 .ss span { width:34px; height:33px; position: absolute; right: 10px; }
-.keyword {width: 682px; height:33px; float: left; overflow:hidden;}
+.keyword {width: 682px; height:33px; float: left; overflow:hidden;font-size:16px}
 
 .wrap {width:1010px;  margin:10px auto; overflow:hidden;}
 .zhankai{ width:226px; overflow:hidden; background:#000; height:36px; line-height:36px; color:#fff; text-align:center;}
