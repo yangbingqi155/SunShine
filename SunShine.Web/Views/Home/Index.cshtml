@@ -1,17 +1,18 @@
 ﻿@using SunShine.Model;
+@using SunShine.Web.Utils;
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (BrowerDetectorHelper.IsMobile()) {
+        Layout = "~/Views/Shared/_Mobile_Layout.cshtml";
+    }
+    else {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
     List<ProductViewModel> hotProducts = (List<ProductViewModel>)ViewData["hotProducts"];
     List<ProductViewModel> newProducts = (List<ProductViewModel>)ViewData["newProducts"];
 }
 
     <div class="wrap">
-        <div class="cp_left">
-           @{ 
-               Html.RenderAction("LeftProductCategory", "Parts");
-           }
-
-        </div>
         <div class="cp_right">
             <div class="title">
                 <ul id="tabs">
@@ -40,22 +41,23 @@
     </div>
 
 <br /> 
-<div style="width:1444px;margin:0px auto;">
+@if (BrowerDetectorHelper.IsMobile()) {
+    <div class="mobile_content_box">
+        <img class="make_step_img" src="~/Images/home/make_step.jpg" />
+    </div>
+}
+else {
+}
+
     @{ 
         Html.RenderAction("CaseListItemsScroll", "Parts");
     }
-    <br />
-   @* <div class="picture_center"><img src="~/Images/home/hexinyoushi.jpg" style="width:1441px" /></div>
-     <br />
-    <div class="picture_center"><img src="~/Images/home/danxinweti_1.jpg" /></div>
-     <br />
-     <div class="picture_center"><img src="~/Images/home/danxin_2.jpg" /></div>
-     <br />*@
-</div>
 
-@{ 
+@{
     Html.RenderAction("CoreAdvance", "Parts");
-    Html.RenderPartial("_HistoryBannerPartial", null);
+    if (!BrowerDetectorHelper.IsMobile()) {
+        Html.RenderPartial("_HistoryBannerPartial", null);
+    }
     Html.RenderPartial("_CustomerSupportTitlePartial", null);
     Html.RenderAction("Partner", "Parts");
     Html.RenderPartial("_CustomizeFlowPartial", null);

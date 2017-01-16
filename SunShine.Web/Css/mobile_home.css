@@ -925,18 +925,19 @@ ul.thirdLevel {
     }
 
 .kanshi_waiceng {
-    width: 1440px;
+    width: 750px;
     margin: 0px auto;
     text-align: center;
-    background:url(../../Images/home/pinpaiyoushi_1.jpg) no-repeat;
+    background: url(../../Images/home/mobile_pinpaiyoushi_1.jpg) no-repeat;
+    background-size: 750px auto;
 }
 
 .kanshi_waiceng_img {
+    width: 750px;
     margin: 0 auto;
 }
 
 .kanshi_neiceng {
-    width: 1000px;
     height: 255px;
     margin: 0px auto;
 }
@@ -951,8 +952,9 @@ ul.thirdLevel {
 .miaoshu {
     float: left;
     width: 530px;
-    margin-top: 145px;
-    margin-left: 123px;
+    margin-top: 107px;
+    margin-left: 92px;
+    text-align: left;
 }
 
 .maioshu ul {
@@ -962,8 +964,8 @@ ul.thirdLevel {
 }
 
 .miaoshu ul li {
-    font-size: 13px;
-    height: 26px;
+    font-size: 12px;
+    height: 20px;
     font-weight: 500;
     font-family: 微软雅黑;
     color: #707070;
@@ -998,15 +1000,15 @@ ul.thirdLevel {
 }
 
 .kanzhiliang {
-    width: 1000px;
+    width: 750px;
     height: 262px;
     margin: 0px auto;
 }
 
     .kanzhiliang .miaoshu {
-        width: 590px;
-        margin-top: 132px;
-        margin-left: 604px;
+        width: 290px;
+        margin-top: 36px;
+        margin-left: 457px;
     }
 
         .kanzhiliang .miaoshu ul li span {
@@ -1035,7 +1037,7 @@ ul.thirdLevel {
 }
 
 .kanxingjiabi {
-    width: 1000px;
+    width: 750px;
     height: 238px;
     margin: 0px auto;
 }
@@ -1053,9 +1055,9 @@ ul.thirdLevel {
         }
 
     .kanxingjiabi .miaoshu {
-        width: 470px;
-        margin-top: 112px;
-        margin-left: 128px;
+        width: 360px;
+        margin-top: -42px;
+        margin-left: 91px;
     }
 
 .kanxingjiabi_text {
@@ -1072,15 +1074,15 @@ ul.thirdLevel {
 }
 
 .kanshouhou {
-    width: 1000px;
+    width: 750px;
     height: 245px;
     margin: 0px auto;
 }
 
     .kanshouhou .miaoshu {
-        width: 475px;
-        margin-top: 112px;
-        margin-left: 531px;
+        width: 350px;
+        margin-top: -100px;
+        margin-left: 394px;
     }
 
         .kanshouhou .miaoshu a img {
@@ -1129,12 +1131,12 @@ ul.thirdLevel {
     }
 
 .gundongbejing {
-    background: url(../../Images/home/hezuo_1.jpg) no-repeat;
+    /*background: url(../../Images/home/hezuo_1.jpg) no-repeat;*/
     height: 181px;
 }
 
 .gundongxiaoguo {
-    width: 1000px;
+    width: 750px;
     height: 181px;
     margin: 0px auto;
     overflow: hidden;
@@ -1162,20 +1164,17 @@ ul.thirdLevel {
         }
 
 .logo {
-    width: 690px;
-    height: 116px;
     float: left;
 }
 
 .telephonenumber {
     width: 310px;
-    height: 116px;
+    height: 101px;
     float: left;
     background: url(../../Images/home/fgz_06.jpg) no-repeat;
 }
 
     .telephonenumber .guhua {
-        ;
         margin-top: -5px;
     }
 
@@ -1194,62 +1193,68 @@ ul.thirdLevel {
 }
 
 .sidahexinyoushi {
-    width: 1444px;
-    height: 155px;
+    width: 750px;
     margin: 0px auto;
-    text-align:center;
+    text-align: center;
 }
+
 .sidahexinyoushi_img {
-    margin:0 auto;
+    width: 750px;
+    margin: 0 auto;
 }
 
-    .sidahexinyoushi .lijizixun {
-        width: 121px;
-        height: 25px;
-        background: #ef9f0b;
-        text-align: center;
-        line-height: 25px;
-        font-size: 14px;
-        border-radius: 2px;
-        margin-top: 94px;
-        margin-left: 1133px;
-        float: left;
-    }
+.sidahexinyoushi .lijizixun {
+    width: 121px;
+    height: 25px;
+    background: #ef9f0b;
+    text-align: center;
+    line-height: 25px;
+    font-size: 14px;
+    border-radius: 2px;
+    margin-top: 94px;
+    margin-left: 1133px;
+    float: left;
+}
 
-        .sidahexinyoushi .lijizixun a {
-            color: #ffffff;
-            width: 120px;
-        }
+    .sidahexinyoushi .lijizixun a {
+        color: #ffffff;
+        width: 120px;
+    }
 
 a {
     text-decoration: none;
 }
 
 .chanpinduibi {
-    width: 1006px;
-    margin: 20px auto;
+    width: 750px;
+    margin: 0 auto;
 }
 
     .chanpinduibi .womenVSputomg {
-        width: 1000px;
-        height: 160px;
+        width: 750px;
+        height: 130px;
         margin-bottom: 20px;
     }
 
 .wenzishuoming {
     float: left;
-    width: 235px;
-    height: 160px;
+    width: 172px;
+    height: 125px;
     background: #dededc;
 }
 
-    .wenzishuoming p {
-        font-size: 16px;
-        margin: 20% 25px;
-        font-weight: 500;
-        letter-spacing: 1px;
-        line-height: 25px;
-    }
+.wenzishuoming_img {
+    width: 172px;
+
+}
+
+.wenzishuoming p {
+    font-size: 16px;
+    margin: 15px 5px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
 
 .womendechanpin {
     float: left;
@@ -1259,6 +1264,9 @@ a {
     .womendechanpin .wenzishuoming p {
         color: #dd4f4b;
     }
+.VS img {
+    height:125px;
+}
 
 .putongdechanpin {
     float: left;
@@ -1332,16 +1340,42 @@ a {
     border: none;
 }
 
+.mobile_content_box {
+    width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.make_step_img {
+    width: 100%;
+}
+
 .scroll_case_list_box {
-    width: 1444px;
-    margin: 0px auto;
+    width: 750px;
+    margin: 10px auto;
+    text-align: center;
 }
+
+.scroll_case_list_header_img {
+    width: 750px;
+}
+
 .yongxinzuofuwu {
-    width:1440px;margin:0 auto;    
+    width: 750px;
+    margin: 0 auto;
+    text-align: center;
 }
+
 .yongxinzuofuwu_img {
-    width:1440px;
+    width: 750px;
+    margin: 0 auto;
 }
 .customer_support {
-    width:1444px;margin:0px auto;
+    width:750px;
+    margin:0px auto;
+    text-align:center;
+}
+.customer_support_img {
+    width:750px;
+    margin:0 auto;
 }

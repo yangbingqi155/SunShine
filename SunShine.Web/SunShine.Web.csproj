@@ -236,6 +236,10 @@
     <Content Include="Css\Bootstrap\bootstrap.css" />
     <Content Include="Css\Bootstrap\bootstrap.min.css" />
     <Content Include="Css\Bootstrap\home.css" />
+    <Content Include="Css\mobile_case.css" />
+    <Content Include="Css\mobile_home.css" />
+    <Content Include="Css\mobile_public.css" />
+    <Content Include="Css\mobile_style.css" />
     <Content Include="Css\Bootstrap\style.css" />
     <Content Include="Css\case.css" />
     <Content Include="Css\Fonts\font_1469444055_0424716_iconfont.svg" />
@@ -374,6 +378,12 @@
     <Content Include="Images\home\home_1.jpg" />
     <Content Include="Images\home\home_banner-1.jpg" />
     <Content Include="Images\home\honor.jpg" />
+    <Content Include="Images\home\make_step.jpg" />
+    <Content Include="Images\home\mobile_fgz_05.jpg" />
+    <Content Include="Images\home\mobile_fuwubiaoyu_1.jpg" />
+    <Content Include="Images\home\mobile_kehuzhichi_1.jpg" />
+    <Content Include="Images\home\mobile_pinpaiyoushi_1.jpg" />
+    <Content Include="Images\home\mobile_yongxinzuofuwu.jpg" />
     <Content Include="Images\home\sinaLogo.jpg" />
     <Content Include="Images\home\sinaLogo_1.jpg" />
     <Content Include="Images\home\weixinLogo.jpg" />
@@ -874,6 +884,7 @@
     <Content Include="Views\Shared\_ProductItemPartial1.cshtml" />
     <Content Include="Views\Parts\HotSearch.cshtml" />
     <Content Include="Views\Home\SiteMap.cshtml" />
+    <Content Include="Views\Shared\_Mobile_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
