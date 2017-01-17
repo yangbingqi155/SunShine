@@ -1,7 +1,18 @@
-﻿@{
+﻿@using SunShine.Web.Utils;
+@{
     Layout = null;
 }
 
-<div style="width:1444px;margin:0px auto;">
-    <div class="picture_center"><img src="/Images/home/dingzhiliucheng_1.jpg"></div>
+<div style="">
+    <div class="picture_center">
+        @if (BrowerDetectorHelper.IsMobile())
+        {
+            <img class="customize_flow_header_img" src="/Images/home/mobile_dingzhiliucheng_1.jpg" />
+        }
+        else
+        {
+            <img class="customize_flow_header_img" src="/Images/home/dingzhiliucheng_1.jpg" />
+        }
+
+    </div>
 </div>

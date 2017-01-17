@@ -4,7 +4,14 @@
 @using SunShine.Web.Utils;
 @model List<ArticleViewModel>
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (BrowerDetectorHelper.IsMobile())
+    {
+        Layout = "~/Views/Shared/_Mobile_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
     string currentCategoryCode = ViewData["currentCategoryCode"].ToString();
     string categoryCode = ViewData["categoryCode"].ToString();
     List<SiteCategory> navPath = (List<SiteCategory>)ViewData["navPath"];

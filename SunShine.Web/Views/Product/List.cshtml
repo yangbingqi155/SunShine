@@ -4,7 +4,14 @@
 @using SunShine.EF;
 @model List<ProductViewModel>
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (BrowerDetectorHelper.IsMobile())
+    {
+        Layout = "~/Views/Shared/_Mobile_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
     var pageCount = Convert.ToInt32(ViewData["pageCount"]);
     var pageIndex = Convert.ToInt32(ViewData["pageIndex"]);
 }

@@ -124,9 +124,11 @@ hr {
         margin: 0 auto;
         overflow: hidden;
     }
+
         .tablist ul li:first-child {
-        margin-left:0;
+            margin-left: 0;
         }
+
         .tablist ul li {
             float: left;
             font-size: 16px;
@@ -134,8 +136,8 @@ hr {
             height: 53px;
             line-height: 53px;
             width: 24%;
-            margin-left:1%;
-            margin-top:5px;
+            margin-left: 1%;
+            margin-top: 5px;
             background: #da251c;
         }
 
@@ -432,7 +434,7 @@ hr {
 
 .cp_right {
     width: 744px;
-    margin:0 auto;
+    margin: 0 auto;
     overflow: hidden;
 }
 
@@ -965,13 +967,11 @@ hr {
 
 .partner {
     margin: 0 auto;
-    height: 378px;
     overflow: hidden;
 }
 
 .content1 {
-    width: 1090px;
-    height: 378px;
+    width: 750px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -983,6 +983,58 @@ hr {
     overflow: hidden;
     margin-top: 160px;
 }
+
+.partner_item_img {
+    width: 300px;
+    float: left;
+}
+
+.partner_item_content {
+    width: 440px;
+    float: left;
+}
+
+.partner_item_title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.partner_item_introduction {
+    font-size: 16px;
+}
+
+.view_detail_btn {
+    text-align: center;
+    float: left;
+    width: 130px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 16px;
+    color: #FFFFFF;
+    background-color: #da251c;
+}
+
+#partner_slide .carousel-inner .item {
+    padding-bottom: 20px;
+    border-bottom: #c9c9c9 1px dashed;
+}
+
+@media screen and (min-width: 768px) {
+    #partner_slide .carousel-indicators {
+        bottom: -30px;
+    }
+}
+
+#partner_slide .carousel-indicators {
+    bottom: -30px;
+}
+
+    #partner_slide .carousel-indicators li {
+        width: 14px;
+        height: 14px;
+        margin: 0;
+        background-color: #B2B2B2;
+    }
 
 .kehu {
     width: 1030px;
@@ -1676,3 +1728,40 @@ hr {
     float: right;
     margin-top: 30px;
 }
+
+.mobile_bottom_honor {
+    width: 750px;
+    margin:0 auto;
+}
+
+    .mobile_bottom_honor .honor_header {
+            border: 1px solid #c3c3c3;
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #da251c;
+    padding: 8px 0 11px 0;
+    }
+
+        .mobile_bottom_honor .honor_header .honor_title {
+            font-size: 18px;
+            font-weight: bold;
+            float: left;
+            margin-left: 14px;
+            width:100px;
+        }
+
+        .mobile_bottom_honor .honor_header .honor_more {
+            padding-top: 2px;
+            margin-right: 16px;
+            width:80px;
+            float:right;
+            color:#FFFFFF;
+        }
+        .mobile_bottom_honor .honor_header .honor_more a{
+            font-size:14px;
+            color:#FFFFFF;
+        }
+
+    .mobile_bottom_honor .honor_content ul li {
+        float: left;
+    }
