@@ -66,7 +66,7 @@
     <div class="tablist1" id="pro_list1">
         <div class="tablist">
             <ul>
-                <li><a href="@Url.Action("Index", "Home")">创意阳光首页1</a></li>
+                <li><a href="@Url.Action("Index", "Home")">创意阳光首页</a></li>
                 <li><a href="@Url.Action("List", "Product", new { categoryCode = "topfloor" })">楼顶发光字</a></li>
                 <li><a href="@Url.Action("List", "Product", new { categoryCode = "door" })">门头发光字</a></li>
                 <li><a href="@Url.Action("List", "Product", new { categoryCode = "bgwall" })">背景墙发光字</a></li>
@@ -87,7 +87,7 @@
     @RenderBody()
     @{ Html.RenderAction("Mobile_BottomProductCategory", "Parts");}
 
-    <div class="back_to_top">返回顶部</div>
+    <div class="back_to_top"><a href="#">返回顶部</a></div>
     @{
         Html.RenderAction("Mobile_BottomWebsiteInfo", "Parts");
     }

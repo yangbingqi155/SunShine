@@ -135,7 +135,7 @@ hr {
             text-align: center;
             height: 53px;
             line-height: 53px;
-            width: 24%;
+            width: 24.25%;
             margin-left: 1%;
             margin-top: 5px;
             background: #da251c;
@@ -433,35 +433,38 @@ hr {
 
 
 .cp_right {
-    width: 744px;
+    width: 100%;
     margin: 0 auto;
     overflow: hidden;
 }
 
     .cp_right .title {
-        width: 744px;
+        width: 100%;
         height: 46px;
         line-height: 46px;
         color: #FFF;
         font-size: 20px;
         font-weight: 500;
-        border-bottom: 2px solid #da251c;
         position: relative;
     }
 
         .cp_right .title ul {
-            width: 300px;
+            width: 100%;
             height: 46px;
             overflow: hidden;
         }
 
             .cp_right .title ul li {
-                width: 129px;
+                width: 48%;
                 height: 44px;
                 float: left;
                 text-align: center;
-                margin-right: 8px;
+                margin-left: 4%;
             }
+
+                .cp_right .title ul li:first-child {
+                    margin-left: 0;
+                }
 
 .more1 {
     position: relative;
@@ -473,6 +476,10 @@ hr {
     height: 44px;
     color: #fff;
     display: block;
+}
+
+.cp_right .title ul li.title_NewestProduct a {
+    color: #333;
 }
 
 .thistab a.tab {
@@ -517,8 +524,8 @@ hr {
 
         .cp_list1 ul li {
             width: 346px;
-            height: 319px;
-            margin: 45px 0 0 40px;
+            height: 270px;
+            margin: 25px 0 0 40px;
             float: left;
         }
 
@@ -988,10 +995,14 @@ hr {
     width: 300px;
     float: left;
 }
-
+.partner_item_img img{
+    width: 300px;
+    height:200px;
+}
 .partner_item_content {
-    width: 440px;
+    width: 420px;
     float: left;
+    margin-left: 20px;
 }
 
 .partner_item_title {
@@ -1001,6 +1012,7 @@ hr {
 
 .partner_item_introduction {
     font-size: 16px;
+    margin-top:15px;
 }
 
 .view_detail_btn {
@@ -1012,6 +1024,7 @@ hr {
     font-size: 16px;
     color: #FFFFFF;
     background-color: #da251c;
+    margin-top:34px;
 }
 
 #partner_slide .carousel-inner .item {
@@ -1022,11 +1035,13 @@ hr {
 @media screen and (min-width: 768px) {
     #partner_slide .carousel-indicators {
         bottom: -30px;
+        z-index:500000;
     }
 }
 
 #partner_slide .carousel-indicators {
     bottom: -30px;
+    z-index:500000;
 }
 
     #partner_slide .carousel-indicators li {
@@ -1731,15 +1746,16 @@ hr {
 
 .mobile_bottom_honor {
     width: 750px;
-    margin:0 auto;
+    margin: 0 auto;
+    margin-top: 30px;
 }
 
     .mobile_bottom_honor .honor_header {
-            border: 1px solid #c3c3c3;
-    color: #FFFFFF;
-    text-align: center;
-    background-color: #da251c;
-    padding: 8px 0 11px 0;
+        border: 1px solid #c3c3c3;
+        color: #FFFFFF;
+        text-align: center;
+        background-color: #da251c;
+        padding: 8px 0 11px 0;
     }
 
         .mobile_bottom_honor .honor_header .honor_title {
@@ -1747,21 +1763,34 @@ hr {
             font-weight: bold;
             float: left;
             margin-left: 14px;
-            width:100px;
+            width: 100px;
         }
 
         .mobile_bottom_honor .honor_header .honor_more {
             padding-top: 2px;
             margin-right: 16px;
-            width:80px;
-            float:right;
-            color:#FFFFFF;
+            width: 80px;
+            float: right;
+            color: #FFFFFF;
         }
-        .mobile_bottom_honor .honor_header .honor_more a{
-            font-size:14px;
-            color:#FFFFFF;
-        }
+
+            .mobile_bottom_honor .honor_header .honor_more a {
+                font-size: 14px;
+                color: #FFFFFF;
+            }
+
+    .mobile_bottom_honor .honor_content {
+        margin-top:20px;
+    }
 
     .mobile_bottom_honor .honor_content ul li {
         float: left;
+        margin-left:1%;
+        width:32%;
+    }
+    mobile_bottom_honor .honor_content ul li:first-child{
+        margin-left:0;
+    }
+    .mobile_bottom_honor .honor_content ul li img{
+       width:100%;
     }

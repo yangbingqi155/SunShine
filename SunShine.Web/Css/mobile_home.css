@@ -843,7 +843,7 @@ ul.thirdLevel {
         text-align: center;
         float: left;
         margin-left: 9px;
-        width: 241px;
+        width: 242px;
         height: 36px;
         border: 1px solid #BCBCBC;
         font-size: 20px;
@@ -860,9 +860,11 @@ ul.thirdLevel {
     line-height: 36px;
     text-align: center;
     font-weight: bold;
-    color:#FFFFFF;
+    color: #FFFFFF;
 }
-
+.back_to_top a{
+    color: #FFFFFF;
+}
 .honor_box {
     width: 100%;
     background-color: #c21119;
@@ -910,11 +912,11 @@ ul.thirdLevel {
     width: 750px;
     margin: 0 auto;
     padding: 20px 0;
-    background-color:#DA251C;
-    text-align:center;
+    background-color: #DA251C;
+    text-align: center;
 }
 
-.site_bottom .site_info_item {
+    .site_bottom .site_info_item {
         color: #FFFFFF;
         font-size: 16px;
         text-align: center;
@@ -1230,7 +1232,7 @@ a {
     .chanpinduibi .womenVSputomg {
         width: 750px;
         height: 130px;
-        margin-bottom: 20px;
+        margin-top: 20px;
     }
 
 .wenzishuoming {
@@ -1361,6 +1363,7 @@ a {
     width: 750px;
     margin: 0 auto;
     text-align: center;
+    margin-top: -200px;
 }
 
 .yongxinzuofuwu_img {
@@ -1372,6 +1375,7 @@ a {
     width: 750px;
     margin: 0px auto;
     text-align: center;
+    margin-top: 25px;
 }
 
 .customer_support_img {
@@ -1382,6 +1386,7 @@ a {
 .customize_flow_header {
     width: 750px;
     margin: 0px auto;
+    margin-top: 35px;
 }
 
 .customize_flow_header_img {
