@@ -1045,7 +1045,9 @@ hr {
     background-color: #da251c;
     margin-top:34px;
 }
-
+.view_detail_btn a {
+    color:#FFFFFF;
+}
 #partner_slide .carousel-inner .item {
     padding-bottom: 20px;
     border-bottom: #c9c9c9 1px dashed;

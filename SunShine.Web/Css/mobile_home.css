@@ -845,9 +845,10 @@ ul.thirdLevel {
         float: left;
         margin-left: 1%;
         width: 32.3%;
-        height: 36px;
+        height: 50px;
         border: 1px solid #BCBCBC;
         font-size: 20px;
+        line-height: 50px;
     }
 
 
@@ -857,9 +858,9 @@ ul.thirdLevel {
     margin: 0 auto;
     background-color: #A9A9A9;
     font-weight: bold;
-    height: 36px;
+    height: 50px;
     font-size: 20px;
-    line-height: 36px;
+    line-height: 50px;
     text-align: center;
     font-weight: bold;
     color: #FFFFFF;
@@ -923,20 +924,13 @@ ul.thirdLevel {
 
     .site_bottom .site_info_item {
         color: #FFFFFF;
-        font-size: 16px;
+        font-size: 18px;
         text-align: center;
-        line-height: 24px;
+        line-height: 36px;
     }
-
-@media screen and (max-width:850px) {
-    .kanshi_waiceng {
-        width: 750px;
-        background-size: 750px auto;
-    }
-}
 
 .kanshi_waiceng {
-    height:991px;
+    height: 991px;
     width: 750px;
     margin: 0px auto;
     text-align: center;
@@ -944,12 +938,8 @@ ul.thirdLevel {
     background-size: 750px auto;
 }
 
-.kanshi_waiceng_img {
-    width: 750px;
-    margin: 0 auto;
-}
-
 .kanshi_neiceng {
+    height: 200px;
     margin: 0px auto;
 }
 
@@ -981,20 +971,222 @@ ul.thirdLevel {
     font-family: 微软雅黑;
     color: #707070;
     letter-spacing: 1px;
+    overflow: hidden;
 }
 
-    .miaoshu ul li img {
-        margin-right: 10px;
+
+.kanzhiliang {
+    width: 750px;
+    height: 200px;
+    margin: 0px auto;
+}
+
+    .kanzhiliang .miaoshu {
+        width: 290px;
+        margin-top: 91px;
+        margin-left: 457px;
     }
 
-    .miaoshu ul li p {
-        display: inline;
+        .kanzhiliang .miaoshu ul li span {
+            font-weight: bold;
+        }
+
+.kanxingjiabi {
+    width: 750px;
+    margin: 0px auto;
+    height: 170px;
+}
+
+    .kanxingjiabi .miaoshu {
+        width: 360px;
+        margin-top: 74px;
+        margin-left: 91px;
     }
 
-.miaoshu a img {
-    margin-left: 40px;
-    margin-top: 30px;
-    width: 110px;
+.kanshouhou {
+    width: 750px;
+    height: 200px;
+    margin: 0px auto;
+}
+
+    .kanshouhou .miaoshu {
+        width: 350px;
+        margin-top: 85px;
+        margin-left: 394px;
+    }
+
+@media (max-width:990px) and (min-width:850px) {
+
+    .kanshi_waiceng {
+        height: 845px;
+        width: 840px;
+        margin: 0px auto;
+        text-align: center;
+        background: url(../../Images/home/mobile_pinpaiyoushi_1.jpg) no-repeat;
+        background-size: 840px auto;
+    }
+
+    .kanshi_neiceng {
+        height: 200px;
+        margin: 0px auto;
+    }
+
+    .kanshi_neiceng .images_tupian {
+        width: 390px;
+        height: 265px;
+        margin-top: 45px;
+        float: left;
+    }
+
+    .miaoshu {
+            float: left;
+    width: 530px;
+    margin-top: 121px;
+    margin-left: 96px;
+    text-align: left;
+    }
+
+    .maioshu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .miaoshu ul li {
+        font-size: 14px;
+        height: 22px;
+        font-weight: 500;
+        font-family: 微软雅黑;
+        color: #707070;
+        letter-spacing: 1px;
+        overflow: hidden;
+    }
+
+    .kanzhiliang {
+        width: 840px;
+        height: 200px;
+        margin: 0px auto;
+    }
+
+    .kanzhiliang .miaoshu {
+        width: 350px;
+        margin-top: 116px;
+        margin-left: 396px;
+    }
+
+    .kanzhiliang .miaoshu ul li span {
+        font-weight: bold;
+    }
+
+    .kanxingjiabi {
+        width: 750px;
+        margin: 0px auto;
+        height: 170px;
+    }
+
+    .kanxingjiabi .miaoshu {
+        width: 360px;
+        margin-top: 130px;
+        margin-left: 60px;
+    }
+
+    .kanshouhou {
+        width: 750px;
+        height: 200px;
+        margin: 0px auto;
+    }
+
+    .kanshouhou .miaoshu {
+        width: 350px;
+        margin-top: 116px;
+        margin-left: 396px;
+    }
+}
+@media screen and (min-width:990px) {
+    .kanshi_waiceng {
+        height: 991px;
+        width: 987px;
+        margin: 0px auto;
+        text-align: center;
+        background: url(../../Images/home/mobile_pinpaiyoushi_1.jpg) no-repeat;
+        background-size: 987px auto;
+    }
+
+    .kanshi_neiceng {
+        height: 200px;
+        margin: 0px auto;
+    }
+
+    .kanshi_neiceng .images_tupian {
+        width: 390px;
+        height: 265px;
+        margin-top: 45px;
+        float: left;
+    }
+
+    .miaoshu {
+        float: left;
+        width: 530px;
+        margin-top: 143px;
+        margin-left: 110px;
+        text-align: left;
+    }
+
+    .maioshu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .miaoshu ul li {
+        font-size: 16px;
+        height: 26px;
+        font-weight: 500;
+        font-family: 微软雅黑;
+        color: #707070;
+        letter-spacing: 1px;
+        overflow: hidden;
+    }
+
+    .kanzhiliang {
+        width: 840px;
+        height: 200px;
+        margin: 0px auto;
+    }
+
+    .kanzhiliang .miaoshu {
+        width: 350px;
+        margin-top: 162px;
+        margin-left: 515px;
+    }
+
+    .kanzhiliang .miaoshu ul li span {
+        font-weight: bold;
+    }
+
+    .kanxingjiabi {
+        width: 750px;
+        margin: 0px auto;
+        height: 170px;
+    }
+
+    .kanxingjiabi .miaoshu {
+        width: 360px;
+        margin-top: 163px;
+        margin-left: 4px;
+    }
+
+    .kanshouhou {
+        width: 750px;
+        height: 200px;
+        margin: 0px auto;
+    }
+
+    .kanshouhou .miaoshu {
+        width: 350px;
+        margin-top: 135px;
+        margin-left: 398px;
+    }
 }
 
 .shilizhashi_text {
@@ -1009,117 +1201,6 @@ ul.thirdLevel {
     float: right;
     width: 310px;
 }
-
-.kanzhiliang {
-    width: 750px;
-    margin: 0px auto;
-}
-
-    .kanzhiliang .miaoshu {
-        width: 290px;
-        margin-top: 36px;
-        margin-left: 457px;
-    }
-
-        .kanzhiliang .miaoshu ul li span {
-            font-weight: bold;
-        }
-    /*span{font-weight:bold}*/
-    .kanzhiliang .images_tupian {
-        width: 370px;
-        float: right;
-        overflow: hidden;
-        margin-right: -40px;
-        margin-top: 15px;
-    }
-
-.kanzhiliang_text {
-    color: #dd2116;
-    font-size: 24px;
-    font-family: 微软雅黑;
-    line-height: 24px;
-    font-weight: 700;
-    margin-top: 102px;
-    margin-left: 213px;
-    letter-spacing: 1px;
-    float: left;
-    width: 350px;
-}
-
-.kanxingjiabi {
-    width: 750px;
-    margin: 0px auto;
-}
-
-    .kanxingjiabi .images_tupian {
-        width: 255px;
-        margin-top: 42px;
-        float: left;
-        margin-left: 71px;
-    }
-
-        .kanxingjiabi .images_tupian img {
-            width: 255px;
-            display: block;
-        }
-
-    .kanxingjiabi .miaoshu {
-        width: 360px;
-        margin-top: -42px;
-        margin-left: 91px;
-    }
-
-.kanxingjiabi_text {
-    color: #dd2116;
-    font-size: 24px;
-    font-family: 微软雅黑;
-    line-height: 24px;
-    font-weight: 700;
-    margin-top: 110px;
-    margin-left: 80px;
-    letter-spacing: 1px;
-    float: left;
-    width: 450px;
-}
-
-.kanshouhou {
-    width: 750px;
-    margin: 0px auto;
-}
-
-    .kanshouhou .miaoshu {
-        width: 350px;
-        margin-top: -100px;
-        margin-left: 394px;
-    }
-
-        .kanshouhou .miaoshu a img {
-            margin-top: 45px;
-            float: left;
-        }
-
-    .kanshouhou .images_tupian {
-        width: 370px;
-        float: right;
-        overflow: hidden;
-        margin-right: -57px;
-        margin-top: 55px;
-        display: block;
-    }
-
-        .kanshouhou .images_tupian img {
-            width: 240px;
-        }
-
-    .kanshouhou .miaoshu .telephone_yellow {
-        float: left;
-        margin-left: 53px;
-        margin-top: 33px;
-    }
-
-        .kanshouhou .miaoshu .telephone_yellow img {
-            width: 230px;
-        }
 
 .decription_text {
     width: 1000px;
@@ -1391,7 +1472,7 @@ a {
     min-width: 750px;
     margin: 0 auto;
     text-align: center;
-    margin-top: -200px;
+    margin-top: 20px;
 }
 
 .yongxinzuofuwu_img {
