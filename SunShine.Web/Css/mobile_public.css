@@ -1,6 +1,6 @@
 ﻿.case_box {
-    width: 1006px;
-    min-width: 1006px;
+    width: 100%;
+    min-width:750px;
     margin: 0 auto;
 }
 
@@ -242,8 +242,8 @@
 
 .case_right {
     float: left;
-    margin-left: 20px;
-    width: 738px;
+    width: 100%;
+    min-width: 750px;
 }
 
 .case_nav {
@@ -274,10 +274,7 @@
         }
 
 .case_list {
-    border-left: 1px solid #c3c3c3;
-    border-right: 1px solid #c3c3c3;
-    border-bottom: 1px solid #c3c3c3;
-    padding: 5px 20px;
+    padding: 5px 3%;
 }
 
     .case_list .case_list_item {
@@ -288,16 +285,18 @@
 .case_list_item .itemimg {
     float: left;
     margin-left: 0px;
+    width:40%;
+    text-align:center;
 }
 
     .case_list_item .itemimg img {
-        width: 226px;
+        width: 100%;
     }
 
 .case_list_item .itemdesc {
     float: left;
-    margin-left: 30px;
-    width: 438px;
+    margin-left: 4%;
+    width: 50%;
 }
 
     .case_list_item .itemdesc .itemtitle a {
@@ -466,7 +465,7 @@
     }
 
 .sunshine_pager {
-    margin: 10px auto 0;
+    margin: 10px auto;
     width: 700px;
     text-align: center;
 }
@@ -480,18 +479,17 @@
 }
 
     .product_detail_top .pimg {
-        float: left;
-        width: 425px;
+        width:100%;
+        text-align:center;
     }
 
         .product_detail_top .pimg img {
-            width: 425px;
+            
         }
 
     .product_detail_top .p_basic_info {
-        float: left;
-        margin-left: 32px;
-        width: 280px;
+        width:400px;
+        margin:0 auto;
     }
 
 .p_basic_info .p_title {
@@ -499,8 +497,7 @@
     line-height: 50px;
     font-size: 24px;
     font-weight: bold;
-    text-align: left;
-    border-bottom: 1px dashed #c3c3c3;
+    text-align: center;
 }
 
 .p_basic_info .p_basic {
@@ -673,3 +670,27 @@ nav .pager {
     .map_items a:first-child{
         margin-left:0;
     }
+.mobile_success_case_box {
+    width:100%;
+    min-width:750px;
+}
+.mobile_success_case_box .mobile_success_case_item{
+    float: left;
+    font-size: 20px;
+    text-align: center;
+    height: 58px;
+    line-height: 58px;
+    width: 32%;
+    margin-left: 1%;
+    margin-top: 5px;
+    background: #da251c;
+
+}
+.mobile_success_case_box .mobile_success_case_item:hover
+{
+    background: #383431;
+}
+
+.mobile_success_case_item a {
+    color:#FFFFFF;
+}

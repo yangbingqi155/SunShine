@@ -90,5 +90,24 @@
     @{
         Html.RenderAction("Mobile_BottomWebsiteInfo", "Parts");
     }
+    <div class="mobile_bottom_menu">
+        <div class="menu_item">
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=3317300173&site=qq&menu=yes"><img src="~/Images/layout/site_bottom1.jpg" /><br /></a>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=3317300173&site=qq&menu=yes">在线咨询</a>
+        </div>
+        <div class="menu_item">
+            <a href="tel:4008778652"><img src="~/Images/layout/site_bottom2.jpg" /><br /></a>
+            <a href="tel:4008778652">电话咨询</a>
+        </div>
+        <div class="menu_item">
+            <a href="@Url.Action("List", "Product")"><img src="~/Images/layout/site_bottom3.jpg" /><br /></a>
+            <a href="@Url.Action("List", "Product")">商品分类</a>
+        </div>
+        <div class="menu_item">
+            <a href="@Url.Action("Index", "Case", new { categoryCode = "contactsunshine",currentCategoryCode="contactus" })"><img src="~/Images/layout/site_bottom4.jpg" /><br /></a>
+            <a href="@Url.Action("Index", "Case", new { categoryCode = "contactsunshine",currentCategoryCode="contactus" })">联系我们</a>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
 </body>
 </html>

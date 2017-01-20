@@ -49,6 +49,15 @@ namespace SunShine.Web.Controllers
         }
 
         /// <summary>
+        /// 手机版-导航-成功案例
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Mobile_NavSuccessCases(string categoryCode)
+        {
+            return View(SiteCategoryService.GetChildCategoriesByCode(categoryCode));
+        }
+
+        /// <summary>
         /// 导航-荣誉资质
         /// </summary>
         /// <returns></returns>
