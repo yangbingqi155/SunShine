@@ -23,14 +23,22 @@
         $(document).ready(function () { $(".case_honor_bottom").imgscroll({ speed: 40, amount: 0, width: 2, dir: "up" }); });
         $(document).ready(function () { $(".wenti_box").imgscroll({ speed: 40, amount: 0, width: 2, dir: "up" }); });
 
-        //$(document).ready(function () {
-        //    $(".tablist").posfixed({
-        //        distance: 0,
-        //        pos: "top",
-        //        type: "while",
-        //        hide: false
-        //    });
-        //});
+        $(document).ready(function () {
+            $(".tablist").posfixed({
+                distance: 0,
+                pos: "top",
+                type: "while",
+                hide: false
+            });
+        });
+        $(document).ready(function () {
+            $(".mobile_bottom_menu").posfixed({
+                distance: 0,
+                pos: "bottom",
+                type: "while",
+                hide: false
+            });
+        });
         //function getQueryByName(name) {
         //    var result = location.search.match(
         //    new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
@@ -91,6 +99,9 @@
         Html.RenderAction("Mobile_BottomWebsiteInfo", "Parts");
     }
     <div class="mobile_bottom_menu">
+        @*<div class="home_menu">
+           <a href="@Url.Action("Index","Home")"> <img src="~/Images/layout/home_menu.png" /></a>
+        </div>*@
         <div class="menu_item">
             <a href="http://wpa.qq.com/msgrd?v=3&uin=3317300173&site=qq&menu=yes"><img src="~/Images/layout/site_bottom1.jpg" /><br /></a>
             <a href="http://wpa.qq.com/msgrd?v=3&uin=3317300173&site=qq&menu=yes">在线咨询</a>
@@ -98,6 +109,9 @@
         <div class="menu_item">
             <a href="tel:4008778652"><img src="~/Images/layout/site_bottom2.jpg" /><br /></a>
             <a href="tel:4008778652">电话咨询</a>
+        </div>
+        <div class="menu_item" style="margin-top:-20px;z-index:100000;">
+            <a href="@Url.Action("Index","Home")"> <img style="width:110px" src="~/Images/layout/home_menu.png" /></a>
         </div>
         <div class="menu_item">
             <a href="@Url.Action("List", "Product")"><img src="~/Images/layout/site_bottom3.jpg" /><br /></a>

@@ -810,7 +810,7 @@ ul.thirdLevel {
     .category_box .category_header {
         width: 100%;
         background-color: #AF251B;
-        font-size: 22px;
+        font-size: 32px;
         color: #FFFFFF;
         text-align: left;
         font-weight: bold;
@@ -828,9 +828,9 @@ ul.thirdLevel {
             width: 100%;
             background-color: #DEDEDC;
             font-weight: bold;
-            height: 36px;
-            font-size: 20px;
-            line-height: 36px;
+            height: 56px;
+            font-size: 30px;
+            line-height: 56px;
             text-align: center;
             font-weight: bold;
         }
@@ -845,10 +845,10 @@ ul.thirdLevel {
         float: left;
         margin-left: 1%;
         width: 32.3%;
-        height: 50px;
+        height: 56px;
         border: 1px solid #BCBCBC;
-        font-size: 20px;
-        line-height: 50px;
+        font-size: 28px;
+        line-height: 56px;
     }
 
 
@@ -858,9 +858,9 @@ ul.thirdLevel {
     margin: 0 auto;
     background-color: #A9A9A9;
     font-weight: bold;
-    height: 50px;
-    font-size: 20px;
-    line-height: 50px;
+    height: 60px;
+    font-size: 30px;
+    line-height: 60px;
     text-align: center;
     font-weight: bold;
     color: #FFFFFF;
@@ -914,6 +914,7 @@ ul.thirdLevel {
 }
 
 .site_bottom {
+    height: 350px;
     width: 100%;
     min-width: 750px;
     margin: 0 auto;
@@ -924,13 +925,13 @@ ul.thirdLevel {
 
     .site_bottom .site_info_item {
         color: #FFFFFF;
-        font-size: 18px;
+        font-size: 22px;
         text-align: center;
         line-height: 36px;
     }
 
 .kanshi_waiceng {
-    height: 991px;
+    height: 760px;
     width: 750px;
     margin: 0px auto;
     text-align: center;
@@ -1344,7 +1345,7 @@ a {
 }
 
 .wenzishuoming p {
-    font-size: 16px;
+    font-size: 24px;
     margin: 15px 5px;
     font-weight: 500;
     letter-spacing: 1px;

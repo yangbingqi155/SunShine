@@ -70,7 +70,7 @@
             </div>
         </div>
         <div style="clear:both;"></div>
-        @{
+        @if(BrowerDetectorHelper.IsMobile()) {
             Html.RenderAction("Mobile_NavSuccessCases", "Parts");
         }
         <div class="case_list">

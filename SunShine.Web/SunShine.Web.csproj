@@ -412,6 +412,7 @@
     <Content Include="Resource\Images\Ue\20161205\6361656234069647717144589.jpg" />
     <Content Include="Resource\Images\Ue\20161205\6361656279530914089195837.jpg" />
     <Content Include="Resource\Images\Ue\20161205\6361656293692592968058984.jpg" />
+    <Content Include="robots.txt" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap-datetimepicker\bootstrap-datetimepicker.js" />
