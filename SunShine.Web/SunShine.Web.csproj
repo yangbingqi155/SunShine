@@ -389,6 +389,7 @@
     <Content Include="Images\home\sinaLogo_1.jpg" />
     <Content Include="Images\home\weixinLogo.jpg" />
     <Content Include="Images\home\weixinLogo_1.jpg" />
+    <Content Include="Images\layout\home_menu.png" />
     <Content Include="Images\layout\site_bottom1.jpg" />
     <Content Include="Images\layout\site_bottom2.jpg" />
     <Content Include="Images\layout\site_bottom3.jpg" />
