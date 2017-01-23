@@ -247,8 +247,9 @@
 }
 
 .case_nav {
-    height: 50px;
+    height: 76px;
     border: 1px solid #c3c3c3;
+    overflow:hidden;
 }
 
     .case_nav .case_nav_icon {
@@ -256,16 +257,17 @@
         width: 14px;
         height: 14px;
         float: left;
-        margin: 18px 0 0 16px;
+        margin: 31px 0 0 16px;
     }
 
     .case_nav .case_nav_title {
-        line-height: 50px;
-        font-size: 15px;
+        line-height: 76px;
+        font-size: 22px;
         float: left;
         margin-left: 6px;
         /*font-weight: bold;*/
         text-align: center;
+        overflow:hidden;
 
     }
 
@@ -275,6 +277,7 @@
 
 .case_list {
     padding: 5px 3%;
+    margin:0 auto;
 }
 
     .case_list .case_list_item {
@@ -465,11 +468,11 @@
     }
 
 .sunshine_pager {
-    margin: 10px auto;
-    width: 700px;
+    margin: 20px auto;
+    width:100%;
+    min-width: 750px;
     text-align: center;
 }
-
 
 .product_detail_box {
     margin-top: 38px;
@@ -484,11 +487,11 @@
     }
 
         .product_detail_top .pimg img {
-            
+            width:600px;
         }
 
     .product_detail_top .p_basic_info {
-        width:400px;
+        width:600px;
         margin:0 auto;
     }
 
@@ -596,6 +599,7 @@ nav .pager {
         }
 
         .pager > li > a, .pager > li > span {
+            font-size:20px;
             position: relative;
             float: left;
             padding: 2px 8px;
@@ -607,7 +611,26 @@ nav .pager {
             border: 1px solid #ddd;
             border-radius: 0px;
         }
-
+@media (min-width:800px) and (max-width:850px) {
+    .pager > li > a, .pager > li > span {
+            font-size:22px;
+        }
+}
+@media (min-width:850px) and (max-width:950px) {
+    .pager > li > a, .pager > li > span {
+            font-size:26px;
+        }
+}
+@media (min-width:950px) and (max-width:1050px) {
+    .pager > li > a, .pager > li > span {
+            font-size:30px;
+        }
+}
+@media screen and (min-width:1050px) {
+    .pager > li > a, .pager > li > span {
+            font-size:36px;
+        }
+}
     .pager > .active > a, .pager > .active > a:focus, .pager > .active > a:hover, .pager > .active > span, .pager > .active > span:focus, .pager > .active > span:hover {
         z-index: 2;
         cursor: default;
@@ -671,18 +694,19 @@ nav .pager {
         margin-left:0;
     }
 .mobile_success_case_box {
-    width:100%;
+    width:99%;
     min-width:750px;
+    margin:0 auto;
 }
 .mobile_success_case_box .mobile_success_case_item{
        float: left;
     font-size: 30px;
     text-align: center;
-    height: 62px;
-    line-height: 62px;
-    width: 32%;
+    height: 72px;
+    line-height: 72px;
+    width: 49.5%;
     margin-left: 1%;
-    margin-top: 5px;
+    margin-top: 20px;
     background: #da251c;
 
 }
@@ -693,4 +717,18 @@ nav .pager {
 
 .mobile_success_case_item a {
     color:#FFFFFF;
+}
+.case_detail_content_box{
+    width:100%;
+}
+.case_detail_content_box img{
+    width:100%;
+    height:auto;
+}
+.baidu_map {
+    width:100%;
+    height:500px;
+    border:#ccc solid 1px;
+    font-size:12px;
+    margin-top:10px;
 }

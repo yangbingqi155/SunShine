@@ -64,7 +64,13 @@
                 @if (Model.Count == 1 && pageIndex == 0 && !string.IsNullOrEmpty(Request["idarticle"]) && Model.First().Category.categorycode != "commonquestion")
                 {
                     <span>
-                        >&nbsp;@Model.First().title
+                        >&nbsp;
+                        @if (!BrowerDetectorHelper.IsMobile()) {
+                            @Model.First().title
+                        }
+                        else {
+                            @(string.IsNullOrEmpty(Model.First().title) ? "" : Model.First().title.RemoveHTMLAndGetByNum(6))
+                        }
                     </span>
                 }
             </div>
@@ -79,7 +85,7 @@
                 Html.RenderPartial("_CaseItemPartial", Model.First());
                 if (currentCategoryCode == "contactus")
                 {
-                    <div style="width:700px;height:400px;border:#ccc solid 1px;font-size:12px;margin-top:10px;" id="map"></div>
+                    <div class="baidu_map" id="map"></div>
                 }
             }
             else

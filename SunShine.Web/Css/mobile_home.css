@@ -845,10 +845,10 @@ ul.thirdLevel {
         float: left;
         margin-left: 1%;
         width: 32.3%;
-        height: 56px;
+        height: 80px;
         border: 1px solid #BCBCBC;
         font-size: 28px;
-        line-height: 56px;
+        line-height: 80px;
     }
 
 
@@ -953,10 +953,11 @@ ul.thirdLevel {
 
 .miaoshu {
     float: left;
-    width: 530px;
+    width: 390px;
     margin-top: 107px;
     margin-left: 92px;
     text-align: left;
+    overflow:hidden;
 }
 
 .maioshu ul {
@@ -1040,11 +1041,12 @@ ul.thirdLevel {
     }
 
     .miaoshu {
-            float: left;
-    width: 530px;
+                float: left;
+    width: 452px;
     margin-top: 121px;
     margin-left: 96px;
     text-align: left;
+    overflow: hidden;
     }
 
     .maioshu ul {
@@ -1070,9 +1072,9 @@ ul.thirdLevel {
     }
 
     .kanzhiliang .miaoshu {
-        width: 350px;
-        margin-top: 116px;
-        margin-left: 396px;
+        width: 338px;
+        margin-top: 127px;
+        margin-left: 502px;
     }
 
     .kanzhiliang .miaoshu ul li span {
@@ -1086,8 +1088,8 @@ ul.thirdLevel {
     }
 
     .kanxingjiabi .miaoshu {
-        width: 360px;
-        margin-top: 130px;
+        width: 380px;
+        margin-top: 131px;
         margin-left: 60px;
     }
 
@@ -1263,9 +1265,12 @@ ul.thirdLevel {
     width: 310px;
     height: 101px;
     float: right;
-    background: url(../../Images/home/fgz_06.jpg) no-repeat;
 }
-
+.telephonenumber img{
+    min-width: 310px;
+    width: 310px;
+    height: 101px;
+}
     .telephonenumber .guhua {
         margin-top: -5px;
     }
@@ -1327,10 +1332,12 @@ a {
 }
 
     .chanpinduibi .womenVSputomg {
-        width: 100%;
+        width: 98%;
         min-width: 750px;
         height: 130px;
         margin-top: 20px;
+        margin-left:auto;
+        margin-right:auto;
     }
 
 .wenzishuoming {
