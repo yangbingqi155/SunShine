@@ -1,6 +1,6 @@
 ﻿.case_box {
     width: 100%;
-    min-width:750px;
+    min-width: 750px;
     margin: 0 auto;
 }
 
@@ -25,14 +25,17 @@
         font-weight: bold;
     }
 
-    .cp_left .success_case_top .success_case_title{
-        font-size: 22px;
-        font-weight:400;
-    }
-    .cp_left .success_case_subtitle .subtitle_center{font-weight:400;}
+.cp_left .success_case_top .success_case_title {
+    font-size: 22px;
+    font-weight: 400;
+}
 
-    .success_case_top .success_case_subtitle {
-    }
+.cp_left .success_case_subtitle .subtitle_center {
+    font-weight: 400;
+}
+
+.success_case_top .success_case_subtitle {
+}
 
 .success_case_subtitle .subtitle_left {
     float: left;
@@ -249,26 +252,25 @@
 .case_nav {
     height: 76px;
     border: 1px solid #c3c3c3;
-    overflow:hidden;
+    overflow: hidden;
 }
 
     .case_nav .case_nav_icon {
-        background-color: #da251c;
-        width: 14px;
-        height: 14px;
-        float: left;
-        margin: 31px 0 0 16px;
+            background-color: #da251c;
+    width: 22px;
+    height: 22px;
+    float: left;
+    margin: 32px 0 0 16px;
     }
 
     .case_nav .case_nav_title {
-        line-height: 76px;
-        font-size: 22px;
+        line-height: 86px;
+        font-size: 34px;
         float: left;
         margin-left: 6px;
         /*font-weight: bold;*/
         text-align: center;
-        overflow:hidden;
-
+        overflow: hidden;
     }
 
         .case_nav .case_nav_title span a {
@@ -277,7 +279,7 @@
 
 .case_list {
     padding: 5px 3%;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
     .case_list .case_list_item {
@@ -288,8 +290,8 @@
 .case_list_item .itemimg {
     float: left;
     margin-left: 0px;
-    width:46%;
-    text-align:center;
+    width: 46%;
+    text-align: center;
 }
 
     .case_list_item .itemimg img {
@@ -303,7 +305,7 @@
 }
 
     .case_list_item .itemdesc .itemtitle a {
-        font-size: 26px;
+        font-size: 30px;
         color: #da251c;
         font-weight: bold;
     }
@@ -311,7 +313,7 @@
     .case_list_item .itemdesc .itemdetail {
         margin-top: 10px;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 26px;
     }
 
 .case_list_item .create_time {
@@ -340,13 +342,13 @@
     .case_question_item .itemdesc .itemdetail {
         margin-top: 10px;
         font-size: 14px;
-        width:658px;
+        width: 658px;
     }
 
 
 .bgcolor_title_head {
     background-color: #da251c;
-    font-size: 20px;
+    font-size: 30px;
     padding: 6px 0;
     color: #FFFFFF;
     /*font-weight: bold;*/
@@ -469,7 +471,7 @@
 
 .sunshine_pager {
     margin: 20px auto;
-    width:100%;
+    width: 100%;
     min-width: 750px;
     text-align: center;
 }
@@ -482,23 +484,23 @@
 }
 
     .product_detail_top .pimg {
-        width:100%;
-        text-align:center;
+        width: 100%;
+        text-align: center;
     }
 
         .product_detail_top .pimg img {
-            width:600px;
+            width: 600px;
         }
 
     .product_detail_top .p_basic_info {
-        width:600px;
-        margin:0 auto;
+        width: 600px;
+        margin: 0 auto;
     }
 
 .p_basic_info .p_title {
-    height: 50px;
-    line-height: 50px;
-    font-size: 24px;
+        height: 60px;
+    line-height: 60px;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
 }
@@ -516,10 +518,10 @@
 .p_basic_info .btn_ask {
     background-color: #F4F1EA;
     border: 1px solid #da251c;
-    padding: 4px 0;
-    font-size: 16px;
+    padding: 8px 0;
+    font-size: 24px;
     font-weight: bold;
-    width: 124px;
+    width: 140px;
     text-align: center;
 }
 
@@ -599,7 +601,7 @@ nav .pager {
         }
 
         .pager > li > a, .pager > li > span {
-            font-size:20px;
+            font-size: 20px;
             position: relative;
             float: left;
             padding: 2px 8px;
@@ -611,40 +613,45 @@ nav .pager {
             border: 1px solid #ddd;
             border-radius: 0px;
         }
+
 @media (min-width:800px) and (max-width:850px) {
     .pager > li > a, .pager > li > span {
-            font-size:22px;
-        }
+        font-size: 22px;
+    }
 }
+
 @media (min-width:850px) and (max-width:950px) {
     .pager > li > a, .pager > li > span {
-            font-size:26px;
-        }
+        font-size: 26px;
+    }
 }
+
 @media (min-width:950px) and (max-width:1050px) {
     .pager > li > a, .pager > li > span {
-            font-size:30px;
-        }
+        font-size: 30px;
+    }
 }
+
 @media screen and (min-width:1050px) {
     .pager > li > a, .pager > li > span {
-            font-size:36px;
-        }
+        font-size: 36px;
+    }
 }
-    .pager > .active > a, .pager > .active > a:focus, .pager > .active > a:hover, .pager > .active > span, .pager > .active > span:focus, .pager > .active > span:hover {
-        z-index: 2;
-        cursor: default;
-        border: 0px;
-        /*color: #fff;
+
+.pager > .active > a, .pager > .active > a:focus, .pager > .active > a:hover, .pager > .active > span, .pager > .active > span:focus, .pager > .active > span:hover {
+    z-index: 2;
+    cursor: default;
+    border: 0px;
+    /*color: #fff;
     background-color: #337ab7;
     border-color: #337ab7;*/
-    }
+}
 
 .site_map_box {
     border: 1px #ccc solid;
     width: 1006px;
     margin: 0 auto;
-    padding-bottom:20px;
+    padding-bottom: 20px;
 }
 
     .site_map_box .map_header {
@@ -652,83 +659,92 @@ nav .pager {
         width: 100%;
         text-align: left;
         padding: 10px;
-        font-size:16px;
+        font-size: 16px;
     }
+
     .site_map_box .map_item_header {
         width: 100%;
         text-align: left;
         padding: 10px;
-        font-size:16px;
+        font-size: 16px;
     }
+
     .site_map_box .map_item_content {
         text-align: left;
         padding: 10px;
-        margin-left:-5px;
-        font-size:14px;
+        margin-left: -5px;
+        font-size: 14px;
     }
-    .map_item_content .second_header{
-        text-align: left;
-        padding: 10px 0 0 10px;
-        font-size:14px;
-        font-weight:bold;
-    }
-    /*.map_item_content .map_items{
+
+.map_item_content .second_header {
+    text-align: left;
+    padding: 10px 0 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/*.map_item_content .map_items{
         text-align: left;
         padding: 5px;
         font-size:12px;
         margin-left:20px;
     }*/
-    .map_items{
-        text-align: left;
-        padding: 5px;
-        font-size:12px;
-        margin-left:60px;
-    }
-    .map_items a{
-        margin-left:10px;
-        font-size:14px;
-        line-height:22px;
-        height:22px;
-    }
-    .map_items a:first-child{
-        margin-left:0;
-    }
-.mobile_success_case_box {
-    width:99%;
-    min-width:750px;
-    margin:0 auto;
+.map_items {
+    text-align: left;
+    padding: 5px;
+    font-size: 12px;
+    margin-left: 60px;
 }
-.mobile_success_case_box .mobile_success_case_item{
-       float: left;
-    font-size: 30px;
-    text-align: center;
-    height: 72px;
-    line-height: 72px;
-    width: 49.5%;
-    margin-left: 1%;
-    margin-top: 20px;
-    background: #da251c;
 
+    .map_items a {
+        margin-left: 10px;
+        font-size: 14px;
+        line-height: 22px;
+        height: 22px;
+    }
+
+        .map_items a:first-child {
+            margin-left: 0;
+        }
+
+.mobile_success_case_box {
+    width: 99%;
+    min-width: 750px;
+    margin: 0 auto;
 }
-.mobile_success_case_box .mobile_success_case_item:hover
-{
-    background: #383431;
-}
+
+    .mobile_success_case_box .mobile_success_case_item {
+        float: left;
+        font-size: 36px;
+        text-align: center;
+        height: 82px;
+        line-height: 82px;
+        width: 49.5%;
+        margin-left: 1%;
+        margin-top: 20px;
+        background: #da251c;
+    }
+
+        .mobile_success_case_box .mobile_success_case_item:hover {
+            background: #383431;
+        }
 
 .mobile_success_case_item a {
-    color:#FFFFFF;
+    color: #FFFFFF;
 }
-.case_detail_content_box{
-    width:100%;
+
+.case_detail_content_box {
+    width: 100%;
 }
-.case_detail_content_box img{
-    width:100%;
-    height:auto;
-}
+
+    .case_detail_content_box img {
+        width: 100%;
+        height: auto;
+    }
+
 .baidu_map {
-    width:100%;
-    height:500px;
-    border:#ccc solid 1px;
-    font-size:12px;
-    margin-top:10px;
+    width: 100%;
+    height: 500px;
+    border: #ccc solid 1px;
+    font-size: 12px;
+    margin-top: 10px;
 }

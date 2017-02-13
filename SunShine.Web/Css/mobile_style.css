@@ -136,7 +136,7 @@ hr {
 
     .tablist ul {
         min-width: 750px;
-        width: 100%;
+        width: 99%;
         margin: 0 auto;
         overflow: hidden;
     }
@@ -147,13 +147,13 @@ hr {
 
         .tablist ul li {
             float: left;
-            font-size: 30px;
+            font-size: 38px;
             text-align: center;
-            height: 86px;
-            line-height: 86px;
-            width: 24.25%;
-            margin-left: 1%;
-            margin-top: 5px;
+            height: 120px;
+            line-height: 120px;
+            width: 24.60%;
+            margin-left: 4px;
+            margin-top: 4px;
             background: #da251c;
         }
 
@@ -461,20 +461,20 @@ hr {
         height: 60px;
         line-height: 60px;
         color: #FFF;
-        font-size: 34px;
+        font-size: 36px;
         font-weight: 500;
         position: relative;
     }
 
         .cp_right .title ul {
             width: 100%;
-            height: 60px;
+            height: 80px;
             overflow: hidden;
         }
 
             .cp_right .title ul li {
                 width: 48%;
-                height: 60px;
+                height: 80px;
                 float: left;
                 text-align: center;
                 margin-left: 4%;
@@ -491,9 +491,10 @@ hr {
 }
 
 .cp_right .title ul li a {
-    height: 60px;
+    height: 80px;
     color: #fff;
     display: block;
+    line-height:80px;
 }
 
 .cp_right .title ul li.title_NewestProduct a {
@@ -573,10 +574,10 @@ hr {
 
 .cp_name {
         width: 100%;
-    height: 40px;
-    line-height: 40px;
+    height: 60px;
+    line-height: 60px;
     background-color: #fff;
-    font-size: 24px;
+    font-size: 36px;
     overflow: hidden;
     text-align: center;
     margin-top: 10px;
@@ -1051,12 +1052,12 @@ hr {
 }
 
 .view_detail_btn {
-    text-align: center;
+        text-align: center;
     float: left;
-    width: 130px;
-    height: 44px;
-    line-height: 44px;
-    font-size: 24px;
+    width: 150px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 30px;
     color: #FFFFFF;
     background-color: #da251c;
     margin-top: 34px;
@@ -1799,7 +1800,7 @@ hr {
     }
 
         .mobile_bottom_honor .honor_header .honor_title {
-            font-size: 28px;
+            font-size: 34px;
     font-weight: bold;
     float: left;
     margin-left: 14px;
@@ -1815,7 +1816,7 @@ hr {
         }
 
             .mobile_bottom_honor .honor_header .honor_more a {
-                font-size: 24px;
+                font-size: 28px;
                 color: #FFFFFF;
             }
 
@@ -1825,8 +1826,8 @@ hr {
 
         .mobile_bottom_honor .honor_content ul li {
             float: left;
-            margin-left: 1%;
-            width: 32%;
+            margin-left: 10px;
+            width: 340px;
         }
 
 mobile_bottom_honor .honor_content ul li:first-child {
@@ -1858,7 +1859,7 @@ mobile_bottom_honor .honor_content ul li:first-child {
         .mobile_bottom_menu .menu_item a {
             margin-top: 10px;
             color: #FFFFFF;
-            font-size: 20px;
+            font-size: 34px;
         }
 
     .mobile_bottom_menu .home_menu {

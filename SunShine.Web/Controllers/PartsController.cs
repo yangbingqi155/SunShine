@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using SunShine.Model;
 using SunShine.BLL;
 using SunShine.EF;
+using SunShine.Web.Utils;
 
 namespace SunShine.Web.Controllers
 {
@@ -123,6 +124,17 @@ namespace SunShine.Web.Controllers
                 category.CopyFromBase(model);
                 return category;
             }).ToList();
+            WebsiteInfoViewModel siteModel = new WebsiteInfoViewModel();
+            List<WebSiteInfo> all = WebSiteInfoService.GetALL();
+            if (all.Count > 0)
+            {
+                siteModel.CopyFromBase(all.First());
+            }
+            else
+            {
+                siteModel = null;
+            }
+            ViewData["websiteinfo"] = siteModel;
             return View(categories);
         }
 
@@ -247,10 +259,15 @@ namespace SunShine.Web.Controllers
 
         public ActionResult HomeAdvertise() {
             string code = "home";
+            if (BrowerDetectorHelper.IsMobile())
+            {
+                code = "mobile_home";
+            }
             Advertise advertise = AdvertiseService.GetByCode(code);
             if (advertise==null) {
                 return View();
             }
+           
             return View( PictureService.GetImagesByIdmodule(advertise.idadvertise, ModuleType.Advertise));
 
         }

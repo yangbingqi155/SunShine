@@ -810,7 +810,7 @@ ul.thirdLevel {
     .category_box .category_header {
         width: 100%;
         background-color: #AF251B;
-        font-size: 32px;
+        font-size: 36px;
         color: #FFFFFF;
         text-align: left;
         font-weight: bold;
@@ -818,6 +818,19 @@ ul.thirdLevel {
         padding: 10px 0;
     }
 
+    .category_header .left{
+        font-size: 36px;
+        float:left;
+        margin-left:20px;
+    }
+    .category_header .right{
+        font-size: 36px;
+        float:right;
+        margin-right:20px;
+    }
+    .category_header .right a{
+        color: #FFFFFF;
+    }
     .category_box .category_item {
         margin-top: 20px;
         height: 50px;
@@ -828,9 +841,9 @@ ul.thirdLevel {
             width: 100%;
             background-color: #DEDEDC;
             font-weight: bold;
-            height: 56px;
-            font-size: 30px;
-            line-height: 56px;
+            height: 75px;
+            font-size: 36px;
+            line-height: 75px;
             text-align: center;
             font-weight: bold;
         }
@@ -845,10 +858,10 @@ ul.thirdLevel {
         float: left;
         margin-left: 1%;
         width: 32.3%;
-        height: 80px;
+        height: 110px;
         border: 1px solid #BCBCBC;
-        font-size: 28px;
-        line-height: 80px;
+        font-size: 34px;
+        line-height: 110px;
     }
 
 
@@ -858,9 +871,9 @@ ul.thirdLevel {
     margin: 0 auto;
     background-color: #A9A9A9;
     font-weight: bold;
-    height: 60px;
-    font-size: 30px;
-    line-height: 60px;
+    height: 84px;
+    font-size: 38px;
+    line-height: 84px;
     text-align: center;
     font-weight: bold;
     color: #FFFFFF;
@@ -914,7 +927,7 @@ ul.thirdLevel {
 }
 
 .site_bottom {
-    height: 350px;
+    height: 380px;
     width: 100%;
     min-width: 750px;
     margin: 0 auto;
@@ -925,9 +938,9 @@ ul.thirdLevel {
 
     .site_bottom .site_info_item {
         color: #FFFFFF;
-        font-size: 22px;
+        font-size: 32px;
         text-align: center;
-        line-height: 36px;
+        line-height: 54px;
     }
 
 .kanshi_waiceng {
