@@ -1205,6 +1205,218 @@ ul.thirdLevel {
     }
 }
 
+
+.advance_box
+{
+    min-width:700px;
+    text-align:left;
+    margin:0 auto;
+}
+
+.advance_box .advance_item
+{
+    margin-top:20px;
+    padding:20px 0;
+
+}
+.advance_item .left
+{
+    float:left;
+
+}
+.advance_item ._advance_center
+{
+    float:left;
+
+}
+.advance_item .right
+{
+    float:left;
+}
+ul.advance_item_content_box {
+    list-style-type:none;
+    padding-left:10px;
+    overflow:hidden;
+}
+ul.advance_item_content_box li {
+    text-align:left;
+    list-style-type:none;
+    margin-top:10px;
+    font-size:20px;
+}
+
+.bg_advance_gray {
+    background-color:#DEDEDC;
+}
+@media screen and (max-width:800px) {
+    .advance_box
+    {
+        width:100%;
+    }
+    .advance_item1 .left img {
+        width:450px;
+    }
+    .advance_item1 .left .advance_item_content_box {
+        width:450px;
+    }
+    ul.advance_item_content_box li {
+        font-size:20px;
+    }
+}
+@media (min-width:800px) and (max-width:900px) {
+    .advance_box
+    {
+        width:800px;
+    }
+    .advance_item1 .left img {
+        width:490px;
+    }
+    .advance_item1 .left .advance_item_content_box {
+        width:490px;
+    }
+    ul.advance_item_content_box li {
+        font-size:18px;
+    }
+    .advance_item2 .right img {
+        width:430px;
+    }
+    .advance_item2 .right .advance_item_content_box {
+        width:430px;
+    }
+    .advance_item3 .left img {
+        width:450px;
+    }
+   .advance_item3 .left .advance_item_content_box {
+        width:450px;
+    }
+    .advance_item4 .left img {
+        width:300px;
+    }
+    .advance_item4 ._advance_center img {
+       width:100px;
+    }
+    .advance_item4 .right img {
+        width:400px;
+    }
+    .advance_item4 .right .advance_item_content_box {
+        width:400px;
+    }
+}
+@media (min-width:900px) and (max-width:1000px) {
+    .advance_box
+    {
+        width:900px;
+    }
+    .advance_item1 .left img {
+        width:597px;
+    }
+    .advance_item1 .left .advance_item_content_box {
+        width:597px;
+    }
+    ul.advance_item_content_box li {
+        font-size:18px;
+    }
+    .advance_item2 .right img {
+        width:530px;
+    }
+    .advance_item2 .right .advance_item_content_box {
+        width:530px;
+    }
+    .advance_item3 .left img {
+        width:566px;
+    }
+   .advance_item3 .left .advance_item_content_box {
+        width:566px;
+    }
+   .advance_item3 .right img {
+        width:330px;
+    }
+    .advance_item4 .left img {
+        width:300px;
+    }
+    .advance_item4 ._advance_center img {
+       width:100px;
+    }
+    .advance_item4 .right img {
+        width:500px;
+    }
+    .advance_item4 .right .advance_item_content_box {
+        width:500px;
+    }
+}
+@media (min-width:1000px) and (max-width:1100px)  {
+    .advance_box
+    {
+        width:1000px;
+    }
+    .advance_item1 .left img {
+        width:697px;
+    }
+    .advance_item1 .left .advance_item_content_box {
+        width:697px;
+    }
+    ul.advance_item_content_box li {
+        font-size:20px;
+    }
+    .advance_item2 .right img {
+        width:630px;
+    }
+    .advance_item2 .right .advance_item_content_box {
+        width:630px;
+    }
+    .advance_item3 .left img {
+        width:666px;
+    }
+   .advance_item3 .left .advance_item_content_box {
+        width:666px;
+    }
+   .advance_item3 .right img {
+        width:330px;
+    }
+    .advance_item4 .left img {
+        width:300px;
+    }
+    .advance_item4 ._advance_center img {
+       width:100px;
+    }
+    .advance_item4 .right img {
+        width:600px;
+    }
+    .advance_item4 .right .advance_item_content_box {
+        width:600px;
+    }
+}
+@media (min-width:1100px)  {
+    .advance_box
+    {
+        width:1100px;
+    }
+    .advance_item1 .left .advance_item_content_box {
+        width:797px;
+    }
+    ul.advance_item_content_box li {
+        font-size:24px;
+    }
+    .advance_item2 .right .advance_item_content_box {
+        width:730px;
+    }
+   .advance_item3 .left .advance_item_content_box {
+        width:766px;
+    }
+   .advance_item3 .right img {
+        width:330px;
+    }
+    .advance_item4 .left img {
+        width:360px;
+    }
+    .advance_item4 ._advance_center img {
+       width:120px;
+    }
+    .advance_item4 .right .advance_item_content_box {
+        width:620px;
+    }
+}
+
 .shilizhashi_text {
     color: #dd2116;
     font-size: 24px;

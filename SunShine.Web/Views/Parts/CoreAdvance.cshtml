@@ -17,74 +17,76 @@
     }
    
 </div>
-<div class="kanshi_waiceng">
-    @*@if (BrowerDetectorHelper.IsMobile()) {
-        <img src="~/Images/home/mobile_pinpaiyoushi_1.jpg" class="kanshi_waiceng_img" />
-    }
-    else {
-        <img src="~/Images/home/pinpaiyoushi_1.jpg" class="kanshi_waiceng_img" />
-    }*@
 
-    <div class="kanshi_neiceng">
-        @*<div class="images_tupian">
-            
-        </div>*@
-        <div class="miaoshu">
-            <ul>
-                @foreach (var item in ablity) {
+<div class="advance_box">
+    <div class="advance_item  advance_item1">
+        <div class="left">
+            <img src="@Url.Content("~/Images/layout/advance_bg_1_1.jpg")" />
+            <ul class="advance_item_content_box">
+                @foreach (var item in ablity)
+                {
                     <li>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
                 }
             </ul>
-           @* <a href="@Url.Action("Index","Case",new {categoryCode="contactsunshine",currentCategoryCode="designteam" })"></a>*@
+            <div style="clear:both;"></div>
         </div>
-        @*<div class="shilizhashi_text"><p></p></div>*@
-        <div style="clear:both"></div>
+        <div class="right">
+            <img src="@Url.Content("~/Images/layout/advance_bg_1_2.jpg")" />
+        </div>
+        <div style="clear:both;"></div>
     </div>
-
-    <div class="kanzhiliang">
-        <div class="miaoshu">
-            <ul>
-                @foreach (var item in quality) {
+  
+    <div class="advance_item  advance_item2 bg_advance_gray">
+        <div class="left">
+            <img src="@Url.Content("~/Images/layout/advance_bg_2_1.jpg")" />
+        </div>
+        <div class="right">
+            <img src="@Url.Content("~/Images/layout/advance_bg_2_2.jpg")" />
+            <ul class="advance_item_content_box">
+                @foreach (var item in quality)
+                {
                     <li>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
                 }
-
             </ul>
-           @* <a href="@Url.Action("Index","Case",new {categoryCode="contactsunshine",currentCategoryCode="designteam" })"></a>*@
+            <div style="clear:both;"></div>
         </div>
-        @*<div class="images_tupian">
-           
+        <div style="clear:both;"></div>
+    </div>
+    <div class="advance_item advance_item3">
+        <div class="left">
+            <img src="@Url.Content("~/Images/layout/advance_bg_3_1.jpg")" />
+            <ul class="advance_item_content_box">
+                @foreach (var item in goodprice)
+                {
+                    <li>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                }
+            </ul>
+            <div style="clear:both;"></div>
         </div>
-        <div class="kanzhiliang_text"><p></p></div>*@
+        <div class="right">
+            <img src="@Url.Content("~/Images/layout/advance_bg_3_2.jpg")" />
+        </div>
+        <div style="clear:both;"></div>
     </div>
-
-    <div class="kanxingjiabi">
-        <div class="miaoshu">
-            <ul>
-                @foreach (var item in goodprice) {
-                <li>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
-            }
-
-        </ul>
+    <div class="advance_item  advance_item4 bg_advance_gray">
+        <div class="left">
+            <img src="@Url.Content("~/Images/layout/advance_bg_4_1.jpg")" />
+        </div>
+        <div class="_advance_center">
+            <img src="@Url.Content("~/Images/layout/advance_bg_4_2.jpg")" />
+        </div>
+        <div class="right">
+            <img src="@Url.Content("~/Images/layout/advance_bg_4_3.jpg")" />
+            <ul class="advance_item_content_box">
+                @foreach (var item in saleservice)
+                {
+                    <li>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                }
+            </ul>
+            <div style="clear:both;"></div>
+        </div>
+        <div style="clear:both;"></div>
     </div>
-</div>
-
-<div class="kanshouhou">
-    <div class="miaoshu">
-        <ul>
-            @foreach (var item in saleservice) {
-                <li>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
-            }
-        </ul>
-       @* <a href="@Url.Action("Index","Case",new {categoryCode="contactsunshine",currentCategoryCode="designteam" })"></a>*@
-        @*<div class="telephone_yellow">
-            
-        </div>*@
-    </div>
-    @*<div class="images_tupian">
-        <img src="~/Images/home/kanshili_4.jpg" />
-    </div>*@
-</div>
-
 </div>
 
 <div style="clear:both"></div>

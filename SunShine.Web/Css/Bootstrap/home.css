@@ -1348,3 +1348,50 @@ a {
 .customize_flow_header {
     width:1444px;margin:0px auto;
 }
+
+
+.advance_box
+{
+    min-width:700px;
+    text-align:left;
+    margin:0 auto;
+    width:1440px;
+}
+
+.advance_box .advance_item
+{
+    margin-top:20px;
+    padding:20px 0;
+    margin-left:auto;
+    margin-right:auto;
+    width:1000px;
+}
+.advance_item .left
+{
+    float:left;
+
+}
+.advance_item ._advance_center
+{
+    float:left;
+
+}
+.advance_item .right
+{
+    float:left;
+}
+ul.advance_item_content_box {
+    list-style-type:none;
+    padding-left:10px;
+    overflow:hidden;
+}
+ul.advance_item_content_box li {
+    text-align:left;
+    list-style-type:none;
+    margin-top:10px;
+    font-size:20px;
+}
+
+.bg_advance_gray {
+    background-color:#DEDEDC;
+}

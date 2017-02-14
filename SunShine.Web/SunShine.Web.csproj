@@ -389,6 +389,15 @@
     <Content Include="Images\home\sinaLogo_1.jpg" />
     <Content Include="Images\home\weixinLogo.jpg" />
     <Content Include="Images\home\weixinLogo_1.jpg" />
+    <Content Include="Images\layout\advance_bg_1_1.jpg" />
+    <Content Include="Images\layout\advance_bg_1_2.jpg" />
+    <Content Include="Images\layout\advance_bg_2_1.jpg" />
+    <Content Include="Images\layout\advance_bg_2_2.jpg" />
+    <Content Include="Images\layout\advance_bg_3_1.jpg" />
+    <Content Include="Images\layout\advance_bg_3_2.jpg" />
+    <Content Include="Images\layout\advance_bg_4_1.jpg" />
+    <Content Include="Images\layout\advance_bg_4_2.jpg" />
+    <Content Include="Images\layout\advance_bg_4_3.jpg" />
     <Content Include="Images\layout\home_menu.png" />
     <Content Include="Images\layout\site_bottom1.jpg" />
     <Content Include="Images\layout\site_bottom2.jpg" />
