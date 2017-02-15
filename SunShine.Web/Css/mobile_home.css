@@ -927,7 +927,7 @@ ul.thirdLevel {
 }
 
 .site_bottom {
-    height: 380px;
+    height: 500px;
     width: 100%;
     min-width: 750px;
     margin: 0 auto;
@@ -1717,9 +1717,8 @@ a {
 .customer_support {
     width: 100%;
     min-width: 750px;
-    margin: 0px auto;
+    margin: 25px auto;
     text-align: center;
-    margin-top: 25px;
 }
 
 .customer_support_img {
@@ -1738,4 +1737,10 @@ a {
 .customize_flow_header_img {
     width: 100%;
     min-width: 750px;
+}
+.customize_flow_header_img_2 {
+    width: 100%;
+    min-width: 750px;
+    margin-top: 30px;
+    margin-bottom: 25px;
 }
