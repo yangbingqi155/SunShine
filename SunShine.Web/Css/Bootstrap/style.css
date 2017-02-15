@@ -23,7 +23,8 @@ hr{margin:0px;padding:0px;}
 .logo { float:left; }
 .phone { float:right; }
 
-.tablist { width:100%; height:53px; background:#da251c;  max-width:1920px;z-index:9999}
+.tablist1{width: 100%;    max-width: 1440px;    margin: 0 auto;}
+.tablist { width:100%; height:53px; background:#da251c;  max-width:1440px;z-index:9999}
 .tablist ul { width:1000px; height:53px; line-height:53px; margin:0 auto; overflow:hidden; }
 .tablist ul li { float:left; font-size:16px;   text-align:center; height:53px; line-height:53px;width:111px;margin:0 7px}
 .tablist .no { background:none;}
@@ -33,7 +34,7 @@ hr{margin:0px;padding:0px;}
 
 .nav_scroll { margin: 0 auto; position: fixed;top: 0; width: 100%; max-width:1920px; z-index:999}
 
-.banner{ width:100%; max-width:1920px;margin:0px auto; overflow:hidden; margin-top:2px;}
+.banner{ width:100%; max-width:1440px;margin:0px auto; overflow:hidden; margin-top:2px;}
 .n_banner{width:1000px;margin:0px auto;height:250px; overflow:hidden;}
 .fullSlide{width:100%;position:relative;background:#EEE;margin:0 auto;}
 .fullSlide .md{margin:0 auto;position:relative;z-index:0;overflow:hidden;}
@@ -53,7 +54,7 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 .ss {width:295px; float:right; position:relative; }
 .ss input { width:245px; height:31px;  border:1px solid #c9c9c9; padding-left:5px;}
 .ss span { width:34px; height:33px; position: absolute; right: 10px; }
-.keyword {width: 682px; height:33px; float: left; overflow:hidden;font-size:16px}
+.keyword {width: 682px; height:33px; float: left; overflow:hidden;font-size:15px}
 
 .wrap {width:1010px;  margin:10px auto; overflow:hidden;}
 .zhankai{ width:226px; overflow:hidden; background:#000; height:36px; line-height:36px; color:#fff; text-align:center;}
@@ -144,9 +145,10 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 
 .gengduo {width:100px; height:30px; line-height:28px; border:#c9c9c9 1px solid; margin:10px auto;  background: #da251c;border-radius:20px}
 .gengduo a { font-size:14px; text-align:center; display:block;color:#fff}
-.hezuo {width:190px;height:340px;margin:10px auto;}
+.hezuo {width:190px;height:340px;margin:10px auto;text-align:center;}
 .hezuo h2 {color:black;margin-top:10px; font-weight:bold;font-size:15px;   }
-.hezuo p{line-height:1.8;font-size:14px;}
+    
+.hezuo p{line-height:1.8;font-size:14px;text-align:left;}
 .hezuo .caseimg{
     width:190px;
     height:126px;
@@ -197,7 +199,7 @@ line-height: 18px; background:#cc0000;border:1px #cc0000 solid; font-size:12px; 
 .content1_left{ float: left; width: 25px; height: 58px; overflow: hidden;margin-top: 160px;}
 .kehu{width:1030px; margin:0 auto;float: left; overflow:hidden;}
 .kehu ul {width:1030px; margin:20px 0 0 5px; overflow:hidden;}
-.kehu ul li { width:230px; height:335px; border:#dcdcdc 2px solid; float:left; margin:0 10px 0 14px; overflow:hidden; text-align:center}
+.kehu ul li { width:230px; height:335px; border:#dcdcdc 2px solid; float:left; margin:0 10px 0 14px; overflow:hidden; }
 .content1_right{ float: left; width: 25px; height: 58px; overflow: hidden;margin-top: 160px;}
 
 .advantage { width:100%; max-width:1440px; background:url(../images/fgz_25.jpg) no-repeat center; height:778px; overflow:hidden; margin:30px auto; font-size:16px;}
