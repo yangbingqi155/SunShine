@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrowerDetectorHelper.cs" />
     <Compile Include="CheckBoxRequiredValidationAttribute.cs" />
     <Compile Include="HttpExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

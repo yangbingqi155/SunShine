@@ -673,3 +673,6 @@ nav .pager {
     .map_items a:first-child{
         margin-left:0;
     }
+    .baidu_map {
+width:700px;height:400px;border:#ccc solid 1px;font-size:12px;margin-top:10px;
+}

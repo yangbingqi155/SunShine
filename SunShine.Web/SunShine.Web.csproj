@@ -236,6 +236,10 @@
     <Content Include="Css\Bootstrap\bootstrap.css" />
     <Content Include="Css\Bootstrap\bootstrap.min.css" />
     <Content Include="Css\Bootstrap\home.css" />
+    <Content Include="Css\mobile_case.css" />
+    <Content Include="Css\mobile_home.css" />
+    <Content Include="Css\mobile_public.css" />
+    <Content Include="Css\mobile_style.css" />
     <Content Include="Css\Bootstrap\style.css" />
     <Content Include="Css\case.css" />
     <Content Include="Css\Fonts\font_1469444055_0424716_iconfont.svg" />
@@ -374,10 +378,31 @@
     <Content Include="Images\home\home_1.jpg" />
     <Content Include="Images\home\home_banner-1.jpg" />
     <Content Include="Images\home\honor.jpg" />
+    <Content Include="Images\home\make_step.jpg" />
+    <Content Include="Images\home\mobile_custom_flow.jpg" />
+    <Content Include="Images\home\mobile_fgz_05.jpg" />
+    <Content Include="Images\home\mobile_fuwubiaoyu_1.jpg" />
+    <Content Include="Images\home\mobile_kehuzhichi_1.jpg" />
+    <Content Include="Images\home\mobile_pinpaiyoushi_1.jpg" />
+    <Content Include="Images\home\mobile_yongxinzuofuwu.jpg" />
     <Content Include="Images\home\sinaLogo.jpg" />
     <Content Include="Images\home\sinaLogo_1.jpg" />
     <Content Include="Images\home\weixinLogo.jpg" />
     <Content Include="Images\home\weixinLogo_1.jpg" />
+    <Content Include="Images\layout\advance_bg_1_1.jpg" />
+    <Content Include="Images\layout\advance_bg_1_2.jpg" />
+    <Content Include="Images\layout\advance_bg_2_1.jpg" />
+    <Content Include="Images\layout\advance_bg_2_2.jpg" />
+    <Content Include="Images\layout\advance_bg_3_1.jpg" />
+    <Content Include="Images\layout\advance_bg_3_2.jpg" />
+    <Content Include="Images\layout\advance_bg_4_1.jpg" />
+    <Content Include="Images\layout\advance_bg_4_2.jpg" />
+    <Content Include="Images\layout\advance_bg_4_3.jpg" />
+    <Content Include="Images\layout\home_menu.png" />
+    <Content Include="Images\layout\site_bottom1.jpg" />
+    <Content Include="Images\layout\site_bottom2.jpg" />
+    <Content Include="Images\layout\site_bottom3.jpg" />
+    <Content Include="Images\layout\site_bottom4.jpg" />
     <Content Include="Images\Manage\headerbg4.png" />
     <Content Include="Images\Manage\login_bg.jpg" />
     <Content Include="lib\log4net\log4net.dll" />
@@ -397,6 +422,7 @@
     <Content Include="Resource\Images\Ue\20161205\6361656234069647717144589.jpg" />
     <Content Include="Resource\Images\Ue\20161205\6361656279530914089195837.jpg" />
     <Content Include="Resource\Images\Ue\20161205\6361656293692592968058984.jpg" />
+    <Content Include="robots.txt" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap-datetimepicker\bootstrap-datetimepicker.js" />
@@ -874,6 +900,12 @@
     <Content Include="Views\Shared\_ProductItemPartial1.cshtml" />
     <Content Include="Views\Parts\HotSearch.cshtml" />
     <Content Include="Views\Home\SiteMap.cshtml" />
+    <Content Include="Views\Shared\_Mobile_Layout.cshtml" />
+    <Content Include="Views\Parts\Mobile_Partner.cshtml" />
+    <Content Include="Views\Parts\Mobile_Bottom_Honor.cshtml" />
+    <Content Include="Views\Parts\Mobile_BottomProductCategory.cshtml" />
+    <Content Include="Views\Parts\Mobile_BottomWebsiteInfo.cshtml" />
+    <Content Include="Views\Parts\Mobile_NavSuccessCases.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

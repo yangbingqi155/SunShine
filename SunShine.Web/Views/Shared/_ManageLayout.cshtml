@@ -27,7 +27,7 @@
 </head>
 <body root="@Url.Content("~/")">
     <div class="T">
-        <div class="TL">您好: @ViewBag.MUName</div>
+        <div class="TL">您好: @ViewBag.MUName-@SunShine.Utils.Pub.ID()</div>
         <div class="TR"><a href="@Url.Action("SignOut","Manage")">注销</a></div>
     </div>
     <div class="C">
@@ -46,6 +46,7 @@
                 <div class="panel-heading parentMenu">网站管理</div>
                 <div class="list-group">
                     <a class="list-group-item" id="EditWebsite" href="@Url.Action("AdvertiseEdit","Manage",new { code="home"})">首页广告</a>
+                    <a class="list-group-item" id="EditWebsite" href="@Url.Action("AdvertiseEdit","Manage",new { code="mobile_home"})">手机版首页广告</a>
                     <a class="list-group-item" id="EditWebsite" href="@Url.Action("WebsiteInfoEdit","Manage")">网站信息</a>
                     <a class="list-group-item" id="FriendURLList" href="@Url.Action("FriendURLList","Manage")">友情链接</a>
                     <a class="list-group-item" id="FriendURLList" href="@Url.Action("ManageUserPasswordEdit","Manage",new { iduser="636132731939680"})">修改登录密码</a>

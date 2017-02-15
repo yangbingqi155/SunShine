@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using SunShine.Model;
 using SunShine.BLL;
 using SunShine.EF;
+using SunShine.Web.Utils;
 
 namespace SunShine.Web.Controllers
 {
@@ -31,10 +32,29 @@ namespace SunShine.Web.Controllers
         }
 
         /// <summary>
+        /// 合作伙伴-手机版
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Mobile_Partner()
+        {
+            string categoryCode = "lastestcase";
+            return View(ArticleService.GetArticlesByCategoryCode(categoryCode).ToList());
+        }
+
+        /// <summary>
         /// 导航-成功案例
         /// </summary>
         /// <returns></returns>
         public ActionResult NavSuccessCases(string categoryCode) {
+            return View(SiteCategoryService.GetChildCategoriesByCode(categoryCode));
+        }
+
+        /// <summary>
+        /// 手机版-导航-成功案例
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Mobile_NavSuccessCases(string categoryCode)
+        {
             return View(SiteCategoryService.GetChildCategoriesByCode(categoryCode));
         }
 
@@ -46,6 +66,19 @@ namespace SunShine.Web.Controllers
             string categoryCode = "honor";
             return View(ArticleService.GetArticlesByCategoryCode(categoryCode));
         }
+
+        /// <summary>
+        /// 手机版-底部导航-荣誉资质
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Mobile_Bottom_Honor()
+        {
+            string categoryCode = "honor";
+            List<ArticleViewModel> articles= ArticleService.GetArticlesByCategoryCode(categoryCode);
+            articles = articles.Count > 3 ? articles.Take(3).ToList() : articles;
+            return View(articles);
+        }
+        
 
         /// <summary>
         /// 导航-联系我们
@@ -77,6 +110,34 @@ namespace SunShine.Web.Controllers
             }).ToList();
             return View(categories);
         }
+
+        /// <summary>
+        /// 手机版-底部产品分类
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Mobile_BottomProductCategory()
+        {
+            List<ProductCategoryViewModel> categories = new List<ProductCategoryViewModel>();
+            List<ProductCategory> tempCategories = ProductCategoryService.GetALL().Where(en => en.inuse).ToList();
+            categories = tempCategories.Select(model => {
+                ProductCategoryViewModel category = new ProductCategoryViewModel();
+                category.CopyFromBase(model);
+                return category;
+            }).ToList();
+            WebsiteInfoViewModel siteModel = new WebsiteInfoViewModel();
+            List<WebSiteInfo> all = WebSiteInfoService.GetALL();
+            if (all.Count > 0)
+            {
+                siteModel.CopyFromBase(all.First());
+            }
+            else
+            {
+                siteModel = null;
+            }
+            ViewData["websiteinfo"] = siteModel;
+            return View(categories);
+        }
+
 
         /// <summary>
         /// 底部产品分类
@@ -165,6 +226,22 @@ namespace SunShine.Web.Controllers
             }
             return View(model);
         }
+
+        public ActionResult Mobile_BottomWebsiteInfo()
+        {
+            WebsiteInfoViewModel model = new WebsiteInfoViewModel();
+            List<WebSiteInfo> all = WebSiteInfoService.GetALL();
+            if (all.Count > 0)
+            {
+                model.CopyFromBase(all.First());
+            }
+            else
+            {
+                model = null;
+            }
+            return View(model);
+        }
+
         public ActionResult CoreAdvance() {
             List<ArticleViewModel> ablity = ArticleService.GetArticlesByCategoryCode("ablity");
             List<ArticleViewModel> quality = ArticleService.GetArticlesByCategoryCode("quality");
@@ -182,13 +259,19 @@ namespace SunShine.Web.Controllers
 
         public ActionResult HomeAdvertise() {
             string code = "home";
+            if (BrowerDetectorHelper.IsMobile())
+            {
+                code = "mobile_home";
+            }
             Advertise advertise = AdvertiseService.GetByCode(code);
             if (advertise==null) {
                 return View();
             }
+           
             return View( PictureService.GetImagesByIdmodule(advertise.idadvertise, ModuleType.Advertise));
 
         }
+
     }
 
 }
