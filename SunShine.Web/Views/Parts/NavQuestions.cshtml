@@ -32,7 +32,16 @@
                 {
                     <li>
                         <div class="datetime">@(item.cretime.Value.ToString("yyyy-MM-dd"))</div>
-                        <div class="wenben">@item.content.RemoveHTMLAndGetByNum(90)</div>
+                        <div class="wenben">
+                            <div class="case_question_item">
+                                <div class="itemdesc" style="margin-left:0;">
+                                    <div class="itemtitle"><img src="@Url.Content("~/Images/case/question.jpg")" />&nbsp;<a href="@Url.Action("Index","Case",new { idarticle=item.idarticle})">@item.title</a></div>
+                                    <div class="itemdetail"><img src="@Url.Content("~/Images/case/anwer.jpg")" />&nbsp;@(string.IsNullOrEmpty(item.content) ? "" : item.content.RemoveHTMLAndGetByNum(80))</div>
+                                </div>
+                            </div>
+                        @*@item.content.RemoveHTMLAndGetByNum(90)*@
+                        
+                        </div>
                     </li>
                 }
             </ul>
