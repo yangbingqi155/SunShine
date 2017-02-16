@@ -748,3 +748,16 @@ nav .pager {
     font-size: 12px;
     margin-top: 10px;
 }
+.circle_index {
+    display: inline-block;
+    border-radius: 18px;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    background-color: #747371;
+    color:#FFFFFF;
+    text-align:center;
+    line-height:18px;
+    margin-right:8px;
+    font-size:12px;
+}

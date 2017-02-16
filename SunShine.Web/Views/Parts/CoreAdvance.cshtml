@@ -23,9 +23,12 @@
         <div class="left">
             <img src="@Url.Content("~/Images/layout/advance_bg_1_1.jpg")" />
             <ul class="advance_item_content_box">
-                @foreach (var item in ablity)
-                {
-                    <li>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                @{ 
+                    int i = 0;
+                    foreach (var item in ablity) {
+                        i++;
+                        <li><div class="circle_index">@i</div> @Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                    }
                 }
             </ul>
             <div style="clear:both;"></div>
@@ -43,10 +46,14 @@
         <div class="right">
             <img src="@Url.Content("~/Images/layout/advance_bg_2_2.jpg")" />
             <ul class="advance_item_content_box">
-                @foreach (var item in quality)
-                {
-                    <li>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                @{
+                    i = 0;
+                    foreach (var item in quality) {
+                        i++;
+                        <li><div class="circle_index">@i</div>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                    }
                 }
+                
             </ul>
             <div style="clear:both;"></div>
         </div>
@@ -56,10 +63,14 @@
         <div class="left">
             <img src="@Url.Content("~/Images/layout/advance_bg_3_1.jpg")" />
             <ul class="advance_item_content_box">
-                @foreach (var item in goodprice)
-                {
-                    <li>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                @{
+                    i = 0;
+                    foreach (var item in goodprice) {
+                        i++;
+                        <li><div class="circle_index">@i</div>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                    }
                 }
+                
             </ul>
             <div style="clear:both;"></div>
         </div>
@@ -78,9 +89,12 @@
         <div class="right">
             <img src="@Url.Content("~/Images/layout/advance_bg_4_3.jpg")" />
             <ul class="advance_item_content_box">
-                @foreach (var item in saleservice)
-                {
-                    <li>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                @{
+                    i = 0;
+                    foreach (var item in saleservice) {
+                        i++;
+                        <li><div class="circle_index">@i</div>@Html.Raw(!string.IsNullOrEmpty(item.introduction) ? item.introduction : item.title)</li>
+                    }
                 }
             </ul>
             <div style="clear:both;"></div>
