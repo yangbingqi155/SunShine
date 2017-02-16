@@ -1563,31 +1563,68 @@ ul.advance_item_content_box {
     float: left;
 }
 
+
+
 .telephonenumber {
     min-width: 310px;
-    width: 310px;
     height: 101px;
     float: right;
+    padding-right:10px;
 }
 
-    .telephonenumber img {
-        min-width: 310px;
-        width: 310px;
-        height: 101px;
+    .telephonenumber .telleft {
+        float: left;
     }
 
-    .telephonenumber .guhua {
-        margin-top: -5px;
+        .telephonenumber .telleft img {
+            height: 100px;
+        }
+
+    .telephonenumber .telright {
+        float: left;
     }
 
-    .telephonenumber .guhua_shouji {
-        font-size: 20px;
-        color: #e51d1f;
-        font-weight: bold;
-        margin-top: 50px;
-        margin-left: 90px;
-        letter-spacing: 1px;
-    }
+        .telephonenumber .telright .rtop a{
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+
+        .telephonenumber .telright .rbottom a{
+            font-size: 30px;
+            color: #EB3D00;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+@media (min-width:850px) and (max-width:900px) {
+    .telephonenumber .telright .rtop  a{
+            font-size: 30px;
+        }
+
+        .telephonenumber .telright .rbottom  a{
+            font-size: 36px;
+        }
+}
+@media (min-width:900px) and (max-width:950px) {
+    .telephonenumber .telright .rtop  a{
+            font-size: 30px;
+        }
+
+        .telephonenumber .telright .rbottom  a{
+            font-size: 40px;
+        }
+}
+@media screen and (min-width:950px) {
+    .telephonenumber .telright .rtop  a{
+        margin-top: 0px;
+            font-size: 32px;
+        }
+
+        .telephonenumber .telright .rbottom  a{
+            font-size: 46px;
+            margin-top: -4px;
+        }
+}
 
 
 .contactuslist ul span {

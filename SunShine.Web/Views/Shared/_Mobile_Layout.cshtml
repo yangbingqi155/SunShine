@@ -23,7 +23,7 @@
         $(document).ready(function () { $(".case_honor_bottom").imgscroll({ speed: 40, amount: 0, width: 2, dir: "up" }); });
         $(document).ready(function () { $(".wenti_box").imgscroll({ speed: 40, amount: 0, width: 2, dir: "up" }); });
         $(document).ready(function () { $(".honor_content").imgscroll({ speed: 40, amount: 0, width: 2, dir: "left" }); });
-      
+
         $(document).ready(function () {
             $(".mobile_bottom_menu").posfixed({
                 distance: 0,
@@ -50,16 +50,25 @@
 
 
 </head>
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261169669'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1261169669' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1261169669'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1261169669' type='text/javascript'%3E%3C/script%3E"));</script>
 <body>
     <div class="center">
         <div class="logo">
             <a href="@Url.Action("Index", "Home")">  <img src="~/Images/home/mobile_fgz_05.jpg" />    </a>
         </div>
-        <div class="telephonenumber" onclick="">
-            <a href="tel:4008778652">
-                <img src="/Images/home/fgz_06.jpg" />
-            </a>
+        <div class="telephonenumber">
+            <div class="telleft">
+                <a href="tel:4008778652">
+                    <img src="@Url.Content("~/Images/home/hot_tel_icon.jpg")" />
+                </a>
+            </div>
+            <div class="telright">
+                <div class="rtop"><a href="tel:4008778652">免费咨询热线</a></div>
+                <div class="rbottom"><a href="tel:4008778652">4008-778-652</a></div>
+            </div>
+            @*<a href="tel:4008778652">
+                    <img src="/Images/home/fgz_06.jpg" />
+                </a>*@
         </div>
     </div>
     <div style="clear:both"></div>
@@ -96,8 +105,8 @@
     }
     <div class="mobile_bottom_menu">
         @*<div class="home_menu">
-           <a href="@Url.Action("Index","Home")"> <img src="~/Images/layout/home_menu.png" /></a>
-        </div>*@
+               <a href="@Url.Action("Index","Home")"> <img src="~/Images/layout/home_menu.png" /></a>
+            </div>*@
         <div class="menu_item">
             <a href="http://wpa.qq.com/msgrd?v=3&uin=3317300173&site=qq&menu=yes"><img src="~/Images/layout/site_bottom1.jpg" /><br /></a>
             <a href="http://wpa.qq.com/msgrd?v=3&uin=3317300173&site=qq&menu=yes">在线咨询</a>
