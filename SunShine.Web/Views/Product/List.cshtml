@@ -112,7 +112,7 @@
         Html.RenderPartial("_HistoryBannerPartial", null);
     }
 
-    Html.RenderPartial("_CustomizeFlowPartial", null);
+
     if (BrowerDetectorHelper.IsMobile())
     {
         Html.RenderAction("Mobile_Bottom_Honor", "Parts");
@@ -122,6 +122,7 @@
         Html.RenderAction("InstroductionCompany", "Parts");
     }
 
+    Html.RenderPartial("_CustomizeFlowPartial", null);
 
 }
 

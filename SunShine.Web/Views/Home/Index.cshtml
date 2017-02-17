@@ -117,16 +117,17 @@ else
     {
         Html.RenderAction("Mobile_Partner", "Parts");
     }
+    if (!BrowerDetectorHelper.IsMobile())
+    {
+        Html.RenderAction("InstroductionCompany", "Parts");
+    }
 
     Html.RenderPartial("_CustomizeFlowPartial", null);
     if (BrowerDetectorHelper.IsMobile())
     {
         Html.RenderAction("Mobile_Bottom_Honor", "Parts");
     }
-    if (!BrowerDetectorHelper.IsMobile())
-    {
-        Html.RenderAction("InstroductionCompany", "Parts");
-    }
+
 
 }
 

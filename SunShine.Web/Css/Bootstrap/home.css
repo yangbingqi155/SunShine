@@ -1352,7 +1352,7 @@ a {
     width:1444px;margin:0px auto;
 }
 .customize_flow_header {
-    width:1444px;margin:0px auto;
+    width:1444px;margin:20px auto 0;
 }
 
 
@@ -1388,7 +1388,7 @@ a {
 }
 ul.advance_item_content_box {
     list-style-type:none;
-    padding-left:10px;
+    padding-left:70px;
     overflow:hidden;
 }
 ul.advance_item_content_box li {
@@ -1401,3 +1401,5 @@ ul.advance_item_content_box li {
 .bg_advance_gray {
     background-color:#DEDEDC;
 }
+
+.advance_item  advance_item4 bg_advance_gray ul{padding-left:0px}
