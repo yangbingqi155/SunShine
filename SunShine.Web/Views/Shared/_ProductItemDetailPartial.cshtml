@@ -1,8 +1,20 @@
 ﻿@using SunShine.Model;
+@using SunShine.Utils;
+@using SunShine.Web.Utils;
 @model ProductViewModel
 @{
     Layout = null;
     string contactus = ViewData["contactus"].ToString();
+}
+
+@if (BrowerDetectorHelper.IsMobile())
+{
+    <script type="text/javascript">
+        $(function () {
+            $(".p_description_body > p").find("span").css("font-size", "30px");
+            $(".p_description_body > p").find("strong").css("font-size", "30px");
+        });
+    </script>
 }
 <script type="text/javascript">
     $(function () {
@@ -27,7 +39,7 @@
         });
     });
 
-</script>
+    </script>
 <div class="product_detail_box">
     <div class="product_detail_top">
         <div class="pimg">
