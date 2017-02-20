@@ -5,6 +5,15 @@
 @{
     Layout = null;
 }
+@if (BrowerDetectorHelper.IsMobile())
+{
+   <script type="text/javascript">
+       $(function () {
+           $(".itemdesc > .itemdetail > p > span").css("font-size", "28px");
+           $(".itemdesc > .itemdetail > p").find("span").css("font-size", "28px");
+       });
+   </script>
+}
 @{
     if (Model != null && Model.Count > 0) {
         for (int i = 0; i < Model.Count; i++) {
