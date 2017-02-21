@@ -121,7 +121,7 @@ hr {
 }
 
 #sunshine_advertise_slide {
-    margin-top: 20px;
+    /*margin-top: 20px;*/
 }
 
 .tablist {
@@ -131,7 +131,6 @@ hr {
     max-width: 1920px;
     z-index: 9999;
     background-color:#FFFFFF;
-    padding:10px 0;
 }
 
     .tablist ul {
@@ -570,6 +569,7 @@ hr {
 
                 .cp_list1 ul li .cp_img img {
                     width: 99%;
+                    height:auto;
                 }
 
 .cp_name {

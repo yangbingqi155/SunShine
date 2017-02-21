@@ -1,8 +1,17 @@
 ﻿@using SunShine.Model;
 @using SunShine.Utils;
+@using SunShine.Web.Utils;
 @model List<ArticleViewModel>
 @{
     Layout = null;
+}
+@if (BrowerDetectorHelper.IsMobile())
+{
+    <script type="text/javascript">
+       $(function () {
+           $(".partner_item_content > p > span").css("font-size", "32px");
+       });
+    </script>
 }
 @if (Model != null && Model.Count > 0)
 {
@@ -31,7 +40,7 @@
                                     @Model[i].title
                                 </span>
                                 <p class="partner_item_introduction">
-                                    @Html.Raw((string.IsNullOrEmpty(Model[i].content) ? "" : Model[i].content.RemoveHTMLAndGetByNum(100)))
+                                    @Html.Raw(!string.IsNullOrEmpty(Model[i].introduction) ? Model[i].introduction : (string.IsNullOrEmpty(Model[i].content) ? "" : Model[i].content.RemoveHTMLAndGetByNum(100)))
                                 </p>
                                 <div class="view_detail_btn"><a href="@Url.Action("Index","Case",new {idarticle= Model[i].idarticle })">查看详情</a></div>
                             </div>

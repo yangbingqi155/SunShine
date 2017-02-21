@@ -256,11 +256,11 @@
 }
 
     .case_nav .case_nav_icon {
-            background-color: #da251c;
-    width: 22px;
-    height: 22px;
-    float: left;
-    margin: 32px 0 0 16px;
+        background-color: #da251c;
+        width: 22px;
+        height: 22px;
+        float: left;
+        margin: 32px 0 0 16px;
     }
 
     .case_nav .case_nav_title {
@@ -486,7 +486,7 @@
     .product_detail_top .pimg {
         width: 90%;
         text-align: center;
-        margin:0 auto;
+        margin: 0 auto;
     }
 
         .product_detail_top .pimg img {
@@ -499,7 +499,7 @@
     }
 
 .p_basic_info .p_title {
-        height: 60px;
+    height: 60px;
     line-height: 70px;
     font-size: 34px;
     font-weight: bold;
@@ -510,18 +510,20 @@
     margin-top: 20px;
     font-size: 16px;
 }
-.p_basic_info .p_basic p{
-    margin-top: 20px;
-    font-size: 30px;
-}
+
+    .p_basic_info .p_basic p {
+        margin-top: 20px;
+        font-size: 30px;
+    }
+
 .p_basic_info .p_ask {
-    width:90%;
+    width: 90%;
     margin-top: 37px;
-    text-align:center;
+    text-align: center;
 }
 
 .p_basic_info .btn_ask {
-        background-color: #F4F1EA;
+    background-color: #F4F1EA;
     border: 1px solid #da251c;
     padding: 8px 0;
     font-size: 38px;
@@ -570,6 +572,10 @@
 .p_description_body {
     margin-top: 22px;
     font-size: 16px;
+}
+.p_description_body img{
+    width:100%;
+    height:auto;
 }
 
 .no_data_div {
@@ -729,9 +735,13 @@ nav .pager {
         background: #da251c;
     }
 
-        .mobile_success_case_box .mobile_success_case_item:hover {
-            background: #383431;
-        }
+.case_box .case_right .mobile_success_case_box .mobile_success_case_item_current {
+    background: #71706E;
+}
+
+.mobile_success_case_box .mobile_success_case_item:hover {
+    background: #383431;
+}
 
 .mobile_success_case_item a {
     color: #FFFFFF;
@@ -753,6 +763,7 @@ nav .pager {
     font-size: 12px;
     margin-top: 10px;
 }
+
 .circle_index {
     display: inline-block;
     border-radius: 18px;
@@ -760,9 +771,9 @@ nav .pager {
     height: 18px;
     margin: 0;
     background-color: #747371;
-    color:#FFFFFF;
-    text-align:center;
-    line-height:18px;
-    margin-right:8px;
-    font-size:12px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 18px;
+    margin-right: 8px;
+    font-size: 12px;
 }
