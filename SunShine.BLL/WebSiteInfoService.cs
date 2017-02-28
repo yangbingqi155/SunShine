@@ -35,6 +35,7 @@ namespace SunShine.BLL
             oldWebsiteInfo.address = websiteInfo.address;
             oldWebsiteInfo.hotphoneallcountry = websiteInfo.hotphoneallcountry;
             oldWebsiteInfo.hotphone = websiteInfo.hotphone;
+            oldWebsiteInfo.hotphone2 = websiteInfo.hotphone2;
             oldWebsiteInfo.phone = websiteInfo.phone;
             oldWebsiteInfo.qq = websiteInfo.qq;
             oldWebsiteInfo.qq2 = websiteInfo.qq2;

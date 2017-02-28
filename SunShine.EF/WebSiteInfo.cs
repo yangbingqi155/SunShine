@@ -29,6 +29,9 @@ namespace SunShine.EF
         public string hotphone { get; set; }
 
         [StringLength(500)]
+        public string hotphone2 { get; set; }
+
+        [StringLength(500)]
         public string phone { get; set; }
 
         [StringLength(500)]

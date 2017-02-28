@@ -36,6 +36,10 @@ namespace SunShine.Model
         [StringLength(500)]
         public new string hotphone { get; set; }
 
+        [Display(Name = "免费咨询电话2")]
+        [StringLength(500)]
+        public new string hotphone2 { get; set; }
+
         [Display(Name = "联系手机")]
         [StringLength(500)]
         public new string phone { get; set; }
@@ -57,6 +61,7 @@ namespace SunShine.Model
             this.address = websiteInfo.address;
             this.hotphoneallcountry = websiteInfo.hotphoneallcountry;
             this.hotphone = websiteInfo.hotphone;
+            this.hotphone2 = websiteInfo.hotphone2;
             this.phone = websiteInfo.phone;
             this.qq = websiteInfo.qq;
             this.qq2 = websiteInfo.qq2;
@@ -70,6 +75,7 @@ namespace SunShine.Model
             websiteInfo.address = this.address;
             websiteInfo.hotphoneallcountry = this.hotphoneallcountry;
             websiteInfo.hotphone = this.hotphone;
+            websiteInfo.hotphone2 = this.hotphone2;
             websiteInfo.phone = this.phone;
             websiteInfo.qq = this.qq;
             websiteInfo.qq2 = this.qq2;

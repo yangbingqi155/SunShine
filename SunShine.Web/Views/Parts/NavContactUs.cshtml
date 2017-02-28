@@ -29,12 +29,15 @@
     <div class="contactuslist">
         <ul>
             <li style="margin-top:0;">咨询热线：@Model.hotphone</li>
-            <li><span>&nbsp;027-85358278</span></li>
+            @if (!string.IsNullOrEmpty(Model.hotphone2)) {
+                <li><span>&nbsp;@Model.hotphone2</span></li>
+            }
+
             <li>咨询手机：@Model.phone</li>
 
             <li>客服QQ：@Model.qq</li>
             @if (!string.IsNullOrEmpty(Model.qq2)) {
-            <li><span>@Model.qq2</span></li>
+                <li><span>@Model.qq2</span></li>
             }
             <li>地址：@Model.address</li>
         </ul>
