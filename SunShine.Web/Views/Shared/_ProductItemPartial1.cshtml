@@ -15,7 +15,7 @@
                 }
                 @foreach (var item in Model)
                 {
-                    <li>
+                    <li  @Html.Raw((i+1)%2==1?"style='clear:both;'":"")>
                         <div class="cp_img"><a href="@Url.Action("List","Product",new { idproduct=item.idproduct})" title="@item.name"><img src="@Url.Content(item.img)" onload="DrawImage(this,357,247)" alt="@item.name" /></a></div>
                         <div class="cp_name"><a href="@Url.Action("List","Product",new { idproduct=item.idproduct})">@item.name</a></div>
                         @if (!BrowerDetectorHelper.IsMobile())
@@ -27,10 +27,6 @@
                         }
                         
                     </li>
-                    if ((i + 1) % 2 == 0)
-                    {
-                        <div style="clear:both;"></div>
-                    }
                     i++;
                 }
             </ul>
