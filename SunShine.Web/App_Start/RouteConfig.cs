@@ -10,19 +10,74 @@ namespace SunShine.Web {
         public static void RegisterRoutes(RouteCollection routes) {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // routes.MapRoute(
+            //    name: "product",
+            //    url: "Product/List_{idproduct}_{idcategory}_{categoryCode}_{keyword}_{pageIndex}.html",
+            //    defaults: new
+            //    {
+            //        controller = "Product",
+            //        action = "List",
+            //        idproduct = UrlParameter.Optional,
+            //        idcategory = UrlParameter.Optional,
+            //        categoryCode = UrlParameter.Optional,
+            //        keyword = UrlParameter.Optional,
+            //        pageIndex = UrlParameter.Optional
+            //    }
+            //);
+           
+
            // routes.MapRoute(
-           //    name: "product",
-           //    url: "Product/List_{idproduct}_{idcategory}_{categoryCode}_{keyword}_{pageIndex}.html",
-           //    defaults: new
-           //    {
-           //        controller = "Product",
-           //        action = "List",
-           //        idproduct = UrlParameter.Optional,
-           //        idcategory = UrlParameter.Optional,
-           //        categoryCode = UrlParameter.Optional,
-           //        keyword = UrlParameter.Optional,
-           //        pageIndex = UrlParameter.Optional
-           //    }
+           //     name: "product_detail",
+           //     url: "Product/Detail/{idproduct}.html",
+           //     defaults: new { controller = "Product", action = "List" }
+           // );
+
+           // routes.MapRoute(
+           //     name: "product_category_pages",
+           //     url: "Product/Category/{idcategory}/{pageIndex}.html",
+           //     defaults: new { controller = "Product", action = "List" }
+           // );
+
+           // routes.MapRoute(
+           //     name: "product_category",
+           //     url: "Product/Category/{idcategory}.html",
+           //     defaults: new { controller = "Product", action = "List" }
+           // );
+
+           // routes.MapRoute(
+           //     name: "product_categorycode_pages",
+           //     url: "Product/Categories/{categoryCode}/{pageIndex}.html",
+           //     defaults: new { controller = "Product", action = "List" }
+           // );
+
+           // routes.MapRoute(
+           //     name: "product_categorycode",
+           //     url: "Product/Categories/{categoryCode}.html",
+           //     defaults: new { controller = "Product", action = "List" }
+           // );
+
+           // routes.MapRoute(
+           //     name: "product_search_pages",
+           //     url: "Product/Search/{keyword}/{pageIndex}.html",
+           //     defaults: new { controller = "Product", action = "List" }
+           // );
+
+           // routes.MapRoute(
+           //     name: "product_search",
+           //     url: "Product/Search/{keyword}.html",
+           //     defaults: new { controller = "Product", action = "List" }
+           // );
+
+           // routes.MapRoute(
+           //     name: "product_list",
+           //     url: "Product/List.html",
+           //     defaults: new { controller = "Product", action = "List", idproduct = UrlParameter.Optional, idcategory = UrlParameter.Optional, categoryCode = UrlParameter.Optional, keyword = UrlParameter.Optional, pageIndex = UrlParameter.Optional }
+           // );
+
+           // routes.MapRoute(
+           //    name: "product_list_pages",
+           //    url: "Product/List/{pageIndex}.html",
+           //    defaults: new { controller = "Product", action = "List",  idproduct = UrlParameter.Optional,  idcategory = UrlParameter.Optional, categoryCode = UrlParameter.Optional,  keyword = UrlParameter.Optional, pageIndex = UrlParameter.Optional }
            //);
 
             routes.MapRoute(

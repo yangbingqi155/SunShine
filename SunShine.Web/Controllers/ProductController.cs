@@ -78,10 +78,10 @@ namespace SunShine.Web.Controllers
             ViewData["keyword"] = keyword;
             ViewData["category"] = category;
 
-            RouteData.Values.Add("keyword", keyword);
-            RouteData.Values.Add("idproduct", idproduct);
-            RouteData.Values.Add("idcategory", idcategory);
-            RouteData.Values.Add("categoryCode", categoryCode);
+            //RouteData.Values.Add("keyword", keyword);
+            //RouteData.Values.Add("idproduct", idproduct);
+            //RouteData.Values.Add("idcategory", idcategory);
+            //RouteData.Values.Add("categoryCode", categoryCode);
             
             return View(pageList);
         }

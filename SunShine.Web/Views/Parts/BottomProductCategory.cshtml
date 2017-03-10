@@ -27,10 +27,10 @@
                     <div class="category_right category_right_one">
                         @for (int i = 0; i < usageCategories.Count; i++) {
                             if (i == usageCategories.Count - 1) {
-                                <span><a href="@Url.Action("List","Product",new { idcategory=usageCategories[i].idcategory})" >@usageCategories[i].categoryname</a>&nbsp;</span>
+                                <span><a href="@Url.Action("List","Product",new { categoryCode=usageCategories[i].categorycode})" >@usageCategories[i].categoryname</a>&nbsp;</span>
                             }
                             else {
-                                <span><a href="@Url.Action("List","Product",new { idcategory=usageCategories[i].idcategory})" >@usageCategories[i].categoryname</a>&nbsp;|</span>
+                                <span><a href="@Url.Action("List","Product",new { categoryCode=usageCategories[i].categorycode})" >@usageCategories[i].categoryname</a>&nbsp;|</span>
                             }
                         }
                     </div>
@@ -44,10 +44,10 @@
                     <div class="category_right category_right_two">
                        @for (int i = 0; i < industryCategories.Count; i++) {
                            if (i == industryCategories.Count - 1) {
-                            <span><a href="@Url.Action("List","Product",new { idcategory=industryCategories[i].idcategory})">@industryCategories[i].categoryname</a>&nbsp;</span>
+                            <span><a href="@Url.Action("List","Product",new { categoryCode=industryCategories[i].categorycode})">@industryCategories[i].categoryname</a>&nbsp;</span>
                            }
                            else {
-                            <span><a href="@Url.Action("List","Product",new { idcategory=industryCategories[i].idcategory})">@industryCategories[i].categoryname</a>&nbsp;|</span>
+                            <span><a href="@Url.Action("List","Product",new { categoryCode=industryCategories[i].categorycode})">@industryCategories[i].categoryname</a>&nbsp;|</span>
                            }
                            if (i == 4) {
                             <br />
@@ -64,10 +64,10 @@
                 <div class="category_right category_right_two">
                    @for (int i = 0; i < productCategories.Count; i++) {
                        if (i == usageCategories.Count - 1) {
-                        <span><a href="@Url.Action("List","Product",new { idcategory=productCategories[i].idcategory})">@productCategories[i].categoryname</a>&nbsp;</span>
+                        <span><a href="@Url.Action("List","Product",new { categoryCode=productCategories[i].categorycode})">@productCategories[i].categoryname</a>&nbsp;</span>
                        }
                        else {
-                        <span><a href="@Url.Action("List","Product",new { idcategory=productCategories[i].idcategory})">@productCategories[i].categoryname</a>&nbsp;|</span>
+                        <span><a href="@Url.Action("List","Product",new { categoryCode=productCategories[i].categorycode})">@productCategories[i].categoryname</a>&nbsp;|</span>
                        }
                        if (i == 4) {
                         <br />
