@@ -20,7 +20,7 @@
                         @if (!BrowerDetectorHelper.IsMobile())
                         {
                             <div class="ckxq">
-                                <div class="ckxq_left"><a href="@Url.Action("List", "Product", new { idproduct = item.idproduct })">查看详情</a></div>
+                                <div class="ckxq_left"><a href="@Url.RouteUrl("product_detail", new { idproduct = item.idproduct })">查看详情</a></div>
                                 <div class="ckxq_ljzx"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3317300173&site=qq&menu=yes">立即咨询</a></div>
                             </div>
                         }

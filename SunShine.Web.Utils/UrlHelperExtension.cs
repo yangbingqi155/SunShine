@@ -79,6 +79,16 @@ namespace SunShine.Web.Utils {
 
             //把roteValue 重新初始化
             routeValues["pageIndex"] = 0;
+            RouteValueDictionary dic = new RouteValueDictionary();
+            dic.Add("action", routeValues["action"]);
+            dic.Add("controller", routeValues["controller"]);
+
+            routeValues.Clear();
+
+            foreach (var item in dic)
+            {
+                routeValues.Add(item.Key,item.Value);
+            }
 
             return sb.ToString();
         }
