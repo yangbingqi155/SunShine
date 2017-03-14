@@ -78,6 +78,37 @@ namespace SunShine.Web {
                 url: "Product/Detail/{idproduct}.html",
                 defaults: new { controller = "Product", action = "List" }
             );
+            
+
+            routes.MapRoute(
+                name: "case_category_current_pages",
+                url: "Case/Category/{categoryCode}/{currentCategoryCode}/{pageIndex}.html",
+                defaults: new { controller = "Case", action = "Index" }
+            );
+
+            routes.MapRoute(
+                name: "case_category_current",
+                url: "Case/Category/{categoryCode}/{currentCategoryCode}.html",
+                defaults: new { controller = "Case", action = "Index" }
+            );
+
+            routes.MapRoute(
+                name: "case_category_pages",
+                url: "Case/Category/{categoryCode}/{pageIndex}.html",
+                defaults: new { controller = "Case", action = "Index" }
+            );
+
+            routes.MapRoute(
+                name: "case_category",
+                url: "Case/Category/{categoryCode}.html",
+                defaults: new { controller = "Case", action = "Index" }
+            );
+
+            routes.MapRoute(
+                name: "case_detail",
+                url: "Case/Detail/{idarticle}.html",
+                defaults: new { controller = "Case", action = "Index" }
+            );
 
             routes.MapRoute(
                 name: "Default_html",

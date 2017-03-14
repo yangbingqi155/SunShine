@@ -53,8 +53,10 @@ namespace SunShine.Web.Controllers
         /// 手机版-导航-成功案例
         /// </summary>
         /// <returns></returns>
-        public ActionResult Mobile_NavSuccessCases(string categoryCode)
+        public ActionResult Mobile_NavSuccessCases(string categoryCode,string currentCategoryCode)
         {
+            ViewData["currentCategoryCode"] = currentCategoryCode;
+            ViewData["categoryCode"] = categoryCode;
             return View(SiteCategoryService.GetChildCategoriesByCode(categoryCode));
         }
 

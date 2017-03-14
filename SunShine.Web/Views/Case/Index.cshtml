@@ -14,9 +14,11 @@
     }
     string currentCategoryCode = ViewData["currentCategoryCode"].ToString();
     string categoryCode = ViewData["categoryCode"].ToString();
+    string idarticle = ViewData["idarticle"].ToString();
     List<SiteCategory> navPath = (List<SiteCategory>)ViewData["navPath"];
     var pageCount = Convert.ToInt32(ViewData["pageCount"]);
     var pageIndex = Convert.ToInt32(ViewData["pageIndex"]);
+
 }
 <div class="case_box">
 
@@ -49,7 +51,7 @@
                     }
                     else
                     {
-                        if (currentCategoryCode == @navPath[i].categorycode && Model.Count == 1 && pageIndex == 0 && !string.IsNullOrEmpty(Request["idarticle"]))
+                        if (currentCategoryCode == @navPath[i].categorycode && Model.Count == 1 && pageIndex == 0 && !string.IsNullOrEmpty(idarticle))
                         {
                             <span>>&nbsp;<a href="@Url.Action("Index","Case",new {categoryCode=categoryCode,currentCategoryCode=currentCategoryCode })">@navPath[i].categoryname&nbsp;</a></span>
                         }
@@ -61,7 +63,7 @@
                         }
                     }
                 }
-                @if (Model.Count == 1 && pageIndex == 0 && !string.IsNullOrEmpty(Request["idarticle"]) && Model.First().Category.categorycode != "commonquestion")
+                @if (Model.Count == 1 && pageIndex == 0 && !string.IsNullOrEmpty(idarticle) && Model.First().Category.categorycode != "commonquestion")
                 {
                     <span>
                         >&nbsp;
@@ -77,7 +79,7 @@
         </div>
         <div style="clear:both;"></div>
         @if(BrowerDetectorHelper.IsMobile()) {
-            Html.RenderAction("Mobile_NavSuccessCases", "Parts");
+            Html.RenderAction("Mobile_NavSuccessCases", "Parts",new { categoryCode= categoryCode, currentCategoryCode =currentCategoryCode});
         }
         <div class="case_list">
             @if (Model.Count == 1 && pageIndex == 0)

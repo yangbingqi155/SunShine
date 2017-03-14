@@ -73,9 +73,10 @@ namespace SunShine.Web.Controllers
             ViewData["navPath"] = parentCategories;
             ViewData["currentCategoryCode"] = currentCategoryCode;
             ViewData["categoryCode"] = categoryCode;
-            
-            RouteData.Values.Add("categoryCode", categoryCode);
-            RouteData.Values.Add("currentCategoryCode", currentCategoryCode);
+            ViewData["idarticle"] = idarticle;
+
+            //RouteData.Values.Add("categoryCode", categoryCode);
+            //RouteData.Values.Add("currentCategoryCode", currentCategoryCode);
             return View(pageList);
 
         }

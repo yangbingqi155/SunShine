@@ -11,7 +11,7 @@
         {
             <div class="case_question_item">
                 <div class="itemdesc">
-                    <div class="itemtitle"><img src="@Url.Content("~/Images/case/question.jpg")" />&nbsp;<a href="@Url.Action("Index","Case",new { idarticle=Model[i].idarticle})">@Model[i].title</a></div>
+                    <div class="itemtitle"><img src="@Url.Content("~/Images/case/question.jpg")" />&nbsp;<a href="@Url.RouteUrl("case_detail",new { idarticle=Model[i].idarticle})">@Model[i].title</a></div>
                     <div class="itemdetail"><img src="@Url.Content("~/Images/case/anwer.jpg")" />&nbsp;@(string.IsNullOrEmpty(Model[i].content) ? "" : Model[i].content.RemoveHTMLAndGetByNum(80))</div>
                 </div>
             </div>

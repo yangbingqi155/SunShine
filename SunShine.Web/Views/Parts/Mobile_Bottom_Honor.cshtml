@@ -19,7 +19,7 @@
                         <li>
                                     @if (!string.IsNullOrEmpty(Model[i].img))
                                     {
-                                        <a href="@Url.Action("Index","Case",new {idarticle=Model[i].idarticle })"><img src="@Url.Content(Model[i].img)" /></a>
+                                        <a href="@Url.RouteUrl("case_detail",new {idarticle=Model[i].idarticle })"><img src="@Url.Content(Model[i].img)" /></a>
                                     }
                         </li>
                     }

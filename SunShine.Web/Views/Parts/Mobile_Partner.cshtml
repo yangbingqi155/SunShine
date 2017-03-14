@@ -44,7 +44,7 @@
                                 <p class="partner_item_introduction">
                                     @Html.Raw(!string.IsNullOrEmpty(Model[i].introduction) ? Model[i].introduction : (string.IsNullOrEmpty(Model[i].content) ? "" : Model[i].content.RemoveHTMLAndGetByNum(100)))
                                 </p>
-                                <div class="view_detail_btn"><a href="@Url.Action("Index","Case",new {idarticle= Model[i].idarticle })">查看详情</a></div>
+                                <div class="view_detail_btn"><a href="@Url.RouteUrl("case_detail",new {idarticle= Model[i].idarticle })">查看详情</a></div>
                             </div>
                             <div style="clear:both;"></div>
                             @*<div class="carousel-caption">

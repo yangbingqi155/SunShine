@@ -10,11 +10,11 @@
                 <div class="itemimg">
                     @if (!string.IsNullOrEmpty(Model[i].img))
                     {
-                        <a href="@Url.Action("Index","Case",new { idarticle=Model[i].idarticle})"><img src="@Url.Content(Model[i].img)" /></a>
+                        <a href="@Url.RouteUrl("case_detail",new { idarticle=Model[i].idarticle})"><img src="@Url.Content(Model[i].img)" /></a>
                     }
                 </div>
                 <div class="itemdesc">
-                    <div class="itemtitle"><a href="@Url.Action("Index","Case",new { idarticle=Model[i].idarticle})">@Model[i].title</a></div>
+                    <div class="itemtitle"><a href="@Url.RouteUrl("case_detail",new { idarticle=Model[i].idarticle})">@Model[i].title</a></div>
                 </div>
             </div>
         }
