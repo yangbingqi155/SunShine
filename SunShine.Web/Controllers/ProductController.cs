@@ -70,6 +70,10 @@ namespace SunShine.Web.Controllers
                 }
             }
 
+            if (productViewModels.Count>0) {
+                productViewModels = productViewModels.OrderBy(en => en.sortno).ToList();
+            }
+
             List<ProductViewModel> pageList = productViewModels.Pager<ProductViewModel>(pageIndex, pageSize, out pageCount);
 
             ViewData["pageCount"] = pageCount;

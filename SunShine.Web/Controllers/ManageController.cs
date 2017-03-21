@@ -207,6 +207,7 @@ namespace TNet.Controllers {
                 idcategory = idproductcategory;
             }
             List<ProductViewModel> entities = ProductService.SearchViewModels(name, idcategory);
+            entities = entities.OrderBy(en => en.sortno).ToList();
             List<ProductViewModel> pageList = entities.Pager<ProductViewModel>(pageIndex, pageSize, out pageCount);
 
             ViewData["pageCount"] = pageCount;
