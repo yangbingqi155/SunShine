@@ -54,8 +54,8 @@
                             <th>@item.pagesize</th>
                             <td>@item.cretime</td>
                             <td>
-                                <a href="@Url.Action("SiteCategoryEdit","Manage",new {idcategory=item.idcategory })" class="btn btn-primary">编辑</a>
-                                <a href="@Url.Action("ArticleEdit","Manage",new {idcategory=item.idcategory })" class="btn btn-primary">新增文章</a>
+                                <a href="@Url.Action("SiteCategoryEdit","Manage",new {idcategory=item.idcategory,returnurl= Request.RawUrl })" class="btn btn-primary">编辑</a>
+                                <a href="@Url.Action("ArticleEdit","Manage",new {idcategory=item.idcategory,returnurl= Request.RawUrl })" class="btn btn-primary">新增文章</a>
                             </td>
                         </tr>
                     }

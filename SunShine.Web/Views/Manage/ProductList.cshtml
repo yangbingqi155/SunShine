@@ -106,7 +106,7 @@
                                 </div>
                             </td>
                             <td>
-                                <a href="@Url.Action("ProductEdit","Manage",new {idproduct=item.idproduct })" class="btn btn-primary">编辑</a>
+                                <a href="@Url.Action("ProductEdit","Manage",new {idproduct=item.idproduct,returnurl= Request.RawUrl})" class="btn btn-primary">编辑</a>
                                 <a href="javascript:void(0);" class="btn btn-danger" name="btn_del" value="@item.idproduct">删除</a>
                             </td>
                         </tr>

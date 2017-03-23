@@ -71,8 +71,8 @@
                             </td>
                             <td>@item.cretime</td>
                             <td>
-                                <a href="@Url.Action("ProductCategoryEdit","Manage",new {idcategory=item.idcategory })" class="btn btn-primary">编辑</a>
-                                <a href="@Url.Action("ProductEdit","Manage",new {idcategory=item.idcategory })" class="btn btn-primary">新增产品</a>
+                                <a href="@Url.Action("ProductCategoryEdit","Manage",new {idcategory=item.idcategory,returnurl= Request.RawUrl })" class="btn btn-primary">编辑</a>
+                                <a href="@Url.Action("ProductEdit","Manage",new {idcategory=item.idcategory,returnurl= Request.RawUrl})" class="btn btn-primary">新增产品</a>
                             </td>
                         </tr>
                     }

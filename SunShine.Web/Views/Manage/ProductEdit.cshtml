@@ -32,6 +32,7 @@
     <form id="form1" action="@Url.Action("ProductEdit","Manage")" method="post" class="form-horizontal">
         <div class="merc-edit-box ">
             <fieldset>
+                <input type="hidden" name="returnurl" value="@Request["returnurl"]" />
                 @Html.HiddenFor(model => model.idproduct)
                 @Html.HiddenFor(model => model.description)
                 @Html.HiddenFor(model => model.basicinfo)

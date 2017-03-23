@@ -164,7 +164,7 @@ namespace TNet.Controllers {
         /// <returns></returns>
         [ManageLoginValidation]
         [HttpPost]
-        public ActionResult ProductCategoryEdit(ProductCategoryViewModel model) {
+        public ActionResult ProductCategoryEdit(ProductCategoryViewModel model,string returnurl="") {
             ProductCategory category = new ProductCategory();
             model.CopyToBase(category);
             if (string.IsNullOrEmpty(category.idcategory)) {
@@ -182,7 +182,10 @@ namespace TNet.Controllers {
             model.CopyFromBase(category);
 
             ModelState.AddModelError("", "保存成功.");
-
+            if (!string.IsNullOrEmpty(returnurl))
+            {
+                return Content("<script>alert('保存成功!');window.location.href=\"" + returnurl + "\";</script>");
+            }
             return Content("<script>alert('保存成功!');window.location.href=\"" + Url.Action("ProductCategoryEdit", "Manage", new { idcategory = model.idcategory }) + "\";</script>");
         }
 
@@ -334,7 +337,7 @@ namespace TNet.Controllers {
         [ManageLoginValidation]
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult ProductEdit(ProductViewModel model, string productImages = "") {
+        public ActionResult ProductEdit(ProductViewModel model, string productImages = "",string returnurl="") {
             Product product = new Product();
             model.CopyToBase(product);
             if (string.IsNullOrEmpty(product.idproduct)) {
@@ -376,6 +379,9 @@ namespace TNet.Controllers {
             ProductService.SetDefaultImage(product.idproduct);
 
             ModelState.AddModelError("", "保存成功.");
+            if (!string.IsNullOrEmpty(returnurl)) {
+                return Content("<script>alert('保存成功!');window.location.href=\"" + returnurl + "\";</script>");
+            }
             return Content("<script>alert('保存成功!');window.location.href=\"" + Url.Action("ProductEdit", "Manage", new { idcategory = model.idcategory, idproduct=model.idproduct }) + "\";</script>");
 
         }
@@ -480,7 +486,7 @@ namespace TNet.Controllers {
         /// <returns></returns>
         [ManageLoginValidation]
         [HttpPost]
-        public ActionResult SiteCategoryEdit(SiteCategoryViewModel model) {
+        public ActionResult SiteCategoryEdit(SiteCategoryViewModel model,string returnurl="") {
             SiteCategory category = new SiteCategory();
             model.CopyToBase(category);
             if (string.IsNullOrEmpty(category.idcategory)) {
@@ -498,6 +504,10 @@ namespace TNet.Controllers {
             model.CopyFromBase(category);
 
             ModelState.AddModelError("", "保存成功.");
+            if (!string.IsNullOrEmpty(returnurl))
+            {
+                return Content("<script>alert('保存成功!');window.location.href=\"" + returnurl + "\";</script>");
+            }
             return Content("<script>alert('保存成功!');window.location.href=\"" + Url.Action("SiteCategoryEdit", "Manage", new { idcategory = model.idcategory }) + "\";</script>");
         }
 
@@ -555,7 +565,7 @@ namespace TNet.Controllers {
         [ManageLoginValidation]
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult ArticleEdit(ArticleViewModel model, string articleImages = "") {
+        public ActionResult ArticleEdit(ArticleViewModel model, string articleImages = "", string returnurl = "") {
             Article article = new Article();
             model.CopyToBase(article);
             if (string.IsNullOrEmpty(article.idarticle)) {
@@ -594,7 +604,10 @@ namespace TNet.Controllers {
             }
 
             ArticleService.SetDefaultImage(article.idarticle);
-
+            if (!string.IsNullOrEmpty(returnurl))
+            {
+                return Content("<script>alert('保存成功!');window.location.href=\"" + returnurl + "\";</script>");
+            }
             return Content("<script>alert('保存成功!');window.location.href=\"" + Url.Action("ArticleEdit", "Manage", new { idcategory = model.idcategory,idarticle=model.idarticle }) + "\";</script>");
         }
 

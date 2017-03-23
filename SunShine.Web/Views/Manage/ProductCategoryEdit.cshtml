@@ -21,6 +21,7 @@
     <form action="@Url.Action("ProductCategoryEdit","Manage")" method="post" class="form-horizontal">
         <div class="merc-edit-box ">
             <fieldset>
+                <input type="hidden" name="returnurl" value="@Request["returnurl"]" />
                 @Html.HiddenFor(model => model.idcategory)
                 @Html.HiddenFor(model => model.categorycode)
                 <div class="form-group">
