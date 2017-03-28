@@ -110,6 +110,12 @@ namespace SunShine.Web {
             );
 
             routes.MapRoute(
+                name: "manage_default",
+                url: "Manage/{action}",
+                defaults: new { controller = "Manage", action = "Index" }
+            );
+
+            routes.MapRoute(
                 name: "Default_html",
                 url: "{controller}/{action}.html",
                 defaults: new { controller = "Home", action = "Index" }

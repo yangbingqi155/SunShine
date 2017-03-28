@@ -17,7 +17,7 @@
     </ol>
 </div>
 <div class="ManageRightContent">
-    <form action="@Url.Action("ProductCategoryList","Manage")" method="post">
+    <form action="@Url.Action("ProductCategoryList","Manage")" method="get">
         <div class="row searchbox">
             <div class="filter_label">
                 @(AttributeHelper.DisplayAttributeFor<ProductCategoryViewModel, string>(en => en.groupmethodname))：
