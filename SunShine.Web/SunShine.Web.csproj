@@ -376,10 +376,13 @@
     <Content Include="Images\home\bottom_logo.jpg" />
     <Content Include="Images\home\fgz_04.jpg" />
     <Content Include="Images\home\fgz_06.jpg" />
+    <Content Include="Images\home\fuwubiaoyu_1.jpg" />
+    <Content Include="Images\home\hexinyoushi.jpg" />
     <Content Include="Images\home\home_1.jpg" />
     <Content Include="Images\home\home_banner-1.jpg" />
     <Content Include="Images\home\honor.jpg" />
     <Content Include="Images\home\hot_tel_icon.jpg" />
+    <Content Include="Images\home\kehuzhichi_1.jpg" />
     <Content Include="Images\home\make_step.jpg" />
     <Content Include="Images\home\mobile_custom_flow.jpg" />
     <Content Include="Images\home\mobile_dingzhiliucheng_1_1.jpg" />
@@ -391,8 +394,10 @@
     <Content Include="Images\home\mobile_yongxinzuofuwu.jpg" />
     <Content Include="Images\home\sinaLogo.jpg" />
     <Content Include="Images\home\sinaLogo_1.jpg" />
+    <Content Include="Images\home\telephone_2.jpg" />
     <Content Include="Images\home\weixinLogo.jpg" />
     <Content Include="Images\home\weixinLogo_1.jpg" />
+    <Content Include="Images\home\yongxinzuofuwu.jpg" />
     <Content Include="Images\layout\advance_bg_1_1.jpg" />
     <Content Include="Images\layout\advance_bg_1_2.jpg" />
     <Content Include="Images\layout\advance_bg_2_1.jpg" />
