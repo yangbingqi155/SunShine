@@ -24,13 +24,20 @@
                     <div class="category_left">
                         <div class="category_title">按用途分类</div>
                     </div>
-                    <div class="category_right category_right_one">
-                        @for (int i = 0; i < usageCategories.Count; i++) {
-                            if (i == usageCategories.Count - 1) {
-                                <span><a href="@Url.Action("List","Product",new { categoryCode=usageCategories[i].categorycode})" >@usageCategories[i].categoryname</a>&nbsp;</span>
+                    <div class="category_right category_right_two">
+                        @for (int i = 0; i < usageCategories.Count; i++)
+                        {
+                            if (i == usageCategories.Count - 1)
+                            {
+                                <span><a href="@Url.Action("List","Product",new { categoryCode=usageCategories[i].categorycode})">@usageCategories[i].categoryname</a>&nbsp;</span>
                             }
-                            else {
-                                <span><a href="@Url.Action("List","Product",new { categoryCode=usageCategories[i].categorycode})" >@usageCategories[i].categoryname</a>&nbsp;|</span>
+                            else
+                            {
+                                <span><a href="@Url.Action("List","Product",new { categoryCode=usageCategories[i].categorycode})">@usageCategories[i].categoryname</a>&nbsp;|</span>
+                            }
+                            if (i == 4)
+                            {
+                                <br />
                             }
                         }
                     </div>

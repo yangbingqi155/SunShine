@@ -8,9 +8,9 @@
     <div class="partner">
         <div class="content1">
             <div class="case_t"></div>
-            <div class="content1_left" id="left"><img src="~/Images/home/fgz_19.jpg" /></div>
+            <div class="content1_left" id="partner_left"><img src="~/Images/home/fgz_19.jpg" /></div>
             <div class="kehu">
-                <ul id="center">
+                <ul id="partner_center">
                     @foreach (var item in Model) {
                         <li>
                             <div class="hezuo">
@@ -27,7 +27,7 @@
                     }
                 </ul>
             </div>
-            <div class="content1_right" id="right"><img src="~/Images/home/fgz_20.jpg" /></div>
+            <div class="content1_right" id="partner_right"><img src="~/Images/home/fgz_20.jpg" /></div>
         </div>
     </div>
 
@@ -35,9 +35,9 @@
     <script type="text/javascript">
     window.onload = function () {
         var aebiz = new ScrollPic();
-        aebiz.scrollContId = "center"; //内容容器ID
-        aebiz.arrLeftId = "left"; //左箭头ID
-        aebiz.arrRightId = "right"; //右箭头ID
+        aebiz.scrollContId = "partner_center"; //内容容器ID
+        aebiz.arrLeftId = "partner_left"; //左箭头ID
+        aebiz.arrRightId = "partner_right"; //右箭头ID
         aebiz.listEvent = "onmouseover"; //切换事件
         aebiz.frameWidth = 1030; //显示框宽度
         aebiz.pageWidth = 254; //翻页宽度
