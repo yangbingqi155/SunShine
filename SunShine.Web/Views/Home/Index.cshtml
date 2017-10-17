@@ -48,7 +48,7 @@
         <div class="title">
             <ul id="tabs">
                 <li class="title_PopularProduct" style="background:#da251c"><a href="" class="tab">热销产品</a></li>
-                <li class="title_NewestProduct" style="background:#DEDEDC"><a href="" class="tab">最新产品</a></li>
+                <li class="title_NewestProduct" style="background:#DEDEDC"><a href="" class="tab">产品展示</a></li>
             </ul>
         </div>
         <div class="tab_box">
@@ -108,13 +108,14 @@ else
     {
         Html.RenderPartial("_HistoryBannerPartial", null);
     }
-    Html.RenderPartial("_CustomerSupportTitlePartial", null);
+    //Html.RenderPartial("_CustomerSupportTitlePartial", null);
     if (!BrowerDetectorHelper.IsMobile())
     {
-        Html.RenderAction("Partner", "Parts");
+        //Html.RenderAction("Partner", "Parts");
     }
     else
     {
+        Html.RenderPartial("_CustomerSupportTitlePartial", null);
         Html.RenderAction("Mobile_Partner", "Parts");
     }
     if (!BrowerDetectorHelper.IsMobile())
