@@ -109,15 +109,15 @@ else
         Html.RenderPartial("_HistoryBannerPartial", null);
     }
     //Html.RenderPartial("_CustomerSupportTitlePartial", null);
-    if (!BrowerDetectorHelper.IsMobile())
-    {
-        //Html.RenderAction("Partner", "Parts");
-    }
-    else
-    {
-        Html.RenderPartial("_CustomerSupportTitlePartial", null);
-        Html.RenderAction("Mobile_Partner", "Parts");
-    }
+    //if (!BrowerDetectorHelper.IsMobile())
+    //{
+    //    Html.RenderAction("Partner", "Parts");
+    //}
+    //else
+    //{
+    //    Html.RenderPartial("_CustomerSupportTitlePartial", null);
+    //    Html.RenderAction("Mobile_Partner", "Parts");
+    //}
     if (!BrowerDetectorHelper.IsMobile())
     {
         Html.RenderAction("InstroductionCompany", "Parts");
